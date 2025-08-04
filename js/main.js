@@ -51,3 +51,49 @@
 })();
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const scroller = document.querySelector('.top-strip .scroller');
+  if (!scroller) return;
+
+  // Collect the original items (<span>…</span>)
+  const items = Array.from(scroller.querySelectorAll('span'));
+  if (items.length === 0) return;
+
+  // Build the animated track and duplicate content for seamless loop
+  const track = document.createElement('div');
+  track.className = 'scroller__track';
+
+  // Move originals into the track
+  items.forEach(el => track.appendChild(el));
+
+  // Duplicate them (aria-hidden so screen readers don't repeat)
+  items.forEach(el => {
+    const clone = el.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  // Mount the track
+  scroller.innerHTML = '';
+  scroller.appendChild(track);
+
+  // Set animation duration based on content width for consistent speed
+  const setDuration = () => {
+    // track now holds 2 copies; halfWidth is width of one copy
+    const halfWidth = track.scrollWidth / 2;
+    const pxPerSecond = 20;                 // ← adjust speed here           ------------------
+    const seconds = Math.max(halfWidth / pxPerSecond, 10);
+    scroller.style.setProperty('--ticker-duration', `${seconds}s`);
+  };
+
+  // Recompute after fonts load & on resize
+  if (document.fonts?.ready) document.fonts.ready.then(setDuration);
+  window.addEventListener('load', setDuration);
+  window.addEventListener('resize', () => {
+    // debounce with rAF for smoothness
+    cancelAnimationFrame(setDuration._raf);
+    setDuration._raf = requestAnimationFrame(setDuration);
+  });
+
+  setDuration();
+});

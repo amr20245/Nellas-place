@@ -1,6 +1,5 @@
-
 /* ─────────────────────────────────────────────────────────────────
-   SHNP Redesign • Global Styles (one stylesheet for all 28 pages)
+   SHNP Redesign • Global Styles (one stylesheet for all pages)
    Palette: grayscale + subtle accent you can change in :root
    ---------------------------------------------------------------- */
 :root{
@@ -9,7 +8,7 @@
   --card:#1e1f22;
   --muted:#b4b6bb;
   --text:#f5f6f7;
-  --accent:#9aa0a6;  /* soft gray accent; change if you want a color */
+  --accent:#9aa0a6;
   --accent-2:#d1d5db;
   --border: #2a2c31;
   --radius: 16px;
@@ -22,9 +21,10 @@ html,body{height:100%}
 body{
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   color:var(--text);
-  background: radial-gradient(1200px 600px at 20% -10%, #1a1b1f 0%, var(--bg) 60%),
-              radial-gradient(1000px 500px at 120% 10%, #191a1e 0%, var(--bg) 60%),
-              var(--bg);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, #1a1b1f 0%, var(--bg) 60%),
+    radial-gradient(1000px 500px at 120% 10%, #191a1e 0%, var(--bg) 60%),
+    var(--bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -41,18 +41,85 @@ a:hover{text-decoration:underline}
 .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
 @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
 
-/* Top notice strip */
+/* ───────────────── Top notice strip ───────────────── */
 .top-strip{
+  /* match bg so fades blend cleanly */
+  --top-strip-bg:#101114;
   background: linear-gradient(90deg, #1b1c20, #101114);
   border-bottom:1px solid var(--border);
   color:#d7d9df;
-  font-size:14px;
+  font-size:16px; /* was 14px → larger */
 }
-.top-strip__inner{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:10px 0}
-.scroller{overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)}
-.scroller span{display:inline-block;padding-right:32px;opacity:.85}
+.top-strip .container{
+  /* nudge content closer to page edges only for this bar */
+  width:min(1300px, 98vw);
+}
+.top-strip__inner{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 0;
+}
 
-/* Header / Nav */
+/* kicker (WHY STEP HIGHER?) bigger, bolder, left-aligned */
+.kicker{letter-spacing:.4px;color:#c3c6cd;text-transform:uppercase;font-size:12px}
+.top-strip .kicker{
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 800;
+  letter-spacing:.6px;
+  text-wrap: nowrap;
+  margin-right:10px;
+}
+
+/* scroller: continuous left→right ticker, items back-to-back */
+.top-strip .scroller{
+  position:relative;
+  flex:1 1 auto;
+  overflow:hidden;
+  white-space:nowrap;
+  line-height:1.5;
+  height:1.5em; /* one-line viewport */
+  /* subtle edge fade via mask so items appear to fade in/out */
+  mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+/* make phrases larger and semi-bold */
+.top-strip .scroller,
+.top-strip .scroller__track,
+.top-strip .scroller span{
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 600;
+}
+
+.top-strip .btn.btn-ghost{ flex:0 0 auto; }
+
+/* ticker track (JS injects .scroller__track with two copies of content) */
+.scroller__track{
+  display:inline-flex;
+  align-items:center;
+  gap:28px;                  /* spacing between phrases */
+  will-change: transform;
+  animation: ticker var(--ticker-duration, 30s) linear infinite;
+  animation-direction: reverse; /* reverse = move right instead of left */
+}
+
+/* pause on hover/focus */
+.scroller:hover .scroller__track,
+.scroller:focus-within .scroller__track{ animation-play-state: paused; }
+
+/* keyframes: base is 0→-50%; reversing makes it move right */
+@keyframes ticker{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* reduced motion: stop animation but keep layout */
+@media (prefers-reduced-motion: reduce){
+  .scroller__track{ animation: none !important; }
+}
+
+/* ───────────────── Header / Nav ───────────────── */
 .header{
   position:sticky; top:0; z-index:1000;
   backdrop-filter: blur(8px);
@@ -75,35 +142,35 @@ a:hover{text-decoration:underline}
   .nav .cta{justify-self:start}
 }
 
-/* Hero */
+/* ───────────────── Hero ───────────────── */
 .hero{
   display:grid;gap:28px;align-items:center;
   grid-template-columns:1.3fr .9fr;
 }
-.hero .tag{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);letter-spacing:.3px}
+.hero .tag{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:#d1d3d8;letter-spacing:.3px}
 .hero h1{font-size: clamp(28px, 4.5vw, 56px);line-height:1.05}
 .hero p.lead{font-size: clamp(16px, 2vw, 20px);color:#d3d5da;max-width:58ch}
 .hero .hero-media{aspect-ratio:16/10;background:linear-gradient(135deg,#1d1f24,#0f1013);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:2px}
 .hero .hero-media > div{width:100%;height:100%;border-radius:18px;background:#0a0b0d url('../assets/img/placeholder.svg') center/cover no-repeat}
 
-/* Cards */
+/* ───────────────── Cards ───────────────── */
 .card{
   background: linear-gradient(180deg, #1a1c20, #131418);
   border:1px solid var(--border);
   border-radius: var(--radius);
   padding: clamp(16px,2vw,22px);
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
 }
 .card h3{margin-bottom:6px}
 .card p{color:#cfd1d6}
 
-/* Buttons */
+/* ───────────────── Buttons ───────────────── */
 .btn{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);padding:10px 14px;border-radius:12px;background:#1a1b20;color:#eceff3}
 .btn:hover{filter:brightness(1.05)}
 .btn-primary{background:#e5e7eb;color:#101114}
 .btn-ghost{background:transparent}
 
-/* Forms */
+/* ───────────────── Forms ───────────────── */
 form{display:grid;gap:12px}
 .input, select, textarea{
   background:#0e0f12;border:1px solid var(--border);color:var(--text);
@@ -113,30 +180,28 @@ input:focus, select:focus, textarea:focus{border-color:#2f88ff;box-shadow:0 0 0 
 label{font-size:14px;color:#d1d3d8}
 .helper{font-size:12px;color:#a4a8b0}
 
-/* Tables */
+/* ───────────────── Tables ───────────────── */
 .table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
 .table th,.table td{padding:12px 14px;border-bottom:1px solid var(--border)}
 .table th{text-align:left;color:#cfd2d8;background:#101114}
 
-/* Footer */
+/* ───────────────── Footer ───────────────── */
 .footer{margin-top:40px;border-top:1px solid var(--border);background:#0c0d10}
 .footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
 .footer a{color:#d2d4d9}
 .footer small{color:#9aa0a6}
 @media(max-width:900px){.footer .cols{grid-template-columns:1fr}}
 
-/* Utilities */
-.kicker{letter-spacing:.4px;color:#c3c6cd;text-transform:uppercase;font-size:12px}
+/* ───────────────── Utilities ───────────────── */
 .muted{color:#c2c5cb}
 .center{text-align:center}
 .badge{font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:999px;color:#c9cbd1}
 
-/* Reveal on scroll */
+/* ───────────────── Reveal on scroll ───────────────── */
 .reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease, transform .5s ease}
 .reveal.visible{opacity:1;transform:none}
 
-
-
+/* ───────────────── Pop-up / FAB (unchanged) ───────────────── */
 .popup-overlay{
   position:fixed; inset:0; background:rgba(5,6,8,.72);
   display:flex; align-items:center; justify-content:center;
@@ -153,11 +218,11 @@ label{font-size:14px;color:#d1d3d8}
 .popup p{color:#d0d3d9}
 .popup .row{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
 .popup .actions{display:flex; gap:12px; margin-top:16px}
-.popup .close-x{ z-index: 5; /* ensure above flyer image */
-
+.popup .close-x{
   position:absolute; top:16px; right:18px; cursor:pointer;
   background:#0f1115; border:1px solid var(--border);
   width:36px; height:36px; border-radius:10px; display:grid;place-items:center;
+  z-index:5;
 }
 
 .fab-tours{
@@ -168,23 +233,24 @@ label{font-size:14px;color:#d1d3d8}
 }
 .fab-tours:hover{filter:brightness(.95)}
 
-
 .popup--flyer .popup{
-  padding: 0;
-  overflow: hidden;
-  position: relative;
+  padding:0;
+  overflow:hidden;
+  position:relative;
 }
-.popup-flyer-img{
-  display:block; width:100%; height:auto; border-radius:20px;
-}
-.popup .close-x{ z-index: 5; /* ensure above flyer image */
-
+.popup-flyer-img{ display:block; width:100%; height:auto; border-radius:20px; }
+.popup .close-x{
   background: rgba(0,0,0,.55);
   border: 1px solid rgba(255,255,255,.6);
   color:#fff;
   font-weight:700;
 }
+
 /* FAB position + shape options */
 .fab-tours{ right:18px; bottom:18px; }
 .fab-left{ left:18px; right:auto; }
-.fab-tours--circle{ border-radius:50%; width:56px; height:56px; padding:0; display:grid; place-items:center; font-weight:800; }
+.fab-tours--circle{
+  border-radius:50%;
+  width:56px; height:56px; padding:0;
+  display:grid; place-items:center; font-weight:800;
+}
