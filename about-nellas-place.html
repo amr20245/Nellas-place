@@ -4,64 +4,235 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Nella's Place • SHNP</title>
-  <meta name="description" content="About Nella's Place page for SHNP redesign.">
+  <meta name="description" content="Nella’s Place — CARF-accredited group home in Cincinnati providing individualized care for girls ages 8–21.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body class="about-nellas">
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>CARF-accredited care</span><span>Community impact</span></div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
-    <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+    <nav class="container nav" id="site-nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html" aria-current="page">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn btn-primary" href="donate.html">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero-dark">
+      <div class="container hero__inner">
+        <div>
+          <span class="hero__eyebrow">CARF-Accredited • Since 2014</span>
+          <h1 class="hero__title">A safe, structured home where girls 8–21 heal, learn, and thrive.</h1>
+          <p class="hero__lead">
+            We partner with families and agencies to deliver individualized treatment, education support,
+            and life skills—so each girl can reach her full potential.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="tours.html" class="btn btn-solid">Book a tour</a>
+            <a href="contact.html" class="btn btn-outline">Refer a client</a>
+            <a href="tel:+15134360118" class="btn btn-outline">Call 513-436-0118</a>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge">✅ CARF Accredited</span>
+            <span class="badge">🕑 Staff awake on-site 24/7</span>
+            <span class="badge">🎓 College & Vocational Prep</span>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <img src="assets/img/nellas-hero-1.jpg" alt="Warm, welcoming environment at Nella’s Place">
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE ROWS (image | text alternating) -->
     <section class="section">
+      <!-- Row 1: Image | Text -->
+      <div class="feature reveal">
+        <div class="feature__media">
+          <img src="assets/img/nellas-feature-1.jpg" alt="Resident at Nella’s Place">
+        </div>
+        <div class="feature__card">
+          <h2>Who We Are</h2>
+          <p>
+            Nella’s Place is a Group Home in the Cincinnati, Ohio metro area that provides a continuum of treatment,
+            evaluation, and services for females ages 8–21 with emotional and behavioral problems, referred by the
+            Ohio Department of Job and Family Services and other social service organizations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 2: Text | Image -->
+      <div class="feature reveal">
+        <div class="feature__card">
+          <h2>Our Mission</h2>
+          <p>We provide a safe, nurturing environment for girls mending their mind, body, and spirit.</p>
+        </div>
+        <div class="feature__media">
+          <img src="assets/img/nellas-feature-2.jpg" alt="Students on campus tour">
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO (services) -->
+    <section class="section" aria-labelledby="services-heading">
       <div class="container">
-        <h1 class="reveal">About Nella's Place</h1>
-        <p class="muted reveal" style="margin-top:6px">CARF-accredited group home providing structured, compassionate care for girls 8–21.</p>
-        <div class="grid grid-2" style="margin-top:18px">
+        <h2 id="services-heading" class="reveal">What We Do</h2>
+        <p class="muted" style="margin-top:6px">
+          Residents receive reparative therapy services intended to mend the mind, body, and spirit. Family therapy is provided as needed.
+        </p>
+
+        <div class="grid grid-3" style="margin-top:18px">
           <div class="card reveal">
-            <h3>Our Program</h3>
-            <p>Individualized service plans, education support, and life-skills development.</p>
+            <h3>Therapy & Care</h3>
+            <ul>
+              <li>Treatment plans</li>
+              <li>Group psychotherapy</li>
+              <li>Counseling services</li>
+              <li>Health & wellness</li>
+              <li>Community-integrated services</li>
+              <li>Staff on-site and awake 24/7</li>
+            </ul>
           </div>
           <div class="card reveal">
-            <h3>Tour Our Facility</h3>
-            <p>Schedule a visit and meet our team.</p>
-            <p><a href="tour-our-facility.html">Book a tour →</a></p>
+            <h3>Growth & Skills</h3>
+            <ul>
+              <li>Life skills & self-esteem building</li>
+              <li>Education readiness</li>
+              <li>Individual special interest/talent focus</li>
+              <li>Cultural enrichment</li>
+              <li>Recreation, events, and activities</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Future Readiness</h3>
+            <ul>
+              <li>Preparation for adult living</li>
+              <li>Reintegration with family</li>
+              <li>College prep</li>
+              <li>Vocational prep</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-    
 
+    <!-- IMPACT STATS -->
+    <section class="section">
+      <div class="container">
+        <h2>Our Impact</h2>
+        <div class="stats">
+          <div class="stat reveal">
+            <div class="stat__num">11+ yrs</div>
+            <div class="stat__label">Serving Cincinnati</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">24/7</div>
+            <div class="stat__label">Awake, on-site staffing</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">95%</div>
+            <div class="stat__label">School attendance while placed*</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num">80%+</div>
+            <div class="stat__label">Family reintegration plans</div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">*Internal 12-mo average; varies by placement.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+      <div class="container">
+        <h2>What Families & Partners Say</h2>
+        <div class="testi-grid">
+          <div class="testi reveal">
+            <p>“The staff met our daughter with patience and love. We saw real growth in her confidence and routine.”</p>
+            <div class="who">Parent of former resident</div>
+          </div>
+          <div class="testi reveal">
+            <p>“Nella’s Place collaborates professionally and consistently—communication is excellent.”</p>
+            <div class="who">ODJFS case manager</div>
+          </div>
+          <div class="testi reveal">
+            <p>“I learned to cook, budget, and plan for college. I feel ready for what’s next.”</p>
+            <div class="who">Resident, age 17</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT VALUES -->
+    <section class="section" aria-labelledby="about-values">
+      <div class="container">
+        <h2 id="about-values" class="reveal">About Us</h2>
+        <div class="grid grid-3" style="margin-top:18px">
+          <div class="card reveal">
+            <div class="kicker">01</div>
+            <h3>Make It Stand Out</h3>
+            <p>We help girls overcome their past and move toward a bright future in a loving, therapeutic environment.</p>
+          </div>
+          <div class="card reveal">
+            <h3>We Protect</h3>
+            <p>A safe, structured setting for girls facing emotional and behavioral challenges—healing with dignity.</p>
+          </div>
+          <div class="card reveal">
+            <h3>We Provide</h3>
+            <p>Reparative therapy services that mend mind, body, and spirit—with family therapy available as needed.</p>
+          </div>
+          <div class="card reveal">
+            <h3>We Grow</h3>
+            <p>Strength-based programs that build skills, confidence, and readiness for school, work, and independent living.</p>
+          </div>
+          <div class="card reveal">
+            <h3>We Love</h3>
+            <p>An environment where girls feel loved, valued, and accepted—so each can reach her full potential.</p>
+          </div>
+          <div class="card reveal">
+            <h3>We Support</h3>
+            <p>A comfortable, safe, supervised home that encourages emotional, moral, social, and physical development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
         <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • <a href="mailto:info@shnp.org">info@shnp.org</a> • <a href="tel:+15134360118">513-436-0118</a></p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -80,12 +251,31 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Sticky mobile CTA -->
+  <div class="cta-sticky">
+    <div class="container">
+      <a href="tours.html" class="btn btn-solid" style="flex:1">Book a Tour</a>
+      <a href="contact.html" class="btn btn-outline" style="flex:1">Refer a Client</a>
+    </div>
+  </div>
+
+  <!-- Minimal JS: menu toggle + reveal on scroll -->
+  <script>
+    // Mobile menu
+    const nav = document.getElementById('site-nav');
+    document.getElementById('menuToggle')?.addEventListener('click', ()=> nav.classList.toggle('open'));
+
+    // Reveal on scroll
+    const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); IO.unobserve(e.target);} });
+    }, {threshold:.08}) : null;
+    document.querySelectorAll('.reveal').forEach(el => IO?.observe(el));
+  </script>
 </body>
 </html>
