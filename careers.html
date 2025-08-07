@@ -4,88 +4,174 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Careers • SHNP</title>
-  <meta name="description" content="Careers page for SHNP redesign.">
+  <meta name="description" content="Apply for positions at Nella’s Place, part of Step Higher.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- global site styles -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- page-specific polish -->
+  <link rel="stylesheet" href="css/careers.css">
 </head>
+
 <body>
+  
+
+  <!-- ▾ Marquee strip ▾ -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span><span>Mentorship</span>
+        <span>Scholarships</span><span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html">Donate</a>
     </div>
   </div>
 
+  <!-- ▾ Header ▾ -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Careers</h1>
-        <p class="muted reveal" style="margin-top:6px">Complete the form below. Fields marked * are required.</p>
-        <div class="card reveal" style="margin-top:18px">
-          <form data-validate>
-            <div class="grid grid-2">
-              <div>
-                <label>First Name *</label>
-                <input class="input" required placeholder="First name">
-              </div>
-              <div>
-                <label>Last Name *</label>
-                <input class="input" required placeholder="Last name">
-              </div>
-              <div>
-                <label>Email *</label>
-                <input type="email" class="input" required placeholder="name@example.com">
-              </div>
-              <div>
-                <label>Phone *</label>
-                <input type="tel" class="input" required placeholder="(xxx) xxx-xxxx">
-              </div>
-              <div class="grid" style="grid-template-columns:1fr">
-                <label>Notes</label>
-                <textarea rows="4" class="input" placeholder="Additional information"></textarea>
-              </div>
+  <!-- ▾ Careers section ▾ -->
+  <section class="section">
+    <div class="container">
+      <h1 class="reveal">Careers at Nella’s Place</h1>
+      <p class="muted reveal" style="margin-top:6px">
+        Fill out the application – fields with * are required.
+      </p>
+
+      <div class="card reveal" style="margin-top:18px">
+        <!-- Application form -->
+        <form id="careersForm" class="careers-form" novalidate>
+          <!-- contact -->
+          <div class="careers-grid">
+            <div>
+              <label for="firstName">First Name *</label>
+              <input id="firstName" name="firstName" class="input" required placeholder="First name">
             </div>
-            <div style="display:flex;gap:12px;margin-top:6px">
-              <button class="btn btn-primary" type="submit">Submit</button>
-              <button class="btn btn-ghost" type="reset">Reset</button>
+            <div>
+              <label for="lastName">Last Name *</label>
+              <input id="lastName" name="lastName" class="input" required placeholder="Last name">
             </div>
-            <p class="helper" style="margin-top:10px">Submitting this form will send your responses to SHNP staff.</p>
-          </form>
+            <div>
+              <label for="email">Email Address *</label>
+              <input id="email" name="email" type="email" class="input" required placeholder="name@example.com">
+            </div>
+            <div>
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx">
+            </div>
+          </div>
+
+          <!-- position -->
+          <fieldset class="positions">
+            <legend>Select the position you're applying for *</legend>
+
+            <label>
+              <input type="radio" name="position" value="Residential Coordinator" required>
+              Residential Coordinator
+            </label>
+
+            <label>
+              <input type="radio" name="position" value="House Manager">
+              House Manager
+            </label>
+
+            <label>
+              <input id="otherRadio" type="radio" name="position" value="Other">
+              Other
+            </label>
+
+            <!-- appears when "Other" picked -->
+            <div id="otherWrap" class="other-wrap" hidden>
+              <label for="otherText">Tell us which position *</label>
+              <input id="otherText" name="otherText" class="input">
+            </div>
+          </fieldset>
+<script src="https://js-na2.hsforms.net/forms/embed/243496281.js" defer></script>
+          <!-- address -->
+          <div class="careers-grid" style="margin-top:12px">
+            <div>
+              <label for="addr1">Address 1 *</label>
+              <input id="addr1" name="addr1" class="input" required placeholder="Street address">
+            </div>
+            <div>
+              <label for="addr2">Address 2</label>
+              <input id="addr2" name="addr2" class="input" placeholder="Apt, suite, etc.">
+            </div>
+            <div>
+              <label for="city">City *</label>
+              <input id="city" name="city" class="input" required>
+            </div>
+            <div>
+              <label for="state">State / Province *</label>
+              <input id="state" name="state" class="input" required>
+            </div>
+            <div>
+              <label for="zip">Zip Code *</label>
+              <input id="zip" name="zip" class="input" required>
+            </div>
+            <div>
+              <label for="county">County *</label>
+              <input id="county" name="county" class="input" required>
+            </div>
+          </div>
+
+          <!-- message -->
+          <div style="margin-top:12px">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" class="input" placeholder="Tell us anything else we should know"></textarea>
+          </div>
+
+          <!-- buttons -->
+          <div class="form-buttons">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-ghost" type="reset">Reset</button>
+          </div>
+          <p class="helper">Submitting zips your info straight to the SHNP hiring squad.</p>
+        </form>
+
+        <!-- thank-you swap -->
+        <div id="thanks" class="thanks" hidden>
+          <h2>Thank you for applying! 🎉</h2>
+          <p>We’ll review your info and be in touch shortly.</p>
         </div>
       </div>
-    </section>
-    
+    </div>
+  </section>
 
+  <!-- ▾ Footer ▾ -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">
+          Step Higher • Nella's Place • empowering youth through education, structure and care.
+        </p>
+        <p class="muted" style="margin-top:10px">
+          1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118
+        </p>
       </div>
       <div>
         <h4>Programs</h4>
-        <ul style="list-style:none;margin-top:10px">
+        <ul class="footer-list">
           <li><a href="tours.html">Tours</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
           <li><a href="nellas-place.html">Nella's Place</a></li>
@@ -93,19 +179,50 @@
       </div>
       <div>
         <h4>Get Involved</h4>
-        <ul style="list-style:none;margin-top:10px">
+        <ul class="footer-list">
           <li><a href="volunteer.html">Volunteer</a></li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container footer-meta">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- scripts -->
+  <script src="js/main.js"></script><!-- your existing site-wide JS -->
+
+  <!-- inline helpers for this page -->
+  <script>
+    /* thank-you swap */
+    const form   = document.getElementById('careersForm');
+    const thanks = document.getElementById('thanks');
+    form?.addEventListener('submit', e => {
+      e.preventDefault();      // remove when real backend exists
+      form.hidden   = true;
+      thanks.hidden = false;
+    });
+
+    /* show Other textbox */
+    const otherRadio = document.getElementById('otherRadio');
+    const otherWrap  = document.getElementById('otherWrap');
+    const otherText  = document.getElementById('otherText');
+    document.querySelectorAll('input[name="position"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const show = otherRadio.checked;
+        otherWrap.hidden = !show;
+        if (show) {
+          otherText.setAttribute('required', '');
+          otherText.focus();
+        } else {
+          otherText.removeAttribute('required');
+          otherText.value = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
