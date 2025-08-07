@@ -43,26 +43,131 @@ h2{font-size:clamp(24px,3.2vw,36px);line-height:1.12}
 h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 .muted{color:var(--muted)}
 
-/* ───────────────── Top strip ───────────────── */
-.top-strip{
-  background:
-    radial-gradient(800px 260px at 20% -10%, rgba(122,162,255,.08), transparent 60%),
-    radial-gradient(700px 220px at 120% 10%, rgba(34,211,238,.08), transparent 60%),
-    var(--bg-soft);
-  border-bottom:1px solid var(--border);
-  color:var(--text);
+/* kicker (WHY STEP HIGHER?) bigger, bolder, left-aligned */
+.kicker{letter-spacing:.4px;color:#c3c6cd;text-transform:uppercase;font-size:12px}
+.top-strip .kicker{
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 800;
+  letter-spacing:.6px;
+  text-wrap: nowrap;
+  margin-right:10px;
 }
+
+/* ============ TOP STRIP: one line, centered, marquee, donate on right ============ */
+
+/* container */
 .top-strip__inner{
-  display:flex;gap:20px;align-items:center;justify-content:space-between;
+  display:flex;
+  align-items:center;           /* vertical center */
+  justify-content:space-between;
+  gap:16px;
   padding:10px 0;
+  flex-wrap:nowrap;             /* never wrap */
 }
-.kicker{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:14px}
-.scroller{flex:1 1 auto;overflow:hidden;white-space:nowrap;line-height:1.5;height:1.5em;
-  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.scroller span{display:inline-block;margin-right:28px;font-weight:600;color:#cdd0d6}
-@media (prefers-reduced-motion:no-preference){
-  .scroller span{animation:xscroll 18s linear infinite}
-  @keyframes xscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* WHY STEP HIGHER? */
+.top-strip .kicker{
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 800;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  white-space:nowrap;           /* stay on one line */
+  margin-right:10px;
+  flex:0 0 auto;
+}
+
+/* scrolling text area */
+.top-strip .scroller{
+  position:relative;
+  flex:1  auto;                /* take remaining space */
+  min-width:0;                  /* allow shrinking */
+  overflow:hidden;
+  white-space:nowrap;
+  display:flex;                 /* center track vertically */
+  align-items:center;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* ==== FINAL OVERRIDES: Top strip = one line, marquee, donate pinned ==== */
+
+/* 1) Never wrap the bar (force precedence) */
+.top-strip__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 0;
+  flex-wrap: nowrap !important;     /* <-- lock to one line */
+}
+
+/* 2) Kicker stays on one line */
+.top-strip .kicker{
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+/* 3) Scroller takes whatever space is left, and is allowed to SHRINK */
+.top-strip .scroller{
+  position: relative;
+  flex: 1 1 0%;                     /* grow + shrink */
+  min-width: 0 !important;          /* allow shrinking below content width */
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* 4) Donate stays pinned right */
+.top-strip .btn.btn-ghost{
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+/* 5) Typography for labels */
+.top-strip .scroller span{
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 600;
+}
+
+/* 6) The moving track (JS duplicates content for seamless loop) */
+.top-strip .scroller__track{
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  will-change: transform;
+  animation: ticker var(--ticker-duration, 30s) linear infinite;
+  animation-direction: reverse;     /* rightward motion */
+}
+
+/* Pause on hover/focus */
+.top-strip .scroller:hover .scroller__track,
+.top-strip .scroller:focus-within .scroller__track{
+  animation-play-state: paused;
+}
+
+/* One full cycle = half width (because we render 2 copies back-to-back) */
+@keyframes ticker{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .top-strip .scroller__track{ animation: none !important; }
+}
+
+/* Small screens: slightly smaller labels */
+@media (max-width: 900px){
+  .top-strip .scroller span{ font-size: 14px; }
+  .top-strip .kicker{ font-size: 12px; }
 }
 
 /* ───────────────── Header / Nav ───────────────── */
@@ -125,7 +230,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   border-color:#4b5563;color:#a6ddff;transform:translateY(-1px);
 }
 
-/* ───────────────── Hero (kept old look) ───────────────── */
+/* ───────────────── Hero (global) ───────────────── */
 .hero-dark{
   background:
     radial-gradient(900px 280px at 20% -10%, rgba(122,162,255,.1), transparent 60%),
@@ -138,7 +243,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   grid-template-columns: 1.1fr .9fr;
   padding: clamp(28px,6vw,60px) 0;
 }
-@media (max-width: 980px){ .hero-dark .hero__inner{ grid-template-columns:1fr; } }
+@media (max-width:980px){ .hero-dark .hero__inner{ grid-template-columns:1fr; } }
 .hero__eyebrow{
   display:inline-flex; align-items:center; gap:8px;
   font-size:12px; letter-spacing:.18em; text-transform:uppercase;
@@ -155,7 +260,19 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   font-size:12px; color:#cdd0d6; border:1px solid var(--border); padding:6px 10px; border-radius:999px;
 }
 
-/* ───────────────── Image | Text feature rows (no cards) ───────────────── */
+/* Global hero ordering (kept), but page-specific overrides will win */
+.hero-dark .hero__inner > :first-child{ order: 1; }  /* text block */
+.hero-dark .hero__inner > :last-child{  order: 2; }  /* media block */
+@media (min-width:981px){
+  .hero-dark .hero__media{ grid-column: 2; }        /* ensure right column by default */
+}
+@media (max-width:980px){
+  .hero-dark .hero__inner{ grid-template-columns: 1fr; }
+  .hero-dark .hero__inner > :first-child{ order: 1; }
+  .hero-dark .hero__inner > :last-child{  order: 2; } /* image below text */
+}
+
+/* ───────────────── Image | Text feature rows ───────────────── */
 .about-nellas .feature{
   display:grid; grid-template-columns:1.1fr 1fr;
   gap:32px; align-items:center; width:min(1100px,92vw);
@@ -218,7 +335,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   box-shadow:0 12px 28px rgba(0,0,0,.22);
 }
 .testi p{ color:#e3e6ea }
-.testi .who{ margin-top:10px; color:#var(--muted); font-size:14px }
+.testi .who{ margin-top:10px; color: var(--muted); font-size:14px } /* fixed var() typo */
 
 /* ───────────────── Sticky mobile CTA ───────────────── */
 .cta-sticky{
@@ -245,99 +362,21 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 .reveal.visible{opacity:1;transform:none}
 
 /* ────────────────────────────────────────────────────────────────
-   FIXES YOU ASKED FOR
-   - Top strip stays single-line
-   - Hero image on the right (desktop), stacks under text (mobile)
+   About Step Higher: page-specific tweaks
    ---------------------------------------------------------------- */
-.top-strip__inner{
-  flex-wrap: nowrap;              /* prevent wrapping */
-}
-.top-strip .kicker{
-  white-space: nowrap;            /* keep text on one line */
-  line-height: 1;
-  flex: 0 0 auto;
-}
-.top-strip .scroller{
-  flex: 1 1 auto;                 /* take remaining space */
-  min-width: 0;                   /* allow shrinking instead of wrapping */
-  overflow: hidden;
-}
-.top-strip .btn{
-  flex: 0 0 auto;                 /* keep donate button pinned right */
-}
-@media (max-width: 840px){
-  .top-strip .scroller span{ font-size: 14px; }
-  .top-strip .kicker{ font-size: 12px; }
-}
 
-/* Force hero layout: text | image on desktop */
-.hero-dark .hero__inner > :first-child{ order: 1; }  /* text block */
-.hero-dark .hero__inner > :last-child{  order: 2; }  /* media block */
-@media (min-width: 981px){
-  .hero-dark .hero__media{ grid-column: 2; }        /* ensure right column */
-}
-@media (max-width: 980px){
-  .hero-dark .hero__inner{ grid-template-columns: 1fr; }
-  .hero-dark .hero__inner > :first-child{ order: 1; }
-  .hero-dark .hero__inner > :last-child{  order: 2; } /* image below text */
-}
-/* ==== Top strip: single-line, no overlap, no animation ==== */
-.top-strip__inner{
-  flex-wrap: nowrap;                /* never wrap */
-}
-
-.top-strip .scroller{
-  display: flex;                    /* line up items in one row */
-  align-items: center;
-  gap: 28px;                        /* spacing between labels */
-  white-space: nowrap;              /* keep one line */
-  overflow: hidden;                 /* hide overflow instead of wrapping */
-  min-width: 0;                     /* allow shrink in flex layout */
-  mask-image:none;                  /* remove edge fade that can clip text */
-}
-
-.top-strip .scroller span{
-  flex: 0 0 auto;                   /* prevent shrinking (no squish) */
-  animation: none !important;       /* stop the marquee animation */
-  transform: none !important;
-  will-change: auto;
-}
-
-/* Optional: make text fit better on smaller widths */
-@media (max-width: 900px){
-  .top-strip .scroller span{ font-size: 14px; }
-  .top-strip .kicker{ font-size: 12px; }
-}
-
-/* If you want swipe-to-scroll on mobile instead of clipping, use this: */
-@media (max-width: 640px){
-  .top-strip .scroller{
-    overflow-x: auto;               /* allow horizontal scroll */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;          /* hide scrollbar (Firefox) */
-  }
-  .top-strip .scroller::-webkit-scrollbar{ display: none; } /* hide (WebKit) */
-}
-/* ===== About Step Higher: page-specific tweaks ===== */
-
-/* 1) Distinct emerald accent for this page (doesn't affect Nella’s) */
-.about-stephigher{
-  --cta:  #10b981;   /* emerald */
-  --cta-2:#059669;   /* deeper emerald */
-}
-.about-stephigher .logo{
-  background:linear-gradient(145deg,#10b981,#059669);
-}
-
-/* 2) Hero differences: image LEFT, emerald lighting */
+/* 1) Page lighting */
 .hero--stephigher{
   background:
     radial-gradient(900px 280px at 15% -10%, rgba(16,185,129,.14), transparent 60%),
     radial-gradient(800px 240px at 115% 10%, rgba(5,150,105,.10), transparent 60%),
     var(--bg);
 }
+
+/* 2) Grid skeleton for image | text */
 .hero__inner--left{
-  grid-template-columns: .95fr 1.05fr; /* image | text */
+  display:grid; gap:32px; align-items:center;
+  grid-template-columns:.95fr 1.05fr; /* image | text */
 }
 @media (max-width:980px){
   .hero__inner--left{ grid-template-columns:1fr; }
@@ -368,4 +407,109 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   border-radius:12px; margin-bottom:8px;
   background:linear-gradient(180deg, rgba(16,185,129,.16), rgba(5,150,105,.08));
   border:1px solid #1e2b24; box-shadow:0 10px 22px rgba(16,185,129,.14);
+}
+
+/* =========================
+   About page: feature rows 
+   ========================= */
+.section--about { padding: clamp(28px, 6vw, 56px) 0; }
+
+.section--about .feature{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;  /* text | image */
+  gap: clamp(20px, 3vw, 36px);
+  align-items:center;
+  width:min(1100px, 92vw);
+  margin: 0 auto clamp(28px, 5vw, 44px);
+}
+
+/* Text card */
+.section--about .feature__card{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.04));
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding: clamp(18px, 2.6vw, 26px);
+  box-shadow: var(--shadow);
+}
+
+.section--about .feature__card h2{
+  margin:0 0 8px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height:1.12;
+  color:#f0f2f6;
+}
+
+.section--about .feature__card p{
+  color:#c7cbd1;
+  max-width: 60ch;
+}
+
+/* Media (keeps a nice panel even if the image is missing) */
+.section--about .feature__media{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background: radial-gradient(1200px 400px at 50% -30%, rgba(122,162,255,.08), transparent 60%),
+              linear-gradient(180deg, #1a1b1f, #141519);
+  min-height: clamp(220px, 36vw, 380px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.35);
+}
+
+.section--about .feature__media img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  filter: contrast(1.02) saturate(1.02);
+}
+
+/* Optional: a soft caption-style overlay for placeholders */
+.section--about .feature__media::after{
+  content: attr(data-fallback) " ";
+  position:absolute; inset:auto 0 14px 0;
+  text-align:center;
+  color:#c3c7ce;
+  font-weight:600;
+  letter-spacing:.3px;
+  pointer-events:none;
+}
+
+/* Alternating rows (image|text) */
+.section--about .feature:nth-of-type(even){
+  grid-template-columns: .95fr 1.05fr; /* image | text */
+}
+.section--about .feature:nth-of-type(even) .feature__media{ order:1; }
+.section--about .feature:nth-of-type(even) .feature__card{  order:2; }
+
+/* Mobile */
+@media (max-width: 980px){
+  .section--about .feature{
+    grid-template-columns:1fr;
+  }
+  .section--about .feature__media{
+    order:1;
+    min-height: clamp(220px, 45vw, 320px);
+  }
+  .section--about .feature__card{ order:2; }
+}
+
+/* ===== FIX: Align About hero (image LEFT | text RIGHT) ===== */
+/* These overrides beat the global hero rule that puts media in column 2 */
+.hero--stephigher .hero__inner{
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;   /* image | text */
+  align-items: center;
+  gap: 32px;
+  padding: clamp(28px,6vw,60px) 0;
+}
+@media (min-width:981px){
+  .hero--stephigher .hero__inner > .hero__media{ grid-column:1 !important; order:1; }
+  .hero--stephigher .hero__inner > div:not(.hero__media){ grid-column:2 !important; order:2; }
+}
+@media (max-width:980px){
+  .hero--stephigher .hero__inner{ grid-template-columns:1fr; }
+  .hero--stephigher .hero__inner > .hero__media{ order:1; }
+  .hero--stephigher .hero__inner > div:not(.hero__media){ order:2; }
 }

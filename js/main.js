@@ -1,48 +1,54 @@
-
 // SHNP Redesign • One JS for all pages
 (function(){
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.menu-toggle');
-  if(toggle){
-    toggle.addEventListener('click', ()=>{
-      nav.classList.toggle('open');
-    });
+  if (toggle) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
   }
 
   // Active link highlighting
-  const here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav a').forEach(a=>{
+  const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.nav a[href]').forEach(a => {
     const href = a.getAttribute('href');
-    if(href && href.endsWith(here)){ a.classList.add('active'); }
+    if (!href) return;
+    const file = href.split('/').pop().toLowerCase();
+    if (file === here) a.classList.add('active');
   });
 
-  // Reveal-on-scroll
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, {threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Reveal-on-scroll (guard for old browsers)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
 
   // Smooth scroll for on-page anchors
-  document.addEventListener('click', (e)=>{
+  document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]');
-    if(!a) return;
+    if (!a) return;
     const id = a.getAttribute('href').slice(1);
     const target = document.getElementById(id);
-    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 
   // Basic client-side form validation
-  document.querySelectorAll('form[data-validate]')?.forEach(form=>{
-    form.addEventListener('submit', (e)=>{
+  document.querySelectorAll('form[data-validate]')?.forEach(form => {
+    form.addEventListener('submit', e => {
       const required = form.querySelectorAll('[required]');
       let ok = true;
-      required.forEach(el=>{
-        if(!el.value.trim()){ el.classList.add('invalid'); ok=false; }
-        else{ el.classList.remove('invalid'); }
+      required.forEach(el => {
+        if (!el.value.trim()) { el.classList.add('invalid'); ok = false; }
+        else { el.classList.remove('invalid'); }
       });
-      if(!ok){
+      if (!ok) {
         e.preventDefault();
         alert('Please complete required fields.');
       }
@@ -50,50 +56,67 @@
   });
 })();
 
-
+/* ───────────────────────────
+   Seamless marquee for top strip
+   - Supports multiple .scroller elements
+   - Duplicates content for infinite loop
+   - Auto speed based on content width
+   - Respects reduced motion
+   ─────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  const scroller = document.querySelector('.top-strip .scroller');
-  if (!scroller) return;
+  const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-  // Collect the original items (<span>…</span>)
-  const items = Array.from(scroller.querySelectorAll('span'));
-  if (items.length === 0) return;
+  document.querySelectorAll('.top-strip .scroller').forEach(scroller => {
+    // Collect items (spans) in this scroller
+    const items = Array.from(scroller.querySelectorAll('span'));
+    if (!items.length) return;
 
-  // Build the animated track and duplicate content for seamless loop
-  const track = document.createElement('div');
-  track.className = 'scroller__track';
+    // Build track only if not already built
+    let track = scroller.querySelector('.scroller__track');
+    if (!track) {
+      track = document.createElement('div');
+      track.className = 'scroller__track';
 
-  // Move originals into the track
-  items.forEach(el => track.appendChild(el));
+      // Move originals into track
+      items.forEach(el => track.appendChild(el));
 
-  // Duplicate them (aria-hidden so screen readers don't repeat)
-  items.forEach(el => {
-    const clone = el.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
+      // Duplicate once for seamless loop
+      items.forEach(el => {
+        const clone = el.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+
+      // Mount
+      scroller.innerHTML = '';
+      scroller.appendChild(track);
+    }
+
+    // Skip animation entirely if user prefers reduced motion
+    if (reduced) {
+      track.style.animation = 'none';
+      return;
+    }
+
+    // Set speed based on content width for consistent px/sec
+    const setDuration = () => {
+      // track holds two copies; halfWidth = one copy
+      const halfWidth = track.scrollWidth / 2;
+      const PX_PER_SECOND = 30;                // ← tweak speed here
+      const seconds = Math.max(halfWidth / PX_PER_SECOND, 10);
+      scroller.style.setProperty('--ticker-duration', `${seconds}s`);
+    };
+
+    const updateWithRAF = () => {
+      cancelAnimationFrame(updateWithRAF._raf);
+      updateWithRAF._raf = requestAnimationFrame(setDuration);
+    };
+
+    // Recompute after fonts load & on resize
+    if (document.fonts?.ready) document.fonts.ready.then(setDuration);
+    window.addEventListener('load', setDuration);
+    window.addEventListener('resize', updateWithRAF);
+
+    setDuration();
   });
-
-  // Mount the track
-  scroller.innerHTML = '';
-  scroller.appendChild(track);
-
-  // Set animation duration based on content width for consistent speed
-  const setDuration = () => {
-    // track now holds 2 copies; halfWidth is width of one copy
-    const halfWidth = track.scrollWidth / 2;
-    const pxPerSecond = 20;                 // ← adjust speed here           ------------------
-    const seconds = Math.max(halfWidth / pxPerSecond, 10);
-    scroller.style.setProperty('--ticker-duration', `${seconds}s`);
-  };
-
-  // Recompute after fonts load & on resize
-  if (document.fonts?.ready) document.fonts.ready.then(setDuration);
-  window.addEventListener('load', setDuration);
-  window.addEventListener('resize', () => {
-    // debounce with rAF for smoothness
-    cancelAnimationFrame(setDuration._raf);
-    setDuration._raf = requestAnimationFrame(setDuration);
-  });
-
-  setDuration();
 });
