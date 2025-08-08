@@ -182,6 +182,31 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 ----------------------------------------------------------------*/
 /* =============== HOME PAGE (index.html) =============== */
 /* (Currently uses only global styles. Add overrides here if needed) */
+/* Global Donate Button Style */
+.nav a[aria-label="Donate"],
+.nav a.btn-donate {
+  background: linear-gradient(180deg, #00b4ff, #0089c7);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.4);
+}
+
+.nav a[aria-label="Donate"]:hover,
+.nav a.btn-donate:hover {
+  background: linear-gradient(180deg, #00c8ff, #0095d6);
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.nav a[aria-label="Donate"]:active,
+.nav a.btn-donate:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
+}
 
 
 /* =============== ABOUT – STEP HIGHER PAGE (about-step-higher.html) =============== */
