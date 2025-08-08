@@ -1,87 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chaperone Application • SHNP</title>
-  <meta name="description" content="Chaperone Application page for SHNP redesign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Chaperone Application page for SHNP redesign." />
+
+  <!-- Fonts & Global Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/chaperone-app.css" />
+
+  <!-- HubSpot loader (ok to keep even if you use a custom backend) -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-  <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Chaperone Application</h1>
-        <p class="muted reveal" style="margin-top:6px">Complete the form below. Fields marked * are required.</p>
-        <div class="card reveal" style="margin-top:18px">
-          <form data-validate>
-            <div class="grid grid-2">
-              <div>
-                <label>First Name *</label>
-                <input class="input" required placeholder="First name">
-              </div>
-              <div>
-                <label>Last Name *</label>
-                <input class="input" required placeholder="Last name">
-              </div>
-              <div>
-                <label>Email *</label>
-                <input type="email" class="input" required placeholder="name@example.com">
-              </div>
-              <div>
-                <label>Phone *</label>
-                <input type="tel" class="input" required placeholder="(xxx) xxx-xxxx">
-              </div>
-              <div class="grid" style="grid-template-columns:1fr">
-                <label>Notes</label>
-                <textarea rows="4" class="input" placeholder="Additional information"></textarea>
-              </div>
-            </div>
-            <div style="display:flex;gap:12px;margin-top:6px">
-              <button class="btn btn-primary" type="submit">Submit</button>
-              <button class="btn btn-ghost" type="reset">Reset</button>
-            </div>
-            <p class="helper" style="margin-top:10px">Submitting this form will send your responses to SHNP staff.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-    
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal">Chaperone Application</h1>
+      <p class="muted reveal">Follow the steps below. Fields marked * are required.</p>
+    </div>
+  </section>
 
+  <!-- Steps row -->
+  <section class="section">
+    <div class="container">
+      <div class="steps-row">
+        <article class="step-card" data-step="1">
+          <div class="step-top">
+            <span class="step-kicker">Step 1</span>
+            <h2>Download Form</h2>
+          </div>
+          <p class="muted">
+            Download the chaperone application form. We provide it in MS Word and PDF.
+          </p>
+        </article>
+
+        <article class="step-card" data-step="2">
+          <div class="step-top">
+            <span class="step-kicker">Step 2</span>
+            <h2>Complete Form</h2>
+          </div>
+          <p class="muted">
+            Fill out a form for each student. When ready, click Fill Out Form to submit.
+          </p>
+        </article>
+
+        <article class="step-card" data-step="3">
+          <div class="step-top">
+            <span class="step-kicker">Step 3</span>
+            <h2>Submit Form</h2>
+          </div>
+          <p class="muted">
+            Clicking Fill Out Form opens a pop up with the application. Upload your completed file and send.
+          </p>
+        </article>
+      </div>
+
+      <!-- Downloads + action -->
+      <div class="downloads-row">
+        <a class="btn btn-pill btn-purple" href="assets/documents/chaperones-application.docx" download>Download Word</a>
+        <a class="btn btn-pill btn-green" href="assets/documents/chaperones-application.pdf" download>Download PDF</a>
+        <button id="openFillForm" class="btn btn-pill btn-primary" type="button">Fill Out Form</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -100,12 +127,231 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
+  <!-- Modal with hard coded form -->
+  <div class="modal" id="applyModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog" role="document" aria-labelledby="modalTitle">
+      <button class="modal__close" aria-label="Close" data-close>&times;</button>
+      <h2 id="modalTitle" class="modal__title">Submit Chaperone Application</h2>
+      <p class="muted small">Upload your completed application and fill in the details.</p>
+
+      <!-- Use HubSpot internal names so capture works if you enable Non HubSpot Forms -->
+      <form id="chaperoneForm" novalidate enctype="multipart/form-data">
+        <div class="grid grid-2">
+          <div>
+            <label for="parent_guardian_name">Parent or Guardian Name *</label>
+            <input id="parent_guardian_name" name="parent_guardian_name" class="input" required placeholder="Full name" />
+            <small class="err" data-for="parent_guardian_name"></small>
+          </div>
+          <div>
+            <label for="email">Parent or Guardian Email Address *</label>
+            <input id="email" name="email" type="email" class="input" required placeholder="name@example.com" />
+            <small class="err" data-for="email"></small>
+          </div>
+          <div>
+            <label for="student_first_name">Student's First Name *</label>
+            <input id="student_first_name" name="student_first_name" class="input" required placeholder="First name" />
+            <small class="err" data-for="student_first_name"></small>
+          </div>
+          <div>
+            <label for="student_last_name">Student Last Name *</label>
+            <input id="student_last_name" name="student_last_name" class="input" required placeholder="Last name" />
+            <small class="err" data-for="student_last_name"></small>
+          </div>
+
+          <!-- File upload: front end validation. If you want HubSpot to keep it, upload to storage and pass URL in hidden field -->
+          <div class="grid" style="grid-template-columns:1fr">
+            <label for="files">Application File *</label>
+            <input id="files" name="files" type="file" class="input" required
+                   accept=".jpg,.jpeg,.jpe,.png,.wax,.wri,.doc,.docx,.pdf" />
+            <small class="muted small">
+              Accepted types: jpg, jpeg, jpe, png, wax, wri, doc, docx, pdf. Max file size 256 MB.
+            </small>
+            <ul id="fileList" class="muted small" style="margin-top:6px; padding-left:18px"></ul>
+            <small class="err" data-for="files"></small>
+            <!-- Hidden text property for a future file URL if you wire a backend -->
+            <input type="hidden" name="chaperone_file_url" id="chaperone_file_url" />
+          </div>
+
+          <div class="grid" style="grid-template-columns:1fr">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" class="input" placeholder="Optional message"></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-ghost" type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+
+      <div id="formSuccess" class="muted small" style="display:none;margin-top:10px">
+        Thanks. Your application is ready to send. Hook up a backend or enable HubSpot capture to collect it.
+      </div>
+    </div>
+  </div>
+
+  <!-- Your site JS -->
   <script src="js/main.js"></script>
+
+  <!-- Modal + UX + validation -->
+  <script>
+    const openBtn = document.getElementById('openFillForm');
+    const modal = document.getElementById('applyModal');
+    const closeEls = document.querySelectorAll('[data-close]');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const modalDialog = document.querySelector('.modal__dialog');
+    let lastFocus = null;
+
+    function openModal() {
+      lastFocus = document.activeElement;
+      modal.classList.add('open');
+      document.body.classList.add('modal-open');
+      // focus first field for accessibility
+      setTimeout(() => document.getElementById('parent_guardian_name')?.focus(), 50);
+    }
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.classList.remove('modal-open');
+      if (lastFocus) lastFocus.focus();
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    closeEls.forEach(el => el.addEventListener('click', closeModal));
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      // focus trap
+      if (e.key === 'Tab' && modal.classList.contains('open')) {
+        const f = modalDialog.querySelectorAll('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])');
+        const focusables = Array.from(f).filter(el => !el.disabled && el.offsetParent !== null);
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    // file name preview
+    const fileInput = document.getElementById('files');
+    const fileList = document.getElementById('fileList');
+    fileInput.addEventListener('change', () => {
+      fileList.innerHTML = '';
+      const files = Array.from(fileInput.files || []);
+      files.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f.name + ' • ' + Math.round(f.size/1024) + ' KB';
+        fileList.appendChild(li);
+      });
+    });
+
+    // form validation
+    const form = document.getElementById('chaperoneForm');
+    const MAX = 256 * 1024 * 1024; // 256 MB
+    const ACCEPT = ['jpg','jpeg','jpe','png','wax','wri','doc','docx','pdf'];
+
+    function setError(name, msg){
+      const el = form.querySelector('[data-for="'+name+'"]');
+      if (el){ el.textContent = msg || ''; }
+    }
+    function clearErrors(){
+      form.querySelectorAll('.err').forEach(e => e.textContent = '');
+    }
+
+    form.addEventListener('submit', function(e){
+      clearErrors();
+      let ok = true;
+
+      const parentName = form.parent_guardian_name;
+      const parentEmail = form.email;
+      const studentFirst = form.student_first_name;
+      const studentLast = form.student_last_name;
+      const files = form.files;
+
+      if (!parentName.value.trim()){
+        setError('parent_guardian_name','Required');
+        ok = false;
+      }
+      if (!parentEmail.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parentEmail.value)){
+        setError('email','Enter a valid email');
+        ok = false;
+      }
+      if (!studentFirst.value.trim()){
+        setError('student_first_name','Required');
+        ok = false;
+      }
+      if (!studentLast.value.trim()){
+        setError('student_last_name','Required');
+        ok = false;
+      }
+
+      const list = Array.from(files.files || []);
+      if (!list.length){
+        setError('files','Please choose a file');
+        ok = false;
+      } else {
+        for (const f of list){
+          const ext = (f.name.split('.').pop() || '').toLowerCase();
+          if (!ACCEPT.includes(ext)){
+            setError('files','Invalid file type. Allowed: ' + ACCEPT.join(', '));
+            ok = false; break;
+          }
+          if (f.size > MAX){
+            setError('files','File exceeds 256 MB');
+            ok = false; break;
+          }
+        }
+      }
+
+      if (!ok){
+        e.preventDefault();
+        return;
+      }
+
+      // No backend wired here. If you want real submissions:
+      // 1) Enable Non HubSpot Forms to auto capture basic fields (HubSpot ignores file inputs)
+      // 2) Or wire a server function to upload the file and submit to HubSpot with a file URL
+      e.preventDefault();
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        form.reset();
+        form.style.display = '';
+        document.getElementById('formSuccess').style.display = 'none';
+        closeModal();
+      }, 1600);
+    });
+  </script>
+
+  <!-- Minimal modal styles as safety net -->
+  <style>
+    .modal{position:fixed;inset:0;display:grid;place-items:center;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s;z-index:1000}
+    .modal.open{visibility:visible;opacity:1}
+    .modal__overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px)}
+    .modal__dialog{position:relative;width:min(760px,92vw);max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:20px}
+    .modal__title{font-size:1.25rem;margin-bottom:6px}
+    .modal__close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:12px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer}
+    body.modal-open{overflow:hidden}
+    .err{color:#ff6b6b;display:block;margin-top:6px;font-size:.85rem}
+    .btn-pill{border-radius:999px;padding:10px 16px;font-weight:700}
+    .btn-purple{background:#6f00ff;color:#fff}
+    .btn-green{background:#2bb24c;color:#fff}
+    .btn-purple:hover,.btn-green:hover{filter:brightness(1.05)}
+    .steps-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+    .step-card{position:relative;padding:18px 24px 22px;background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:16px;transition:transform .12s,box-shadow .12s}
+    .step-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.32)}
+    .step-kicker{font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .step-card h2{font-size:1.7rem;line-height:1.15;font-weight:800}
+    .step-card::after{content:attr(data-step);position:absolute;top:-6px;right:8px;font-size:6.4rem;font-weight:800;line-height:1;color:var(--muted);opacity:.14;pointer-events:none}
+    @media (max-width:980px){.steps-row{grid-template-columns:1fr}.step-card::after{font-size:4.8rem;opacity:.12;right:0}}
+    .downloads-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:28px 0 8px}
+  </style>
 </body>
 </html>
