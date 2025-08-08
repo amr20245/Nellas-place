@@ -9,18 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- global site styles -->
   <link rel="stylesheet" href="css/styles.css">
-  <!-- page-specific polish -->
   <link rel="stylesheet" href="css/careers.css">
 </head>
 
 <body>
-  
-<!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
-<!-- End of HubSpot Embed Code -->
-  <!-- ▾ Marquee strip ▾ -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
@@ -32,8 +25,9 @@
       <a class="btn btn-ghost" href="donate.html">Donate</a>
     </div>
   </div>
-
-  <!-- ▾ Header ▾ -->
+<!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
+<!-- End of HubSpot Embed Code -->
   <header class="header">
     <nav class="container nav">
       <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
@@ -51,18 +45,15 @@
     </nav>
   </header>
 
-  <!-- ▾ Careers section ▾ -->
   <section class="section">
     <div class="container">
       <h1 class="reveal">Careers at Nella’s Place</h1>
       <p class="muted reveal" style="margin-top:6px">
-        Fill out the application – fields with * are required.
+        Fill out the application - fields with * are required.
       </p>
 
       <div class="card reveal" style="margin-top:18px">
-        <!-- Application form -->
         <form id="careersForm" class="careers-form" novalidate>
-          <!-- contact -->
           <div class="careers-grid">
             <div>
               <label for="firstName">First Name *</label>
@@ -78,11 +69,10 @@
             </div>
             <div>
               <label for="phone">Phone *</label>
-              <input id="phone" name="phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx">
+              <input id="phone" name="phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx" inputmode="numeric" autocomplete="tel">
             </div>
           </div>
 
-          <!-- position -->
           <fieldset class="positions">
             <legend>Select the position you're applying for *</legend>
 
@@ -101,14 +91,12 @@
               Other
             </label>
 
-            <!-- appears when "Other" picked -->
             <div id="otherWrap" class="other-wrap" hidden>
               <label for="otherText">Tell us which position *</label>
               <input id="otherText" name="otherText" class="input">
             </div>
           </fieldset>
-          <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
-          <!-- address -->
+
           <div class="careers-grid" style="margin-top:12px">
             <div>
               <label for="addr1">Address 1 *</label>
@@ -128,7 +116,7 @@
             </div>
             <div>
               <label for="zip">Zip Code *</label>
-              <input id="zip" name="zip" class="input" required>
+              <input id="zip" name="zip" class="input" required inputmode="numeric">
             </div>
             <div>
               <label for="county">County *</label>
@@ -136,30 +124,27 @@
             </div>
           </div>
 
-          <!-- message -->
           <div style="margin-top:12px">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" class="input" placeholder="Tell us anything else we should know"></textarea>
           </div>
 
-          <!-- buttons -->
           <div class="form-buttons">
             <button class="btn btn-primary" type="submit">Submit</button>
             <button class="btn btn-ghost" type="reset">Reset</button>
           </div>
-          <p class="helper">Submitting zips your info straight to the SHNP hiring squad.</p>
+          <p class="helper">Submitting sends your info to the SHNP hiring team.</p>
         </form>
 
-        <!-- thank-you swap -->
         <div id="thanks" class="thanks" hidden>
           <h2>Thank you for applying! 🎉</h2>
-          <p>We’ll review your info and be in touch shortly.</p>
+          <p>We will review your info and reach out shortly.</p>
+          <button id="againBtn" class="btn btn-primary" type="button">Fill out again</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ▾ Footer ▾ -->
   <footer class="footer">
     <div class="container cols">
       <div>
@@ -194,36 +179,143 @@
     </div>
   </footer>
 
-  <!-- scripts -->
-  <script src="js/main.js"></script><!-- your existing site-wide JS -->
+  <script src="js/main.js"></script>
 
-  <!-- inline helpers for this page -->
+  <!-- Page logic: validation + mask + thank you swap -->
   <script>
-    /* thank-you swap */
-    const form   = document.getElementById('careersForm');
-    const thanks = document.getElementById('thanks');
-    form?.addEventListener('submit', e => {
-      e.preventDefault();      // remove when real backend exists
+    const form      = document.getElementById('careersForm');
+    const thanks    = document.getElementById('thanks');
+    const againBtn  = document.getElementById('againBtn');
+    const phone     = document.getElementById('phone');
+    const email     = document.getElementById('email');
+    const otherRadio= document.getElementById('otherRadio');
+    const otherWrap = document.getElementById('otherWrap');
+    const otherText = document.getElementById('otherText');
+
+    // Show Other text box only when "Other" is picked
+    document.querySelectorAll('input[name="position"]').forEach(r => {
+      r.addEventListener('change', () => {
+        const show = otherRadio.checked;
+        otherWrap.hidden = !show;
+        if (show) { otherText.setAttribute('required', ''); otherText.focus(); }
+        else { otherText.removeAttribute('required'); otherText.value = ''; }
+      });
+    });
+
+    // Phone mask: (123) 456-7890
+    function formatPhone(value) {
+      const d = value.replace(/\D/g, '').slice(0, 10);
+      const a = d.slice(0,3), b = d.slice(3,6), c = d.slice(6,10);
+      if (d.length > 6)  return `(${a}) ${b}-${c}`;
+      if (d.length > 3)  return `(${a}) ${b}`;
+      if (d.length > 0)  return `(${a}`;
+      return '';
+    }
+    phone.addEventListener('input', () => {
+      const prev = phone.value;
+      phone.value = formatPhone(prev);
+      // keep cursor at end - simple and works fine
+      phone.setSelectionRange(phone.value.length, phone.value.length);
+    });
+
+    // Toast helper
+    function showToast(text) {
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.textContent = text;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2500);
+    }
+
+    // Field error helpers
+    function markInvalid(field, msg) {
+      field.classList.add('invalid');
+      const small = document.createElement('div');
+      small.className = 'error-msg';
+      small.textContent = msg;
+      field.parentElement.appendChild(small);
+    }
+    function addError(container, msg) {
+      const small = document.createElement('div');
+      small.className = 'error-msg';
+      small.textContent = msg;
+      container.appendChild(small);
+    }
+    function clearErrors() {
+      form.querySelectorAll('.error-msg').forEach(n => n.remove());
+      form.querySelectorAll('.invalid').forEach(n => n.classList.remove('invalid'));
+    }
+
+    // Email check
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    // Validate all required inputs before submit
+    function validateForm() {
+      clearErrors();
+      let ok = true;
+
+      // required inputs (except radios handled below)
+      form.querySelectorAll('[required]').forEach(el => {
+        if (el.type === 'radio') return;
+        if (!el.value.trim()) {
+          markInvalid(el, 'Required');
+          ok = false;
+        }
+      });
+
+      // email pattern
+      if (!validEmail(email.value)) {
+        markInvalid(email, 'Enter a valid email');
+        ok = false;
+      }
+
+      // phone - 10 digits
+      if (phone.value.replace(/\D/g, '').length !== 10) {
+        markInvalid(phone, 'Enter a 10 digit phone');
+        ok = false;
+      }
+
+      // radio picked
+      const chosen = form.querySelector('input[name="position"]:checked');
+      if (!chosen) {
+        addError(form.querySelector('.positions'), 'Please pick one position');
+        ok = false;
+      }
+
+      // other text required if Other is chosen
+      if (otherRadio.checked && !otherText.value.trim()) {
+        markInvalid(otherText, 'Tell us the position');
+        ok = false;
+      }
+
+      if (!ok) {
+        showToast('Please fill out the needed fields');
+        const first = form.querySelector('.invalid');
+        if (first) first.focus();
+      }
+      return ok;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validateForm()) return;
+
+      // success - show thank you
       form.hidden   = true;
       thanks.hidden = false;
     });
 
-    /* show Other textbox */
-    const otherRadio = document.getElementById('otherRadio');
-    const otherWrap  = document.getElementById('otherWrap');
-    const otherText  = document.getElementById('otherText');
-    document.querySelectorAll('input[name="position"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        const show = otherRadio.checked;
-        otherWrap.hidden = !show;
-        if (show) {
-          otherText.setAttribute('required', '');
-          otherText.focus();
-        } else {
-          otherText.removeAttribute('required');
-          otherText.value = '';
-        }
-      });
+    againBtn.addEventListener('click', () => {
+      form.reset();
+      clearErrors();
+      otherWrap.hidden = true;
+      otherText.removeAttribute('required');
+      phone.value = '';
+      thanks.hidden = true;
+      form.hidden = false;
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   </script>
 </body>
