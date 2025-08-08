@@ -4,39 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chaperone Application • SHNP</title>
-  <meta name="description" content="Chaperone Application page for SHNP redesign." />
+  <meta name="description" content="Complete the Chaperone Application online. No downloads required.">
 
-  <!-- Fonts & Global Styles -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Global and page styles -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/chaperone-app.css" />
 
-  <!-- HubSpot loader (ok to keep even if you use a custom backend) -->
+  <!-- Optional analytics -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
 </head>
 <body>
   <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
-      <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
+      <div class="kicker">WHY STEP HIGHER?</div>
+      <div class="scroller" aria-hidden="true">
         <span>College readiness</span>
         <span>Mentorship</span>
         <span>Scholarships</span>
         <span>Accredited care at Nella's Place</span>
         <span>Community impact</span>
       </div>
-      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn btn-ghost" href="donate.html">Donate</a>
     </div>
   </div>
 
   <!-- Header -->
   <header class="header">
     <nav class="container nav">
-      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <div class="brand"><div class="logo" aria-hidden="true"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
@@ -45,68 +47,459 @@
         <li><a href="scholarships.html">Scholarships</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+        <li><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="page-hero">
+  <section class="page-hero" aria-labelledby="pageTitle">
     <div class="container">
-      <h1 class="reveal">Chaperone Application</h1>
-      <p class="muted reveal">Follow the steps below. Fields marked * are required.</p>
+      <h1 id="pageTitle">Chaperone Application</h1>
+      <p class="muted">Fill this out online. Fields marked * are required.</p>
     </div>
   </section>
 
-  <!-- Steps row -->
-  <section class="section">
-    <div class="container">
-      <div class="steps-row">
-        <article class="step-card" data-step="1">
-          <div class="step-top">
-            <span class="step-kicker">Step 1</span>
-            <h2>Download Form</h2>
-          </div>
-          <p class="muted">
-            Download the chaperone application form. We provide it in MS Word and PDF.
-          </p>
-        </article>
+  <!-- Layout: sticky section nav + form -->
+  <main class="section">
+    <div class="container form-layout">
+      <!-- Sticky in page nav -->
+      <aside class="form-nav" aria-label="Form sections">
+        <nav>
+          <ol>
+            <li><a class="form-nav__link" href="#applicant">Applicant</a></li>
+            <li><a class="form-nav__link" href="#emergency">Emergency</a></li>
+            <li><a class="form-nav__link" href="#education">Education</a></li>
+            <li><a class="form-nav__link" href="#employment">Employment</a></li>
+            <li><a class="form-nav__link" href="#references">References</a></li>
+            <li><a class="form-nav__link" href="#certify">Certification</a></li>
+          </ol>
+        </nav>
+        <span class="form-nav__indicator" aria-hidden="true"></span>
+      </aside>
 
-        <article class="step-card" data-step="2">
-          <div class="step-top">
-            <span class="step-kicker">Step 2</span>
-            <h2>Complete Form</h2>
-          </div>
-          <p class="muted">
-            Fill out a form for each student. When ready, click Fill Out Form to submit.
-          </p>
-        </article>
+      <!-- Full application form -->
+      <section class="form-wrap" aria-label="Chaperone application form">
+        <form id="chaperoneFullForm" class="app-form" novalidate>
+          <!-- Applicant Information -->
+          <fieldset class="card section-group" id="applicant">
+            <legend>Applicant Information</legend>
 
-        <article class="step-card" data-step="3">
-          <div class="step-top">
-            <span class="step-kicker">Step 3</span>
-            <h2>Submit Form</h2>
-          </div>
-          <p class="muted">
-            Clicking Fill Out Form opens a pop up with the application. Upload your completed file and send.
-          </p>
-        </article>
-      </div>
+            <div class="field-inline-3">
+              <div>
+                <label for="last_name">Last Name *</label>
+                <input id="last_name" name="last_name" class="input" autocomplete="family-name" required />
+              </div>
+              <div>
+                <label for="first_name">First Name *</label>
+                <input id="first_name" name="first_name" class="input" autocomplete="given-name" required />
+              </div>
+              <div>
+                <label for="middle_name">Middle</label>
+                <input id="middle_name" name="middle_name" class="input" />
+              </div>
+            </div>
 
-      <!-- Downloads + action -->
-      <div class="downloads-row">
-        <a class="btn btn-pill btn-purple" href="assets/documents/chaperones-application.docx" download>Download Word</a>
-        <a class="btn btn-pill btn-green" href="assets/documents/chaperones-application.pdf" download>Download PDF</a>
-        <button id="openFillForm" class="btn btn-pill btn-primary" type="button">Fill Out Form</button>
-      </div>
+            <div class="field-address">
+              <div class="span-2">
+                <label for="street">Street *</label>
+                <input id="street" name="street" class="input" autocomplete="address-line1" required />
+              </div>
+              <div>
+                <label for="city">City *</label>
+                <input id="city" name="city" class="input" autocomplete="address-level2" required />
+              </div>
+              <div class="state-zip">
+                <div>
+                  <label for="state">State *</label>
+                  <input id="state" name="state" class="input" maxlength="2" placeholder="OH" autocomplete="address-level1" required />
+                </div>
+                <div>
+                  <label for="zip">Zip *</label>
+                  <input id="zip" name="zip" class="input" pattern="\\d{5}(-\\d{4})?" inputmode="numeric" placeholder="45237" autocomplete="postal-code" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-inline-3">
+              <div>
+                <label for="phone_home">Phone</label>
+                <input id="phone_home" name="phone_home" class="input" inputmode="tel" autocomplete="tel" placeholder="(xxx) xxx-xxxx" />
+              </div>
+              <div>
+                <label for="phone_cell">Cell</label>
+                <input id="phone_cell" name="phone_cell" class="input" inputmode="tel" autocomplete="tel-national" placeholder="(xxx) xxx-xxxx" />
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" class="input" placeholder="name@example.com" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field-inline-3">
+              <div>
+                <label for="ssn">Social Security *</label>
+                <input id="ssn" name="ssn" class="input" inputmode="numeric" pattern="\\d{3}-\\d{2}-\\d{4}" placeholder="123-45-6789" required />
+                <small class="muted">Only submit over HTTPS. Store securely.</small>
+              </div>
+              <div>
+                <label for="dob">Date of Birth *</label>
+                <input id="dob" name="dob" type="date" class="input" required />
+              </div>
+              <div class="state-zip">
+                <div>
+                  <label for="dl_state">License State *</label>
+                  <input id="dl_state" name="dl_state" class="input" maxlength="2" placeholder="OH" required />
+                </div>
+                <div>
+                  <label for="dl_number">License Number *</label>
+                  <input id="dl_number" name="dl_number" class="input" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-inline-2">
+              <div>
+                <label for="airport_1">Closest Major Airport *</label>
+                <input id="airport_1" name="airport_1" class="input" required />
+              </div>
+              <div>
+                <label for="airport_2">Second Closest Major Airport *</label>
+                <input id="airport_2" name="airport_2" class="input" required />
+              </div>
+            </div>
+
+            <div class="field-inline-2">
+              <div>
+                <label for="dates_available">Dates Available *</label>
+                <textarea id="dates_available" name="dates_available" class="input" rows="2" placeholder="List ranges or specific dates" required></textarea>
+              </div>
+              <div>
+                <label for="referred_by">Referred By</label>
+                <input id="referred_by" name="referred_by" class="input" />
+              </div>
+            </div>
+
+            <div class="field-stack">
+              <fieldset class="yesno">
+                <legend>Have you ever been accused or convicted of a crime? *</legend>
+                <label><input type="radio" name="crime_history" value="No" required /> No</label>
+                <label><input type="radio" name="crime_history" value="Yes" required /> Yes</label>
+              </fieldset>
+              <div id="crime_explain_wrap" class="hidden">
+                <label for="crime_explain">If yes, please explain</label>
+                <textarea id="crime_explain" name="crime_explain" class="input" rows="3"></textarea>
+              </div>
+
+              <fieldset class="yesno">
+                <legend>Have you ever been accused or convicted of mishandling or misappropriating funds? *</legend>
+                <label><input type="radio" name="funds_history" value="No" required /> No</label>
+                <label><input type="radio" name="funds_history" value="Yes" required /> Yes</label>
+              </fieldset>
+              <div id="funds_explain_wrap" class="hidden">
+                <label for="funds_explain">If yes, please explain</label>
+                <textarea id="funds_explain" name="funds_explain" class="input" rows="3"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Emergency Contact -->
+          <fieldset class="card section-group" id="emergency">
+            <legend>Emergency Contact</legend>
+
+            <div class="field-inline-3">
+              <div class="span-2">
+                <label for="em_name">Name *</label>
+                <input id="em_name" name="em_name" class="input" required />
+              </div>
+              <div>
+                <label for="em_relationship">Relationship *</label>
+                <input id="em_relationship" name="em_relationship" class="input" required />
+              </div>
+            </div>
+
+            <div class="field-address">
+              <div class="span-2">
+                <label for="em_street">Street *</label>
+                <input id="em_street" name="em_street" class="input" required />
+              </div>
+              <div>
+                <label for="em_city">City *</label>
+                <input id="em_city" name="em_city" class="input" required />
+              </div>
+              <div class="state-zip">
+                <div>
+                  <label for="em_state">State *</label>
+                  <input id="em_state" name="em_state" class="input" maxlength="2" required />
+                </div>
+                <div>
+                  <label for="em_zip">Zip *</label>
+                  <input id="em_zip" name="em_zip" class="input" pattern="\\d{5}(-\\d{4})?" inputmode="numeric" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-inline-2">
+              <div>
+                <label for="em_phone">Phone *</label>
+                <input id="em_phone" name="em_phone" class="input" inputmode="tel" required />
+              </div>
+              <div>
+                <label for="em_cell">Cell</label>
+                <input id="em_cell" name="em_cell" class="input" inputmode="tel" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Education and Experience -->
+          <fieldset class="card section-group" id="education">
+            <legend>Education and Experience</legend>
+
+            <div class="school-repeat">
+              <div class="sublegend">School 1</div>
+              <div class="field-inline-2">
+                <div><label for="school1_name">Name of School</label><input id="school1_name" name="school1_name" class="input" /></div>
+                <div><label for="school1_dates">Dates Attended</label><input id="school1_dates" name="school1_dates" class="input" placeholder="2019 to 2023" /></div>
+              </div>
+              <div class="field-inline-2">
+                <div><label for="school1_major">Major Course of Study</label><input id="school1_major" name="school1_major" class="input" /></div>
+                <div><label for="school1_degree">Diploma or Degree</label><input id="school1_degree" name="school1_degree" class="input" /></div>
+              </div>
+            </div>
+
+            <div class="school-repeat">
+              <div class="sublegend">School 2</div>
+              <div class="field-inline-2">
+                <div><label for="school2_name">Name of School</label><input id="school2_name" name="school2_name" class="input" /></div>
+                <div><label for="school2_dates">Dates Attended</label><input id="school2_dates" name="school2_dates" class="input" /></div>
+              </div>
+              <div class="field-inline-2">
+                <div><label for="school2_major">Major Course of Study</label><input id="school2_major" name="school2_major" class="input" /></div>
+                <div><label for="school2_degree">Diploma or Degree</label><input id="school2_degree" name="school2_degree" class="input" /></div>
+              </div>
+            </div>
+
+            <div class="school-repeat">
+              <div class="sublegend">School 3</div>
+              <div class="field-inline-2">
+                <div><label for="school3_name">Name of School</label><input id="school3_name" name="school3_name" class="input" /></div>
+                <div><label for="school3_dates">Dates Attended</label><input id="school3_dates" name="school3_dates" class="input" /></div>
+              </div>
+              <div class="field-inline-2">
+                <div><label for="school3_major">Major Course of Study</label><input id="school3_major" name="school3_major" class="input" /></div>
+                <div><label for="school3_degree">Diploma or Degree</label><input id="school3_degree" name="school3_degree" class="input" /></div>
+              </div>
+            </div>
+
+            <div class="field-stack">
+              <label for="skills">Other educational experience or special skills</label>
+              <textarea id="skills" name="skills" class="input" rows="3" placeholder="First aid, CPR, sign language, etc."></textarea>
+            </div>
+
+            <div class="field-stack">
+              <label for="dev_disability_exp">Experience working with people with developmental disabilities</label>
+              <textarea id="dev_disability_exp" name="dev_disability_exp" class="input" rows="3"></textarea>
+            </div>
+
+            <div class="field-stack">
+              <label for="travel_exp">Travel experience</label>
+              <textarea id="travel_exp" name="travel_exp" class="input" rows="3"></textarea>
+            </div>
+
+            <div class="field-stack">
+              <label for="volunteer_exp">Volunteer experience</label>
+              <textarea id="volunteer_exp" name="volunteer_exp" class="input" rows="3"></textarea>
+            </div>
+          </fieldset>
+
+          <!-- Employment History -->
+          <fieldset class="card section-group" id="employment">
+            <legend>Employment History</legend>
+
+            <div class="sublegend">Current Employer</div>
+            <div class="field-inline-3">
+              <div><label for="emp_current_name">Employer *</label><input id="emp_current_name" name="emp_current_name" class="input" required /></div>
+              <div><label for="emp_current_supervisor">Supervisor *</label><input id="emp_current_supervisor" name="emp_current_supervisor" class="input" required /></div>
+              <div><label for="emp_current_title">Job Title *</label><input id="emp_current_title" name="emp_current_title" class="input" required /></div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_current_desc">Brief Job Description *</label>
+              <textarea id="emp_current_desc" name="emp_current_desc" class="input" rows="3" required></textarea>
+            </div>
+            <div class="field-inline-3">
+              <div><label for="emp_current_start">Employment Start *</label><input id="emp_current_start" name="emp_current_start" type="date" class="input" required /></div>
+              <div><label for="emp_current_end">End</label><input id="emp_current_end" name="emp_current_end" type="date" class="input" /></div>
+              <div><label for="emp_current_phone">Phone *</label><input id="emp_current_phone" name="emp_current_phone" class="input" inputmode="tel" required /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="emp_current_street">Street *</label><input id="emp_current_street" name="emp_current_street" class="input" required /></div>
+              <div><label for="emp_current_city">City *</label><input id="emp_current_city" name="emp_current_city" class="input" required /></div>
+              <div class="state-zip">
+                <div><label for="emp_current_state">State *</label><input id="emp_current_state" name="emp_current_state" class="input" maxlength="2" required /></div>
+                <div><label for="emp_current_zip">Zip *</label><input id="emp_current_zip" name="emp_current_zip" class="input" inputmode="numeric" required /></div>
+              </div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_current_reason">Reason For Leaving</label>
+              <input id="emp_current_reason" name="emp_current_reason" class="input" />
+            </div>
+
+            <hr class="divider" />
+
+            <div class="sublegend">Previous Employer 1</div>
+            <div class="field-inline-3">
+              <div><label for="emp_prev1_name">Employer</label><input id="emp_prev1_name" name="emp_prev1_name" class="input" /></div>
+              <div><label for="emp_prev1_supervisor">Supervisor</label><input id="emp_prev1_supervisor" name="emp_prev1_supervisor" class="input" /></div>
+              <div><label for="emp_prev1_title">Job Title</label><input id="emp_prev1_title" name="emp_prev1_title" class="input" /></div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_prev1_desc">Brief Job Description</label>
+              <textarea id="emp_prev1_desc" name="emp_prev1_desc" class="input" rows="3"></textarea>
+            </div>
+            <div class="field-inline-3">
+              <div><label for="emp_prev1_start">Start</label><input id="emp_prev1_start" name="emp_prev1_start" type="date" class="input" /></div>
+              <div><label for="emp_prev1_end">End</label><input id="emp_prev1_end" name="emp_prev1_end" type="date" class="input" /></div>
+              <div><label for="emp_prev1_phone">Phone</label><input id="emp_prev1_phone" name="emp_prev1_phone" class="input" inputmode="tel" /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="emp_prev1_street">Street</label><input id="emp_prev1_street" name="emp_prev1_street" class="input" /></div>
+              <div><label for="emp_prev1_city">City</label><input id="emp_prev1_city" name="emp_prev1_city" class="input" /></div>
+              <div class="state-zip">
+                <div><label for="emp_prev1_state">State</label><input id="emp_prev1_state" name="emp_prev1_state" class="input" maxlength="2" /></div>
+                <div><label for="emp_prev1_zip">Zip</label><input id="emp_prev1_zip" name="emp_prev1_zip" class="input" inputmode="numeric" /></div>
+              </div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_prev1_reason">Reason For Leaving</label>
+              <input id="emp_prev1_reason" name="emp_prev1_reason" class="input" />
+            </div>
+
+            <hr class="divider" />
+
+            <div class="sublegend">Previous Employer 2</div>
+            <div class="field-inline-3">
+              <div><label for="emp_prev2_name">Employer</label><input id="emp_prev2_name" name="emp_prev2_name" class="input" /></div>
+              <div><label for="emp_prev2_supervisor">Supervisor</label><input id="emp_prev2_supervisor" name="emp_prev2_supervisor" class="input" /></div>
+              <div><label for="emp_prev2_title">Job Title</label><input id="emp_prev2_title" name="emp_prev2_title" class="input" /></div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_prev2_desc">Brief Job Description</label>
+              <textarea id="emp_prev2_desc" name="emp_prev2_desc" class="input" rows="3"></textarea>
+            </div>
+            <div class="field-inline-3">
+              <div><label for="emp_prev2_start">Start</label><input id="emp_prev2_start" name="emp_prev2_start" type="date" class="input" /></div>
+              <div><label for="emp_prev2_end">End</label><input id="emp_prev2_end" name="emp_prev2_end" type="date" class="input" /></div>
+              <div><label for="emp_prev2_phone">Phone</label><input id="emp_prev2_phone" name="emp_prev2_phone" class="input" inputmode="tel" /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="emp_prev2_street">Street</label><input id="emp_prev2_street" name="emp_prev2_street" class="input" /></div>
+              <div><label for="emp_prev2_city">City</label><input id="emp_prev2_city" name="emp_prev2_city" class="input" /></div>
+              <div class="state-zip">
+                <div><label for="emp_prev2_state">State</label><input id="emp_prev2_state" name="emp_prev2_state" class="input" maxlength="2" /></div>
+                <div><label for="emp_prev2_zip">Zip</label><input id="emp_prev2_zip" name="emp_prev2_zip" class="input" inputmode="numeric" /></div>
+              </div>
+            </div>
+            <div class="field-stack">
+              <label for="emp_prev2_reason">Reason For Leaving</label>
+              <input id="emp_prev2_reason" name="emp_prev2_reason" class="input" />
+            </div>
+          </fieldset>
+
+          <!-- References -->
+          <fieldset class="card section-group" id="references">
+            <legend>References</legend>
+            <p class="muted small">List three people not related to you whom you have known for at least 1 year.</p>
+
+            <!-- Ref 1 -->
+            <div class="sublegend">Reference 1</div>
+            <div class="field-inline-3">
+              <div class="span-2"><label for="ref1_name">Name *</label><input id="ref1_name" name="ref1_name" class="input" required /></div>
+              <div><label for="ref1_relationship">Relationship *</label><input id="ref1_relationship" name="ref1_relationship" class="input" required /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="ref1_street">Street *</label><input id="ref1_street" name="ref1_street" class="input" required /></div>
+              <div><label for="ref1_city">City *</label><input id="ref1_city" name="ref1_city" class="input" required /></div>
+              <div class="state-zip">
+                <div><label for="ref1_state">State *</label><input id="ref1_state" name="ref1_state" class="input" maxlength="2" required /></div>
+                <div><label for="ref1_phone">Phone *</label><input id="ref1_phone" name="ref1_phone" class="input" inputmode="tel" required /></div>
+              </div>
+            </div>
+
+            <!-- Ref 2 -->
+            <div class="sublegend">Reference 2</div>
+            <div class="field-inline-3">
+              <div class="span-2"><label for="ref2_name">Name *</label><input id="ref2_name" name="ref2_name" class="input" required /></div>
+              <div><label for="ref2_relationship">Relationship *</label><input id="ref2_relationship" name="ref2_relationship" class="input" required /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="ref2_street">Street *</label><input id="ref2_street" name="ref2_street" class="input" required /></div>
+              <div><label for="ref2_city">City *</label><input id="ref2_city" name="ref2_city" class="input" required /></div>
+              <div class="state-zip">
+                <div><label for="ref2_state">State *</label><input id="ref2_state" name="ref2_state" class="input" maxlength="2" required /></div>
+                <div><label for="ref2_phone">Phone *</label><input id="ref2_phone" name="ref2_phone" class="input" inputmode="tel" required /></div>
+              </div>
+            </div>
+
+            <!-- Ref 3 -->
+            <div class="sublegend">Reference 3</div>
+            <div class="field-inline-3">
+              <div class="span-2"><label for="ref3_name">Name *</label><input id="ref3_name" name="ref3_name" class="input" required /></div>
+              <div><label for="ref3_relationship">Relationship *</label><input id="ref3_relationship" name="ref3_relationship" class="input" required /></div>
+            </div>
+            <div class="field-address">
+              <div class="span-2"><label for="ref3_street">Street *</label><input id="ref3_street" name="ref3_street" class="input" required /></div>
+              <div><label for="ref3_city">City *</label><input id="ref3_city" name="ref3_city" class="input" required /></div>
+              <div class="state-zip">
+                <div><label for="ref3_state">State *</label><input id="ref3_state" name="ref3_state" class="input" maxlength="2" required /></div>
+                <div><label for="ref3_phone">Phone *</label><input id="ref3_phone" name="ref3_phone" class="input" inputmode="tel" required /></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Certification -->
+          <fieldset class="card section-group" id="certify">
+            <legend>Certification</legend>
+            <p class="muted small">
+              I state that all of the information provided above is true and accurate to the best of my knowledge.
+              I authorize investigation of all statements contained in this application. I understand that
+              misrepresentation or omission of facts is a Federal crime punishable by law.
+            </p>
+
+            <div class="field-inline-3">
+              <div class="span-2">
+                <label for="signature">Signature (type full name) *</label>
+                <input id="signature" name="signature" class="input" required />
+              </div>
+              <div>
+                <label for="signature_date">Date *</label>
+                <input id="signature_date" name="signature_date" type="date" class="input" required />
+              </div>
+            </div>
+            <label class="agree">
+              <input type="checkbox" id="agree" required />
+              I agree and certify the above is true.
+            </label>
+          </fieldset>
+
+          <!-- Submit -->
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Submit Application</button>
+            <button class="btn btn-ghost" type="reset">Reset</button>
+          </div>
+
+          <div id="formSuccess" class="alert success" role="status" aria-live="polite" style="display:none">
+            Application submitted. We will be in touch soon.
+          </div>
+        </form>
+      </section>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
         <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
         <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
@@ -133,225 +526,193 @@
     </div>
   </footer>
 
-  <!-- Modal with hard coded form -->
-  <div class="modal" id="applyModal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal__overlay" data-close></div>
-    <div class="modal__dialog" role="document" aria-labelledby="modalTitle">
-      <button class="modal__close" aria-label="Close" data-close>&times;</button>
-      <h2 id="modalTitle" class="modal__title">Submit Chaperone Application</h2>
-      <p class="muted small">Upload your completed application and fill in the details.</p>
-
-      <!-- Use HubSpot internal names so capture works if you enable Non HubSpot Forms -->
-      <form id="chaperoneForm" novalidate enctype="multipart/form-data">
-        <div class="grid grid-2">
-          <div>
-            <label for="parent_guardian_name">Parent or Guardian Name *</label>
-            <input id="parent_guardian_name" name="parent_guardian_name" class="input" required placeholder="Full name" />
-            <small class="err" data-for="parent_guardian_name"></small>
-          </div>
-          <div>
-            <label for="email">Parent or Guardian Email Address *</label>
-            <input id="email" name="email" type="email" class="input" required placeholder="name@example.com" />
-            <small class="err" data-for="email"></small>
-          </div>
-          <div>
-            <label for="student_first_name">Student's First Name *</label>
-            <input id="student_first_name" name="student_first_name" class="input" required placeholder="First name" />
-            <small class="err" data-for="student_first_name"></small>
-          </div>
-          <div>
-            <label for="student_last_name">Student Last Name *</label>
-            <input id="student_last_name" name="student_last_name" class="input" required placeholder="Last name" />
-            <small class="err" data-for="student_last_name"></small>
-          </div>
-
-          <!-- File upload: front end validation. If you want HubSpot to keep it, upload to storage and pass URL in hidden field -->
-          <div class="grid" style="grid-template-columns:1fr">
-            <label for="files">Application File *</label>
-            <input id="files" name="files" type="file" class="input" required
-                   accept=".jpg,.jpeg,.jpe,.png,.wax,.wri,.doc,.docx,.pdf" />
-            <small class="muted small">
-              Accepted types: jpg, jpeg, jpe, png, wax, wri, doc, docx, pdf. Max file size 256 MB.
-            </small>
-            <ul id="fileList" class="muted small" style="margin-top:6px; padding-left:18px"></ul>
-            <small class="err" data-for="files"></small>
-            <!-- Hidden text property for a future file URL if you wire a backend -->
-            <input type="hidden" name="chaperone_file_url" id="chaperone_file_url" />
-          </div>
-
-          <div class="grid" style="grid-template-columns:1fr">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" class="input" placeholder="Optional message"></textarea>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button class="btn btn-primary" type="submit">Submit</button>
-          <button class="btn btn-ghost" type="button" id="cancelBtn">Cancel</button>
-        </div>
-      </form>
-
-      <div id="formSuccess" class="muted small" style="display:none;margin-top:10px">
-        Thanks. Your application is ready to send. Hook up a backend or enable HubSpot capture to collect it.
+  <!-- Thank You overlay -->
+  <div id="thankYou" class="ty" role="dialog" aria-modal="true" aria-labelledby="tyTitle" aria-hidden="true">
+    <div class="ty__backdrop"></div>
+    <div class="ty__card">
+      <svg class="ty__icon" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="check check__circle" cx="60" cy="60" r="42"></circle>
+        <path class="check check__tick" d="M40 62 L55 75 L82 47"></path>
+      </svg>
+      <h2 id="tyTitle" class="ty__title">Thank you for applying</h2>
+      <p class="ty__meta">We received your application. We will follow up by email soon.</p>
+      <div class="ty__actions">
+        <button id="tyClose" class="ty__btn ty__btn--primary" type="button">Close</button>
+        <a href="index.html" class="ty__btn" role="button">Back to Home</a>
       </div>
     </div>
   </div>
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
 
-  <!-- Your site JS -->
-  <script src="js/main.js"></script>
-
-  <!-- Modal + UX + validation -->
+  <!-- Interactions -->
   <script>
-    const openBtn = document.getElementById('openFillForm');
-    const modal = document.getElementById('applyModal');
-    const closeEls = document.querySelectorAll('[data-close]');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const modalDialog = document.querySelector('.modal__dialog');
-    let lastFocus = null;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.style.scrollBehavior = prefersReduced ? 'auto' : 'smooth';
 
-    function openModal() {
-      lastFocus = document.activeElement;
-      modal.classList.add('open');
-      document.body.classList.add('modal-open');
-      // focus first field for accessibility
-      setTimeout(() => document.getElementById('parent_guardian_name')?.focus(), 50);
+    // Smooth anchor scroll with offset and hash update
+    const OFFSET = 96;
+    function smoothTo(id){
+      const el = document.querySelector(id);
+      if(!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+      window.scrollTo({ top: y, behavior: prefersReduced ? 'auto' : 'smooth' });
+      history.replaceState(null, '', id);
     }
-    function closeModal() {
-      modal.classList.remove('open');
-      document.body.classList.remove('modal-open');
-      if (lastFocus) lastFocus.focus();
-    }
-
-    if (openBtn) openBtn.addEventListener('click', openModal);
-    closeEls.forEach(el => el.addEventListener('click', closeModal));
-    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-      // focus trap
-      if (e.key === 'Tab' && modal.classList.contains('open')) {
-        const f = modalDialog.querySelectorAll('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])');
-        const focusables = Array.from(f).filter(el => !el.disabled && el.offsetParent !== null);
-        if (!focusables.length) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    });
-
-    // file name preview
-    const fileInput = document.getElementById('files');
-    const fileList = document.getElementById('fileList');
-    fileInput.addEventListener('change', () => {
-      fileList.innerHTML = '';
-      const files = Array.from(fileInput.files || []);
-      files.forEach(f => {
-        const li = document.createElement('li');
-        li.textContent = f.name + ' • ' + Math.round(f.size/1024) + ' KB';
-        fileList.appendChild(li);
+    document.querySelectorAll('.form-nav__link').forEach(link=>{
+      link.addEventListener('click', e=>{
+        e.preventDefault();
+        smoothTo(link.getAttribute('href'));
+        link.focus({ preventScroll: true });
       });
     });
 
-    // form validation
-    const form = document.getElementById('chaperoneForm');
-    const MAX = 256 * 1024 * 1024; // 256 MB
-    const ACCEPT = ['jpg','jpeg','jpe','png','wax','wri','doc','docx','pdf'];
+    // Scroll spy with indicator
+    const navRoot = document.querySelector('.form-nav');
+    const navContainer = navRoot.querySelector('nav');
+    const indicator = document.querySelector('.form-nav__indicator');
+    const spyLinks = Array.from(document.querySelectorAll('.form-nav__link'));
+    const spySections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 
-    function setError(name, msg){
-      const el = form.querySelector('[data-for="'+name+'"]');
-      if (el){ el.textContent = msg || ''; }
+    function moveIndicatorTo(link){
+      const top = link.offsetTop + navContainer.offsetTop;
+      indicator.style.transform = `translateY(${top}px)`;
+      indicator.style.height = link.offsetHeight + 'px';
     }
-    function clearErrors(){
-      form.querySelectorAll('.err').forEach(e => e.textContent = '');
+    function activate(link){
+      if (!link) return;
+      spyLinks.forEach(l => l.classList.remove('is-active'));
+      link.classList.add('is-active');
+      moveIndicatorTo(link);
     }
 
+    const io = new IntersectionObserver((entries)=>{
+      let best = null;
+      for(const e of entries){
+        if(!e.isIntersecting) continue;
+        if(!best || e.intersectionRatio > best.intersectionRatio) best = e;
+      }
+      if(best){
+        const id = '#' + best.target.id;
+        const link = spyLinks.find(l => l.getAttribute('href') === id);
+        activate(link);
+        document.querySelectorAll('.section-group').forEach(s => s.classList.toggle('is-current', s.id === best.target.id));
+      }
+    }, { root: null, rootMargin: '-45% 0px -45% 0px', threshold: [0, .25, .5, .75, 1] });
+
+    spySections.forEach(sec => io.observe(sec));
+
+    function fallbackSpy(){
+      const pos = window.scrollY + OFFSET + 1;
+      let current = spySections[0];
+      for(const sec of spySections){
+        if (pos >= sec.offsetTop) current = sec;
+      }
+      if (current){
+        const link = spyLinks.find(l => l.getAttribute('href') === '#' + current.id);
+        activate(link);
+        document.querySelectorAll('.section-group').forEach(s => s.classList.toggle('is-current', s === current));
+      }
+    }
+    window.addEventListener('scroll', ()=>requestAnimationFrame(fallbackSpy));
+
+    // Resize observer keeps indicator aligned
+    const ro = new ResizeObserver(()=>{
+      const active = document.querySelector('.form-nav__link.is-active') || spyLinks[0];
+      if (active) moveIndicatorTo(active);
+    });
+    ro.observe(navContainer);
+    window.addEventListener('resize', ()=>requestAnimationFrame(()=>{
+      const active = document.querySelector('.form-nav__link.is-active') || spyLinks[0];
+      if (active) moveIndicatorTo(active);
+    }));
+    requestAnimationFrame(()=>{
+      const start = spyLinks[0];
+      if (start) activate(start);
+      fallbackSpy();
+      if (location.hash && document.querySelector(location.hash)) smoothTo(location.hash);
+    });
+
+    // Show and hide conditional textareas
+    const form = document.getElementById('chaperoneFullForm');
+    const crimeRadios = form.querySelectorAll('input[name="crime_history"]');
+    const fundsRadios = form.querySelectorAll('input[name="funds_history"]');
+    const crimeWrap = document.getElementById('crime_explain_wrap');
+    const fundsWrap = document.getElementById('funds_explain_wrap');
+    function toggleExplain(radios, wrap, textareaId){
+      const val = [...radios].find(r => r.checked)?.value;
+      if (val === 'Yes'){ wrap.classList.remove('hidden'); form[textareaId].setAttribute('required','required'); }
+      else { wrap.classList.add('hidden'); form[textareaId].removeAttribute('required'); form[textareaId].value = ''; }
+    }
+    crimeRadios.forEach(r => r.addEventListener('change', ()=>toggleExplain(crimeRadios, crimeWrap, 'crime_explain')));
+    fundsRadios.forEach(r => r.addEventListener('change', ()=>toggleExplain(fundsRadios, fundsWrap, 'funds_explain')));
+
+    // Thank you overlay + confetti
+    const ty = document.getElementById('thankYou');
+    const tyClose = document.getElementById('tyClose');
+    const confettiWrap = document.getElementById('confetti');
+    function showThankYou(){
+      ty.classList.add('ty--show');
+      ty.setAttribute('aria-hidden','false');
+      launchConfetti(100);
+    }
+    function hideThankYou(){
+      ty.classList.remove('ty--show');
+      ty.setAttribute('aria-hidden','true');
+      confettiWrap.innerHTML = '';
+    }
+    tyClose?.addEventListener('click', hideThankYou);
+    ty?.addEventListener('click', (e)=>{ if(e.target === ty) hideThankYou(); });
+    function launchConfetti(count){
+      const colors = ['#6f00ff','#2bb24c','#00b4ff','#ffd54a','#ff6b6b'];
+      const w = window.innerWidth;
+      for(let i=0;i<count;i++){
+        const el = document.createElement('i');
+        const x = Math.random() * w;
+        const y = -20 - Math.random()*200;
+        const move = (Math.random() - .5) * 200;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        el.style.background = colors[Math.floor(Math.random()*colors.length)];
+        el.style.transform = `translate3d(0,0,0) rotate(${Math.random()*360}deg)`;
+        el.style.animationDuration = 1.5 + Math.random()*1.8 + 's';
+        el.style.setProperty('--x-move', move + 'px');
+        confettiWrap.appendChild(el);
+        setTimeout(()=> el.remove(), 4000);
+      }
+    }
+
+    // Demo submit
+    const successBanner = document.getElementById('formSuccess');
     form.addEventListener('submit', function(e){
-      clearErrors();
-      let ok = true;
-
-      const parentName = form.parent_guardian_name;
-      const parentEmail = form.email;
-      const studentFirst = form.student_first_name;
-      const studentLast = form.student_last_name;
-      const files = form.files;
-
-      if (!parentName.value.trim()){
-        setError('parent_guardian_name','Required');
-        ok = false;
-      }
-      if (!parentEmail.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parentEmail.value)){
-        setError('email','Enter a valid email');
-        ok = false;
-      }
-      if (!studentFirst.value.trim()){
-        setError('student_first_name','Required');
-        ok = false;
-      }
-      if (!studentLast.value.trim()){
-        setError('student_last_name','Required');
-        ok = false;
-      }
-
-      const list = Array.from(files.files || []);
-      if (!list.length){
-        setError('files','Please choose a file');
-        ok = false;
-      } else {
-        for (const f of list){
-          const ext = (f.name.split('.').pop() || '').toLowerCase();
-          if (!ACCEPT.includes(ext)){
-            setError('files','Invalid file type. Allowed: ' + ACCEPT.join(', '));
-            ok = false; break;
-          }
-          if (f.size > MAX){
-            setError('files','File exceeds 256 MB');
-            ok = false; break;
-          }
-        }
-      }
-
-      if (!ok){
+      if (!form.checkValidity()){
         e.preventDefault();
+        form.reportValidity();
         return;
       }
-
-      // No backend wired here. If you want real submissions:
-      // 1) Enable Non HubSpot Forms to auto capture basic fields (HubSpot ignores file inputs)
-      // 2) Or wire a server function to upload the file and submit to HubSpot with a file URL
       e.preventDefault();
-      form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-      setTimeout(() => {
+      const btn = form.querySelector('[type="submit"]');
+      const original = btn?.textContent;
+      if (btn){ btn.disabled = true; btn.textContent = 'Submitting…' }
+      setTimeout(()=>{
+        if (btn){ btn.disabled = false; btn.textContent = original || 'Submit Application' }
         form.reset();
-        form.style.display = '';
-        document.getElementById('formSuccess').style.display = 'none';
-        closeModal();
-      }, 1600);
+        successBanner.style.display = 'none';
+        showThankYou();
+        toggleExplain(crimeRadios, crimeWrap, 'crime_explain');
+        toggleExplain(fundsRadios, fundsWrap, 'funds_explain');
+        smoothTo('#applicant');
+      }, 600);
     });
-  </script>
 
-  <!-- Minimal modal styles as safety net -->
-  <style>
-    .modal{position:fixed;inset:0;display:grid;place-items:center;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s;z-index:1000}
-    .modal.open{visibility:visible;opacity:1}
-    .modal__overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px)}
-    .modal__dialog{position:relative;width:min(760px,92vw);max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:20px}
-    .modal__title{font-size:1.25rem;margin-bottom:6px}
-    .modal__close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:12px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer}
-    body.modal-open{overflow:hidden}
-    .err{color:#ff6b6b;display:block;margin-top:6px;font-size:.85rem}
-    .btn-pill{border-radius:999px;padding:10px 16px;font-weight:700}
-    .btn-purple{background:#6f00ff;color:#fff}
-    .btn-green{background:#2bb24c;color:#fff}
-    .btn-purple:hover,.btn-green:hover{filter:brightness(1.05)}
-    .steps-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
-    .step-card{position:relative;padding:18px 24px 22px;background:linear-gradient(180deg,var(--card),var(--bg-2));border:1px solid var(--border);border-radius:16px;transition:transform .12s,box-shadow .12s}
-    .step-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.32)}
-    .step-kicker{font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-    .step-card h2{font-size:1.7rem;line-height:1.15;font-weight:800}
-    .step-card::after{content:attr(data-step);position:absolute;top:-6px;right:8px;font-size:6.4rem;font-weight:800;line-height:1;color:var(--muted);opacity:.14;pointer-events:none}
-    @media (max-width:980px){.steps-row{grid-template-columns:1fr}.step-card::after{font-size:4.8rem;opacity:.12;right:0}}
-    .downloads-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:28px 0 8px}
-  </style>
+    // Mobile nav toggle in case global js is not loaded
+    const globalNav = document.querySelector('.nav');
+    const toggle = document.querySelector('.menu-toggle');
+    if (toggle && globalNav){
+      toggle.addEventListener('click', ()=>{
+        globalNav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', globalNav.classList.contains('open'));
+      });
+    }
+  </script>
 </body>
 </html>
