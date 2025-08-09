@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Donate • SHNP</title>
   <meta name="description" content="Donate to support SHNP tours, scholarships, and resident services." />
-
-  <!-- Fonts + Global -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Donate page polish -->
   <link rel="stylesheet" href="css/donate.css" />
 </head>
 <body>
@@ -59,63 +56,32 @@
           Your support fuels tours, scholarships, and care at Nella’s Place.
         </p>
 
-        <!-- Card: message + impact list + PayPal button -->
+        <!-- Card -->
         <div class="card reveal" style="margin-top:18px">
-          <p class="lead">
-            Every dollar matters. Here are ten real ways your gift helps.
-          </p>
+          <p class="lead">Every dollar matters. Here are real ways your gift helps:</p>
 
-          <!-- Ten impact callouts with emojis -->
+          <!-- Static list instead of scroll -->
           <ul class="impact-list">
-            <li class="impact-card">🚌 Covers part of a bus ride for a college tour</li>
-            <li class="impact-card">🥪 Provides lunch for students on program days</li>
-            <li class="impact-card">📚 Buys workbooks for small group learning</li>
-            <li class="impact-card">🎓 Helps a senior pay a college application fee</li>
-            <li class="impact-card">💻 Expands access to tutoring tech and devices</li>
-            <li class="impact-card">🧑‍🏫 Funds a mentor session with a pro</li>
-            <li class="impact-card">🏫 Sponsors a mini campus visit experience</li>
-            <li class="impact-card">🎒 Stocks backpacks with school supplies</li>
-            <li class="impact-card">🎤 Supports a college prep workshop</li>
-            <li class="impact-card">🎁 Seeds a micro scholarship for a student</li>
+            <li>🚌 Covers part of a bus ride for a college tour</li>
+            <li>🥪 Provides lunch for students on program days</li>
+            <li>📚 Buys workbooks for small group learning</li>
+            <li>🎓 Helps a senior pay a college application fee</li>
+            <li>💻 Expands access to tutoring tech and devices</li>
+     
           </ul>
 
-          <!-- Donate button that goes to PayPal -->
           <div class="action-row">
             <form id="paypal-form" action="https://www.paypal.com/donate" method="post" target="_top">
               <input type="hidden" name="hosted_button_id" value="U76NWMRK9AQHW" />
-              <button type="submit" class="btn btn-primary">
-                Donate with PayPal
-              </button>
+              <button type="submit" class="btn btn-primary big-btn">Donate with PayPal</button>
             </form>
-
-            <!-- Emoji badges -->
             <div class="badges">
               <div class="badge">🔒 Secure</div>
               <div class="badge">🧾 Tax write off</div>
-              <div class="badge">🔄 Cancel anytime</div>
               <div class="badge">✅ Verified nonprofit</div>
             </div>
           </div>
         </div>
-
-        <!-- Rotating impact strip -->
-        <section class="impact-deck reveal" aria-label="More ways your donation helps">
-          <h3>More impact</h3>
-          <div class="carousel" aria-hidden="false">
-            <ul class="carousel-track">
-              <li>🧠 Funds mental wellness resources for residents</li>
-              <li>🧼 Stocks hygiene kits for new arrivals</li>
-              <li>🎟️ Covers museum or campus event tickets</li>
-              <li>🧰 Builds STEM kits for hands on learning</li>
-              <li>🗣️ Supports speaking coaches and interview prep</li>
-              <li>🧪 Pays for lab fees or materials</li>
-              <li>📨 Covers transcript and mailing costs</li>
-              <li>🧭 Funds career exploration field trips</li>
-              <li>🧵 Buys basic clothing essentials</li>
-              <li>🧑‍💼 Supports job readiness materials</li>
-            </ul>
-          </div>
-        </section>
 
         <!-- Trust grid -->
         <div class="trust reveal">
@@ -162,24 +128,6 @@
     </div>
   </footer>
 
-  <!-- Your global JS -->
   <script src="js/main.js"></script>
-
-  <!-- Slower carousel script -->
-  <script>
-    (function(){
-      const track = document.querySelector('.carousel-track');
-      if (!track) return;
-      const items = Array.from(track.children);
-      let idx = 0;
-      function go() {
-        idx = (idx + 1) % items.length;
-        track.style.transform = `translateX(${-idx * 100}%)`;
-      }
-      track.style.width = (items.length * 100) + '%';
-      items.forEach(li => li.style.width = (100 / items.length) + '%');
-      setInterval(go, 5000); // 5 seconds per slide
-    })();
-  </script>
 </body>
 </html>

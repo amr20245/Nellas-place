@@ -1,0 +1,144 @@
+/* =========================================================
+   SHNP — Events Page Styles
+   Uses your dark tokens from styles.css
+   ========================================================= */
+
+/* spacing helpers */
+.section-intro { margin-top: 6px; }
+
+/* toolbar */
+.events-toolbar {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.events-toolbar .filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: var(--bg-2, #121316);
+  color: var(--text, #e7eaee);
+  border: 1px solid var(--border, #202227);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: border-color .18s ease, transform .12s ease;
+}
+
+.chip:hover { transform: translateY(-1px); }
+
+.chip.is-active {
+  border-color: var(--cta, #00b4ff);
+  box-shadow: 0 0 0 3px rgba(0,180,255,.15);
+}
+
+.view-note { font-size: .9rem; }
+
+/* grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 18px;
+}
+
+/* card */
+.event-card {
+  background: var(--card, #15161a);
+  border: 1px solid var(--border, #202227);
+  border-radius: var(--radius, 16px);
+  padding: 20px;
+  box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,.25));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.event-card:hover,
+.event-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.32);
+  border-color: var(--cta, #00b4ff);
+}
+
+/* internals */
+.event-tag {
+  align-self: flex-start;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #202227);
+  background: rgba(0,180,255,.12);
+  color: var(--text, #e7eaee);
+  letter-spacing: .2px;
+}
+
+.event-tag.tour { border-color: var(--cta, #00b4ff); }
+.event-tag.meeting { border-color: #7aa2ff; }
+.event-tag.closed { border-color: #ff7a7a; }
+.event-tag.deadline { border-color: #ffc46b; }
+
+.event-date {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: .2px;
+  color: var(--cta, #00b4ff);
+}
+
+.event-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.event-location {
+  font-size: 0.92rem;
+  color: var(--muted, #9aa0a6);
+}
+
+.event-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.event-actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.event-actions .btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: .9rem;
+}
+
+/* footer polish on this page */
+.footer-blurb { margin-top: 10px; }
+.footer-links { list-style: none; margin-top: 10px; padding: 0; }
+.footer-legal {
+  padding: 10px 0;
+  border-top: 1px solid var(--border, #202227);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* responsive */
+@media (max-width: 520px) {
+  .event-card { padding: 16px; }
+  .event-title { font-size: 1.05rem; }
+}
