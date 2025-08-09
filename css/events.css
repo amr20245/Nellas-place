@@ -1,12 +1,44 @@
 /* =========================================================
-   SHNP — Events Page Styles
-   Uses your dark tokens from styles.css
+   SHNP — Events Page • Glassmorphism
+   Works with your dark theme tokens from styles.css
    ========================================================= */
+
+/* page backdrop with subtle glow */
+.section-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-glass::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(40rem 40rem at 15% 10%, rgba(0,180,255,.12), transparent 60%),
+    radial-gradient(36rem 36rem at 85% 20%, rgba(0,140,255,.10), transparent 60%),
+    radial-gradient(28rem 28rem at 50% 90%, rgba(0,180,255,.08), transparent 60%);
+  filter: blur(20px);
+  z-index: 0;
+}
+.section-glass > .container { position: relative; z-index: 1; }
+
+/* frosted nav strip */
+.glass-header {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom,
+    rgba(20,24,30,.35),
+    rgba(20,24,30,.05)
+  );
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
 
 /* spacing helpers */
 .section-intro { margin-top: 6px; }
 
-/* toolbar */
+/* toolbar with glass chips */
 .events-toolbar {
   margin-top: 18px;
   margin-bottom: 10px;
@@ -24,21 +56,23 @@
 }
 
 .chip {
-  background: var(--bg-2, #121316);
+  position: relative;
+  background: rgba(255,255,255,.04);
   color: var(--text, #e7eaee);
-  border: 1px solid var(--border, #202227);
+  border: 1px solid rgba(255,255,255,.08);
   padding: 8px 12px;
   border-radius: 999px;
   font-size: .9rem;
   cursor: pointer;
-  transition: border-color .18s ease, transform .12s ease;
+  transition: transform .12s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
-
 .chip:hover { transform: translateY(-1px); }
-
 .chip.is-active {
   border-color: var(--cta, #00b4ff);
-  box-shadow: 0 0 0 3px rgba(0,180,255,.15);
+  box-shadow: 0 0 0 3px rgba(0,180,255,.15), 0 8px 24px rgba(0,0,0,.35);
+  background: linear-gradient(to bottom right, rgba(0,180,255,.16), rgba(255,255,255,.03));
 }
 
 .view-note { font-size: .9rem; }
@@ -46,59 +80,96 @@
 /* grid */
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
   margin-top: 18px;
 }
 
-/* card */
+/* glass card */
 .event-card {
-  background: var(--card, #15161a);
-  border: 1px solid var(--border, #202227);
+  position: relative;
+  background: linear-gradient(
+      to bottom right,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.04)
+    );
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--radius, 16px);
-  padding: 20px;
-  box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,.25));
+  padding: 22px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.04) inset,
+    0 12px 34px rgba(0,0,0,.35);
   display: flex;
   flex-direction: column;
   gap: 10px;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  overflow: hidden;
 }
+
+/* animated shimmer border */
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(0,180,255,.7),
+    rgba(255,255,255,.25),
+    rgba(0,180,255,.7)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: .0;
+  transition: opacity .25s ease;
+}
+.event-card:hover::before { opacity: .5; }
 
 .event-card:hover,
 .event-card:focus-within {
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.32);
-  border-color: var(--cta, #00b4ff);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(0,180,255,.18) inset;
+  border-color: rgba(0,180,255,.35);
 }
 
-/* internals */
+/* pill tag */
 .event-tag {
   align-self: flex-start;
   font-size: .8rem;
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid var(--border, #202227);
-  background: rgba(0,180,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  background: linear-gradient(to bottom right, rgba(255,255,255,.12), rgba(255,255,255,.04));
   color: var(--text, #e7eaee);
   letter-spacing: .2px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.event-tag.tour { border-color: var(--cta, #00b4ff); }
-.event-tag.meeting { border-color: #7aa2ff; }
-.event-tag.closed { border-color: #ff7a7a; }
-.event-tag.deadline { border-color: #ffc46b; }
+.event-tag.tour { border-color: rgba(0,180,255,.6); }
+.event-tag.meeting { border-color: rgba(122,162,255,.6); }
+.event-tag.closed { border-color: rgba(255,122,122,.6); }
+.event-tag.deadline { border-color: rgba(255,196,107,.7); }
 
+/* text inside card */
 .event-date {
   font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: .2px;
   color: var(--cta, #00b4ff);
+  text-shadow: 0 0 12px rgba(0,180,255,.25);
 }
 
 .event-title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.25;
 }
 
@@ -110,6 +181,8 @@
 .event-description {
   font-size: 0.95rem;
   line-height: 1.5;
+  color: var(--text, #e7eaee);
+  opacity: .95;
 }
 
 .event-actions {
@@ -123,22 +196,32 @@
   padding: 8px 12px;
   border-radius: 10px;
   font-size: .9rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-/* footer polish on this page */
+/* footer polish */
 .footer-blurb { margin-top: 10px; }
 .footer-links { list-style: none; margin-top: 10px; padding: 0; }
 .footer-legal {
   padding: 10px 0;
-  border-top: 1px solid var(--border, #202227);
+  border-top: 1px solid rgba(255,255,255,.08);
   display: flex;
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
 }
 
+/* motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .event-card,
+  .event-card::before { transition: none; }
+}
+
 /* responsive */
-@media (max-width: 520px) {
-  .event-card { padding: 16px; }
+@media (max-width: 560px) {
+  .events-grid { gap: 18px; }
+  .event-card { padding: 18px; }
   .event-title { font-size: 1.05rem; }
 }

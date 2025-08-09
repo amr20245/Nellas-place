@@ -31,7 +31,7 @@
   </div>
 
   <!-- Header and nav -->
-  <header class="header">
+  <header class="header glass-header">
     <nav class="container nav">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
@@ -52,11 +52,11 @@
   </header>
 
   <!-- Events -->
-  <section class="section">
+  <section class="section section-glass">
     <div class="container">
       <h1 class="reveal">Upcoming Events</h1>
       <p class="muted reveal section-intro">
-        Keep up with meetings, tours, closures, and important deadlines.
+        Keep up with meetings, tours, closures, and deadlines.
       </p>
 
       <div class="events-toolbar reveal" aria-label="Event filters">
@@ -74,7 +74,7 @@
         <!-- Event 1 -->
         <article class="event-card reveal" data-type="meeting">
           <span class="event-tag meeting">Meeting</span>
-          <div class="event-date">Aug 20, 2025 • 6:00 PM – 7:30 PM</div>
+          <div class="event-date">Aug 20, 2025 • 6:00 PM - 7:30 PM</div>
           <h3 class="event-title">Back to School Kickoff Meeting</h3>
           <div class="event-location">SHNP Main Office, 1610 California Ave, Cincinnati OH</div>
           <p class="event-description">
@@ -89,7 +89,7 @@
         <!-- Event 2 -->
         <article class="event-card reveal" data-type="tour">
           <span class="event-tag tour">Tour</span>
-          <div class="event-date">Sep 3, 2025 • 9:00 AM – 3:00 PM</div>
+          <div class="event-date">Sep 3, 2025 • 9:00 AM - 3:00 PM</div>
           <h3 class="event-title">College Campus Tour</h3>
           <div class="event-location">Central State University, Wilberforce OH</div>
           <p class="event-description">
@@ -118,7 +118,7 @@
         <!-- Event 4 -->
         <article class="event-card reveal" data-type="meeting">
           <span class="event-tag meeting">Meeting</span>
-          <div class="event-date">Oct 1, 2025 • 5:30 PM – 7:00 PM</div>
+          <div class="event-date">Oct 1, 2025 • 5:30 PM - 7:00 PM</div>
           <h3 class="event-title">Community Mentorship Night</h3>
           <div class="event-location">Westwood Community Center, Cincinnati OH</div>
           <p class="event-description">
@@ -179,7 +179,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Tiny filter logic. No dependencies.
+    // Tiny filter logic
     const grid = document.getElementById('eventsGrid');
     const chips = document.querySelectorAll('.events-toolbar .chip');
     chips.forEach(chip => {
@@ -188,11 +188,7 @@
         chip.classList.add('is-active');
         const type = chip.getAttribute('data-filter');
         grid.querySelectorAll('.event-card').forEach(card => {
-          if (type === 'all' || card.dataset.type === type) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
         });
       });
     });
