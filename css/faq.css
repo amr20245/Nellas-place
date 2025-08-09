@@ -1,0 +1,153 @@
+/* =========================================================
+   SHNP — FAQ page styles
+   Glassy dark accordion, smooth open and close
+   ========================================================= */
+
+:root{
+  --faq-accent: #00b4ff;
+  --faq-accent-2: #0089c7;
+  --faq-glass: rgba(255,255,255,.06);
+  --faq-ring: rgba(0,180,255,.35);
+  --faq-radius: 16px;
+  --faq-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+/* hero */
+.faq-hero h1{
+  letter-spacing:.2px;
+  font-weight:800;
+  background: linear-gradient(180deg, var(--text), #cfefff 70%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.faq-hero .muted{max-width:840px}
+
+/* clickable filter tags */
+.faq-tags{
+  margin:18px 0 10px;
+  display:flex;flex-wrap:wrap;gap:8px
+}
+.faq-tags .tag{
+  font-size:13px;
+  padding:8px 12px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--muted);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+  cursor:pointer;
+  transition:transform .12s ease, border-color .15s ease, background .15s ease, color .15s ease;
+}
+.faq-tags .tag:hover{ transform:translateY(-1px) }
+.faq-tags .tag:focus-visible{ outline:none; box-shadow:0 0 0 3px var(--faq-ring) }
+.faq-tags .tag.active{
+  color:#001019;
+  background:linear-gradient(180deg, var(--faq-accent), var(--faq-accent-2));
+  border-color:color-mix(in srgb, var(--faq-accent) 40%, var(--border));
+}
+
+/* accordion base */
+.faq-accordion{
+  margin-top:14px;
+  display:grid;
+  gap:0; /* we are going to use shared dividers */
+}
+.faq-accordion details{
+  border:0;
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+  border-radius:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02)),
+    radial-gradient(1000px 200px at 0% -20%, rgba(0,180,255,.08), transparent 60%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--faq-shadow);
+  overflow:hidden;
+  transition: border-color .2s ease, transform .16s ease, background .2s ease;
+  position:relative;
+}
+
+/* group frame caps */
+.faq-accordion details:first-child{
+  border-top:1px solid var(--border);
+  border-top-left-radius:var(--faq-radius);
+  border-top-right-radius:var(--faq-radius);
+}
+.faq-accordion details + details{
+  border-top:1px solid var(--border);
+}
+.faq-accordion details:last-child{
+  border-bottom:1px solid var(--border);
+  border-bottom-left-radius:var(--faq-radius);
+  border-bottom-right-radius:var(--faq-radius);
+}
+
+/* summary row */
+.faq-accordion summary{
+  list-style:none;
+  cursor:pointer;
+  padding:18px 18px 18px 54px;
+  position:relative;
+  display:flex;align-items:center;gap:10px;
+  min-height:56px;
+  user-select:none;
+  font-weight:600;
+  color:var(--text);
+  outline:none;
+}
+
+/* custom marker */
+.faq-accordion summary::before{
+  content:"?";
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  width:28px;height:28px;border-radius:999px;
+  display:grid;place-items:center;
+  font-weight:800;font-size:14px;
+  color:#001019;
+  background: linear-gradient(180deg, var(--faq-accent), var(--faq-accent-2));
+  box-shadow: 0 8px 20px rgba(0,180,255,.35), inset 0 1px 0 rgba(255,255,255,.2);
+}
+.faq-accordion summary:focus-visible{ box-shadow:0 0 0 3px var(--faq-ring) }
+.faq-accordion details[open] summary{ border-bottom:1px solid color-mix(in srgb, var(--faq-accent) 28%, var(--border)); background:linear-gradient(180deg, rgba(255,255,255,.05), transparent) }
+.faq-accordion details[open] summary::before{ content:"✓" }
+
+/* content */
+.faq-accordion .content{
+  padding:16px 18px;
+  color:var(--muted);
+  line-height:1.7;
+  animation: faq-reveal .22s ease;
+  position:relative;
+}
+.faq-accordion .content::before{
+  content:"";
+  position:absolute;left:18px;right:18px;top:-1px;height:1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  opacity:.9;
+}
+
+@keyframes faq-reveal{
+  from{opacity:0; transform: translateY(-3px)}
+  to{opacity:1; transform: translateY(0)}
+}
+
+.faq-accordion .content p{margin:0 0 10px}
+.faq-accordion .content ul{margin:6px 0 0 18px}
+.faq-accordion .content li{margin:4px 0}
+
+/* hide unmatched items when a filter is active */
+.faq-accordion details[hidden]{ display:none }
+
+/* hover polish */
+.faq-accordion details:hover{
+  transform: translateY(-1px);
+  border-left-color: color-mix(in srgb, var(--faq-accent) 25%, var(--border));
+  border-right-color: color-mix(in srgb, var(--faq-accent) 25%, var(--border));
+}
+
+/* small screens */
+@media (max-width:720px){
+  .faq-accordion summary{ padding-left:50px }
+  .faq-accordion .content::before{ left:14px; right:14px }
+}

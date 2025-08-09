@@ -9,53 +9,253 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/faq.css">
 </head>
 <body>
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
       <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
- <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">FAQ</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the FAQ page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
-        </div>
+  <section class="section faq-hero">
+    <div class="container">
+      <h1 class="reveal">Frequently Asked Questions</h1>
+      <p class="muted reveal" style="margin-top:6px">
+        Quick answers about Step Higher, Nella’s Place, tours, scholarships, and how to get involved.
+      </p>
+
+      <!-- filter buttons -->
+      <div class="faq-tags" role="tablist" aria-label="Filter FAQs">
+        <button class="tag active" data-filter="all" aria-pressed="true">All</button>
+        <button class="tag" data-filter="tours" aria-pressed="false">Tours</button>
+        <button class="tag" data-filter="nellas" aria-pressed="false">Nella’s Place</button>
+        <button class="tag" data-filter="scholarships" aria-pressed="false">Scholarships</button>
+        <button class="tag" data-filter="volunteers" aria-pressed="false">Volunteers</button>
+        <button class="tag" data-filter="donors" aria-pressed="false">Donors</button>
+        <button class="tag" data-filter="policies" aria-pressed="false">Policies</button>
       </div>
-    </section>
-    
+
+      <!-- accordion -->
+      <div class="faq-accordion">
+        <!-- general -->
+        <details data-cat="general">
+          <summary><span>What is Step Higher and how is Nella’s Place connected?</span></summary>
+          <div class="content">
+            Step Higher runs college readiness programs and scholarships. Nella’s Place is our licensed group home for girls 8 to 21. Programs share staff, training, and a common mission.
+          </div>
+        </details>
+
+        <!-- tours -->
+        <details data-cat="tours">
+          <summary><span>Who can join a Step Higher college tour?</span></summary>
+          <div class="content">
+            Middle and high school students with parent or guardian consent. Priority goes to foster youth and low income students.
+          </div>
+        </details>
+
+        <details data-cat="tours">
+          <summary><span>How do I apply for a tour?</span></summary>
+          <div class="content">
+            Go to the Tours page, select a trip, complete the form, and watch your email for deadlines and required forms.
+          </div>
+        </details>
+
+        <details data-cat="tours">
+          <summary><span>What costs are covered on tours?</span></summary>
+          <div class="content">
+            Usually bus, hotel, campus visits, and most meals. Personal snacks and souvenirs are not covered. Need based support may reduce or remove fees.
+          </div>
+        </details>
+
+        <details data-cat="tours">
+          <summary><span>Do tours include HBCUs?</span></summary>
+          <div class="content">
+            Yes. HBCUs are a core part of our tour routes along with a mix of public and private universities.
+          </div>
+        </details>
+
+        <details data-cat="tours">
+          <summary><span>What is the supervision and safety plan on trips?</span></summary>
+          <div class="content">
+            Staff to student ratios meet or exceed state guidelines. We do headcounts, room checks, and use emergency contact trees and GPS bus tracking.
+          </div>
+        </details>
+
+        <!-- scholarships -->
+        <details data-cat="scholarships">
+          <summary><span>How do SHNP scholarships work?</span></summary>
+          <div class="content">
+            Annual awards for graduating seniors and current college students who have engaged with our programs. Criteria include need, participation, academics, and a short essay.
+          </div>
+        </details>
+
+        <details data-cat="scholarships">
+          <summary><span>What materials are required for scholarship applications?</span></summary>
+          <div class="content">
+            Application form, transcript or recent grade report, short essay, and one recommendation. See the Scholarships page for exact dates.
+          </div>
+        </details>
+
+        <details data-cat="scholarships">
+          <summary><span>Can awards be used for trade or certificate programs?</span></summary>
+          <div class="content">
+            Yes, many awards allow accredited trade schools and certificate programs. Check each award description for details.
+          </div>
+        </details>
+
+        <!-- Nella’s Place -->
+        <details data-cat="nellas">
+          <summary><span>What is Nella’s Place?</span></summary>
+          <div class="content">
+            A CARF accredited group home in Cincinnati providing 24 by 7 care, education support, therapy coordination, and life skills training for girls 8 to 21.
+          </div>
+        </details>
+
+        <details data-cat="nellas">
+          <summary><span>How do referrals to Nella’s Place work?</span></summary>
+          <div class="content">
+            Referrals come from counties, case managers, or licensed professionals. Start through the Contact page or call the main line to check availability and begin intake.
+          </div>
+        </details>
+
+        <details data-cat="nellas">
+          <summary><span>What happens during intake?</span></summary>
+          <div class="content">
+            We review placement paperwork, medical history, medication list, education records, clothing inventory, and care plans. Families and guardians are included when applicable.
+          </div>
+        </details>
+
+        <details data-cat="nellas">
+          <summary><span>How are medications managed?</span></summary>
+          <div class="content">
+            Only trained staff handle medications under physician orders. Doses are logged, meds are stored securely, and prescribers are consulted for changes.
+          </div>
+        </details>
+
+        <details data-cat="nellas">
+          <summary><span>Do residents attend local schools?</span></summary>
+          <div class="content">
+            Yes. We coordinate enrollment and transportation. If an IEP or 504 plan exists, we partner with the school district to support it.
+          </div>
+        </details>
+
+        <details data-cat="nellas">
+          <summary><span>Are therapy and medical appointments coordinated?</span></summary>
+          <div class="content">
+            We schedule and coordinate therapy, primary care, dental, vision, and specialist visits with approved providers and keep case managers updated.
+          </div>
+        </details>
+
+        <!-- volunteers -->
+        <details data-cat="volunteers">
+          <summary><span>How can I volunteer?</span></summary>
+          <div class="content">
+            Apply on the Volunteer page for tutoring, chaperoning, events, or admin support. Background checks are required for roles with youth.
+          </div>
+        </details>
+
+        <details data-cat="volunteers">
+          <summary><span>Do you offer group volunteer days?</span></summary>
+          <div class="content">
+            Yes. Companies, colleges, and community groups can schedule service days like supply drives or campus prep projects.
+          </div>
+        </details>
+
+        <!-- donors -->
+        <details data-cat="donors">
+          <summary><span>How can I donate?</span></summary>
+          <div class="content">
+            Use the Donate page to give online or learn about corporate matching, sponsorships, and in kind gifts such as school supplies or hygiene kits.
+          </div>
+        </details>
+
+        <details data-cat="donors">
+          <summary><span>Can donors sponsor a tour seat?</span></summary>
+          <div class="content">
+            Yes. You can fully or partially sponsor a seat. We will confirm the route and share impact updates after the trip.
+          </div>
+        </details>
+
+        <details data-cat="donors">
+          <summary><span>Is Step Higher a 501c3 and will I get a receipt?</span></summary>
+          <div class="content">
+            Yes. Step Higher is a registered nonprofit. Donation receipts are emailed automatically and are tax deductible as allowed by law.
+          </div>
+        </details>
+
+        <!-- policies -->
+        <details data-cat="policies">
+          <summary><span>What safety standards does Nella’s Place follow?</span></summary>
+          <div class="content">
+            State licensing rules, CARF standards, staff training, 24 by 7 supervision, incident reporting, and regular audits for quality and safety.
+          </div>
+        </details>
+
+        <details data-cat="policies">
+          <summary><span>Do you provide language access or ADA support?</span></summary>
+          <div class="content">
+            Yes. Interpreter services and accessibility accommodations are available with advance notice. Tell us what you need on the form.
+          </div>
+        </details>
+
+        <details data-cat="policies">
+          <summary><span>How is privacy handled for youth information?</span></summary>
+          <div class="content">
+            We follow state rules and best practices for data protection, need to know access, and secure storage. See the Privacy Policy for details.
+          </div>
+        </details>
+
+        <details data-cat="policies">
+          <summary><span>Where are you located and how do I reach you?</span></summary>
+          <div class="content">
+            1610 California Ave, Cincinnati, OH 45237. Email info@shnp.org or call 513 436 0118. See the Contact page for hours.
+          </div>
+        </details>
+
+        <!-- extra general to reach 23 -->
+        <details data-cat="general">
+          <summary><span>How can I stay updated on programs and dates?</span></summary>
+          <div class="content">
+            Join our email list on the Contact or Blog page and follow our social channels for tour dates, scholarship cycles, and events.
+          </div>
+        </details>
+
+        <details data-cat="general">
+          <summary><span>Do you accept internships or work study students?</span></summary>
+          <div class="content">
+            Yes. We partner with local colleges for internships and work study. Check the Careers page or contact us with your program requirements.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -81,5 +281,43 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- tiny filter script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.faq-accordion');
+    const buttons = document.querySelectorAll('.faq-tags .tag');
+    if (!list || !buttons.length) return;
+
+    const applyFilter = (cat) => {
+      list.querySelectorAll('details').forEach(d => {
+        const match = (cat === 'all') || d.dataset.cat === cat;
+        if (!match) {
+          d.open = false;
+          d.setAttribute('hidden', '');
+        } else {
+          d.removeAttribute('hidden');
+        }
+      });
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed','true');
+        applyFilter(btn.dataset.filter);
+        // put the filter in the URL hash for deep link
+        history.replaceState(null, '', '#' + btn.dataset.filter);
+      });
+    });
+
+    // deep link support: faq.html#scholarships etc
+    const hash = location.hash.replace('#','');
+    if (hash) {
+      const matchBtn = [...buttons].find(b => b.dataset.filter === hash);
+      if (matchBtn) matchBtn.click();
+    }
+  });
+  </script>
 </body>
 </html>
