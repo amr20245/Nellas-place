@@ -1,0 +1,199 @@
+/* =========================================================
+   SHNP • Donate page clean version
+   Drop this after styles.css
+   ========================================================= */
+
+:root {
+  --donate-accent: #00b4ff;
+  --donate-accent-2: #0089c7;
+  --donate-glow: 0 0 0 6px rgba(0,180,255,.12);
+}
+
+.section .container { max-width: 920px; }
+
+/* Headline with subtle frost */
+.section h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff, #cfefff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 24px rgba(0,180,255,.12);
+  margin-bottom: 6px;
+}
+
+.section .muted { font-size: 15px; }
+
+.card {
+  background:
+    radial-gradient(120% 120% at 10% 0%, rgba(0,180,255,.06) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid color-mix(in lab, var(--border, #1f2a36), #5dd4ff 14%);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius, 16px);
+  padding: clamp(18px, 2.5vw, 28px);
+  box-shadow: var(--shadow, 0 12px 34px rgba(0,0,0,.32));
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in lab, var(--border, #1f2a36), #5dd4ff 26%);
+  box-shadow: 0 24px 54px rgba(0,0,0,.36), 0 0 0 1px rgba(0,180,255,.12) inset;
+}
+
+.lead {
+  font-size: 15px;
+  color: color-mix(in lab, var(--text, #e8eef5), #cfefff 12%);
+  margin-bottom: 12px;
+}
+
+/* Ten impact callouts */
+.impact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  margin: 0 0 14px 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 720px) {
+  .impact-list { grid-template-columns: 1fr; }
+}
+
+.impact-card {
+  border: 1px solid var(--border, #1f2a36);
+  background: var(--bg-2, #0f141b);
+  color: var(--text, #e8eef5);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+  transition: transform .12s ease, border-color .2s ease, background .2s ease;
+}
+.impact-card:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in lab, var(--border, #1f2a36), #ffffff 12%);
+}
+
+/* Action row */
+.action-row { display: grid; gap: 10px; align-items: start; }
+@media (min-width: 720px) {
+  .action-row { grid-template-columns: auto 1fr; align-items: center; }
+}
+
+/* Primary button look for PayPal */
+#paypal-form button {
+  --btn-bg: linear-gradient(180deg, var(--donate-accent) 0%, var(--donate-accent-2) 100%);
+  --btn-brd: color-mix(in lab, var(--donate-accent-2), #ffffff 20%);
+  color: #0b0f14;
+  text-shadow: 0 1px 0 rgba(255,255,255,.28);
+  box-shadow: 0 8px 22px rgba(0,142,199,.35), inset 0 1px 0 rgba(255,255,255,.24);
+  border: 1px solid var(--btn-brd);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+#paypal-form button:hover {
+  box-shadow: 0 12px 28px rgba(0,142,199,.42), inset 0 1px 0 rgba(255,255,255,.28);
+  transform: translateY(-1px);
+}
+#paypal-form button:active { transform: translateY(0); }
+
+/* Emoji badges */
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #1f2a36);
+  background: var(--bg-2, #0f141b);
+  color: color-mix(in lab, var(--muted, #9aa8b5), #fff 16%);
+}
+
+/* Optional rotating strip */
+.impact-deck {
+  margin-top: 18px;
+  background: var(--bg-2, #0f141b);
+  border: 1px solid var(--border, #1f2a36);
+  border-radius: 16px;
+  padding: 14px;
+}
+.impact-deck h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: .2px;
+  color: var(--text, #e8eef5);
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px dashed color-mix(in lab, var(--border, #1f2a36), #5dd4ff 28%);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+}
+.carousel-track {
+  display: flex;
+  transition: transform .5s ease;
+  will-change: transform;
+  width: 100%;
+}
+.carousel-track li {
+  list-style: none;
+  padding: 14px 16px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in lab, var(--text, #e8eef5), #cfefff 8%);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Trust grid */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+.trust-item {
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border, #1f2a36);
+  background: var(--bg-2, #0f141b);
+  color: var(--muted, #9aa8b5);
+  font-weight: 700;
+}
+
+/* Reveal hooks */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Nav highlight */
+.nav a[href="donate.html"] { position: relative; }
+.nav a[href="donate.html"]::after {
+  content: "";
+  position: absolute;
+  left: 8px; right: 8px; bottom: -8px;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--donate-accent), transparent);
+  opacity: .6;
+}
