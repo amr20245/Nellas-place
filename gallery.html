@@ -1,85 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery • SHNP</title>
-  <meta name="description" content="Gallery page for SHNP redesign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Photo and media gallery for SHNP events." />
+  <!-- global site styles if you have them -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- page specific -->
+  <link rel="stylesheet" href="css/gallery.css" />
 </head>
 <body>
+  <!-- Top strip (optional, matches your other pages) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Community impact</span>
+      </div>
     </div>
   </div>
 
-  <header class="header">
-    <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
-    </nav>
+  <header class="page-header container">
+    <h1 class="page-title">Gallery</h1>
+    <p class="page-subtitle">Browse photos, videos, and files from events and programs</p>
+
+    <div class="controls">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search by title or tag" aria-label="Search gallery" />
+        <button class="btn btn-ghost" id="clearSearch" aria-label="Clear search">Clear</button>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filter by category">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="photos" role="tab">Photos</button>
+        <button class="chip" data-filter="videos" role="tab">Videos</button>
+        <button class="chip" data-filter="docs" role="tab">Docs</button>
+        <div class="divider"></div>
+        <!-- sample event filters. add your own -->
+        <button class="chip" data-filter="event:graduation">Graduation</button>
+        <button class="chip" data-filter="event:campus-tour">Campus Tour</button>
+        <button class="chip" data-filter="event:workshop">Workshop</button>
+      </div>
+    </div>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Gallery</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the Gallery page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
-        </div>
-      </div>
+  <main class="container">
+    <!-- Quick instructions area you can remove later -->
+    <section class="hint">
+      <p>Add new items by copying a <code>.card</code> and updating the <code>data-type</code>, <code>data-tags</code>, thumb, and source. Supported:</p>
+      <ul>
+        <li><strong>data-type</strong>: photo, video, doc</li>
+        <li><strong>data-tags</strong>: any words like event:graduation, year:2025</li>
+      </ul>
     </section>
-    
 
-  <footer class="footer">
-    <div class="container cols">
-      <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
-      </div>
-      <div>
-        <h4>Programs</h4>
-        <ul style="list-style:none;margin-top:10px">
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella's Place</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get Involved</h4>
-        <ul style="list-style:none;margin-top:10px">
-          <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <small>© 2025 SHNP. All rights reserved.</small>
-      <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
-    </div>
-  </footer>
+    <!-- Responsive grid -->
+    <section id="gallery" class="grid" aria-live="polite">
+      <!-- PHOTO -->
+      <article class="card" tabindex="0"
+        data-type="photo"
+        data-tags="event:graduation year:2025 students">
+        <button class="thumb" data-src="media/graduation-01.jpg" data-kind="image" aria-label="Open Graduation Photo 1">
+          <img src="media/graduation-01-thumb.jpg" alt="Students celebrating at graduation" loading="lazy" />
+        </button>
+        <div class="meta">
+          <h3 class="title">Graduation Highlights</h3>
+          <p class="tags">event:graduation • year:2025 • photo</p>
+        </div>
+      </article>
 
-  <script src="js/main.js"></script>
+      <!-- PHOTO -->
+      <article class="card" tabindex="0"
+        data-type="photo"
+        data-tags="event:campus-tour year:2025 campus">
+        <button class="thumb" data-src="media/tour-02.jpg" data-kind="image" aria-label="Open Campus Tour Photo">
+          <img src="media/tour-02-thumb.jpg" alt="Group walking on campus" loading="lazy" />
+        </button>
+        <div class="meta">
+          <h3 class="title">Campus Tour</h3>
+          <p class="tags">event:campus-tour • year:2025 • photo</p>
+        </div>
+      </article>
+
+      <!-- VIDEO -->
+      <article class="card" tabindex="0"
+        data-type="video"
+        data-tags="event:workshop year:2024 training">
+        <button class="thumb" data-src="media/workshop-recap.mp4" data-kind="video" aria-label="Open Workshop Recap Video">
+          <video muted preload="metadata">
+            <source src="media/workshop-recap.mp4#t=0.1" type="video/mp4" />
+          </video>
+          <span class="badge">Video</span>
+        </button>
+        <div class="meta">
+          <h3 class="title">Workshop Recap</h3>
+          <p class="tags">event:workshop • year:2024 • video</p>
+        </div>
+      </article>
+
+      <!-- DOC (PDF) -->
+      <article class="card" tabindex="0"
+        data-type="doc"
+        data-tags="event:graduation year:2025 program">
+        <a class="thumb doc" href="media/graduation-program.pdf" target="_blank" rel="noopener" aria-label="Open Graduation Program PDF">
+          <div class="doc-icon" aria-hidden="true">📄</div>
+          <span class="badge">PDF</span>
+        </a>
+        <div class="meta">
+          <h3 class="title">Graduation Program</h3>
+          <p class="tags">event:graduation • year:2025 • doc</p>
+        </div>
+      </article>
+
+      <!-- PHOTO -->
+      <article class="card" tabindex="0"
+        data-type="photo"
+        data-tags="event:workshop year:2024 mentors">
+        <button class="thumb" data-src="media/workshop-mentors.jpg" data-kind="image" aria-label="Open Workshop Mentors Photo">
+          <img src="media/workshop-mentors-thumb.jpg" alt="Mentors guiding students" loading="lazy" />
+        </button>
+        <div class="meta">
+          <h3 class="title">Mentors In Action</h3>
+          <p class="tags">event:workshop • year:2024 • photo</p>
+        </div>
+      </article>
+
+      <!-- VIDEO external (YouTube) using thumbnail image -->
+      <article class="card" tabindex="0"
+        data-type="video"
+        data-tags="event:campus-tour year:2025 recap yt">
+        <button class="thumb" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-kind="youtube" aria-label="Open Campus Tour Recap on YouTube">
+          <img src="media/youtube-thumb.jpg" alt="Video thumbnail" loading="lazy" />
+          <span class="badge">YouTube</span>
+        </button>
+        <div class="meta">
+          <h3 class="title">Campus Tour Recap</h3>
+          <p class="tags">event:campus-tour • year:2025 • video</p>
+        </div>
+      </article>
+
+      <!-- DOC (pptx or docx) -->
+      <article class="card" tabindex="0"
+        data-type="doc"
+        data-tags="event:workshop year:2024 slides">
+        <a class="thumb doc" href="media/financial-literacy-slides.pptx" target="_blank" aria-label="Download Financial Literacy Slides">
+          <div class="doc-icon" aria-hidden="true">🗂️</div>
+          <span class="badge">PPTX</span>
+        </a>
+        <div class="meta">
+          <h3 class="title">Financial Literacy Slides</h3>
+          <p class="tags">event:workshop • year:2024 • doc</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Lightbox using <dialog> for a11y -->
+  <dialog id="lightbox" aria-label="Media preview">
+    <button class="close" aria-label="Close preview">✕</button>
+    <div class="stage" id="stage" role="document"></div>
+  </dialog>
+
+  <script>
+    // Filter logic
+    const chips = [...document.querySelectorAll('.chip')];
+    const cards = [...document.querySelectorAll('.card')];
+    const search = document.getElementById('search');
+    const clearSearch = document.getElementById('clearSearch');
+
+    let activeFilter = 'all';
+
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const type = card.dataset.type;
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const title = card.querySelector('.title')?.textContent.toLowerCase() || '';
+
+        const passesType = activeFilter === 'all'
+          ? true
+          : activeFilter === 'photos' ? type === 'photo'
+          : activeFilter === 'videos' ? type === 'video'
+          : activeFilter === 'docs' ? type === 'doc'
+          : tags.includes(activeFilter); // event filter like event:graduation
+
+        const passesSearch = !q || tags.includes(q) || title.includes(q);
+
+        card.style.display = passesType && passesSearch ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        activeFilter = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    search.addEventListener('input', applyFilters);
+    clearSearch.addEventListener('click', () => { search.value = ''; applyFilters(); });
+
+    // Lightbox logic
+    const lb = document.getElementById('lightbox');
+    const stage = document.getElementById('stage');
+    function openLightbox(kind, src) {
+      stage.innerHTML = '';
+      if (kind === 'image') {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        img.loading = 'eager';
+        stage.appendChild(img);
+      } else if (kind === 'video') {
+        const vid = document.createElement('video');
+        vid.controls = true;
+        vid.autoplay = true;
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        vid.appendChild(source);
+        stage.appendChild(vid);
+      } else if (kind === 'youtube') {
+        const iframe = document.createElement('iframe');
+        iframe.src = src + '?autoplay=1&modestbranding=1&rel=0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        stage.appendChild(iframe);
+      }
+      lb.showModal();
+    }
+
+    document.querySelectorAll('.thumb').forEach(btn => {
+      if (btn.tagName.toLowerCase() === 'a') return; // docs open in new tab
+      btn.addEventListener('click', () => openLightbox(btn.dataset.kind, btn.dataset.src));
+      // allow Enter to open when card is focused
+      btn.closest('.card')?.addEventListener('keydown', e => {
+        if (e.key === 'Enter') btn.click();
+      });
+    });
+
+    lb.querySelector('.close').addEventListener('click', () => lb.close());
+    lb.addEventListener('click', e => {
+      if (e.target === lb) lb.close();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lb.open) lb.close();
+    });
+  </script>
 </body>
 </html>
