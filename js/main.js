@@ -2,9 +2,46 @@
 (function(){
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.menu-toggle');
-  if (toggle) {
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  const dropdown = document.getElementById('hamburger-dropdown');
+
+  // Toggle nav open for mobile UL and the dropdown
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+
+      // Manage focus for a11y
+      const firstItem = dropdown?.querySelector('a');
+      if (open && firstItem) {
+        // give the animation a tick then focus
+        setTimeout(() => firstItem.setAttribute('tabindex','0'), 1);
+        setTimeout(() => firstItem.focus(), 120);
+      } else if (dropdown) {
+        dropdown.querySelectorAll('a').forEach(a => a.setAttribute('tabindex','-1'));
+      }
+    });
   }
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!nav) return;
+    const clickedInside = e.target.closest('.nav');
+    if (!clickedInside && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      if (dropdown) dropdown.querySelectorAll('a').forEach(a => a.setAttribute('tabindex','-1'));
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && nav?.classList.contains('open')) {
+      nav.classList.remove('open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      if (dropdown) dropdown.querySelectorAll('a').forEach(a => a.setAttribute('tabindex','-1'));
+      if (toggle) toggle.focus();
+    }
+  });
 
   // Active link highlighting
   const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
@@ -15,7 +52,7 @@
     if (file === here) a.classList.add('active');
   });
 
-  // Reveal-on-scroll (guard for old browsers)
+  // Reveal on scroll (guard for old browsers)
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -30,7 +67,7 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
-  // Smooth scroll for on-page anchors
+  // Smooth scroll for on page anchors
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -39,7 +76,7 @@
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 
-  // Basic client-side form validation
+  // Basic client side form validation
   document.querySelectorAll('form[data-validate]')?.forEach(form => {
     form.addEventListener('submit', e => {
       const required = form.querySelectorAll('[required]');
@@ -56,53 +93,36 @@
   });
 })();
 
-/* ───────────────────────────
-   Seamless marquee for top strip
-   - Supports multiple .scroller elements
-   - Duplicates content for infinite loop
-   - Auto speed based on content width
-   - Respects reduced motion
-   ─────────────────────────── */
+/* Seamless marquee for top strip */
 document.addEventListener('DOMContentLoaded', () => {
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   document.querySelectorAll('.top-strip .scroller').forEach(scroller => {
-    // Collect items (spans) in this scroller
     const items = Array.from(scroller.querySelectorAll('span'));
     if (!items.length) return;
 
-    // Build track only if not already built
     let track = scroller.querySelector('.scroller__track');
     if (!track) {
       track = document.createElement('div');
       track.className = 'scroller__track';
-
-      // Move originals into track
       items.forEach(el => track.appendChild(el));
-
-      // Duplicate once for seamless loop
       items.forEach(el => {
         const clone = el.cloneNode(true);
         clone.setAttribute('aria-hidden', 'true');
         track.appendChild(clone);
       });
-
-      // Mount
       scroller.innerHTML = '';
       scroller.appendChild(track);
     }
 
-    // Skip animation entirely if user prefers reduced motion
     if (reduced) {
       track.style.animation = 'none';
       return;
     }
 
-    // Set speed based on content width for consistent px/sec
     const setDuration = () => {
-      // track holds two copies; halfWidth = one copy
       const halfWidth = track.scrollWidth / 2;
-      const PX_PER_SECOND = 30;                // ← tweak speed here
+      const PX_PER_SECOND = 30;
       const seconds = Math.max(halfWidth / PX_PER_SECOND, 10);
       scroller.style.setProperty('--ticker-duration', `${seconds}s`);
     };
@@ -112,11 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
       updateWithRAF._raf = requestAnimationFrame(setDuration);
     };
 
-    // Recompute after fonts load & on resize
     if (document.fonts?.ready) document.fonts.ready.then(setDuration);
     window.addEventListener('load', setDuration);
     window.addEventListener('resize', updateWithRAF);
-
     setDuration();
   });
 });
