@@ -1,6 +1,6 @@
 /* ================================================================
-   SHNP • Global Dark Theme – Master Stylesheet (cleaned)
-   --------------------------------------------------------------- */
+   SHNP • Global Dark Theme – Master Stylesheet
+   ---------------------------------------------------------------- */
 
 /* Design tokens */
 :root{
@@ -91,10 +91,20 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 /* Active link from JS */
 .nav a.active{background:#181a1f;border:1px solid var(--border)}
 
-/* Top strip */
+/* ----------------------- Top strip (universal) ----------------------- */
+.top-strip{
+  position:sticky; top:0; z-index:1000;
+  background:
+    radial-gradient(1200px 120px at 50% -30%, #00b4ff22 0%, transparent 60%),
+    linear-gradient(0deg, #0f1114, #0f1114);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:saturate(140%) blur(10px);
+}
 .top-strip__inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;flex-wrap:nowrap}
 .kicker{letter-spacing:.4px;color:#c3c6cd;text-transform:uppercase;font-size:12px}
 .top-strip .kicker{font-size:clamp(14px,1.8vw,18px);font-weight:800;letter-spacing:.6px;margin-right:10px;white-space:nowrap}
+
+/* ticker */
 .top-strip .scroller{position:relative;flex:1 1 0%;min-width:0;overflow:hidden;white-space:nowrap;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .top-strip .scroller span{font-size:clamp(15px,1.6vw,18px);font-weight:600}
 .top-strip .scroller__track{display:inline-flex;align-items:center;gap:28px;will-change:transform;animation:ticker var(--ticker-duration,30s) linear infinite;animation-direction:reverse}
@@ -102,11 +112,24 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 @media(prefers-reduced-motion:reduce){.top-strip .scroller__track{animation:none!important}}
 @media(max-width:900px){.top-strip .scroller span{font-size:14px}.top-strip .kicker{font-size:12px}}
 
-/* Header and nav */
-.header{position:sticky;top:0;z-index:1000;background:rgba(10,11,13,.7);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--border)}
+.top-strip .btn-ghost{
+  border:1px solid #00b4ff33;
+  background:#00b4ff14;
+  color:var(--text);
+  padding:8px 14px;
+  border-radius:999px;
+  transition:.2s ease;
+}
+.top-strip .btn-ghost:hover{
+  border-color:#00b4ff66; background:#00b4ff22;
+  box-shadow:0 0 0 3px rgba(0,180,255,.24) inset;
+}
+
+/* ----------------------- Header and nav (universal) ----------------------- */
+.header{position:sticky;top:0;z-index:999;background:rgba(10,11,13,.7);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--border)}
 .nav{position:relative;display:flex;align-items:center;gap:18px;padding:14px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-.logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#00b4ff,#008cff)}
+.logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#00b4ff,#008cff);box-shadow:0 8px 24px rgba(0,180,255,.35)}
 .nav > ul{margin-left:auto;display:flex;gap:14px;list-style:none;align-items:center}
 .nav a{padding:8px 10px;border-radius:10px;color:var(--text)}
 .nav a:hover,.nav a[aria-current="page"]{background:#181a1f;border:1px solid var(--border)}
@@ -118,7 +141,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
   color:#fff!important;
   padding:8px 16px;border-radius:8px;font-weight:600;text-decoration:none;
   transition:all .2s ease;box-shadow:0 0 12px rgba(0,180,255,.4);
-  order:3; /* keep donate at far right */
+  order:3;
 }
 .nav a[aria-label="Donate"]:hover,
 .nav a.btn-donate:hover{background:linear-gradient(180deg,#00c8ff,#0095d6);box-shadow:0 0 18px rgba(0,180,255,.6);transform:translateY(-1px)}
@@ -128,7 +151,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 /* Menu wrap sits before Donate */
 .menu-wrap{position:relative;order:2}
 
-/* Hamburger button (icon only) */
+/* Hamburger button */
 .btn-menu{
   display:flex;align-items:center;justify-content:center;
   width:44px;height:44px;padding:0;
@@ -171,7 +194,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 .menu-wrap .hamburger-dropdown a + a{margin-top:6px}
 .menu-wrap .hamburger-dropdown a:hover{background:linear-gradient(180deg,rgba(124,58,237,.16),rgba(0,180,255,.12));color:#f3f6ff;transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.24)}
 
-/* Open state is controlled by .nav.open from your JS */
+/* Open state is controlled by .nav.open from JS */
 .nav.open .hamburger-dropdown{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
 
 /* Mobile nav behavior */

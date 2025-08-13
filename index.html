@@ -8,63 +8,66 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Global + page CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <div class="top-strip">
-    <div class="container top-strip__inner">
-      <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
-        <span>College readiness</span>
-        <span>Mentorship</span>
-        <span>Scholarships</span>
-        <span>Accredited care at Nella's Place</span>
-        <span>Community impact</span>
-      </div>
-      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
-    </div>
-  </div>
+
+  <!-- Top strip -->
+<div class="top-strip"> 
+  <div class="container top-strip__inner"> 
+    <div class="kicker">Why Step Higher?</div> 
+    <div class="scroller"> <span>College readiness</span> 
+      <span>Mentorship</span> <span>Scholarships</span> 
+      <span>Accredited care at Nella's Place</span> 
+      <span>Community impact</span> </div> 
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a> </div>
+     </div>
 
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
   <!-- End of HubSpot Embed Code -->
 
+  <!-- Header / Nav -->
   <header class="header">
-   <nav class="container nav">
-  <div class="brand">
-    <div class="logo"></div>
-    <a href="index.html">SHNP</a>
-  </div>
+    <nav class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
 
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tours.html">Tours</a></li>
-    <li><a href="nellas-place.html">Nella’s Place</a></li>
-    <li><a href="our-story.html">Our Story</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-  <!-- Hamburger Menu icon only -->
-  <div class="menu-wrap">
-    <button class="menu-toggle btn-menu" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">
-      &#9776;
-    </button>
-    <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
-      <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
-      <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
-    </div>
-  </div>
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
 
-  <a class="btn btn-donate" href="donate.html" aria-label="Donate">Donate</a>
-</nav>
-
+      <a class="btn btn-donate" href="donate.html" aria-label="Donate">Donate</a>
+    </nav>
   </header>
 
+  <!-- Hero -->
   <section class="section">
     <div class="container hero">
       <div class="reveal">
         <span class="tag">Step Higher • Nella's Place</span>
-        <h1>Opportunity that <em>lifts</em> modern support for students & youth.</h1>
+        <h1>Opportunity that <em>lifts</em> modern support for students and youth.</h1>
         <p class="lead">College tours, scholarships, and a safe, accredited group home. Explore programs, register for tours, or get involved as a volunteer or donor.</p>
         <div style="display:flex;gap:12px;margin-top:12px">
           <a class="btn btn-primary" href="tours.html">Explore Tours</a>
@@ -75,6 +78,7 @@
     </div>
   </section>
 
+  <!-- Feature cards -->
   <section class="section">
     <div class="container grid grid-3">
       <div class="card reveal">
@@ -87,7 +91,7 @@
         <span class="badge">Nella's Place</span>
         <h3>CARF Accredited Care</h3>
         <p>Safe, structured group home for girls 8 to 21 with personalized programming and support.</p>
-        <p><a href="about-nellas-place.html">Learn more →</a></p>
+        <p><a href="nellas-place.html">Learn more →</a></p>
       </div>
       <div class="card reveal">
         <span class="badge">Give</span>
@@ -98,6 +102,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
@@ -110,7 +115,7 @@
         <ul style="list-style:none;margin-top:10px">
           <li><a href="tours.html">Tours</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella's Place</a></li>
+          <li><a href="nellas-place.html">Nella’s Place</a></li>
         </ul>
       </div>
       <div>
@@ -122,7 +127,7 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
