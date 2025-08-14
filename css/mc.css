@@ -1,0 +1,189 @@
+/* Medical Consent page styles */
+
+:root{
+  --mc-gradient: radial-gradient(1200px 600px at 20% 0%, rgba(0,180,255,.18), transparent 60%),
+                 radial-gradient(900px 500px at 90% 20%, rgba(0,180,255,.10), transparent 60%);
+  --mc-card: rgba(21, 24, 30, .7);
+  --mc-border: rgba(255,255,255,.10);
+  --ring: rgba(0,180,255,.35);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-soft: 0 12px 28px rgba(0,0,0,.25);
+}
+
+/* Hero */
+.mc-hero{
+  position: relative;
+  padding: 56px 0 28px;
+  background: var(--bg-soft, #121316);
+  overflow: clip;
+}
+.mc-hero__inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.mc-hero h1{
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1;
+  margin: 8px 0 8px;
+}
+.mc-badge{
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid var(--mc-border);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted, #9aa0a6);
+  background: rgba(255,255,255,.03);
+}
+.mc-blob{
+  position: absolute;
+  inset: 0;
+  background: var(--mc-gradient);
+  filter: blur(12px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Layout */
+.mc-wrap{
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 980px){
+  .mc-wrap{ grid-template-columns: 1fr; }
+}
+
+/* Card */
+.mc-card{
+  background: var(--mc-card);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+  backdrop-filter: blur(10px);
+}
+
+/* Side tips */
+.mc-side{
+  display: grid;
+  gap: 16px;
+}
+.mc-tip{
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+.mc-tip h3{
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Groups */
+.mc-group-title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 6px 0 10px;
+  font-size: 14px;
+  color: var(--muted, #9aa0a6);
+  text-transform: uppercase;
+}
+
+/* Fields */
+.field{ display: grid; gap: 6px; }
+label{ font-weight: 600; font-size: 13px; }
+.input, .input[type="date"], textarea.input{
+  width: 100%;
+  padding: 12px 12px;
+  border: 1px solid var(--mc-border);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  color: var(--text, #e7eaee);
+  outline: none;
+  transition: box-shadow .2s, border-color .2s, background .2s;
+}
+.input:focus, textarea.input:focus{
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 30%, transparent);
+  background: rgba(255,255,255,.06);
+}
+.field.has-error .input{ border-color: #ff6b6b; }
+.field .error{
+  min-height: 16px;
+  font-size: 12px;
+  color: #ff9a9a;
+}
+
+/* Grid helpers */
+.grid{ display: grid; gap: 12px; }
+.grid-2{ grid-template-columns: 1fr 1fr; }
+.grid-span-2{ grid-column: span 2; }
+@media (max-width: 720px){
+  .grid-2{ grid-template-columns: 1fr; }
+  .grid-span-2{ grid-column: span 1; }
+}
+
+/* Checks */
+.checks{ display: grid; gap: 10px; margin-bottom: 4px; }
+.check{
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 14px;
+}
+.check input[type="checkbox"]{
+  width: 18px; height: 18px;
+  accent-color: var(--cta, #00b4ff);
+}
+
+/* Upload slot */
+.upload-slot{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px dashed var(--mc-border);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255,255,255,.02);
+}
+.upload-copy p{ margin-top: 4px; }
+
+/* Actions */
+.mc-actions{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+}
+.mc-inline-status{
+  color: var(--muted, #9aa0a6);
+  font-size: 13px;
+}
+
+/* Success */
+.mc-success{
+  text-align: center;
+  padding: 42px 14px;
+}
+.mc-success h2{ margin: 8px 0 8px; }
+.mc-success-mark{
+  font-size: 42px;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(0,180,255,.16);
+  border: 1px solid var(--mc-border);
+}
+
+/* Buttons use your global .btn styles, just add hover ring */
+.btn:focus{
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 30%, transparent);
+  outline: none;
+}

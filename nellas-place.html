@@ -1,150 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nella's Place • SHNP</title>
-  <meta name="description" content="Nella's Place — quick links, our story, and client referrals.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Nella's Place quick links, our story, and client referrals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/nellas-p.css" />
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Nella's Place</div>
-      <div class="scroller"><span>CARF-accredited</span><span>Behavioral Health</span><span>Education & Life Skills</span><span>Safe & Structured Care</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>CARF accredited</span>
+        <span>Behavioral Health</span>
+        <span>Education and Life Skills</span>
+        <span>Safe and Structured Care</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header and nav -->
   <header class="header">
     <nav class="container nav">
-      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html" class="brand-text">SHNP</a>
+      </div>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">☰ Menu</button>
+
+      <ul id="primary-nav" class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html" aria-current="page">Nella's Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="donate-pill"><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Quick link boxes -->
-    <section class="section">
+   <!-- Our Story -->
+<section class="section section-story" id="about">
+  <div class="container story-grid">
+    <div class="story-copy reveal">
+      <h2 class="story-title">
+        <span class="story-accent" aria-hidden="true"></span>
+        Our Story
+      </h2>
+
+      <p class="muted" style="margin-top:8px">
+        Nella's Place is a CARF accredited group home for girls ages 8 to 21. We provide a safe, structured
+        environment with individualized treatment plans, education support, and life skills coaching. Our goal is
+        stability today and a clear path to independence tomorrow.
+      </p>
+
+      <ul class="checklist">
+        <li>On site behavioral health services</li>
+        <li>Education and career planning</li>
+        <li>Aftercare and community transitions</li>
+      </ul>
+
+      <div class="story-pills">
+        <span class="pill">CARF accredited</span>
+        <span class="pill">Girls 8 - 21</span>
+        <span class="pill">Aftercare</span>
+      </div>
+    </div>
+
+    <figure class="story-media reveal">
+      <img src="assets/img/placeholder.svg" alt="Common room at Nella's Place">
+      <figcaption>SHNP Placeholder</figcaption>
+    </figure>
+  </div>
+</section>
+
+    <!-- Quick links -->
+    <section class="section section-quicklinks">
       <div class="container">
         <h1 class="reveal">Nella's Place</h1>
-        <p class="muted reveal" style="margin-top:6px">Choose an option below — the cards will take you where you need to go.</p>
+        <p class="muted reveal" style="margin-top:6px">Pick a card and jump straight to what you need.</p>
 
-        <div class="grid grid-3" style="margin-top:18px">
-          <a class="card reveal" href="#about">
-            <h3>About / Our Story</h3>
-            <p>Who we serve, accreditation, and what makes our care different.</p>
+        <div class="ql-grid" style="margin-top:18px">
+          <!-- About -->
+          <a class="ql-card reveal" href="#about">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 3.9L18 9l-4.1 2.1L12 15l-1.9-3.9L6 9l4.1-2.1L12 3z"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">About and Our Story</span>
+              <span class="ql-desc">Who we serve, accreditation, and how our care stands out.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+            </span>
           </a>
-          <a class="card reveal" href="#refer">
-            <h3>Refer a Client</h3>
-            <p>Securely send us referral details to start the process.</p>
+
+          <!-- Refer -->
+          <a class="ql-card reveal" href="#refer">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H7l-4-4V5a2 2 0 0 1 2-2h9"/><path d="M17 3h4v4"/><path d="M16 8l5-5"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Refer a Client</span>
+              <span class="ql-desc">Securely send referral details to start the process.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="card reveal" href="about-nellas-place.html">
-            <h3>Behavioral Health Services</h3>
-            <p>Assessment, therapy, life skills, and transition planning.</p>
+
+          <!-- Behavioral Health -->
+          <a class="ql-card reveal" href="about-nellas-place.html">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 11.4a5.6 5.6 0 0 0-9.9-3.6L10 8l-.9-.2a5.6 5.6 0 0 0-6.7 5.5c0 5.2 7.6 8.9 9.6 9.7.3.1.6.1.9 0 2-0.8 9.6-4.5 9.6-9.7z"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Behavioral Health Services</span>
+              <span class="ql-desc">Assessment, therapy, life skills, and transition planning.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="card reveal" href="volunteer.html">
-            <h3>Volunteer</h3>
-            <p>Mentoring, tutoring, and support opportunities.</p>
+
+          <!-- Volunteer -->
+          <a class="ql-card reveal" href="volunteer.html">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Volunteer</span>
+              <span class="ql-desc">Mentoring, tutoring, and support opportunities.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="card reveal" href="tour-our-facility.html">
-            <h3>Tour Our Facility</h3>
-            <p>Schedule a visit and meet our team.</p>
+
+          <!-- Tour -->
+          <a class="ql-card reveal" href="tour-our-facility.html">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-9 9 9"/><path d="M9 22V12h6v10"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Tour Our Facility</span>
+              <span class="ql-desc">Schedule a visit and meet our team.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="card reveal" href="donate.html">
-            <h3>Donations</h3>
-            <p>Give online or arrange in‑kind contributions.</p>
+
+          <!-- Donations -->
+          <a class="ql-card reveal" href="donate.html">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v8H4v-8"/><path d="M12 12V2"/><path d="M7 6l5-4 5 4"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Donations</span>
+              <span class="ql-desc">Give online or arrange in kind contributions.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="card reveal" href="wish-list-wednesday.html">
-            <h3>Wish List Wednesday</h3>
-            <p>See the most‑needed items this week.</p>
+
+          <!-- Wish List -->
+          <a class="ql-card reveal" href="wish-list-wednesday.html">
+            <span class="ql-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+            </span>
+            <div class="ql-content">
+              <span class="ql-title">Wish List Wednesday</span>
+              <span class="ql-desc">See the most needed items this week.</span>
+            </div>
+            <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Our Story / About -->
-    <section class="section" id="about">
-      <div class="container grid grid-2">
-        <div class="reveal">
-          <h2>Our Story</h2>
-          <p class="muted" style="margin-top:6px">
-            Nella’s Place is a CARF‑accredited group home for girls ages 8–21. We provide a safe, structured
-            environment with individualized treatment plans, education support, and life‑skills coaching. Our aim is
-            stability today and a pathway to independence tomorrow.
-          </p>
-          <ul class="muted" style="margin-top:10px; margin-left:18px">
-            <li>On‑site behavioral health services</li>
-            <li>Education & career planning</li>
-            <li>Aftercare & community transitions</li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <img src="assets/img/placeholder.svg" alt="Common room">
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Refer a Client -->
     <section class="section" id="refer">
       <div class="container">
         <h2 class="reveal">Refer a Client</h2>
-        <p class="muted reveal" style="margin-top:6px">Agencies and providers — submit referral information below. We’ll follow up within 1–2 business days.</p>
+        <p class="muted reveal" style="margin-top:6px">Agencies and providers, send referral info below. We will follow up within 1 to 2 business days.</p>
+
         <div class="card reveal" style="margin-top:16px">
-          <form data-validate>
+          <form action="#" method="post" data-validate novalidate>
             <div class="grid grid-2">
               <div>
-                <label>Agency/Organization *</label>
-                <input class="input" required placeholder="Agency name">
+                <label for="agency">Agency or Organization *</label>
+                <input id="agency" name="agency" class="input" required placeholder="Agency name" />
               </div>
+
               <div>
-                <label>Contact Name *</label>
-                <input class="input" required placeholder="Your name">
+                <label for="contact-name">Contact Name *</label>
+                <input id="contact-name" name="contactName" class="input" required placeholder="Your name" />
               </div>
+
               <div>
-                <label>Contact Email *</label>
-                <input type="email" class="input" required placeholder="name@example.com">
+                <label for="email">Contact Email *</label>
+                <input id="email" name="email" type="email" class="input" required placeholder="name@example.com" />
               </div>
+
               <div>
-                <label>Phone</label>
-                <input type="tel" class="input" placeholder="(xxx) xxx-xxxx">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" class="input" placeholder="(xxx) xxx-xxxx" />
               </div>
+
               <div class="grid" style="grid-template-columns:1fr">
-                <label>Client Overview *</label>
-                <textarea class="input" rows="4" required placeholder="Age, current placement, key needs, timeline"></textarea>
+                <label for="overview">Client Overview *</label>
+                <textarea id="overview" name="overview" class="input" rows="4" required placeholder="Age, current placement, key needs, timeline"></textarea>
               </div>
             </div>
+
             <div style="display:flex;gap:10px;margin-top:10px">
               <button class="btn btn-primary" type="submit">Submit Referral</button>
-              <a class="btn" href="contact.html">Questions? Contact Us</a>
+              <a class="btn" href="contact.html">Questions, Contact Us</a>
             </div>
-            <p class="helper" style="margin-top:10px">Submitting this form will send your responses to Nella’s Place staff for review.</p>
+
+            <p class="helper" style="margin-top:10px">Submitting this form sends your responses to Nella's Place staff for review.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <strong>SHNP</strong>
+        </div>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place, empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
+
       <div>
         <h4>Programs</h4>
         <ul style="list-style:none;margin-top:10px">
@@ -153,6 +250,7 @@
           <li><a href="nellas-place.html">Nella's Place</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Get Involved</h4>
         <ul style="list-style:none;margin-top:10px">
@@ -162,12 +260,41 @@
         </ul>
       </div>
     </div>
+
     <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
+  <!-- Your site JS -->
   <script src="js/main.js"></script>
+
+  <!-- Tiny helpers for reveal and mobile menu -->
+  <script>
+    // Reveal on scroll
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(el => el.classList.add('is-in'));
+        return;
+      }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+      }, { threshold: 0.15 });
+      els.forEach(el => io.observe(el));
+    })();
+
+    // Mobile menu toggle
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const list = document.getElementById('primary-nav');
+      if (!btn || !list) return;
+      btn.addEventListener('click', () => {
+        const open = list.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 </body>
 </html>

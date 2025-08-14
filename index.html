@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home • SHNP</title>
-  <meta name="description" content="Home page for SHNP redesign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Home page for SHNP redesign." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- Global + page CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
 
   <!-- Top strip -->
-<div class="top-strip"> 
-  <div class="container top-strip__inner"> 
-    <div class="kicker">Why Step Higher?</div> 
-    <div class="scroller"> <span>College readiness</span> 
-      <span>Mentorship</span> <span>Scholarships</span> 
-      <span>Accredited care at Nella's Place</span> 
-      <span>Community impact</span> </div> 
-      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a> </div>
-     </div>
+  <div class="top-strip">
+    <div class="container top-strip__inner">
+      <div class="kicker">Why Step Higher?</div>
+      <div class="scroller" aria-hidden="true">
+        <div class="scroller__track">
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+        </div>
+      </div>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+    </div>
+  </div>
 
-  <!-- Start of HubSpot Embed Code -->
+  <!-- HubSpot -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
-  <!-- End of HubSpot Embed Code -->
 
   <!-- Header / Nav -->
   <header class="header">
@@ -39,7 +48,7 @@
       </div>
 
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
@@ -58,7 +67,7 @@
         </div>
       </div>
 
-      <a class="btn btn-donate" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
@@ -67,8 +76,8 @@
     <div class="container hero">
       <div class="reveal">
         <span class="tag">Step Higher • Nella's Place</span>
-        <h1>Opportunity that <em>lifts</em> modern support for students and youth.</h1>
-        <p class="lead">College tours, scholarships, and a safe, accredited group home. Explore programs, register for tours, or get involved as a volunteer or donor.</p>
+        <h1>Opportunity that <em>lifts</em> modern support for students and youth</h1>
+        <p class="lead">College tours, scholarships, and a safe accredited group home. Explore programs, register for tours, or get involved as a volunteer or donor.</p>
         <div style="display:flex;gap:12px;margin-top:12px">
           <a class="btn btn-primary" href="tours.html">Explore Tours</a>
           <a class="btn" href="nellas-place.html">Nella's Place</a>
@@ -78,27 +87,91 @@
     </div>
   </section>
 
-  <!-- Feature cards -->
+  <!-- Sidebar + stacked features -->
   <section class="section">
-    <div class="container grid grid-3">
-      <div class="card reveal">
-        <span class="badge">Tours</span>
-        <h3>Spring College Tour</h3>
-        <p>Multi-campus experience, workshops, and mentorship. Register and complete required forms online.</p>
-        <p><a href="tours.html">See tour details →</a></p>
-      </div>
-      <div class="card reveal">
-        <span class="badge">Nella's Place</span>
-        <h3>CARF Accredited Care</h3>
-        <p>Safe, structured group home for girls 8 to 21 with personalized programming and support.</p>
-        <p><a href="nellas-place.html">Learn more →</a></p>
-      </div>
-      <div class="card reveal">
-        <span class="badge">Give</span>
-        <h3>Support the Mission</h3>
-        <p>Your gift helps fund tours, scholarships, and services. Every dollar makes a difference.</p>
-        <p><a href="donate.html">Donate now →</a></p>
-      </div>
+    <div class="container shell">
+      <!-- Sidebar -->
+      <aside class="sidebar-card" aria-label="Section navigation">
+        <nav>
+          <ul class="side-list" role="list">
+            <li>
+              <a class="side-link is-active" href="#feat-tours" data-target="#feat-tours" aria-current="page">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Tours</span>
+              </a>
+            </li>
+            <li>
+              <a class="side-link" href="#feat-nella" data-target="#feat-nella">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Nella’s Place</span>
+              </a>
+            </li>
+            <li>
+              <a class="side-link" href="#feat-mida" data-target="#feat-mida">
+                <span class="dot" aria-hidden="true"></span>
+                <span>MIDA Out</span>
+              </a>
+            </li>
+            <li>
+              <a class="side-link" href="#feat-give" data-target="#feat-give">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Give</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <section class="content">
+        <article id="feat-tours" class="feature">
+          <div class="feature__content">
+            <span class="badge">Tours</span>
+            <h2>Spring College Tour</h2>
+            <p class="muted">Multi campus experience with workshops and mentorship. Register and complete required forms online.</p>
+            <p><a class="btn btn-primary" href="tours.html">See tour details</a></p>
+          </div>
+          <figure class="feature__media">
+            <img src="images/tours.jpg" alt="Students touring a university campus" loading="lazy" />
+          </figure>
+        </article>
+
+        <article id="feat-nella" class="feature feature--alt">
+          <div class="feature__content">
+            <span class="badge">Nella’s Place</span>
+            <h2>CARF Accredited Care</h2>
+            <p class="muted">Safe structured group home for girls 8 to 21 with personalized programming and support.</p>
+            <p><a class="btn btn-outline" href="nellas-place.html">Learn more</a></p>
+          </div>
+          <figure class="feature__media">
+            <img src="images/nellas.jpg" alt="Nella’s Place living room" loading="lazy" />
+          </figure>
+        </article>
+
+        <article id="feat-mida" class="feature">
+          <div class="feature__content">
+            <span class="badge">MIDA Out</span>
+            <h2>Community Outreach</h2>
+            <p class="muted">Hands on service and local impact projects. Join a team, log hours, and make a difference with us.</p>
+            <p><a class="btn btn-outline" href="mida-out.html">Explore MIDA Out</a></p>
+          </div>
+          <figure class="feature__media">
+            <img src="images/mida.jpg" alt="Volunteers working on a community project" loading="lazy" />
+          </figure>
+        </article>
+
+        <article id="feat-give" class="feature feature--alt">
+          <div class="feature__content">
+            <span class="badge">Give</span>
+            <h2>Support the Mission</h2>
+            <p class="muted">Your gift powers tours, scholarships, and services. Every dollar matters.</p>
+            <p><a class="btn btn-primary" href="donate.html">Donate now</a></p>
+          </div>
+          <figure class="feature__media">
+            <img src="images/give.jpg" alt="Donor event with students" loading="lazy" />
+          </figure>
+        </article>
+      </section>
     </div>
   </section>
 
@@ -107,7 +180,7 @@
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
         <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
@@ -132,6 +205,94 @@
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
+
+  <!-- Page JS -->
+  <script>
+    // hamburger toggle fallback
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+        }
+      });
+    })();
+
+    // sidebar smooth scroll + scroll spy that tracks current section
+    (function(){
+      const OFFSET = 16; // adjust if you have a taller sticky header
+      const list = document.querySelector('.side-list');
+      const links = document.querySelectorAll('.side-link');
+      const sections = Array.from(document.querySelectorAll('#feat-tours,#feat-nella,#feat-mida,#feat-give'));
+
+      function setActiveById(id){
+        links.forEach(a => {
+          const match = a.getAttribute('data-target') === '#' + id;
+          a.classList.toggle('is-active', match);
+          a.setAttribute('aria-current', match ? 'page' : 'false');
+          if (match && list) {
+            // keep the active link centered in the sidebar
+            const y = a.offsetTop - (list.clientHeight / 2) + (a.clientHeight / 2);
+            list.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        });
+      }
+
+      // click to smooth scroll
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const target = document.querySelector(a.getAttribute('data-target'));
+          if (!target) return;
+          const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+          window.history.replaceState(null, '', a.getAttribute('href'));
+          window.scrollTo({ top, behavior: 'smooth' });
+          setActiveById(target.id);
+        });
+      });
+
+      // scroll spy using IO
+      const io = new IntersectionObserver((entries) => {
+        let best = null;
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
+          }
+        });
+        if (best) setActiveById(best.target.id);
+      }, {
+        root: null,
+        rootMargin: "-35% 0px -55% 0px",
+        threshold: [0.25, 0.5, 0.75]
+      });
+
+      sections.forEach(s => io.observe(s));
+
+      // handle deep link on load
+      const hash = window.location.hash.replace('#','');
+      if (hash) setActiveById(hash);
+    })();
+
+    // reveal on scroll for hero and cards
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
+  </script>
 
   <script src="js/main.js"></script>
 </body>

@@ -1,87 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medical Consent Form • SHNP</title>
-  <meta name="description" content="Medical Consent Form page for SHNP redesign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Submit medical consent for your student. This form goes straight to SHNP staff through HubSpot." />
+
+  <!-- Fonts and global site styles (unchanged) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page specific styles -->
+  <link rel="stylesheet" href="css/mc.css" />
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header / Nav -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Medical Consent Form</h1>
-        <p class="muted reveal" style="margin-top:6px">Complete the form below. Fields marked * are required.</p>
-        <div class="card reveal" style="margin-top:18px">
-          <form data-validate>
-            <div class="grid grid-2">
-              <div>
-                <label>First Name *</label>
-                <input class="input" required placeholder="First name">
-              </div>
-              <div>
-                <label>Last Name *</label>
-                <input class="input" required placeholder="Last name">
-              </div>
-              <div>
-                <label>Email *</label>
-                <input type="email" class="input" required placeholder="name@example.com">
-              </div>
-              <div>
-                <label>Phone *</label>
-                <input type="tel" class="input" required placeholder="(xxx) xxx-xxxx">
-              </div>
-              <div class="grid" style="grid-template-columns:1fr">
-                <label>Notes</label>
-                <textarea rows="4" class="input" placeholder="Additional information"></textarea>
-              </div>
-            </div>
-            <div style="display:flex;gap:12px;margin-top:6px">
-              <button class="btn btn-primary" type="submit">Submit</button>
-              <button class="btn btn-ghost" type="reset">Reset</button>
-            </div>
-            <p class="helper" style="margin-top:10px">Submitting this form will send your responses to SHNP staff.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-    
+  <!-- Hero -->
+  <section class="mc-hero">
+    <div class="container mc-hero__inner">
+      <div class="mc-badge">Secure form</div>
+      <h1>Medical Consent</h1>
+      <p class="muted">Complete the form and paste a link to your signed consent file. Submissions go straight to our staff in HubSpot.</p>
+    </div>
+    <div class="mc-blob" aria-hidden="true"></div>
+  </section>
 
+  <!-- Form section -->
+  <section class="section">
+    <div class="container mc-wrap">
+      <div class="mc-card">
+        <form id="mcForm" novalidate>
+          <!-- Parent / guardian -->
+          <div class="mc-group-title">Parent or Guardian</div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="parent_name">Full name *</label>
+              <input id="parent_name" name="parent_name" class="input" required placeholder="First and last name" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="parent_email">Email *</label>
+              <input id="parent_email" name="parent_email" type="email" class="input" required placeholder="name@example.com" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="parent_phone">Phone *</label>
+              <input id="parent_phone" name="parent_phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="relationship">Relationship to student *</label>
+              <input id="relationship" name="relationship" class="input" required placeholder="Parent, guardian, other" />
+              <small class="error"></small>
+            </div>
+          </div>
+
+          <!-- Student info -->
+          <div class="mc-group-title">Student</div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="student_first">First name *</label>
+              <input id="student_first" name="student_first" class="input" required placeholder="First name" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="student_last">Last name *</label>
+              <input id="student_last" name="student_last" class="input" required placeholder="Last name" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="student_dob">Date of birth *</label>
+              <input id="student_dob" name="student_dob" type="date" class="input" required />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="student_grade">Current grade</label>
+              <input id="student_grade" name="student_grade" class="input" placeholder="Optional" />
+              <small class="error"></small>
+            </div>
+          </div>
+
+          <!-- Medical details -->
+          <div class="mc-group-title">Medical details</div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="provider">Primary care provider</label>
+              <input id="provider" name="provider" class="input" placeholder="Clinic or doctor name" />
+            </div>
+            <div class="field">
+              <label for="provider_phone">Provider phone</label>
+              <input id="provider_phone" name="provider_phone" class="input" placeholder="(xxx) xxx-xxxx" />
+            </div>
+            <div class="field grid-span-2">
+              <label for="insurance">Insurance info</label>
+              <input id="insurance" name="insurance" class="input" placeholder="Provider and policy number" />
+            </div>
+            <div class="field grid-span-2">
+              <label for="allergies">Allergies</label>
+              <textarea id="allergies" name="allergies" rows="3" class="input" placeholder="List any allergies"></textarea>
+            </div>
+            <div class="field grid-span-2">
+              <label for="medications">Current medications</label>
+              <textarea id="medications" name="medications" rows="3" class="input" placeholder="List medications and dosages"></textarea>
+            </div>
+          </div>
+
+          <!-- Consent file link slot -->
+          <div class="mc-group-title">Consent file</div>
+          <div class="upload-slot">
+            <div class="upload-copy">
+              <strong>Upload the signed consent file using your preferred tool</strong>
+              <p class="muted">Click the button to open your upload page, or use Drive, Dropbox, or your school portal. Then paste the share link below.</p>
+            </div>
+            <div class="upload-cta">
+              <button class="btn btn-ghost" id="openUpload" type="button">Open upload page</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="consent_url">Paste the file link *</label>
+            <input id="consent_url" name="consent_url" class="input" required placeholder="https://drive.google.com/... or https://dropbox.com/..." />
+            <small class="error"></small>
+          </div>
+
+          <!-- Agreements -->
+          <div class="mc-group-title">Agreements</div>
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" id="agree_treatment" required />
+              <span>I authorize SHNP to seek emergency treatment for the student if needed.</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="agree_share" required />
+              <span>I consent to sharing relevant medical info with program staff and care providers.</span>
+            </label>
+          </div>
+
+          <!-- Signature -->
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="signature_name">Type your name as signature *</label>
+              <input id="signature_name" name="signature_name" class="input" required placeholder="Parent or guardian name" />
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="signature_date">Date *</label>
+              <input id="signature_date" name="signature_date" type="date" class="input" required />
+              <small class="error"></small>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="field">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="4" class="input" placeholder="Anything else we should know"></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div class="mc-actions">
+            <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-ghost">Reset</button>
+            <div class="mc-inline-status" id="inlineStatus" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Side panel with tips -->
+      <aside class="mc-side">
+        <div class="mc-tip">
+          <h3>What you will need</h3>
+          <ul>
+            <li>Parent or guardian contact info</li>
+            <li>Student name and date of birth</li>
+            <li>Doctor and insurance details</li>
+            <li>A link to the signed consent file</li>
+          </ul>
+        </div>
+        <div class="mc-tip">
+          <h3>Privacy</h3>
+          <p class="muted">Your submission goes straight to SHNP staff in HubSpot. We only use this information to support your student.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place focus on youth empowerment through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -100,12 +242,185 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
+  <!-- Minimal page script: HubSpot submit + UX -->
+  <script>
+    // Set these
+    const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID";
+    const HUBSPOT_FORM_GUID = "YOUR_FORM_GUID";
+    const UPLOAD_URL = "https://example.com/upload"; // put your upload endpoint or page here
+
+    // Open external upload page
+    document.getElementById("openUpload")?.addEventListener("click", () => {
+      window.open(UPLOAD_URL, "_blank", "noopener,noreferrer");
+    });
+
+    // Default signature date to today
+    const sigDate = document.getElementById("signature_date");
+    if (sigDate && !sigDate.value) {
+      const t = new Date();
+      const yyyy = t.getFullYear();
+      const mm = String(t.getMonth()+1).padStart(2,"0");
+      const dd = String(t.getDate()).padStart(2,"0");
+      sigDate.value = `${yyyy}-${mm}-${dd}`;
+    }
+
+    // Basic client validation
+    function showError(input, msg) {
+      const field = input.closest(".field");
+      if (!field) return;
+      const small = field.querySelector(".error");
+      if (small) small.textContent = msg || "";
+      field.classList.toggle("has-error", !!msg);
+    }
+
+    function validateRequired(id, label) {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      if (!el.value.trim()) {
+        showError(el, `${label} is required`);
+        el.focus();
+        return false;
+      }
+      showError(el, "");
+      return true;
+    }
+
+    function validateChecks() {
+      const t = document.getElementById("agree_treatment");
+      const s = document.getElementById("agree_share");
+      if (!t.checked || !s.checked) {
+        document.getElementById("inlineStatus").textContent = "Please accept the agreements.";
+        return false;
+      }
+      document.getElementById("inlineStatus").textContent = "";
+      return true;
+    }
+
+    // HubSpot Forms API submit
+    // Docs note: include hubspotutk cookie and page info when possible
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+      return "";
+    }
+
+    async function submitToHubSpot(payload) {
+      const url = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || "HubSpot submission failed");
+      }
+      return res.json();
+    }
+
+    document.getElementById("mcForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Required fields
+      const required = [
+        ["parent_name","Parent or guardian name"],
+        ["parent_email","Email"],
+        ["parent_phone","Phone"],
+        ["relationship","Relationship"],
+        ["student_first","Student first name"],
+        ["student_last","Student last name"],
+        ["student_dob","Date of birth"],
+        ["consent_url","Consent file link"],
+        ["signature_name","Signature name"],
+        ["signature_date","Signature date"]
+      ];
+      for (const [id,label] of required) {
+        if (!validateRequired(id, label)) return;
+      }
+      if (!validateChecks()) return;
+
+      const submitBtn = document.getElementById("submitBtn");
+      const status = document.getElementById("inlineStatus");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      status.textContent = "";
+
+      const fields = [
+        { name: "parent_guardian_name", value: document.getElementById("parent_name").value.trim() },
+        { name: "parent_guardian_email", value: document.getElementById("parent_email").value.trim() },
+        { name: "parent_guardian_phone", value: document.getElementById("parent_phone").value.trim() },
+        { name: "relationship_to_student", value: document.getElementById("relationship").value.trim() },
+
+        { name: "student_first_name", value: document.getElementById("student_first").value.trim() },
+        { name: "student_last_name", value: document.getElementById("student_last").value.trim() },
+        { name: "student_dob", value: document.getElementById("student_dob").value },
+
+        { name: "student_grade", value: document.getElementById("student_grade").value.trim() },
+        { name: "provider_name", value: document.getElementById("provider").value.trim() },
+        { name: "provider_phone", value: document.getElementById("provider_phone").value.trim() },
+        { name: "insurance_info", value: document.getElementById("insurance").value.trim() },
+        { name: "allergies", value: document.getElementById("allergies").value.trim() },
+        { name: "current_medications", value: document.getElementById("medications").value.trim() },
+
+        { name: "consent_file_url", value: document.getElementById("consent_url").value.trim() },
+
+        { name: "agree_treatment", value: document.getElementById("agree_treatment").checked ? "Yes" : "No" },
+        { name: "agree_share_info", value: document.getElementById("agree_share").checked ? "Yes" : "No" },
+
+        { name: "signature_name", value: document.getElementById("signature_name").value.trim() },
+        { name: "signature_date", value: document.getElementById("signature_date").value },
+        { name: "notes", value: document.getElementById("notes").value.trim() }
+      ];
+
+      // HubSpot context
+      const hutk = getCookie("hubspotutk");
+      const hs_context = {
+        hutk,
+        pageUri: window.location.href,
+        pageName: document.title
+      };
+
+      const payload = { fields, context: hs_context };
+
+      try {
+        if (!HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_GUID || HUBSPOT_PORTAL_ID === "YOUR_PORTAL_ID") {
+          throw new Error("Add your HubSpot portalId and formGuid in the script.");
+        }
+        await submitToHubSpot(payload);
+
+        // Success state
+        const card = document.querySelector(".mc-card");
+        card.innerHTML = `
+          <div class="mc-success">
+            <div class="mc-success-mark" aria-hidden="true">✔</div>
+            <h2>Thanks. Your medical consent was submitted.</h2>
+            <p class="muted">You can close this page. If you need to update anything later, reach out to our team.</p>
+            <a class="btn btn-primary" href="index.html">Back to home</a>
+          </div>
+        `;
+      } catch (err) {
+        status.textContent = "There was a problem submitting the form. Check your connection and try again.";
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+      }
+    });
+
+    // Clear inline errors on input
+    document.querySelectorAll("#mcForm .input").forEach((el) => {
+      el.addEventListener("input", () => showError(el, ""));
+    });
+  </script>
+
+  <!-- Site script (unchanged) -->
   <script src="js/main.js"></script>
 </body>
 </html>
