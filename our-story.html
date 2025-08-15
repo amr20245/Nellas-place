@@ -1,130 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Story • SHNP</title>
-  <meta name="description" content="The story of Step Higher & Nella's Place — two missions under one roof.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="The story of Step Higher and Nella's Place, two missions under one roof." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/story.css" />
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header / Nav -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html" aria-current="page">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <section class="section">
+    <!-- Hero -->
+    <section class="section story-hero">
       <div class="container">
         <span class="tag reveal">Two missions • One organization</span>
         <h1 class="reveal" style="margin-top:8px">Our Story</h1>
         <p class="lead reveal" style="margin-top:10px">
-          SHNP unites <strong>Step Higher</strong>—our college tour and readiness program—with <strong>Nella’s Place</strong>—our 
-          CARF-accredited group home for girls—so youth can see, plan, and step into a bigger future.
+          SHNP brings together <strong>Step Higher</strong>, our college tour and readiness program, with
+          <strong>Nella’s Place</strong>, our CARF accredited group home for girls. Youth can see, plan, and step into a bigger future.
         </p>
       </div>
     </section>
 
+    <!-- Feature row 1 -->
     <section class="section">
-      <div class="container grid grid-2">
-        <div class="reveal">
+      <div class="container grid grid-2 feature">
+        <div class="copy reveal">
           <h2>Step Higher begins</h2>
-          <p class="muted" style="margin-top:6px">
-            Born from a simple belief: exposure changes trajectories. Our college tours introduce high school students—
-            especially foster and low‑income youth—to campuses, programs, and mentors while building confidence and
-            a plan for what comes after graduation.
+          <p class="muted m-6">
+            Born from a simple belief: exposure changes trajectories. Our college tours introduce high school students,
+            especially foster and low income youth, to campuses, programs, and mentors while building confidence and a
+            plan for life after graduation.
           </p>
         </div>
-        <div class="reveal">
-          <img src="assets/img/placeholder.svg" alt="Students on a campus tour">
+        <div class="media reveal">
+          <img src="assets/img/placeholder.svg" alt="Students on a campus tour" />
         </div>
       </div>
     </section>
 
+    <!-- Feature row 2 (alt layout) -->
     <section class="section">
-      <div class="container grid grid-2">
-        <div class="reveal">
-          <img src="assets/img/placeholder.svg" alt="Group home care at Nella's Place">
+      <div class="container grid grid-2 feature alt">
+        <div class="media reveal">
+          <img src="assets/img/placeholder.svg" alt="Group home care at Nella's Place" />
         </div>
-        <div class="reveal">
+        <div class="copy reveal">
           <h2>Nella’s Place expands the support</h2>
-          <p class="muted" style="margin-top:6px">
-            For girls ages 8–21 who need a structured and caring home, Nella’s Place provides a continuum of services—
-            evaluation, treatment, education support, and life skills—so young people can heal and grow.
+          <p class="muted m-6">
+            For girls ages 8 to 21 who need a structured and caring home, Nella’s Place provides a continuum of
+            services, including evaluation, treatment, education support, and life skills so young people can heal and grow.
           </p>
-          <p class="helper" style="margin-top:6px">Accredited by CARF. <a href="about-nellas-place.html">Learn more →</a></p>
+          <p class="helper m-6">CARF accredited. <a href="about-nellas-place.html">Learn more →</a></p>
         </div>
       </div>
     </section>
 
+    <!-- Feature row 3 -->
     <section class="section">
-      <div class="container grid grid-2">
-        <div class="reveal">
+      <div class="container grid grid-2 feature">
+        <div class="copy reveal">
           <h2>One pathway, two lanes</h2>
-          <p class="muted" style="margin-top:6px">
-            Together, Step Higher and Nella’s Place create a pipeline from <em>stability</em> to <em>opportunity</em>—
-            from safe housing and behavioral health to tours, scholarships, and post‑secondary plans.
+          <p class="muted m-6">
+            Together, Step Higher and Nella’s Place create a pipeline from stability to opportunity,
+            from safe housing and behavioral health to tours, scholarships, and postsecondary plans.
           </p>
-          <div style="display:flex;gap:10px;margin-top:10px">
+          <div class="gap-10 m-10">
             <a class="btn" href="tours.html">Explore Tours</a>
             <a class="btn btn-primary" href="nellas-place.html">Visit Nella’s Place</a>
           </div>
         </div>
-        <div class="reveal">
-          <img src="assets/img/placeholder.svg" alt="Mentorship and planning">
+        <div class="media reveal">
+          <img src="assets/img/placeholder.svg" alt="Mentorship and planning" />
         </div>
       </div>
     </section>
 
+    <!-- Who we are + Mission cards -->
     <section class="section">
-      <div class="container grid grid-2">
-        <div class="reveal">
-          <img src="assets/img/placeholder.svg" alt="Community and supporters">
-        </div>
-        <div class="reveal">
-          <h2>Community powered</h2>
-          <p class="muted" style="margin-top:6px">
-            Donors, partners, and volunteers make the work possible—from sponsoring seats on the bus to funding
-            scholarships and outfitting the group homes.
+      <div class="container info-grid">
+        <article class="info-card reveal">
+          <h3>Who We Are</h3>
+          <p class="m-6">
+            Nella’s Place is a Group Home in the Cincinnati, Ohio metro area that provides a continuum of treatment,
+            evaluation, and services for females ages 8 to 21 with emotional and behavioral challenges, referred by the
+            Ohio Department of Jobs and Family Services and other social service organizations.
           </p>
-          <div style="display:flex;gap:10px;margin-top:10px">
-            <a class="btn btn-primary" href="donate.html">Donate</a>
-            <a class="btn" href="volunteer.html">Volunteer</a>
+          <div class="pill-row m-10">
+            <a class="pill" href="donate.html">Donate Today</a>
+            <a class="pill" href="nellas-place.html">About Nella’s Place</a>
           </div>
+        </article>
+
+        <article class="info-card reveal">
+          <h3>Our Solid Mission</h3>
+          <p class="m-6">
+            We provide a safe, nurturing environment for girls mending their mind, body, and spirit.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section class="section">
+      <div class="container">
+        <span class="badge">What We Do</span>
+        <div class="do-list m-10">
+          <div class="do-item">
+            <strong>Services Provided</strong>
+            <p class="m-6">
+              Residents receive reparative therapy services intended to mend minds, bodies, and spirits.
+              Family therapy is provided as needed.
+            </p>
+          </div>
+
+          <div class="do-item">
+            <strong>Education and Growth</strong>
+            <ul class="do-bullets m-6">
+              <li>Education readiness</li>
+              <li>Treatment plans</li>
+              <li>Group psychotherapy</li>
+              <li>Life skills</li>
+              <li>Individual special interest or talent focus</li>
+              <li>Self esteem building</li>
+              <li>Cultural enrichment</li>
+            </ul>
+          </div>
+
+          <div class="do-item">
+            <strong>Support and Community</strong>
+            <ul class="do-bullets m-6">
+              <li>Preparation for adult living</li>
+              <li>Counseling services</li>
+              <li>Recreation, events, and activities</li>
+              <li>Staffing on site and awake 24/7</li>
+              <li>Community integrated services</li>
+              <li>Reintegration with family</li>
+              <li>College prep, vocational prep, health and wellness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stepper -->
+    <section class="section">
+      <div class="container">
+        <div class="stepper reveal">
+          <article class="step">
+            <h4>Step 1 • Volunteer</h4>
+            <p>Nella’s Place welcomes qualified people to volunteer. A background check may be required.</p>
+            <div class="cta gap-10">
+              <a class="btn btn-primary" href="volunteer.html">Volunteer</a>
+            </div>
+          </article>
+          <article class="step">
+            <h4>Step 2 • Tour Our Facility</h4>
+            <p>Our facilities are clean, safe, and hospitable. We create a family style environment centered on love.</p>
+            <div class="cta gap-10">
+              <a class="btn" href="tours.html">Tour Facility</a>
+            </div>
+          </article>
+          <article class="step">
+            <h4>Step 3 • Step Higher Tours</h4>
+            <p>We offer chaperoned tours of historically Black colleges and universities to inspire higher education.</p>
+            <div class="cta gap-10">
+              <a class="btn" href="tours.html">Step Higher</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="section">
+      <div class="container vision reveal">
+        <span class="badge">Our Vision</span>
+        <h3 class="m-10">Make it stand out</h3>
+        <p class="max-700">
+          Our program is designed to meet the girls’ needs in an atmosphere where they feel loved, valued, and accepted.
+          We work hard to help each girl mature and grow to reach her maximum potential.
+        </p>
+        <div class="sig">
+          <strong>Janelle Hocker</strong>
+          <span>• Serving the area for 11 years</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About values -->
+    <section class="section">
+      <div class="container about-slab reveal">
+        <div class="about-left">
+          <div class="eyebrow">About Us • 01</div>
+          <h3 class="m-10">We strive to help young girls overcome their past and grow toward a bright future</h3>
+          <p class="m-10">We do this through educational, recreational, treatment, and support services in a loving and therapeutic environment.</p>
+        </div>
+        <div class="about-right">
+          <div class="value">
+            <h5>We Protect • We Provide • We Grow</h5>
+            <p class="m-6">Safety, structure, and consistent care set the foundation for growth.</p>
+          </div>
+          <div class="value">
+            <h5>We Love • We Support • We Care</h5>
+            <p class="m-6">A culture of love first. Every decision centers on the child’s best interest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft CTA -->
+    <section class="section">
+      <div class="container story-cta reveal">
+        <p>Want to fuel this mission today</p>
+        <div class="gap-10">
+          <a class="btn btn-primary" href="donate.html">Donate</a>
+          <a class="btn" href="volunteer.html">Volunteer</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
+        <p class="muted m-10">Step Higher and Nella's Place, empowering youth through education, structure, and care.</p>
+        <p class="muted m-10">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -143,7 +287,7 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>

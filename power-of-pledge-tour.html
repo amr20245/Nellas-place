@@ -4,58 +4,204 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Power of Pledge Tour • SHNP</title>
-  <meta name="description" content="Power of Pledge Tour page for SHNP redesign.">
+  <meta name="description" content="Get the Power of Pledge Tour forms, follow the steps, and submit your completed documents.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Your sitewide styles -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Page specific styles -->
+  <link rel="stylesheet" href="css/pop.css">
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰ Menu</button>
+      <ul id="mainMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="hide-on-desktop"><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Power of Pledge Tour</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the Power of Pledge Tour page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
-        </div>
+  <!-- Hero -->
+  <section class="section hero container">
+    <div class="hero__content">
+      <h1 class="reveal">Power of Pledge Tour</h1>
+      <p class="muted reveal">Follow the three steps to download, complete, and submit your form. Then print and send your payment by mail.</p>
+      <div class="hero__cta">
+        <a class="btn" href="assets/Power-of-Pledge-Form.docx" download>Download Word</a>
+        <a class="btn btn-ghost" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Open PDF</a>
       </div>
-    </section>
-    
+    </div>
+    <div class="hero__image" role="img" aria-label="Students on a college tour">
+      <div class="img-skeleton">Image placeholder</div>
+    </div>
+  </section>
 
+  <!-- Steps -->
+  <section class="section container steps">
+    <ol class="steps__list">
+      <li class="step">
+        <div class="step__badge">1</div>
+        <div class="step__body">
+          <h3>Download Form</h3>
+          <p>Grab the Power of Pledge Tour form in MS Word or PDF.</p>
+          <div class="chips">
+            <a class="chip" href="assets/Power-of-Pledge-Form.docx" download>Form - Word</a>
+            <a class="chip" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Form - PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__badge">2</div>
+        <div class="step__body">
+          <h3>Complete Form</h3>
+          <p>Fill one form per student. You can type into Word or a fillable PDF, or print and write clearly.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__badge">3</div>
+        <div class="step__body">
+          <h3>Submit Form Online</h3>
+          <p>Upload the completed file below, answer the math check, and hit submit.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Upload form -->
+  <section class="section container card form-wrap" id="submit">
+    <h2>Submit Completed Form</h2>
+    <p class="muted">After you submit online, print your form and mail payment in the same envelope or include a check.</p>
+
+    <form id="pledgeForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+      <div class="grid grid-2">
+        <label class="field">
+          <span>Parent or Guardian Name</span>
+          <input type="text" name="guardian_name" required placeholder="Full name">
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label class="field">
+          <span>Student Name</span>
+          <input type="text" name="student_name" required placeholder="First and last name">
+        </label>
+        <label class="field">
+          <span>School</span>
+          <input type="text" name="school" placeholder="School name">
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Upload Completed Form</span>
+        <input type="file" name="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required>
+        <small class="muted">Accepted: pdf, doc, docx, png, jpg, jpeg - Max 10 MB</small>
+      </label>
+
+      <div class="grid grid-2">
+        <label class="field">
+          <span id="mathLabel">Prove you are human</span>
+          <input type="number" id="mathAnswer" placeholder="Your answer" required>
+          <small class="muted" id="mathHint"></small>
+        </label>
+        <label class="field">
+          <span>Notes (optional)</span>
+          <textarea name="message" rows="3" placeholder="Any details we should know"></textarea>
+        </label>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="printConfirm" required>
+        <span>I will print the completed form and send payment by mail or include a check with the student name on the memo line.</span>
+      </label>
+
+      <div class="mail-card">
+        <h3>Where to send payment</h3>
+        <p>Make check payable to: <strong>Student or Family Name</strong></p>
+        <p>Mail to: <strong>Step Higher Program - P.O. Box 2306, Covington, KY 41012-2306</strong></p>
+      </div>
+
+      <button class="btn" type="submit">Submit Form</button>
+      <p class="muted tiny">By submitting, you agree to SHNP communication about the tour.</p>
+    </form>
+  </section>
+
+  <!-- Pledge letter template -->
+  <section class="section container">
+    <div class="card letter">
+      <div class="letter__head">
+        <h2>The Power of 25 Pledges</h2>
+        <button class="btn btn-ghost" id="copyLetter" type="button">Copy Letter</button>
+      </div>
+
+      <div class="letter__image">
+        <div class="img-skeleton">Insert picture</div>
+      </div>
+
+      <div class="letter__body" id="letterText">
+        <p>I am writing this letter to ask if you will join me in the “Power of 25” pledge. This Spring, students will have the opportunity to visit Colleges and Universities.</p>
+
+        <p>The tour may include schools like Tennessee State University, Alabama A and M University, Prairie View A and M University, Texas Southern University, Southern University and A and M College, Dillard University, Jackson State University, Alcorn State University, Alabama State University, Tuskegee University, Clark Atlanta University, Morehouse College, and Spelman College. We will also tour key historical landmarks and learning sites.</p>
+
+        <p>My family and I are working hard to raise the funds, but I need your help. I need to raise <strong>$750.00</strong> to participate in this seven day college tour. The Power of 25 is simple - if 30 people pledge $25.00, I am on my way. With your support, I can meet admission teams, learn about financial aid, and see what is possible for my future.</p>
+
+        <p>The trip is made possible by Step Higher Program, a 501 c 3 nonprofit organization located at P.O. Box 2306 Covington, Kentucky 41012-2306. Any contribution is tax deductible and very appreciated. If you have questions, please contact me. Thank you for your generosity and for investing in my future.</p>
+
+        <p>Sincerely,</p>
+        <p>(Student Name)</p>
+
+        <hr class="rule">
+
+        <p><strong>Yes, I will sponsor</strong> (Name of Student) for:</p>
+        <ul class="pledge-grid">
+          <li>$25.00</li>
+          <li>Other Amount $ ________</li>
+        </ul>
+
+        <p>Sponsor Name (please print): ________________________________</p>
+        <p>Please attach a check made payable to: <strong>Student or Family Name</strong></p>
+        <p>Send donations to: Step Higher - P.O. Box 2306, Covington, Kentucky 41012-2306</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place - empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -74,12 +220,55 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
+  <!-- Minimal JS just for UX on this page -->
+  <script>
+    // mobile menu
+    document.getElementById('menuToggle')?.addEventListener('click', () => {
+      document.getElementById('mainMenu').classList.toggle('open');
+    });
+
+    // simple math challenge
+    const a = Math.floor(Math.random() * 8) + 2;
+    const b = Math.floor(Math.random() * 7) + 2;
+    const answer = a + b;
+    document.getElementById('mathLabel').textContent = `What is ${a} + ${b}?`;
+    document.getElementById('mathHint').textContent = 'Quick check to prevent spam';
+
+    // form validate
+    document.getElementById('pledgeForm').addEventListener('submit', (e) => {
+      const math = Number(document.getElementById('mathAnswer').value);
+      const printed = document.getElementById('printConfirm').checked;
+      if (math !== answer) {
+        e.preventDefault();
+        alert('Math answer is not correct. Try again.');
+      } else if (!printed) {
+        e.preventDefault();
+        alert('Please confirm you will print and mail payment.');
+      } else {
+        // demo only - in production, post to your backend or form service
+        e.preventDefault();
+        alert('Form submitted. Thank you.');
+      }
+    });
+
+    // copy letter
+    document.getElementById('copyLetter').addEventListener('click', () => {
+      const text = document.getElementById('letterText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyLetter');
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = 'Copy Letter', 1200);
+      });
+    });
+  </script>
+
+  <!-- Your existing site script if needed -->
   <script src="js/main.js"></script>
 </body>
 </html>
