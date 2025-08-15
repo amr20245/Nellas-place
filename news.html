@@ -1,61 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>News & Updates • SHNP</title>
-  <meta name="description" content="News & Updates page for SHNP redesign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Latest news, events, and updates from Step Higher and Nella's Place." />
+
+  <!-- Fonts + global -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Page specific -->
+  <link rel="stylesheet" href="css/news.css" />
 </head>
+
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li class="active"><a href="news.html" aria-current="page">News</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="only-desktop"><a href="donate.html" class="btn btn-cta">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">News & Updates</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the News & Updates page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
+  <!-- Hero -->
+  <section class="section hero">
+    <div class="container hero__wrap reveal">
+      <div class="hero__media">
+        <!-- Replace with your image -->
+        <img src="images/news/featured.jpg" alt="Students on a campus tour" loading="lazy" />
+      </div>
+      <div class="hero__body">
+        <div class="pill">Featured</div>
+        <h1>College tour series expands to include new STEM campuses</h1>
+        <p class="muted">
+          SHNP is leveling up access to STEM pathways by adding hands-on visits to regional tech programs and labs. Students meet mentors, explore dorm life, and map out next steps.
+        </p>
+        <div class="meta">
+          <span>Programs</span>
+          <span>Aug 2025</span>
+          <span>4 min read</span>
+        </div>
+        <div class="hero__actions">
+          <a href="#" class="btn btn-cta">Read update</a>
+          <a href="tours.html" class="btn btn-ghost">See tours</a>
         </div>
       </div>
-    </section>
-    
+    </div>
+  </section>
 
+  <!-- Controls + Posts grid with pure CSS category filter -->
+  <section class="section">
+    <div class="container">
+      <div class="news-board reveal">
+        <!-- Tabs (radios) -->
+        <div class="tabs" role="tablist" aria-label="Filter news by category">
+          <input type="radio" name="cat" id="cat-all" checked />
+          <label for="cat-all" role="tab" aria-controls="panel-all">All</label>
+
+          <input type="radio" name="cat" id="cat-programs" />
+          <label for="cat-programs" role="tab" aria-controls="panel-programs">Programs</label>
+
+          <input type="radio" name="cat" id="cat-events" />
+          <label for="cat-events" role="tab" aria-controls="panel-events">Events</label>
+
+          <input type="radio" name="cat" id="cat-press" />
+          <label for="cat-press" role="tab" aria-controls="panel-press">Press</label>
+
+          <input type="radio" name="cat" id="cat-blog" />
+          <label for="cat-blog" role="tab" aria-controls="panel-blog">Blog</label>
+        </div>
+
+        <!-- Cards -->
+        <div class="posts" id="panel-all" role="tabpanel" aria-labelledby="cat-all">
+          <!-- Card -->
+          <article class="post" data-cat="programs">
+            <a class="thumb" href="#">
+              <img src="images/news/1.jpg" alt="Workshop with laptops" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-programs">Programs</span>
+                <time class="muted">Aug 10, 2025</time>
+              </div>
+              <h3><a href="#">Scholarship applications now open for fall cohort</a></h3>
+              <p class="muted">Apply for financial support that covers tuition, books, and certifications. Priority for first gen students in Cincinnati.</p>
+              <div class="post__meta">
+                <span>3 min read</span>
+                <a class="deep-link" href="#">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post" data-cat="events">
+            <a class="thumb" href="#">
+              <img src="images/news/2.jpg" alt="Community event with volunteers" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-events">Events</span>
+                <time class="muted">Aug 2, 2025</time>
+              </div>
+              <h3><a href="#">Back to school kickoff and supply drive</a></h3>
+              <p class="muted">Join our block party with free backpacks, workshops, and parent resources. Volunteers welcome.</p>
+              <div class="post__meta">
+                <span>2 min read</span>
+                <a class="deep-link" href="#">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post" data-cat="press">
+            <a class="thumb" href="#">
+              <img src="images/news/3.jpg" alt="Microphone at a press podium" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-press">Press</span>
+                <time class="muted">Jul 18, 2025</time>
+              </div>
+              <h3><a href="#">Local news spotlights Nella's Place accreditation</a></h3>
+              <p class="muted">Media coverage highlights our high standards of care and expanded clinical partnerships.</p>
+              <div class="post__meta">
+                <span>2 min read</span>
+                <a class="deep-link" href="#">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post" data-cat="blog">
+            <a class="thumb" href="#">
+              <img src="images/news/4.jpg" alt="Student studying with notebook" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-blog">Blog</span>
+                <time class="muted">Jul 8, 2025</time>
+              </div>
+              <h3><a href="#">Five tips to crush your campus visit</a></h3>
+              <p class="muted">How to plan questions, read the vibe, and connect with student ambassadors like a pro.</p>
+              <div class="post__meta">
+                <span>5 min read</span>
+                <a class="deep-link" href="#">Read</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post" data-cat="events">
+            <a class="thumb" href="#">
+              <img src="images/news/5.jpg" alt="Stage with speakers" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-events">Events</span>
+                <time class="muted">Jun 30, 2025</time>
+              </div>
+              <h3><a href="#">Youth leadership summit recap</a></h3>
+              <p class="muted">Students pitched solutions for food access, transit, and school to career pipelines.</p>
+              <div class="post__meta">
+                <span>4 min read</span>
+                <a class="deep-link" href="#">Highlights</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="post" data-cat="programs">
+            <a class="thumb" href="#">
+              <img src="images/news/6.jpg" alt="Mentor and student pair" loading="lazy" />
+            </a>
+            <div class="post__body">
+              <div class="post__top">
+                <span class="tag tag-programs">Programs</span>
+                <time class="muted">Jun 12, 2025</time>
+              </div>
+              <h3><a href="#">Mentorship roster adds industry partners</a></h3>
+              <p class="muted">New mentors from healthcare and tech are opening doors for job shadows and internships.</p>
+              <div class="post__meta">
+                <span>3 min read</span>
+                <a class="deep-link" href="#">Meet mentors</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pager reveal" aria-label="Pagination">
+          <a href="#" class="btn btn-ghost" aria-label="Previous page">Prev</a>
+          <div class="pager__nums" aria-hidden="true">
+            <span class="is-current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+          </div>
+          <a href="#" class="btn btn-ghost" aria-label="Next page">Next</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section section-cta">
+    <div class="container cta-card reveal">
+      <div class="cta-card__text">
+        <h2>Get monthly updates</h2>
+        <p class="muted">No spam. Just program wins, event invites, and student stories.</p>
+      </div>
+      <form class="cta-card__form" action="#" method="post">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        <button class="btn btn-cta" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <strong>SHNP</strong>
+        </div>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place. Empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -74,12 +270,13 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
+  <!-- Your global JS likely handles menu and reveal -->
   <script src="js/main.js"></script>
 </body>
 </html>
