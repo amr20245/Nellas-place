@@ -1,61 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Partners & Sponsors • SHNP</title>
-  <meta name="description" content="Partners & Sponsors page for SHNP redesign.">
+  <meta name="description" content="Our partners and sponsors who help power SHNP programs." />
+  <!-- Fonts and global styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- your global theme -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- page specific styles -->
+  <link rel="stylesheet" href="css/partners.css">
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="hide-on-mobile"><a class="btn btn-primary" href="donate.html">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
+  <!-- Partners section -->
+  <main>
+    <section class="section partners-hero">
       <div class="container">
         <h1 class="reveal">Partners & Sponsors</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the Partners & Sponsors page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
+        <p class="muted reveal lead">
+          real change is a team sport. these partners help us serve youth with care, structure, and opportunity.
+        </p>
+
+        <div class="partners-grid" role="list">
+          <!-- 1 CareSource -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="CareSource">
+            <img src="images/caresource-logo.png" alt="CareSource logo" loading="lazy">
+          </a>
+          <!-- 2 Molina Healthcare -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="Molina Healthcare">
+            <img src="images/molina-healthcare-logo.png" alt="Molina Healthcare logo" loading="lazy">
+          </a>
+          <!-- 3 Best Notes -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="BestNotes">
+            <img src="images/bestnotes-logo.png" alt="BestNotes logo" loading="lazy">
+          </a>
+          <!-- 4 EZ (adjust the name as needed) -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="EZ">
+            <img src="images/ez-logo.png" alt="EZ logo" loading="lazy">
+          </a>
+          <!-- 5 United Way of Greater Cincinnati -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="United Way of Greater Cincinnati">
+            <img src="images/united-way-cincinnati-logo.png" alt="United Way of Greater Cincinnati logo" loading="lazy">
+          </a>
+          <!-- 6 CARF Accredited -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="CARF Accredited">
+            <img src="images/carf-accredited-logo.png" alt="CARF Accredited logo" loading="lazy">
+          </a>
+          <!-- 7 OhioRISE -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="OhioRISE">
+            <img src="images/ohio-rise-logo.png" alt="OhioRISE logo" loading="lazy">
+          </a>
+          <!-- 8 Ohio Addiction Services -->
+          <a class="partner-card reveal" role="listitem" href="#" aria-label="Ohio Addiction Services">
+            <img src="images/ohio-addiction-services-logo.png" alt="Ohio Addiction Services logo" loading="lazy">
+          </a>
+        </div>
+
+        <!-- optional CTA row -->
+        <div class="partners-cta">
+          <h2>become a partner</h2>
+          <p class="muted">want to collaborate, sponsor an event, or fund a program? let’s build something meaningful.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="contact.html">Contact Us</a>
+            <a class="btn btn-ghost" href="donate.html">Sponsor a Program</a>
+          </div>
         </div>
       </div>
     </section>
-    
+  </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowers youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -74,7 +133,7 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
