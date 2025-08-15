@@ -12,40 +12,11 @@
 </head>
 <body>
   <!-- Top strip (optional, matches your other pages) -->
-  <div class="top-strip">
-    <div class="container top-strip__inner">
-      <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
-        <span>College readiness</span>
-        <span>Mentorship</span>
-        <span>Scholarships</span>
-        <span>Community impact</span>
-      </div>
-    </div>
+  <!--#include virtual="partials/top-strip.html" -->
   </div>
 
   <header class="page-header container">
-    <h1 class="page-title">Gallery</h1>
-    <p class="page-subtitle">Browse photos, videos, and files from events and programs</p>
-
-    <div class="controls">
-      <div class="search-wrap">
-        <input id="search" type="search" placeholder="Search by title or tag" aria-label="Search gallery" />
-        <button class="btn btn-ghost" id="clearSearch" aria-label="Clear search">Clear</button>
-      </div>
-
-      <div class="filters" role="tablist" aria-label="Filter by category">
-        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="photos" role="tab">Photos</button>
-        <button class="chip" data-filter="videos" role="tab">Videos</button>
-        <button class="chip" data-filter="docs" role="tab">Docs</button>
-        <div class="divider"></div>
-        <!-- sample event filters. add your own -->
-        <button class="chip" data-filter="event:graduation">Graduation</button>
-        <button class="chip" data-filter="event:campus-tour">Campus Tour</button>
-        <button class="chip" data-filter="event:workshop">Workshop</button>
-      </div>
-    </div>
+    <!--#include virtual="partials/header.html" -->
   </header>
 
   <main class="container">
