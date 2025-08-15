@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Power of Pledge Tour • SHNP</title>
-  <meta name="description" content="Get the Power of Pledge Tour forms, follow the steps, and submit your completed documents.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Your sitewide styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Page specific styles -->
-  <link rel="stylesheet" href="css/pop.css">
+  <meta name="description" content="Download, complete, and submit your Power of Pledge Tour form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- global styles (do not touch) -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- page styles -->
+  <link rel="stylesheet" href="css/pop.css" />
 </head>
-<body>
-  <!-- Top strip -->
+<body class="pop-page">
+  <!-- Top strip (unchanged) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
@@ -30,15 +29,12 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header and nav (unchanged markup) -->
   <header class="header">
     <nav class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <a href="index.html">SHNP</a>
-      </div>
-      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰ Menu</button>
-      <ul id="mainMenu">
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
@@ -46,119 +42,127 @@
         <li><a href="scholarships.html">Scholarships</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="hide-on-desktop"><a href="donate.html" aria-label="Donate">Donate</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="section hero container">
-    <div class="hero__content">
-      <h1 class="reveal">Power of Pledge Tour</h1>
-      <p class="muted reveal">Follow the three steps to download, complete, and submit your form. Then print and send your payment by mail.</p>
-      <div class="hero__cta">
-        <a class="btn" href="assets/Power-of-Pledge-Form.docx" download>Download Word</a>
-        <a class="btn btn-ghost" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Open PDF</a>
+  <section class="section">
+    <div class="container hero">
+      <div class="hero__content reveal">
+        <h1>Power of Pledge Tour</h1>
+        <p class="muted">Follow 3 simple steps, upload your form, print it, and mail your payment.</p>
+        <div class="hero__cta">
+          <a class="btn btn-primary" href="assets/Power-of-Pledge-Form.docx" download>Download Word</a>
+          <a class="btn btn-ghost" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Open PDF</a>
+        </div>
+        <div class="hero__note muted tiny">You can type in the Word or PDF file, then print and sign.</div>
       </div>
-    </div>
-    <div class="hero__image" role="img" aria-label="Students on a college tour">
-      <div class="img-skeleton">Image placeholder</div>
+
+      <div class="hero__art reveal" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="card hero__preview shine">
+          <div class="img-skeleton">Tour preview</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Steps -->
-  <section class="section container steps">
-    <ol class="steps__list">
-      <li class="step">
-        <div class="step__badge">1</div>
-        <div class="step__body">
-          <h3>Download Form</h3>
-          <p>Grab the Power of Pledge Tour form in MS Word or PDF.</p>
-          <div class="chips">
-            <a class="chip" href="assets/Power-of-Pledge-Form.docx" download>Form - Word</a>
-            <a class="chip" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Form - PDF</a>
+  <section class="section">
+    <div class="container steps">
+      <ol class="steps__list">
+        <li class="step reveal">
+          <div class="step__badge">1</div>
+          <div class="step__body">
+            <h3>Download Form</h3>
+            <p>Grab the Power of Pledge form in the format you like.</p>
+            <div class="chips">
+              <a class="chip" href="assets/Power-of-Pledge-Form.docx" download>Form - Word</a>
+              <a class="chip" href="assets/Power-of-Pledge-Form.pdf" target="_blank" rel="noopener">Form - PDF</a>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step__badge">2</div>
-        <div class="step__body">
-          <h3>Complete Form</h3>
-          <p>Fill one form per student. You can type into Word or a fillable PDF, or print and write clearly.</p>
-        </div>
-      </li>
-      <li class="step">
-        <div class="step__badge">3</div>
-        <div class="step__body">
-          <h3>Submit Form Online</h3>
-          <p>Upload the completed file below, answer the math check, and hit submit.</p>
-        </div>
-      </li>
-    </ol>
+        </li>
+        <li class="step reveal">
+          <div class="step__badge">2</div>
+          <div class="step__body">
+            <h3>Complete Form</h3>
+            <p>Fill one per student. Type it in or print and fill by hand.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step__badge">3</div>
+          <div class="step__body">
+            <h3>Submit and Mail Payment</h3>
+            <p>Upload your file below, answer the math check, submit, then print and mail payment.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
   </section>
 
-  <!-- Upload form -->
-  <section class="section container card form-wrap" id="submit">
-    <h2>Submit Completed Form</h2>
-    <p class="muted">After you submit online, print your form and mail payment in the same envelope or include a check.</p>
+  <!-- Upload Form -->
+  <section class="section">
+    <div class="container card form-wrap reveal">
+      <h2>Submit Completed Form</h2>
+      <p class="muted">Make checks payable to <strong>Student or Family Name</strong>. Mail to <strong>Step Higher Program, P.O. Box 2306, Covington, KY 41012-2306</strong>.</p>
 
-    <form id="pledgeForm" action="#" method="post" enctype="multipart/form-data" novalidate>
-      <div class="grid grid-2">
-        <label class="field">
-          <span>Parent or Guardian Name</span>
-          <input type="text" name="guardian_name" required placeholder="Full name">
-        </label>
-        <label class="field">
-          <span>Email</span>
-          <input type="email" name="email" required placeholder="you@example.com">
-        </label>
-        <label class="field">
-          <span>Student Name</span>
-          <input type="text" name="student_name" required placeholder="First and last name">
-        </label>
-        <label class="field">
-          <span>School</span>
-          <input type="text" name="school" placeholder="School name">
-        </label>
-      </div>
+      <form id="pledgeForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <div class="grid grid-2">
+          <label class="field">
+            <span>Parent or Guardian Name</span>
+            <input type="text" name="guardian_name" required placeholder="Full name" />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label class="field">
+            <span>Student Name</span>
+            <input type="text" name="student_name" required placeholder="First and last name" />
+          </label>
+          <label class="field">
+            <span>School</span>
+            <input type="text" name="school" placeholder="School name" />
+          </label>
+        </div>
 
-      <label class="field">
-        <span>Upload Completed Form</span>
-        <input type="file" name="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required>
-        <small class="muted">Accepted: pdf, doc, docx, png, jpg, jpeg - Max 10 MB</small>
-      </label>
-
-      <div class="grid grid-2">
         <label class="field">
-          <span id="mathLabel">Prove you are human</span>
-          <input type="number" id="mathAnswer" placeholder="Your answer" required>
-          <small class="muted" id="mathHint"></small>
+          <span>Upload Completed Form</span>
+          <input type="file" name="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required />
+          <small class="muted">Accepted: pdf, doc, docx, png, jpg, jpeg • Max 10 MB</small>
         </label>
-        <label class="field">
-          <span>Notes (optional)</span>
-          <textarea name="message" rows="3" placeholder="Any details we should know"></textarea>
+
+        <div class="grid grid-2">
+          <label class="field">
+            <span id="mathLabel">Prove you are human</span>
+            <input type="number" id="mathAnswer" placeholder="Your answer" required />
+            <small class="muted" id="mathHint"></small>
+          </label>
+          <label class="field">
+            <span>Notes (optional)</span>
+            <textarea name="message" rows="3" placeholder="Any details we should know"></textarea>
+          </label>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="printConfirm" required />
+          <span>I will print the completed form and send payment by mail or include a check with the student name on the memo line.</span>
         </label>
-      </div>
 
-      <label class="check">
-        <input type="checkbox" id="printConfirm" required>
-        <span>I will print the completed form and send payment by mail or include a check with the student name on the memo line.</span>
-      </label>
-
-      <div class="mail-card">
-        <h3>Where to send payment</h3>
-        <p>Make check payable to: <strong>Student or Family Name</strong></p>
-        <p>Mail to: <strong>Step Higher Program - P.O. Box 2306, Covington, KY 41012-2306</strong></p>
-      </div>
-
-      <button class="btn" type="submit">Submit Form</button>
-      <p class="muted tiny">By submitting, you agree to SHNP communication about the tour.</p>
-    </form>
+        <button class="btn btn-primary btn-pop" type="submit">Submit Form</button>
+        <p class="muted tiny">By submitting, you agree to SHNP communication about the tour.</p>
+      </form>
+    </div>
   </section>
 
-  <!-- Pledge letter template -->
-  <section class="section container">
-    <div class="card letter">
+  <!-- Pledge Letter Template -->
+  <section class="section">
+    <div class="container card letter reveal">
       <div class="letter__head">
         <h2>The Power of 25 Pledges</h2>
         <button class="btn btn-ghost" id="copyLetter" type="button">Copy Letter</button>
@@ -169,38 +173,31 @@
       </div>
 
       <div class="letter__body" id="letterText">
-        <p>I am writing this letter to ask if you will join me in the “Power of 25” pledge. This Spring, students will have the opportunity to visit Colleges and Universities.</p>
-
-        <p>The tour may include schools like Tennessee State University, Alabama A and M University, Prairie View A and M University, Texas Southern University, Southern University and A and M College, Dillard University, Jackson State University, Alcorn State University, Alabama State University, Tuskegee University, Clark Atlanta University, Morehouse College, and Spelman College. We will also tour key historical landmarks and learning sites.</p>
-
-        <p>My family and I are working hard to raise the funds, but I need your help. I need to raise <strong>$750.00</strong> to participate in this seven day college tour. The Power of 25 is simple - if 30 people pledge $25.00, I am on my way. With your support, I can meet admission teams, learn about financial aid, and see what is possible for my future.</p>
-
-        <p>The trip is made possible by Step Higher Program, a 501 c 3 nonprofit organization located at P.O. Box 2306 Covington, Kentucky 41012-2306. Any contribution is tax deductible and very appreciated. If you have questions, please contact me. Thank you for your generosity and for investing in my future.</p>
-
+        <p>I am writing this letter to ask if you will join me in the Power of 25 pledge. This Spring, students will have the opportunity to visit Colleges and Universities.</p>
+        <p>The tour may include schools like Tennessee State University, Alabama A and M University, Prairie View A and M University, Texas Southern University, Southern University and A and M College, Dillard University, Jackson State University, Alcorn State University, Alabama State University, Tuskegee University, Clark Atlanta University, Morehouse College, and Spelman College. We will also tour key historical landmarks.</p>
+        <p>My family and I are working hard to raise the funds, but I need your help. I need to raise <strong>$750.00</strong> to participate in this seven day college tour. The Power of 25 is simple. If 30 people pledge $25.00, I am on my way. With your support I can meet admission teams, learn about financial aid, and see what is possible for my future.</p>
+        <p>The trip is made possible by Step Higher Program, a 501 c 3 nonprofit located at P.O. Box 2306, Covington, KY 41012-2306. Any contribution is tax deductible. If you have questions, please contact me. Thank you for your generosity and for investing in my future.</p>
         <p>Sincerely,</p>
         <p>(Student Name)</p>
-
-        <hr class="rule">
-
+        <hr class="rule" />
         <p><strong>Yes, I will sponsor</strong> (Name of Student) for:</p>
         <ul class="pledge-grid">
           <li>$25.00</li>
           <li>Other Amount $ ________</li>
         </ul>
-
         <p>Sponsor Name (please print): ________________________________</p>
-        <p>Please attach a check made payable to: <strong>Student or Family Name</strong></p>
-        <p>Send donations to: Step Higher - P.O. Box 2306, Covington, Kentucky 41012-2306</p>
+        <p>Make check payable to: <strong>Student or Family Name</strong></p>
+        <p>Send to: Step Higher, P.O. Box 2306, Covington, KY 41012-2306</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place - empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empower youth through education, structure, and care.</p>
         <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
@@ -226,33 +223,66 @@
     </div>
   </footer>
 
-  <!-- Minimal JS just for UX on this page -->
+  <!-- Page JS scoped only to this page; does not touch header/nav -->
   <script>
-    // mobile menu
-    document.getElementById('menuToggle')?.addEventListener('click', () => {
-      document.getElementById('mainMenu').classList.toggle('open');
+    // scroll reveal if your global script doesn't handle it
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // parallax on hero art
+    const heroArt = document.querySelector('.hero__art');
+    document.addEventListener('pointermove', (e) => {
+      if (!heroArt) return;
+      const r = heroArt.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      heroArt.style.setProperty('--px', px);
+      heroArt.style.setProperty('--py', py);
     });
 
-    // simple math challenge
-    const a = Math.floor(Math.random() * 8) + 2;
-    const b = Math.floor(Math.random() * 7) + 2;
-    const answer = a + b;
+    // math challenge
+    const a = Math.floor(Math.random()*8) + 2;
+    const b = Math.floor(Math.random()*7) + 2;
+    const sum = a + b;
     document.getElementById('mathLabel').textContent = `What is ${a} + ${b}?`;
     document.getElementById('mathHint').textContent = 'Quick check to prevent spam';
 
-    // form validate
+    // confetti
+    function confettiBurst(x, y){
+      const colors = ['#00b4ff', '#008cff', '#a78bfa', '#6d28d9', '#c3f1ff'];
+      for(let i=0;i<24;i++){
+        const p = document.createElement('span');
+        p.className = 'confetti';
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        p.style.background = colors[i % colors.length];
+        p.style.setProperty('--tx', (Math.random()*2 - 1) * 140 + 'px');
+        p.style.setProperty('--ty', (-80 - Math.random()*120) + 'px');
+        p.style.setProperty('--rot', (Math.random()*720 - 360) + 'deg');
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(), 900);
+      }
+    }
+
+    // form validate (no network post in demo)
     document.getElementById('pledgeForm').addEventListener('submit', (e) => {
       const math = Number(document.getElementById('mathAnswer').value);
       const printed = document.getElementById('printConfirm').checked;
-      if (math !== answer) {
+      if (math !== sum) {
         e.preventDefault();
         alert('Math answer is not correct. Try again.');
       } else if (!printed) {
         e.preventDefault();
         alert('Please confirm you will print and mail payment.');
       } else {
-        // demo only - in production, post to your backend or form service
         e.preventDefault();
+        const rect = e.submitter.getBoundingClientRect();
+        confettiBurst(rect.left + rect.width/2, rect.top);
+        e.submitter.classList.add('btn-okay');
+        setTimeout(()=>{ e.submitter.classList.remove('btn-okay'); }, 1200);
         alert('Form submitted. Thank you.');
       }
     });
@@ -260,15 +290,15 @@
     // copy letter
     document.getElementById('copyLetter').addEventListener('click', () => {
       const text = document.getElementById('letterText').innerText;
-      navigator.clipboard.writeText(text).then(() => {
+      navigator.clipboard.writeText(text).then(()=>{
         const btn = document.getElementById('copyLetter');
         btn.textContent = 'Copied';
-        setTimeout(() => btn.textContent = 'Copy Letter', 1200);
+        setTimeout(()=> btn.textContent = 'Copy Letter', 1200);
       });
     });
   </script>
 
-  <!-- Your existing site script if needed -->
+  <!-- your site script, unchanged -->
   <script src="js/main.js"></script>
 </body>
 </html>
