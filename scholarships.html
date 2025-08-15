@@ -9,70 +9,480 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/scholarships.css">
 </head>
 <body>
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a class="is-active" href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <section class="section">
       <div class="container">
-        <h1 class="reveal">Scholarships</h1>
-        <p class="muted reveal" style="margin-top:6px">Browse featured opportunities. Click a card to view details and <strong>Apply</strong>.</p>
+        <header class="sch-head reveal">
+          <h1>Scholarships</h1>
+          <p class="muted page-intro">Browse opportunities. Click a block to jump to the official application page.</p>
+          <div class="sch-legend">
+            <span class="chip">Leadership</span>
+            <span class="chip">STEM</span>
+            <span class="chip">Need based</span>
+            <span class="chip">Undergrad</span>
+          </div>
+        </header>
 
-        <div class="grid grid-3" style="margin-top:18px">
-          <a class="card reveal" href="scholarship-ron-brown.html">
-            <img src="assets/img/placeholder.svg" alt="Scholarship" style="margin-bottom:10px">
+        <!-- GRID WRAPPER ADDED -->
+        <div class="sch-grid">
+
+          <a class="sch-card reveal" href="http://www.ronbrown.org/" target="_blank" rel="noopener" aria-label="Open Ron Brown Scholar Program">
+            <div class="sch-top">
+              <span class="tag">Leadership</span>
+              <span class="tag">Undergrad</span>
+            </div>
             <h3>Ron Brown Scholar Program</h3>
-            <p>National scholarship with leadership and service focus.</p>
-            <p class="helper" style="margin-top:6px">Click to view requirements & apply →</p>
+            <p>Major national award for African American high school seniors with leadership and service.</p>
+            <div class="sch-meta">
+              <span>HS Seniors</span>
+              <span>Prestigious</span>
+            </div>
           </a>
 
-          <a class="card reveal" href="scholarship-stem-firstgen.html">
-            <img src="assets/img/placeholder.svg" alt="Scholarship" style="margin-bottom:10px">
-            <h3>STEM & First‑Gen Scholars</h3>
-            <p>Support for first‑generation students pursuing STEM majors.</p>
-            <p class="helper" style="margin-top:6px">Click to view requirements & apply →</p>
+          <a class="sch-card reveal" href="http://advocacy-net.com/scholarmks.htm" target="_blank" rel="noopener" aria-label="Open Scholarships On The Net">
+            <div class="sch-top">
+              <span class="tag">Directory</span>
+            </div>
+            <h3>Scholarships On The Net (1,500)</h3>
+            <p>Large directory of scholarships across many fields and backgrounds.</p>
+            <div class="sch-meta">
+              <span>Browse</span>
+              <span>Multi field</span>
+            </div>
           </a>
 
-          <a class="card reveal" href="scholarship-local-foundation.html">
-            <img src="assets/img/placeholder.svg" alt="Scholarship" style="margin-bottom:10px">
-            <h3>Local Community Foundation</h3>
-            <p>Multiple awards for graduating seniors in the region.</p>
-            <p class="helper" style="margin-top:6px">Click to view requirements & apply →</p>
+          <a class="sch-card reveal" href="http://www.truman.gov/" target="_blank" rel="noopener" aria-label="Open Harry S. Truman Scholarship">
+            <div class="sch-top">
+              <span class="tag">Public Service</span>
+              <span class="tag">Leadership</span>
+            </div>
+            <h3>Harry S. Truman Scholarship</h3>
+            <p>For juniors planning careers in public service. Campus nomination required.</p>
+            <div class="sch-meta">
+              <span>Juniors</span>
+              <span>Highly selective</span>
+            </div>
           </a>
+
+          <a class="sch-card reveal" href="http://www.marine-scholars.org/" target="_blank" rel="noopener" aria-label="Open Marine Corps Scholarship">
+            <div class="sch-top">
+              <span class="tag">Family Military</span>
+              <span class="tag">Need based</span>
+            </div>
+            <h3>Marine Corps Scholarship</h3>
+            <p>For children of Marines and Navy Corpsmen. GPA and financial need apply.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>2.0 plus GPA</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.mcdonalds.com/countries/usa/community/education/scholarships/uncf/uncf.html" target="_blank" rel="noopener" aria-label="Open McDonald’s Education Scholarships (UNCF)">
+            <div class="sch-top">
+              <span class="tag">UNCF</span>
+              <span class="tag">Need based</span>
+            </div>
+            <h3>McDonald’s Education Scholarships (with UNCF)</h3>
+            <p>UNCF partnership offering multiple awards for students nationwide.</p>
+            <div class="sch-meta">
+              <span>Multiple awards</span>
+              <span>Nationwide</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.target.com/target_group/community/community_scholarships.jhtml" target="_blank" rel="noopener" aria-label="Open Target Scholarships">
+            <div class="sch-top">
+              <span class="tag">Community</span>
+            </div>
+            <h3>Target Scholarships</h3>
+            <p>Awards focused on community impact and academics.</p>
+            <div class="sch-meta">
+              <span>Service</span>
+              <span>Undergrad</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.uncf.org/merck/program.htm" target="_blank" rel="noopener" aria-label="Open UNCF Merck Science Initiative">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">UNCF</span>
+            </div>
+            <h3>UNCF Merck Science Initiative</h3>
+            <p>Support for students pursuing science and research pathways.</p>
+            <div class="sch-meta">
+              <span>Research</span>
+              <span>UG and Grad</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://ppia.aed.org/index.html" target="_blank" rel="noopener" aria-label="Open AED Fellowships">
+            <div class="sch-top">
+              <span class="tag">Policy</span>
+              <span class="tag">Fellowship</span>
+            </div>
+            <h3>Academy for Educational Development Fellowships</h3>
+            <p>Fellowships for students preparing for public policy and service careers.</p>
+            <div class="sch-meta">
+              <span>Cohort</span>
+              <span>Mentorship</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.ahcpr.gov/fund/minortrg.htm" target="_blank" rel="noopener" aria-label="Open Minority Health Program">
+            <div class="sch-top">
+              <span class="tag">Health</span>
+            </div>
+            <h3>Minority Health Program</h3>
+            <p>Training and funding resources focused on minority health fields.</p>
+            <div class="sch-meta">
+              <span>Public Health</span>
+              <span>Resources</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.aahcpa.org/scholar.htm" target="_blank" rel="noopener" aria-label="Open American Association of Hispanic CPAs Scholarships">
+            <div class="sch-top">
+              <span class="tag">Accounting</span>
+              <span class="tag">Business</span>
+            </div>
+            <h3>American Association of Hispanic CPAs Scholarships</h3>
+            <p>Scholarships for Hispanic students pursuing accounting.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Professional</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.agiweb.org/ehr/mgsftp.html" target="_blank" rel="noopener" aria-label="Open AGI Minority Geoscience Scholarships">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Geoscience</span>
+            </div>
+            <h3>American Geological Institute Minority Geoscience Scholarships</h3>
+            <p>Support for underrepresented students in geosciences.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Field specific</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.aicpa.org/members/div/care" target="_blank" rel="noopener" aria-label="Open AICPA Minority Doctoral Scholarships">
+            <div class="sch-top">
+              <span class="tag">Accounting</span>
+              <span class="tag">Doctoral</span>
+            </div>
+            <h3>Minority Scholarships (Doctoral students in Accounting)</h3>
+            <p>Doctoral level awards for accounting scholars.</p>
+            <div class="sch-meta">
+              <span>Doctoral</span>
+              <span>AICPA</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.asm.org/edusrc/edu23b.htm" target="_blank" rel="noopener" aria-label="Open ASM Undergraduate Fellowships">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Microbiology</span>
+            </div>
+            <h3>American Society for Microbiology Undergraduate Fellowships</h3>
+            <p>Lab experience and support for aspiring microbiologists.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Research</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.research.att.com/academic/urp.html" target="_blank" rel="noopener" aria-label="Open AT and T Research URP">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Research</span>
+            </div>
+            <h3>Research Program for Women Minorities Underrepresented in the Sciences</h3>
+            <p>Undergraduate research opportunities in science and engineering.</p>
+            <div class="sch-meta">
+              <span>URM</span>
+              <span>Undergrad</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.bms.com/aboutbms/fellow/data/" target="_blank" rel="noopener" aria-label="Open BMS Minority Fellowships">
+            <div class="sch-top">
+              <span class="tag">Health</span>
+              <span class="tag">Fellowship</span>
+            </div>
+            <h3>Bristol Myers Squibb Minority Fellowships in Academic Medicine</h3>
+            <p>Support for underrepresented scholars in academic medicine.</p>
+            <div class="sch-meta">
+              <span>Fellowship</span>
+              <span>Medical</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://ourworld.compuserve.com/homepages/dlhinson/dfb_sch.htm" target="_blank" rel="noopener" aria-label="Open DFBS in Science">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+            </div>
+            <h3>Development Fund for Black Students in Science</h3>
+            <p>Scholarships for Black students in science disciplines.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>STEM</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://scholarship.tylenol.com/" target="_blank" rel="noopener" aria-label="Open Tylenol Scholarships">
+            <div class="sch-top">
+              <span class="tag">Health</span>
+              <span class="tag">STEM</span>
+            </div>
+            <h3>Tylenol Scholarships</h3>
+            <p>For students entering medical, nursing, or pharmacy programs.</p>
+            <div class="sch-meta">
+              <span>Undergrad and Grad</span>
+              <span>Healthcare</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www2.coca-cola.com/citizenship/education_scholarsfoundation.html" target="_blank" rel="noopener" aria-label="Open Coca Cola Scholars">
+            <div class="sch-top">
+              <span class="tag">Leadership</span>
+              <span class="tag">National</span>
+            </div>
+            <h3>Coca Cola Scholarships</h3>
+            <p>Achievement award for seniors with leadership and impact.</p>
+            <div class="sch-meta">
+              <span>HS Seniors</span>
+              <span>High impact</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.statefarm.com/foundati/awards.htm" target="_blank" rel="noopener" aria-label="Open State Farm Achievement">
+            <div class="sch-top">
+              <span class="tag">Community</span>
+            </div>
+            <h3>State Farm Insurance Achievement Scholarships</h3>
+            <p>Academic excellence and community involvement awards.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Service</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.statefarm.com/foundati/hispanic.htm" target="_blank" rel="noopener" aria-label="Open State Farm Hispanic Scholarships">
+            <div class="sch-top">
+              <span class="tag">Community</span>
+              <span class="tag">Hispanic</span>
+            </div>
+            <h3>State Farm Insurance Hispanic Scholarships</h3>
+            <p>Support for Hispanic students pursuing higher education.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Multiple awards</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://trc.dfrc.nasa.gov/trc/Undergrad/space.html" target="_blank" rel="noopener" aria-label="Open McNair Scholars Program">
+            <div class="sch-top">
+              <span class="tag">Research</span>
+              <span class="tag">First gen</span>
+            </div>
+            <h3>McNair Scholars Program</h3>
+            <p>Pre doctoral research prep for first gen and underrepresented students.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Grad prep</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://ugsp.info.nih.gov/InfoUGSP.htm" target="_blank" rel="noopener" aria-label="Open NIH UGSP">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Health</span>
+            </div>
+            <h3>NIH Undergraduate Scholarships</h3>
+            <p>Scholarships with research and service at the National Institutes of Health.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Service</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://scholarships.kachinatech.com/scholars.html" target="_blank" rel="noopener" aria-label="Open National Scholarships Hub">
+            <div class="sch-top">
+              <span class="tag">Directory</span>
+            </div>
+            <h3>National Scholarships at All Levels</h3>
+            <p>Aggregated directory for undergraduate and graduate awards.</p>
+            <div class="sch-meta">
+              <span>Browse</span>
+              <span>Multi level</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.todaysmilitary.com/chart_mil_rotc.html" target="_blank" rel="noopener" aria-label="Open ROTC Scholarships">
+            <div class="sch-top">
+              <span class="tag">Military</span>
+            </div>
+            <h3>ROTC Scholarships</h3>
+            <p>Service linked scholarships across Army, Navy, Air Force, Marines.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Service track</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.salliemae.com/planning/scholarships.html" target="_blank" rel="noopener" aria-label="Open Sallie Mae Scholarships">
+            <div class="sch-top">
+              <span class="tag">Directory</span>
+            </div>
+            <h3>Sallie Mae’s Free Online Scholarships</h3>
+            <p>Free tool to search scholarships by major, location, and more.</p>
+            <div class="sch-meta">
+              <span>Thousands</span>
+              <span>Filters</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://216.110.42.89/search-logon.phtml" target="_blank" rel="noopener" aria-label="Open FreSch Search">
+            <div class="sch-top">
+              <span class="tag">Directory</span>
+            </div>
+            <h3>Scholarship Search – From FreSch!</h3>
+            <p>Legacy database of awards and grants.</p>
+            <div class="sch-meta">
+              <span>Browse</span>
+              <span>Legacy</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.astronautscholarship.org/" target="_blank" rel="noopener" aria-label="Open Astronaut Scholarship Foundation">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Merit</span>
+            </div>
+            <h3>Astronaut Scholarship Foundation</h3>
+            <p>High level STEM scholarships for outstanding undergrads.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Prestigious</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.uncf.org/" target="_blank" rel="noopener" aria-label="Open UNCF College Fund">
+            <div class="sch-top">
+              <span class="tag">UNCF</span>
+              <span class="tag">Directory</span>
+            </div>
+            <h3>College Fund UNCF</h3>
+            <p>Multiple scholarships and resources for students nationwide.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Nationwide</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.xensei.com/users/adl/" target="_blank" rel="noopener" aria-label="Open Art Film Writing Competitions">
+            <div class="sch-top">
+              <span class="tag">Arts</span>
+              <span class="tag">Competitions</span>
+            </div>
+            <h3>Art, Film, Writing Scholarships/Competitions</h3>
+            <p>Scholarships and contests for creative fields.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Creative</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.rotary.org/foundation/educational/amb_scho/" target="_blank" rel="noopener" aria-label="Open Rotary Ambassadorial Scholarships">
+            <div class="sch-top">
+              <span class="tag">International</span>
+              <span class="tag">Rotary</span>
+            </div>
+            <h3>Ambassadorial Scholarships</h3>
+            <p>International study funding through Rotary programs.</p>
+            <div class="sch-meta">
+              <span>Study abroad</span>
+              <span>Prestige</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.nacme.org/univ/scholars.html" target="_blank" rel="noopener" aria-label="Open NACME Scholarship Program">
+            <div class="sch-top">
+              <span class="tag">STEM</span>
+              <span class="tag">Engineering</span>
+            </div>
+            <h3>NACME Scholarship Program</h3>
+            <p>Support for underrepresented students in engineering.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Industry</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://scholarships-ar-us.org/athletic.htm" target="_blank" rel="noopener" aria-label="Open Athletic Scholarships">
+            <div class="sch-top">
+              <span class="tag">Athletics</span>
+            </div>
+            <h3>Athletic Scholarships</h3>
+            <p>Resources and awards for student athletes.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Sport specific</span>
+            </div>
+          </a>
+
+          <a class="sch-card reveal" href="http://www.free-4u.com/baptist_scholarships.htm" target="_blank" rel="noopener" aria-label="Open Baptist Scholarships">
+            <div class="sch-top">
+              <span class="tag">Faith based</span>
+            </div>
+            <h3>Baptist Scholarships</h3>
+            <p>Directory of awards available to Baptist students.</p>
+            <div class="sch-meta">
+              <span>Undergrad</span>
+              <span>Directory</span>
+            </div>
+          </a>
+
         </div>
+        <!-- END .sch-grid -->
 
-        <div class="card reveal" style="margin-top:18px">
-          <h3>How to Apply</h3>
-          <ol style="margin-left:18px;margin-top:8px">
-            <li>Gather transcripts and test scores (if required).</li>
-            <li>Request 1–2 letters of recommendation.</li>
-            <li>Draft your personal statement; ask SHNP staff for feedback.</li>
-            <li>Submit before the deadline and confirm receipt.</li>
-          </ol>
+        <div class="card reveal note-card">
+          <p class="muted tiny">Heads up. Some legacy links may redirect or be retired. If a link does not load, try the Sallie Mae search tool above to locate the current page fast.</p>
         </div>
       </div>
     </section>
@@ -82,8 +492,8 @@
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -102,7 +512,7 @@
         </ul>
       </div>
     </div>
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>

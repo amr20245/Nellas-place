@@ -1,0 +1,59 @@
+/* rar.css – Rules & Regulations page styles */
+
+.rar-section {
+  padding: 50px 0;
+}
+
+.rar-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.rar-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rar-note {
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  font-size: 0.95rem;
+}
+
+.rar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.rar-card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.rar-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.rar-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
