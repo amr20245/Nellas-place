@@ -78,17 +78,50 @@
 
   // Basic client side form validation
   document.querySelectorAll('form[data-validate]')?.forEach(form => {
+    const required = form.querySelectorAll('[required]');
+
+    const showError = el => {
+      const container = el.closest('.field') || el.parentElement;
+      let msg = container.querySelector('.error');
+      if (!msg) {
+        msg = document.createElement('span');
+        msg.className = 'error';
+        msg.setAttribute('aria-live', 'polite');
+        msg.textContent = 'This field is required.';
+        container.appendChild(msg);
+      }
+      el.classList.add('invalid');
+    };
+
+    const clearError = el => {
+      const container = el.closest('.field') || el.parentElement;
+      const msg = container.querySelector('.error');
+      if (msg) msg.remove();
+      el.classList.remove('invalid');
+    };
+
+    required.forEach(el => {
+      el.addEventListener('input', () => {
+        if (el.value.trim()) clearError(el);
+      });
+    });
+
     form.addEventListener('submit', e => {
-      const required = form.querySelectorAll('[required]');
       let ok = true;
       required.forEach(el => {
-        if (!el.value.trim()) { el.classList.add('invalid'); ok = false; }
-        else { el.classList.remove('invalid'); }
+        if (!el.value.trim()) {
+          if (ok) el.focus();
+          showError(el);
+          ok = false;
+        } else {
+          clearError(el);
+        }
       });
-      if (!ok) {
-        e.preventDefault();
-        alert('Please complete required fields.');
-      }
+      if (!ok) e.preventDefault();
+    });
+
+    form.addEventListener('reset', () => {
+      required.forEach(clearError);
     });
   });
 })();

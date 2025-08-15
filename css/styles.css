@@ -218,3 +218,7 @@ h3{font-size:clamp(18px,2.2vw,22px);line-height:1.25}
 .footer a{color:#cfd3da}
 .footer small{color:#8e939a}
 @media(max-width:900px){.footer .cols{grid-template-columns:1fr}}
+
+/* Form validation */
+.invalid{border-color:#ff6b6b!important}
+.error{display:block;color:#ff6b6b;font-size:14px;margin-top:4px}
