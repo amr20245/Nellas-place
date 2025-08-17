@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-
   <!-- Global theme -->
   <link rel="stylesheet" href="css/styles.css" />
   <!-- Page scoped styles for the form -->
@@ -16,7 +15,7 @@
 </head>
 <body>
 
-  <!-- Top strip (same pattern as index) -->
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
@@ -34,14 +33,14 @@
           <span>Community impact</span>
         </div>
       </div>
-      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
   <!-- HubSpot -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
 
-  <!-- Header / Nav (same structure as index) -->
+  <!-- Header / Nav -->
   <header class="header">
     <nav class="container nav" role="navigation" aria-label="Main">
       <div class="brand">
@@ -49,6 +48,7 @@
         <a href="index.html">SHNP</a>
       </div>
 
+      <!-- Primary links -->
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
@@ -57,6 +57,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
+      <!-- Compact “More” menu -->
       <div class="menu-wrap">
         <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
         <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
@@ -333,13 +334,17 @@
     </section>
   </main>
 
-  <!-- Footer (same structure as index) -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
         <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
+        <p class="muted" style="margin-top:10px">
+          1610 California Ave, Cincinnati, OH 45237 •
+          <a href="mailto:info@shnp.org">info@shnp.org</a> •
+          <a href="tel:+15134360118">513-436-0118</a>
+        </p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -369,7 +374,7 @@
     // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // hamburger toggle same as index
+    // hamburger toggle
     (function(){
       const nav = document.querySelector('.nav');
       const btn = document.querySelector('.menu-toggle');
@@ -389,15 +394,12 @@
       });
     })();
 
-    // left section bar smooth scroll and active state
+    // left section bar smooth scroll + active state
     (function(){
       const sections = Array.from(document.querySelectorAll('.ta-section'));
       const steps = Array.from(document.querySelectorAll('.ta-step'));
-      const stepById = new Map(
-        steps.map(li => [li.querySelector('a').getAttribute('href').slice(1), li])
-      );
+      const stepById = new Map(steps.map(li => [li.querySelector('a').getAttribute('href').slice(1), li]));
 
-      // Smooth scroll on nav click
       document.getElementById('taSteps').addEventListener('click', e => {
         const a = e.target.closest('a');
         if(!a) return;
@@ -407,7 +409,6 @@
         if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
       });
 
-      // Intersection Observer to update active step
       const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           const id = entry.target.id;
@@ -424,7 +425,7 @@
     })();
   </script>
 
-  <!-- your global JS if needed -->
+  <!-- Global JS -->
   <script src="js/main.js"></script>
 </body>
 </html>

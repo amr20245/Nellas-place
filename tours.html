@@ -9,8 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/tours.css">
-
+  <link rel="stylesheet" href="css/tours.css">
 </head>
 <body>
   <!-- Top strip -->
@@ -28,7 +27,7 @@
     </div>
   </div>
 
-  <!-- Header matches index -->
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
       <!-- brand -->
@@ -38,10 +37,10 @@
       </a>
 
       <!-- mobile menu -->
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰ Menu</button>
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰ Menu</button>
 
       <!-- nav links -->
-      <ul class="nav__links">
+      <ul id="primary-nav" class="nav__links">
         <li><a href="index.html">Home</a></li>
         <li class="is-active"><a href="tours.html" aria-current="page">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
@@ -49,12 +48,8 @@
         <li><a href="scholarships.html">Scholarships</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="only-desktop"><a href="donate.html" class="btn btn-cta" aria-label="Donate">Donate</a></li>
       </ul>
-
-      <!-- right side cta -->
-      <div class="nav__cta">
-        <a href="donate.html" class="btn btn-ghost" aria-label="Donate">Donate</a>
-      </div>
     </nav>
   </header>
 
@@ -92,9 +87,13 @@
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
         <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
+        <p class="muted" style="margin-top:10px">
+          1610 California Ave, Cincinnati, OH 45237 •
+          <a href="mailto:info@shnp.org">info@shnp.org</a> •
+          <a href="tel:+15134360118">513-436-0118</a>
+        </p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -114,10 +113,26 @@
       </div>
     </div>
     <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <small>© 2025 SHNP. All rights reserved.</small>
+      <small>© <span id="year"></span> SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
+
+  <script>
+    // mobile menu toggle (a11y)
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const list = document.getElementById('primary-nav');
+      if (!btn || !list) return;
+      btn.addEventListener('click', () => {
+        const open = list.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
   <script src="js/main.js"></script>
 </body>

@@ -23,19 +23,25 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <nav class="container nav">
-      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-      <ul>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰ Menu</button>
+
+      <ul id="primary-nav">
         <li><a href="index.html">Home</a></li>
-        <li class="is-active"><a href="tours.html">Tours</a></li>
+        <li class="is-active"><a href="tours.html" aria-current="page">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
         <li><a href="scholarships.html">Scholarships</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+        <li class="only-desktop"><a href="donate.html" class="btn btn-cta" aria-label="Donate">Donate</a></li>
       </ul>
     </nav>
   </header>
@@ -141,12 +147,17 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place - empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
+        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">
+          1610 California Ave, Cincinnati, OH 45237 •
+          <a href="mailto:info@shnp.org">info@shnp.org</a> •
+          <a href="tel:+15134360118">513-436-0118</a>
+        </p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -166,7 +177,7 @@
       </div>
     </div>
     <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <small>© 2025 SHNP. All rights reserved.</small>
+      <small>© <span id="year"></span> SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
@@ -215,7 +226,6 @@
       if (!ok) return;
 
       // TODO: hook up to your backend or Formspree
-      // Simulate request
       form.classList.add('is-loading');
       await new Promise(r => setTimeout(r, 800));
       form.classList.remove('is-loading');
@@ -233,6 +243,20 @@
         el.closest('.fld, fieldset')?.classList.remove('has-error');
       });
     });
+
+    // mobile menu toggle a11y
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const list = document.getElementById('primary-nav');
+      if (!btn || !list) return;
+      btn.addEventListener('click', () => {
+        const open = list.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
   <script src="js/main.js"></script>

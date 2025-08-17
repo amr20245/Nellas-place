@@ -8,82 +8,104 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Global styles -->
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Page styles -->
   <link rel="stylesheet" href="css/nellas-p.css" />
 </head>
 <body>
-  <!-- Top strip -->
+
+  <!-- Top strip (match index) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Nella's Place</div>
-      <div class="scroller">
-        <span>CARF accredited</span>
-        <span>Behavioral Health</span>
-        <span>Education and Life Skills</span>
-        <span>Safe and Structured Care</span>
+      <div class="scroller" aria-hidden="true">
+        <div class="scroller__track">
+          <span>CARF accredited</span>
+          <span>Behavioral Health</span>
+          <span>Education and Life Skills</span>
+          <span>Safe and Structured Care</span>
+          <span>CARF accredited</span>
+          <span>Behavioral Health</span>
+          <span>Education and Life Skills</span>
+          <span>Safe and Structured Care</span>
+        </div>
       </div>
-      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
-  <!-- Header and nav -->
+  <!-- HubSpot (match index) -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
+
+  <!-- Header / Nav (matches index) -->
   <header class="header">
-    <nav class="container nav">
+    <nav class="container nav" role="navigation" aria-label="Main">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <a href="index.html" class="brand-text">SHNP</a>
+        <a href="index.html">SHNP</a>
       </div>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">☰ Menu</button>
-
-      <ul id="primary-nav" class="nav-list">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
-        <li><a href="nellas-place.html" aria-current="page">Nella's Place</a></li>
+        <li><a href="nellas-place.html" aria-current="page">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="donate-pill"><a href="donate.html" aria-label="Donate">Donate</a></li>
       </ul>
+
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
+
+      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
   <main>
-   <!-- Our Story -->
-<section class="section section-story" id="about">
-  <div class="container story-grid">
-    <div class="story-copy reveal">
-      <h2 class="story-title">
-        <span class="story-accent" aria-hidden="true"></span>
-        Our Story
-      </h2>
+    <!-- Our Story -->
+    <section class="section section-story" id="about">
+      <div class="container story-grid">
+        <div class="story-copy reveal">
+          <h2 class="story-title">
+            <span class="story-accent" aria-hidden="true"></span>
+            Our Story
+          </h2>
 
-      <p class="muted" style="margin-top:8px">
-        Nella's Place is a CARF accredited group home for girls ages 8 to 21. We provide a safe, structured
-        environment with individualized treatment plans, education support, and life skills coaching. Our goal is
-        stability today and a clear path to independence tomorrow.
-      </p>
+          <p class="muted" style="margin-top:8px">
+            Nella's Place is a CARF accredited group home for girls ages 8 to 21. We provide a safe, structured
+            environment with individualized treatment plans, education support, and life skills coaching. Our goal is
+            stability today and a clear path to independence tomorrow.
+          </p>
 
-      <ul class="checklist">
-        <li>On site behavioral health services</li>
-        <li>Education and career planning</li>
-        <li>Aftercare and community transitions</li>
-      </ul>
+          <ul class="checklist">
+            <li>On site behavioral health services</li>
+            <li>Education and career planning</li>
+            <li>Aftercare and community transitions</li>
+          </ul>
 
-      <div class="story-pills">
-        <span class="pill">CARF accredited</span>
-        <span class="pill">Girls 8 - 21</span>
-        <span class="pill">Aftercare</span>
+          <div class="story-pills" role="list">
+            <span class="pill" role="listitem">CARF accredited</span>
+            <span class="pill" role="listitem">Girls 8 - 21</span>
+            <span class="pill" role="listitem">Aftercare</span>
+          </div>
+        </div>
+
+        <figure class="story-media reveal">
+          <img src="assets/img/placeholder.svg" alt="Common room at Nella's Place" loading="lazy">
+          <figcaption>SHNP Placeholder</figcaption>
+        </figure>
       </div>
-    </div>
-
-    <figure class="story-media reveal">
-      <img src="assets/img/placeholder.svg" alt="Common room at Nella's Place">
-      <figcaption>SHNP Placeholder</figcaption>
-    </figure>
-  </div>
-</section>
+    </section>
 
     <!-- Quick links -->
     <section class="section section-quicklinks">
@@ -95,7 +117,7 @@
           <!-- About -->
           <a class="ql-card reveal" href="#about">
             <span class="ql-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 3.9L18 9l-4.1 2.1L12 15l-1.9-3.9L6 9l4.1-2.1L12 3z"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.9 3.9L18 9l-4.1 2.1L12 15l-1.9-3.9L6 9l4.1-2.1L12 3z"/></svg>
             </span>
             <div class="ql-content">
               <span class="ql-title">About and Our Story</span>
@@ -121,7 +143,7 @@
           <!-- Behavioral Health -->
           <a class="ql-card reveal" href="about-nellas-place.html">
             <span class="ql-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 11.4a5.6 5.6 0 0 0-9.9-3.6L10 8l-.9-.2a5.6 5.6 0 0 0-6.7 5.5c0 5.2 7.6 8.9 9.6 9.7.3.1.6.1.9 0 2-0.8 9.6-4.5 9.6-9.7z"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 11.4a5.6 5.6 0 0 0-9.9-3.6L10 8l-.9-.2a5.6 5.6 0 0 0-6.7 5.5c0 5.2 7.6 8.9 9.6 9.7.3.1.6.1.9 0 2 0.8 9.6-4.5 9.6-9.7z"/></svg>
             </span>
             <div class="ql-content">
               <span class="ql-title">Behavioral Health Services</span>
@@ -161,7 +183,7 @@
             </span>
             <div class="ql-content">
               <span class="ql-title">Donations</span>
-              <span class="ql-desc">Give online or arrange in kind contributions.</span>
+              <span class="ql-desc">Give online or arrange in-kind contributions.</span>
             </div>
             <span class="ql-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
@@ -180,8 +202,6 @@
         </div>
       </div>
     </section>
-
-    
 
     <!-- Refer a Client -->
     <section class="section" id="refer">
@@ -230,27 +250,22 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (match index) -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <strong>SHNP</strong>
-        </div>
-        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place, empowering youth through education, structure, and care.</p>
+        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
         <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
-
       <div>
         <h4>Programs</h4>
         <ul style="list-style:none;margin-top:10px">
           <li><a href="tours.html">Tours</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella's Place</a></li>
+          <li><a href="nellas-place.html">Nella’s Place</a></li>
         </ul>
       </div>
-
       <div>
         <h4>Get Involved</h4>
         <ul style="list-style:none;margin-top:10px">
@@ -260,19 +275,53 @@
         </ul>
       </div>
     </div>
-
-    <div class="container" style="padding: 10px 0; border-top:1px solid var(--border); display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
-  <!-- Your site JS -->
-  <script src="js/main.js"></script>
-
-  <!-- Tiny helpers for reveal and mobile menu -->
+  <!-- Page JS: hamburger + reveal -->
   <script>
-    // Reveal on scroll
+    // hamburger toggle fallback
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+
+      function setLinksTabbable(isOpen){
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = isOpen ? 0 : -1);
+      }
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        setLinksTabbable(open);
+        if (open) dd.querySelector('a')?.focus();
+      });
+
+      // click outside closes
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          setLinksTabbable(false);
+        }
+      });
+
+      // Escape closes
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape'){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          setLinksTabbable(false);
+          btn.focus();
+        }
+      });
+    })();
+
+    // simple reveal on scroll
     (function(){
       const els = document.querySelectorAll('.reveal');
       if (!('IntersectionObserver' in window) || !els.length) {
@@ -284,17 +333,8 @@
       }, { threshold: 0.15 });
       els.forEach(el => io.observe(el));
     })();
-
-    // Mobile menu toggle
-    (function(){
-      const btn = document.querySelector('.menu-toggle');
-      const list = document.getElementById('primary-nav');
-      if (!btn || !list) return;
-      btn.addEventListener('click', () => {
-        const open = list.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
   </script>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
