@@ -1,0 +1,263 @@
+/* Page-scoped styles for the tour application form
+   Only class names prefixed with .ta- to avoid touching your global theme */
+
+/* Layout */
+.ta-wrap{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap:24px;
+  padding:24px;
+}
+
+@media (max-width: 980px){
+  .ta-wrap{ grid-template-columns: 1fr; }
+  .ta-nav{ position: sticky; top:0; z-index: 2; }
+}
+
+/* Left section bar */
+.ta-nav{
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  padding:16px;
+  border-radius:16px;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, rgba(255,255,255,.06), transparent 20%);
+  outline: 1px solid rgba(255,255,255,.06);
+}
+
+.ta-nav__title{
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity:.85;
+  margin-bottom:10px;
+}
+
+.ta-steps{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.ta-step{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.ta-step a{
+  display:block;
+  padding:10px 12px;
+  text-decoration:none;
+  color:inherit;
+  font-weight:600;
+}
+
+.ta-step .ta-pill{
+  pointer-events:none;
+  position:absolute;
+  inset:2px;
+  border-radius:10px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(14px) saturate(140%);
+  transform: scale(0.95);
+  opacity:0;
+  transition: opacity .25s, transform .25s;
+  outline: 1px solid rgba(255,255,255,.08);
+}
+
+.ta-step.is-active .ta-pill{
+  opacity:1;
+  transform: scale(1);
+}
+
+/* Content area */
+.ta-content{
+  display:block;
+  padding:16px;
+  border-radius:16px;
+  background: rgba(255,255,255,.02);
+  outline:1px solid rgba(255,255,255,.06);
+}
+
+.ta-head{
+  margin-bottom:18px;
+}
+
+.ta-head h1{
+  font-size: clamp(20px, 3vw, 28px);
+  line-height:1.2;
+  margin-bottom:6px;
+}
+
+/* Sections */
+.ta-section{
+  padding:18px;
+  margin-bottom:18px;
+  border-radius:16px;
+  background: rgba(255,255,255,.03);
+  outline:1px solid rgba(255,255,255,.06);
+  scroll-margin-top: 18px;
+}
+
+.ta-section__head{
+  margin-bottom:12px;
+}
+
+.ta-section__head h2{
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin-bottom:6px;
+}
+
+/* Grid and fields */
+.ta-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:12px;
+}
+
+.ta-col-2{ grid-column: 1 / -1; }
+
+.ta-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.ta-field > span,
+.ta-field legend{
+  font-size: 12px;
+  letter-spacing:.02em;
+  opacity:.9;
+}
+
+.ta-field input[type="text"],
+.ta-field input[type="email"],
+.ta-field input[type="tel"],
+.ta-field input[type="date"],
+.ta-field input[type="file"],
+.ta-field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: inherit;
+  outline: none;
+}
+
+.ta-field textarea{ resize: vertical; }
+
+.ta-field input:focus,
+.ta-field textarea:focus{
+  border-color: rgba(0,180,255,.6);
+  box-shadow: 0 0 0 3px rgba(0,180,255,.15);
+}
+
+/* Choices */
+.ta-choice{
+  padding:10px 12px;
+  border-radius:12px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.ta-choice label{
+  margin-right:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* Callouts and notes */
+.ta-callout{
+  padding:12px;
+  border-radius:12px;
+  background: rgba(0,180,255,.09);
+  border:1px solid rgba(0,180,255,.25);
+}
+
+.ta-callout h3{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.ta-note{
+  font-size:12px;
+  opacity:.9;
+}
+
+/* Signatures */
+.ta-sign{
+  padding:12px;
+  border-radius:12px;
+  background: rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.ta-sign__row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.ta-date{
+  max-width: 220px;
+}
+
+/* Footer bits */
+.ta-badge{
+  width: fit-content;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,0,0,.25);
+  background: rgba(255,0,0,.08);
+  font-size:12px;
+}
+
+.ta-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:8px;
+}
+
+.ta-btn{
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(0,180,255,.9), rgba(0,140,255,.9));
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.ta-btn:hover{
+  filter: brightness(1.05);
+}
+
+.ta-link{
+  text-decoration: none;
+  font-weight:600;
+  opacity:.9;
+}
+
+/* Accessibility helpers */
+.ta-check{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  background: rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px){
+  .ta-grid{ grid-template-columns: 1fr; }
+  .ta-sign__row{ grid-template-columns: 1fr; }
+  .ta-nav{ position: static; }
+}

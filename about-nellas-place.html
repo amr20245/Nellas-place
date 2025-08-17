@@ -1,99 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Nella's Place • SHNP</title>
   <meta name="description" content="Nella’s Place, a CARF-accredited group home in Cincinnati providing individualized care for girls 8 to 21.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- global -->
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- page specific -->
-  <link rel="stylesheet" href="css/nellas.css">
+  <!-- global theme -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- page css -->
+  <link rel="stylesheet" href="css/nellas.css" />
 </head>
 
 <body class="about-nellas">
+
   <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller" aria-label="Step Higher benefits">
+      <div class="scroller" aria-hidden="true">
         <div class="scroller__track">
           <span>College readiness</span>
           <span>Mentorship</span>
           <span>Scholarships</span>
-          <span>CARF-accredited care</span>
+          <span>Accredited care at Nella's Place</span>
           <span>Community impact</span>
-          <span aria-hidden="true">College readiness</span>
-          <span aria-hidden="true">Mentorship</span>
-          <span aria-hidden="true">Scholarships</span>
-          <span aria-hidden="true">CARF-accredited care</span>
-          <span aria-hidden="true">Community impact</span>
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
         </div>
       </div>
-      <a class="btn btn-ghost" href="donate.html">Donate</a>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
+
   <!-- Header -->
   <header class="header">
-    <nav class="container nav" id="site-nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰ Menu</button>
+    <nav class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html" aria-current="page">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn-primary" href="donate.html">Donate</a></li>
       </ul>
+
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
+
+      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main id="main-content">
 
-    <!-- HERO -->
-    <section class="hero-dark">
+    <!-- HERO split -->
+    <section class="hero-dark hero-split">
       <div class="container hero__inner">
-        <div>
+        <div class="hero__copy">
           <span class="hero__eyebrow">CARF-Accredited • Since 2014</span>
           <h1 class="hero__title">A safe, structured home where girls 8 to 21 heal, learn, and thrive.</h1>
           <p class="hero__lead">
             We partner with families and agencies to deliver individualized treatment, education support, and life skills so each girl can reach her full potential.
           </p>
+
           <div class="hero__ctas">
             <a href="tours.html" class="btn btn-solid">Book a tour</a>
             <a href="contact.html" class="btn btn-outline">Refer a client</a>
             <a href="tel:+15134360118" class="btn btn-outline">Call 513-436-0118</a>
           </div>
+
           <div class="badge-row">
             <span class="badge">✅ CARF Accredited</span>
             <span class="badge">🕑 Staff awake on-site 24/7</span>
             <span class="badge">🎓 College & Vocational Prep</span>
           </div>
         </div>
-        <div class="hero__media">
-          <img src="assets/img/nellas-hero-1.jpg" alt="Warm, welcoming environment at Nella’s Place">
-        </div>
+
+        <figure class="hero__media">
+          <img src="assets/img/nellas-hero-2.jpg" alt="Warm, welcoming environment at Nella’s Place">
+          <figcaption class="hero-sticker">💫 Safe • Structured • Caring</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- FEATURE GRID: Who We Are + Our Mission -->
+    <!-- FEATURE GRID -->
     <section class="section">
       <div class="feature-grid container">
-        <!-- Media -->
         <figure class="feature-media card-shine">
           <img src="assets/img/nellas-feature-1.jpg" alt="Resident at Nella’s Place"
                onerror="this.closest('.feature-media').classList.add('is-fallback'); this.remove();">
         </figure>
 
-        <!-- Copy -->
         <article class="feature-card card-elevate">
           <div class="pill" data-emoji="👥">Who We Are</div>
           <h2 class="feature-title">Clinically informed care in a stable, loving home</h2>
@@ -102,7 +123,6 @@
           </p>
         </article>
 
-        <!-- Copy -->
         <article class="feature-card card-elevate">
           <div class="pill" data-emoji="🎯">Our Mission</div>
           <h2 class="feature-title">Mend mind, body, and spirit</h2>
@@ -111,7 +131,6 @@
           </p>
         </article>
 
-        <!-- Media -->
         <figure class="feature-media card-shine">
           <img src="assets/img/nellas-feature-2.jpg" alt="Students on campus tour"
                onerror="this.closest('.feature-media').classList.add('is-fallback'); this.remove();">
@@ -187,49 +206,102 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section testimonials">
+    <section class="section testimonials" aria-labelledby="testi-heading">
       <div class="container">
-        <h2 class="section-heading">What Families & Partners Say</h2>
+        <h2 id="testi-heading" class="section-heading">What Families & Partners Say</h2>
+
         <div class="testi-grid">
-          <div class="testi reveal">
-            <div class="testi__icon">💖</div>
-            <p>“The staff met our daughter with patience and love. We saw real growth in her confidence and routine.”</p>
-            <div class="who">Parent of former resident</div>
-          </div>
-          <div class="testi reveal">
-            <div class="testi__icon">🤝</div>
-            <p>“Nella’s Place collaborates professionally and consistently. Communication is excellent.”</p>
-            <div class="who">ODJFS case manager</div>
-          </div>
-          <div class="testi reveal">
-            <div class="testi__icon">🎓</div>
-            <p>“I learned to cook, budget, and plan for college. I feel ready for what is next.”</p>
-            <div class="who">Resident, age 17</div>
-          </div>
+          <article class="testi-card reveal">
+            <div class="testi-top"><span class="testi-emoji">💖</span></div>
+            <div class="testi-body">
+              <p class="testi-text">“The staff met our daughter with patience and love. We saw real growth in her confidence and routine.”</p>
+              <div class="testi-who">Parent of former resident</div>
+            </div>
+          </article>
+
+          <article class="testi-card reveal">
+            <div class="testi-top"><span class="testi-emoji">🤝</span></div>
+            <div class="testi-body">
+              <p class="testi-text">“Nella’s Place collaborates professionally and consistently. Communication is excellent.”</p>
+              <div class="testi-who">ODJFS case manager</div>
+            </div>
+          </article>
+
+          <article class="testi-card reveal">
+            <div class="testi-top"><span class="testi-emoji">🎓</span></div>
+            <div class="testi-body">
+              <p class="testi-text">“I learned to cook, budget, and plan for college. I feel ready for what is next.”</p>
+              <div class="testi-who">Resident, age 17</div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer (short) -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place. Empowering youth through education, structure, and care.</p>
+        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
+      <div>
+        <h4>Programs</h4>
+        <ul style="list-style:none;margin-top:10px">
+          <li><a href="tours.html">Tours</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="nellas-place.html">Nella’s Place</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <ul style="list-style:none;margin-top:10px">
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <small>© 2025 SHNP. All rights reserved.</small>
+      <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Page JS -->
   <script>
-    const nav = document.getElementById('site-nav');
-    document.getElementById('menuToggle')?.addEventListener('click', ()=> nav.classList.toggle('open'));
-    const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); IO.unobserve(e.target);} });
-    }, {threshold:.08}) : null;
-    document.querySelectorAll('.reveal').forEach(el => IO?.observe(el));
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+        }
+      });
+    })();
+
+    // reveal on scroll
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
   </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -9,53 +9,144 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- page specific styles -->
+  <link rel="stylesheet" href="css/tof.css">
 </head>
 <body>
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
- <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
+      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="is-active"><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" aria-label="Donate">Donate</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
+  <!-- Hero intro -->
+  <section class="section hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
         <h1 class="reveal">Tour Our Facility</h1>
-        <p class="muted reveal" style="margin-top:6px">Placeholder section. Replace with real content for the Tour Our Facility page.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card reveal"><h3>Headline A</h3><p>Use this area to add copy blocks or images.</p></div>
-          <div class="card reveal"><h3>Headline B</h3><p>Keep paragraphs short and skimmable.</p></div>
-          <div class="card reveal"><h3>Headline C</h3><p>Link to relevant forms or resources.</p></div>
-        </div>
+        <p class="muted reveal" style="margin-top:8px">
+          Book a guided walk through Nella's Place. Tell us your party size and when you want to visit.
+        </p>
+        <ul class="hero__bullets">
+          <li>Private tours by appointment</li>
+          <li>Staff on site to answer questions</li>
+          <li>ADA friendly routes available</li>
+        </ul>
       </div>
-    </section>
-    
+      <div class="hero__card">
+        <!-- Form -->
+        <form id="tourForm" class="form-card" novalidate>
+          <div class="form-row">
+            <label class="fld">
+              <span class="lbl">Name *</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
+              <small class="err">Please enter your name</small>
+            </label>
+
+            <label class="fld">
+              <span class="lbl">Email Address *</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+              <small class="err">Enter a valid email</small>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label class="fld">
+              <span class="lbl">Phone Number *</span>
+              <input type="tel" name="phone" inputmode="tel" required placeholder="(513) 555-0123" pattern="^[+()0-9\s.-]{7,}$" aria-describedby="phoneHelp">
+              <small id="phoneHelp" class="assist">We will text if we need to confirm details</small>
+              <small class="err">Enter a valid phone</small>
+            </label>
+
+            <fieldset class="fld">
+              <legend class="lbl">How Many People Will Be In Your Party?</legend>
+              <div class="choice-row" role="radiogroup" aria-label="Party size">
+                <label class="chip">
+                  <input type="radio" name="party" value="1-2" required>
+                  <span>1-2</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="party" value="3-4">
+                  <span>3-4</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="party" value="5 or more">
+                  <span>5 or More</span>
+                </label>
+              </div>
+              <small class="err">Pick a party size</small>
+            </fieldset>
+          </div>
+
+          <div class="form-row">
+            <label class="fld">
+              <span class="lbl">Schedule Date and Time *</span>
+              <input type="datetime-local" name="datetime" required id="datetime">
+              <small class="assist">Tours are typically Mon to Fri, 10am to 4pm</small>
+              <small class="err">Choose a date and time</small>
+            </label>
+          </div>
+
+          <label class="fld">
+            <span class="lbl">Message *</span>
+            <textarea name="message" required rows="5" maxlength="800" placeholder="Tell us anything we should know, accessibility notes, or preferred focus areas."></textarea>
+            <div class="meta">
+              <small class="err">Message is required</small>
+              <small class="count"><span id="charCount">0</span>/800</small>
+            </div>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-cta">Request Tour</button>
+            <p class="muted tiny">By submitting you agree to our <a href="privacy-policy.html">privacy policy</a>.</p>
+          </div>
+
+          <!-- success toast -->
+          <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+            <span class="toast-dot" aria-hidden="true"></span>
+            Request sent. We will confirm by email within one business day.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info tiles -->
+  <section class="section">
+    <div class="container grid grid-3">
+      <div class="card reveal"><h3>What to Expect</h3><p>60 minute tour with time for Q and A at the end.</p></div>
+      <div class="card reveal"><h3>Parking</h3><p>Free on site parking. Enter via California Ave gate.</p></div>
+      <div class="card reveal"><h3>ID and Security</h3><p>Please bring a photo ID for check in at reception.</p></div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place - empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -79,6 +170,70 @@
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
+
+  <script>
+    // set min datetime to now + 24h
+    (function(){
+      const dt = document.getElementById('datetime');
+      if (dt){
+        const now = new Date();
+        now.setHours(now.getHours() + 24);
+        const pad = n => String(n).padStart(2,'0');
+        const isoLocal = y => `${y.getFullYear()}-${pad(y.getMonth()+1)}-${pad(y.getDate())}T${pad(y.getHours())}:${pad(y.getMinutes())}`;
+        dt.min = isoLocal(now);
+      }
+    })();
+
+    // character counter
+    (function(){
+      const ta = document.querySelector('textarea[name="message"]');
+      const out = document.getElementById('charCount');
+      if (ta && out){
+        const update = () => { out.textContent = ta.value.length; };
+        ta.addEventListener('input', update);
+        update();
+      }
+    })();
+
+    // simple form validation and mock submit
+    document.getElementById('tourForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const toast = document.getElementById('toast');
+
+      // built in validity UI
+      let ok = true;
+      form.querySelectorAll('[required]').forEach(el => {
+        const wrap = el.closest('.fld, fieldset');
+        if (!el.checkValidity()){
+          ok = false;
+          wrap?.classList.add('has-error');
+        } else {
+          wrap?.classList.remove('has-error');
+        }
+      });
+      if (!ok) return;
+
+      // TODO: hook up to your backend or Formspree
+      // Simulate request
+      form.classList.add('is-loading');
+      await new Promise(r => setTimeout(r, 800));
+      form.classList.remove('is-loading');
+      toast?.classList.add('show');
+
+      // reset for demo
+      form.reset();
+      document.getElementById('charCount').textContent = '0';
+      setTimeout(()=>toast?.classList.remove('show'), 4000);
+    });
+
+    // remove error on input
+    document.querySelectorAll('#tourForm input, #tourForm textarea').forEach(el=>{
+      el.addEventListener('input', ()=>{
+        el.closest('.fld, fieldset')?.classList.remove('has-error');
+      });
+    });
+  </script>
 
   <script src="js/main.js"></script>
 </body>

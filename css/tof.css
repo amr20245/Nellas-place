@@ -1,0 +1,233 @@
+/* Tours page - form and hero layout
+   Uses your global tokens: --bg, --panel, --card, --text, --muted, --border, --radius, --shadow, --cta, --cta-2
+*/
+
+.hero{
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background:
+    radial-gradient(600px 200px at 20% -10%, rgba(0,180,255,.12), transparent 60%),
+    radial-gradient(600px 200px at 120% 10%, rgba(167,139,250,.10), transparent 60%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px){
+  .hero__inner{ grid-template-columns: 1fr; }
+}
+
+.hero__copy{
+  padding-right: 10px;
+}
+.hero__bullets{
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+.hero__bullets li{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.hero__bullets li::before{
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  box-shadow: 0 0 12px rgba(0,180,255,.35);
+}
+
+.hero__card{
+  position: relative;
+}
+
+.form-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 700px){
+  .form-row{ grid-template-columns: 1fr; }
+}
+
+.fld{
+  display: grid;
+  gap: 8px;
+}
+
+.lbl{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.fld input,
+.fld textarea{
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, transform .05s;
+}
+
+.fld textarea{
+  resize: vertical;
+}
+
+.fld input:focus,
+.fld textarea:focus{
+  border-color: var(--cta);
+  box-shadow: 0 0 0 4px rgba(0,180,255,.18);
+}
+
+.fld input::placeholder,
+.fld textarea::placeholder{
+  color: rgba(231,234,238,.45);
+}
+
+.assist{
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.choice-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip span{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 999px;
+  transition: border-color .2s, box-shadow .2s, transform .05s;
+}
+
+.chip input:focus + span{
+  box-shadow: 0 0 0 4px rgba(0,180,255,.18);
+}
+
+.chip input:checked + span{
+  border-color: var(--cta);
+  box-shadow: inset 0 0 0 1px var(--cta);
+}
+
+.form-actions{
+  display: grid;
+  gap: 8px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, filter .2s ease, box-shadow .2s ease;
+  text-decoration: none;
+}
+.btn:hover{ filter: brightness(1.05); }
+.btn:active{ transform: translateY(1px); }
+
+.btn-cta{ border: none; }
+
+/* errors */
+.has-error input,
+.has-error textarea,
+.has-error .chip span{
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,.2) !important;
+}
+.err{
+  color: #ef6a6a;
+  font-size: 12px;
+  display: none;
+}
+.has-error .err{ display: inline; }
+
+/* loading state */
+#tourForm.is-loading .btn{
+  opacity: .7;
+  pointer-events: none;
+}
+
+/* toast */
+.toast{
+  display: none;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  gap: 10px;
+  align-items: center;
+}
+.toast.show{ display: inline-flex; }
+.toast-dot{
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  box-shadow: 0 0 10px rgba(0,180,255,.4);
+}
+
+/* small helper */
+.tiny{ font-size: 12px; color: var(--muted); }

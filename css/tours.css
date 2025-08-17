@@ -1,0 +1,77 @@
+/* tours.css – extra flavor only for tours page */
+
+/* section styling */
+.section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.1) 120%);
+}
+
+/* grid spacing */
+.grid.grid-3 {
+  gap: 24px;
+}
+
+/* cards */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* buttons inside cards */
+.card .btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  color: #fff;
+  text-decoration: none;
+  transition: filter .2s ease;
+}
+
+.card .btn:hover {
+  filter: brightness(1.15);
+}
+
+/* page title reveal */
+h1.reveal {
+  font-size: 36px;
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+/* subtle animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}

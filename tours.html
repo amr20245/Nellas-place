@@ -9,65 +9,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tours.css">
+
 </head>
 <body>
+  <!-- Top strip -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller"><span>College readiness</span><span>Mentorship</span><span>Scholarships</span><span>Accredited care at Nella's Place</span><span>Community impact</span></div>
-<a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <div class="scroller">
+        <span>College readiness</span>
+        <span>Mentorship</span>
+        <span>Scholarships</span>
+        <span>Accredited care at Nella's Place</span>
+        <span>Community impact</span>
+      </div>
+      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
+  <!-- Header matches index -->
   <header class="header">
     <nav class="container nav">
-    <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-    <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
-   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="tours.html">Tours</a></li>
-  <li><a href="nellas-place.html">Nella’s Place</a></li>
-  <li><a href="our-story.html">Our Story</a></li>
-  <li><a href="scholarships.html">Scholarships</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="donate.html" aria-label="Donate">Donate</a></li>
-</ul>
+      <!-- brand -->
+      <a class="brand" href="index.html" aria-label="SHNP home">
+        <div class="logo" aria-hidden="true"></div>
+        <span>SHNP</span>
+      </a>
+
+      <!-- mobile menu -->
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰ Menu</button>
+
+      <!-- nav links -->
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li class="is-active"><a href="tours.html" aria-current="page">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- right side cta -->
+      <div class="nav__cta">
+        <a href="donate.html" class="btn btn-ghost" aria-label="Donate">Donate</a>
+      </div>
     </nav>
   </header>
 
-  
-    <section class="section">
-      <div class="container">
-        <h1 class="reveal">Tours</h1>
-        <p class="muted reveal" style="margin-top:6px">Campus visits, workshops, and career exposure. Download the itinerary once released.</p>
-        <div class="grid grid-3" style="margin-top:18px">
-          <article class="card reveal">
-            <h3>Spring College Tour</h3>
-            <p>Overview, costs, and schedule at-a-glance.</p>
-            <a href="register.html" class="btn" style="margin-top:8px">Register for Tour</a>
-          </article>
-          <article class="card reveal">
-            <h3>Power of Pledge Tour</h3>
-            <p>Character & leadership focused day trip.</p>
-            <a href="power-of-pledge-tour.html" class="btn" style="margin-top:8px">Learn more</a>
-          </article>
-          <article class="card reveal">
-            <h3>Rules & Forms</h3>
-            <p>Rules, medical consent, chaperone & tour applications.</p>
-            <a href="rules-and-regulations.html" class="btn" style="margin-top:8px">View requirements</a>
-          </article>
-        </div>
-      </div>
-    </section>
-    
+  <!-- Content -->
+  <section class="section">
+    <div class="container">
+      <h1 class="reveal">Tours</h1>
+      <p class="muted reveal" style="margin-top:6px">
+        Campus visits, workshops, and career exposure. Download the itinerary once released.
+      </p>
 
+      <div class="grid grid-3" style="margin-top:18px">
+        <article class="card reveal">
+          <h3>Spring College Tour</h3>
+          <p>Overview, costs, and schedule at a glance.</p>
+          <a href="register.html" class="btn" style="margin-top:8px">Register for Tour</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Power of Pledge Tour</h3>
+          <p>Character and leadership focused day trip.</p>
+          <a href="power-of-pledge-tour.html" class="btn" style="margin-top:8px">Learn more</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Rules and Forms</h3>
+          <p>Rules, medical consent, chaperone and tour applications.</p>
+          <a href="rules-and-regulations.html" class="btn" style="margin-top:8px">View requirements</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place — empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513‑436‑0118</p>
+        <p class="muted" style="margin-top:10px">Step Higher • Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>

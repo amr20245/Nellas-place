@@ -12,42 +12,65 @@
   <link rel="stylesheet" href="css/donate.css" />
 </head>
 <body>
-  <!-- Top strip -->
+
+  <!-- Top strip (standard) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
-        <span>College readiness</span>
-        <span>Mentorship</span>
-        <span>Scholarships</span>
-        <span>Accredited care at Nella's Place</span>
-        <span>Community impact</span>
+      <div class="scroller" aria-hidden="true">
+        <div class="scroller__track">
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+        </div>
       </div>
-      <a class="btn btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
+
+  <!-- Header / Nav (standard) -->
   <header class="header">
-    <nav class="container nav">
+    <nav class="container nav" role="navigation" aria-label="Main">
       <div class="brand">
-        <div class="logo"></div><a href="index.html">SHNP</a>
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
       </div>
-      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="active" href="donate.html" aria-label="Donate">Donate</a></li>
       </ul>
+
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
+
+      <a class="btn-donate" href="donate.html" aria-label="Donate" aria-current="page">Donate</a>
     </nav>
   </header>
 
-  <!-- Main -->
+  <!-- Main (unchanged) -->
   <main>
     <section class="section">
       <div class="container">
@@ -67,7 +90,6 @@
             <li>📚 Buys workbooks for small group learning</li>
             <li>🎓 Helps a senior pay a college application fee</li>
             <li>💻 Expands access to tutoring tech and devices</li>
-     
           </ul>
 
           <div class="action-row">
@@ -93,24 +115,20 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (standard) -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">
-          Step Higher • Nella's Place empowers youth through education, structure, and care.
-        </p>
-        <p class="muted" style="margin-top:10px">
-          1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118
-        </p>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • <a href="mailto:info@shnp.org">info@shnp.org</a> • <a href="tel:+15134360118">513-436-0118</a></p>
       </div>
       <div>
         <h4>Programs</h4>
         <ul style="list-style:none;margin-top:10px">
           <li><a href="tours.html">Tours</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella's Place</a></li>
+          <li><a href="nellas-place.html">Nella’s Place</a></li>
         </ul>
       </div>
       <div>
@@ -127,6 +145,28 @@
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
   </footer>
+
+  <!-- Hamburger toggle (matches index) -->
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+        }
+      });
+    })();
+  </script>
 
   <script src="js/main.js"></script>
 </body>

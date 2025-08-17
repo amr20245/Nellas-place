@@ -4,57 +4,91 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Step Higher • SHNP</title>
-  <meta name="description" content="Step Higher — college tours, scholarships, and mentorship that lift students and youth." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Step Higher - college tours, scholarships, and mentorship that lift students and youth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- global theme -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- page specific styles from our convo -->
+  <link rel="stylesheet" href="css/stepp.css" />
 </head>
 
 <body class="about-stephigher">
-  <!-- Top strip (same component) -->
+
+  <!-- Top strip (standard) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
-        <span>College tours</span><span>Scholarships</span><span>Mentorship</span>
-        <span>HBCU experiences</span><span>Career prep</span>
+      <div class="scroller" aria-hidden="true">
+        <div class="scroller__track">
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+        </div>
       </div>
-      <a class="btn btn-ghost" href="donate.html">Donate</a>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
-  <!-- Header (shared) -->
+  <!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
+
+  <!-- Header / Nav -->
   <header class="header">
-    <nav class="container nav" id="site-nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰ Menu</button>
+    <nav class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
-        <li><a href="about-step-higher.html" aria-current="page">About Step Higher</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn-primary" href="donate.html">Donate</a></li>
       </ul>
+
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
+
+      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main id="main-content">
 
-    <!-- HERO (distinct: image LEFT, emerald accent) -->
+    <!-- HERO -->
     <section class="hero-dark hero--stephigher">
       <div class="container hero__inner hero__inner--left">
-        <div class="hero__media">
+        <div class="hero__media" aria-hidden="true">
           <img src="assets/img/step-higher-hero.jpg" alt="Students on a Step Higher campus tour">
         </div>
+
         <div>
           <span class="hero__eyebrow">Step Higher • Since 2014</span>
           <h1 class="hero__title">College access, scholarships, and mentorship that lift potential.</h1>
           <p class="hero__lead">
-            We connect students to chaperoned college tours, application support, and mentors—so they can discover
+            We connect students to chaperoned college tours, application support, and mentors so they can discover
             pathways, secure aid, and step confidently into what’s next.
           </p>
 
@@ -63,27 +97,31 @@
             <a href="contact.html" class="btn btn-outline">Become a Mentor</a>
           </div>
 
+          <!-- frosted chips with emoji -->
           <div class="badge-row">
-            <span class="badge">🚌 Multi-campus tour experiences</span>
-            <span class="badge">🎓 Scholarship guidance</span>
-            <span class="badge">🤝 Community mentors</span>
+            <span class="badge" data-emoji="🚌">Multi-campus tour experiences</span>
+            <span class="badge" data-emoji="🎓">Scholarship guidance</span>
+            <span class="badge" data-emoji="🤝">Community mentors</span>
           </div>
         </div>
       </div>
 
-      <!-- angled ribbon to set this page apart -->
+      <!-- small frosted chips row instead of big bar -->
       <div class="ribbon">
         <div class="container ribbon__inner">
           <div>11+ years serving Cincinnati</div>
-          <div>HBCU & regional campus trips</div>
-          <div>Application & FAFSA help</div>
+          <div>HBCU and regional campus trips</div>
+          <div>Application and FAFSA help</div>
         </div>
       </div>
+
+      <!-- scroll cue so users see there’s more -->
+      <div class="scroll-cue" aria-hidden="true">⌄</div>
     </section>
 
-    <!-- FEATURE ROWS (match layout style) -->
-  <section class="section section--about">
-      <!-- Row 1: Text | Image (flip from Nella’s for variety) -->
+    <!-- ABOUT FEATURES -->
+    <section class="section section--about" id="about">
+      <!-- Row 1: Text | Image -->
       <div class="feature reveal">
         <div class="feature__card">
           <h2>Who We Are</h2>
@@ -93,27 +131,27 @@
             organizations to remove barriers and open doors.
           </p>
         </div>
-        <div class="feature__media">
+        <div class="feature__media" aria-hidden="true">
           <img src="assets/img/placeholder.svg" alt="Students visiting a university campus">
         </div>
       </div>
 
       <!-- Row 2: Image | Text -->
-      <div class="feature">
-        <div class="feature__media">
+      <div class="feature reveal">
+        <div class="feature__media" aria-hidden="true">
           <img src="assets/img/placeholder.svg" alt="Mentor supporting a student">
         </div>
         <div class="feature__card">
           <h2>Our Mission</h2>
           <p>
-            Equip students to see farther and aim higher through exposure, preparation, and sustained support—
-            from the first tour to move-in day and beyond.
+            Equip students to see farther and aim higher through exposure, preparation, and sustained support
+            from the first tour to move in day and beyond.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- PILLARS (distinct new section with icons) -->
+    <!-- PILLARS -->
     <section class="section" aria-labelledby="pillars">
       <div class="container">
         <h2 id="pillars" class="reveal">Our Pillars</h2>
@@ -137,7 +175,7 @@
       </div>
     </section>
 
-    <!-- IMPACT (reuse stat style) -->
+    <!-- IMPACT STATS -->
     <section class="section">
       <div class="container">
         <h2>Impact Highlights</h2>
@@ -148,7 +186,7 @@
           </div>
           <div class="stat reveal">
             <div class="stat__num">85%</div>
-            <div class="stat__label">Post-secondary enrollment*</div>
+            <div class="stat__label">Post secondary enrollment*</div>
           </div>
           <div class="stat reveal">
             <div class="stat__num">$1.2M</div>
@@ -159,11 +197,11 @@
             <div class="stat__label">Active mentors</div>
           </div>
         </div>
-        <p class="muted" style="margin-top:8px;font-size:12px">*Internal multi-year average; varies by cohort.</p>
+        <p class="muted" style="margin-top:8px;font-size:12px">*Internal multi year average. Varies by cohort.</p>
       </div>
     </section>
 
-    <!-- DISTINCT CTA FOR THIS PAGE -->
+    <!-- CTA -->
     <section class="section">
       <div class="container">
         <div class="card reveal" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
@@ -181,13 +219,13 @@
 
   </main>
 
-  <!-- Footer (shared) -->
+  <!-- Footer (standard) -->
   <footer class="footer">
     <div class="container cols">
       <div>
-        <div class="brand"><div class="logo" aria-hidden="true"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher — college readiness through tours, scholarships, and mentorship.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • <a href="mailto:info@shnp.org">info@shnp.org</a> • <a href="tel:+15134360118">513-436-0118</a></p>
+        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
+        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
+        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
       </div>
       <div>
         <h4>Programs</h4>
@@ -200,9 +238,9 @@
       <div>
         <h4>Get Involved</h4>
         <ul style="list-style:none;margin-top:10px">
-          <li><a href="contact.html">Mentor</a></li>
-          <li><a href="donate.html">Donate</a></li>
           <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </div>
     </div>
@@ -212,27 +250,39 @@
     </div>
   </footer>
 
-  <!-- Minimal JS: menu + reveal + marquee init -->
+  <!-- Page JS - menu and reveal -->
   <script>
-    // mobile menu
-    const nav = document.getElementById('site-nav');
-    document.getElementById('menuToggle')?.addEventListener('click', ()=> nav.classList.toggle('open'));
-
-    // reveal on scroll
-    const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); IO.unobserve(e.target);} });
-    }, {threshold:.08}) : null;
-    document.querySelectorAll('.reveal').forEach(el => IO?.observe(el));
-
-    // marquee init (same as Nella’s): duplicate scroller spans into a track
+    // hamburger toggle
     (function(){
-      const scrollers = document.querySelectorAll('.top-strip .scroller');
-      scrollers.forEach(s => {
-        if (s.querySelector('.scroller__track')) return;
-        const original = s.innerHTML.trim();
-        s.innerHTML = `<div class="scroller__track">${original}${original}</div>`;
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+        }
       });
     })();
+
+    // reveal on scroll
+    (function(){
+      if (!('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    })();
   </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

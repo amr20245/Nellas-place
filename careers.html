@@ -1,55 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Careers • SHNP</title>
-  <meta name="description" content="Apply for positions at Nella’s Place, part of Step Higher.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Apply for positions at Nella’s Place, part of Step Higher." />
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/careers.css">
+  <!-- Fonts + global styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/careers.css" />
 </head>
 
 <body>
+  <!-- Top strip (standard) -->
   <div class="top-strip">
     <div class="container top-strip__inner">
       <div class="kicker">Why Step Higher?</div>
-      <div class="scroller">
-        <span>College readiness</span><span>Mentorship</span>
-        <span>Scholarships</span><span>Accredited care at Nella's Place</span>
-        <span>Community impact</span>
+      <div class="scroller" aria-hidden="true">
+        <div class="scroller__track">
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
+          <span>Accredited care at Nella's Place</span>
+          <span>Community impact</span>
+        </div>
       </div>
-      <a class="btn btn-ghost" href="donate.html">Donate</a>
+      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
-<!-- Start of HubSpot Embed Code -->
+
+  <!-- HubSpot -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
-<!-- End of HubSpot Embed Code -->
+
+  <!-- Header / Nav (standard) -->
   <header class="header">
-    <nav class="container nav">
-      <div class="brand"><div class="logo"></div><a href="index.html">SHNP</a></div>
-      <button class="menu-toggle" aria-label="Open menu">☰ Menu</button>
+    <nav class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="index.html">SHNP</a>
+      </div>
+
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
         <li><a href="nellas-place.html">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="donate.html">Donate</a></li>
       </ul>
+
+      <div class="menu-wrap">
+        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
+        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+          <a href="careers.html" role="menuitem" tabindex="-1" aria-current="page">Careers</a>
+          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+        </div>
+      </div>
+
+      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
+  <!-- MAIN (unchanged content) -->
   <section class="section">
     <div class="container">
       <h1 class="reveal">Careers at Nella’s Place</h1>
       <p class="muted reveal" style="margin-top:6px">
-        Fill out the application - fields with * are required.
+        Fill out the application — fields with * are required.
       </p>
 
       <div class="card reveal" style="margin-top:18px">
@@ -57,19 +85,19 @@
           <div class="careers-grid">
             <div>
               <label for="firstName">First Name *</label>
-              <input id="firstName" name="firstName" class="input" required placeholder="First name">
+              <input id="firstName" name="firstName" class="input" required placeholder="First name" />
             </div>
             <div>
               <label for="lastName">Last Name *</label>
-              <input id="lastName" name="lastName" class="input" required placeholder="Last name">
+              <input id="lastName" name="lastName" class="input" required placeholder="Last name" />
             </div>
             <div>
               <label for="email">Email Address *</label>
-              <input id="email" name="email" type="email" class="input" required placeholder="name@example.com">
+              <input id="email" name="email" type="email" class="input" required placeholder="name@example.com" />
             </div>
             <div>
               <label for="phone">Phone *</label>
-              <input id="phone" name="phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx" inputmode="numeric" autocomplete="tel">
+              <input id="phone" name="phone" type="tel" class="input" required placeholder="(xxx) xxx-xxxx" inputmode="numeric" autocomplete="tel" />
             </div>
           </div>
 
@@ -77,50 +105,50 @@
             <legend>Select the position you're applying for *</legend>
 
             <label>
-              <input type="radio" name="position" value="Residential Coordinator" required>
+              <input type="radio" name="position" value="Residential Coordinator" required />
               Residential Coordinator
             </label>
 
             <label>
-              <input type="radio" name="position" value="House Manager">
+              <input type="radio" name="position" value="House Manager" />
               House Manager
             </label>
 
             <label>
-              <input id="otherRadio" type="radio" name="position" value="Other">
+              <input id="otherRadio" type="radio" name="position" value="Other" />
               Other
             </label>
 
             <div id="otherWrap" class="other-wrap" hidden>
               <label for="otherText">Tell us which position *</label>
-              <input id="otherText" name="otherText" class="input">
+              <input id="otherText" name="otherText" class="input" />
             </div>
           </fieldset>
 
           <div class="careers-grid" style="margin-top:12px">
             <div>
               <label for="addr1">Address 1 *</label>
-              <input id="addr1" name="addr1" class="input" required placeholder="Street address">
+              <input id="addr1" name="addr1" class="input" required placeholder="Street address" />
             </div>
             <div>
               <label for="addr2">Address 2</label>
-              <input id="addr2" name="addr2" class="input" placeholder="Apt, suite, etc.">
+              <input id="addr2" name="addr2" class="input" placeholder="Apt, suite, etc." />
             </div>
             <div>
               <label for="city">City *</label>
-              <input id="city" name="city" class="input" required>
+              <input id="city" name="city" class="input" required />
             </div>
             <div>
               <label for="state">State / Province *</label>
-              <input id="state" name="state" class="input" required>
+              <input id="state" name="state" class="input" required />
             </div>
             <div>
               <label for="zip">Zip Code *</label>
-              <input id="zip" name="zip" class="input" required inputmode="numeric">
+              <input id="zip" name="zip" class="input" required inputmode="numeric" />
             </div>
             <div>
               <label for="county">County *</label>
-              <input id="county" name="county" class="input" required>
+              <input id="county" name="county" class="input" required />
             </div>
           </div>
 
@@ -145,35 +173,36 @@
     </div>
   </section>
 
+  <!-- Footer (standard) -->
   <footer class="footer">
     <div class="container cols">
       <div>
         <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
         <p class="muted" style="margin-top:10px">
-          Step Higher • Nella's Place • empowering youth through education, structure and care.
+          Step Higher and Nella's Place empowering youth through education, structure, and care.
         </p>
         <p class="muted" style="margin-top:10px">
-          1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118
+          1610 California Ave, Cincinnati, OH 45237 • <a href="mailto:info@shnp.org">info@shnp.org</a> • <a href="tel:+15134360118">513-436-0118</a>
         </p>
       </div>
       <div>
         <h4>Programs</h4>
-        <ul class="footer-list">
+        <ul class="footer-list" style="list-style:none;margin-top:10px">
           <li><a href="tours.html">Tours</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella's Place</a></li>
+          <li><a href="nellas-place.html">Nella’s Place</a></li>
         </ul>
       </div>
       <div>
         <h4>Get Involved</h4>
-        <ul class="footer-list">
+        <ul class="footer-list" style="list-style:none;margin-top:10px">
           <li><a href="volunteer.html">Volunteer</a></li>
           <li><a href="donate.html">Donate</a></li>
-          <li><a href="careers.html">Careers</a></li>
+          <li><a href="careers.html" aria-current="page">Careers</a></li>
         </ul>
       </div>
     </div>
-    <div class="container footer-meta">
+    <div class="container footer-meta" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <small>© 2025 SHNP. All rights reserved.</small>
       <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
     </div>
@@ -214,7 +243,6 @@
     phone.addEventListener('input', () => {
       const prev = phone.value;
       phone.value = formatPhone(prev);
-      // keep cursor at end - simple and works fine
       phone.setSelectionRange(phone.value.length, phone.value.length);
     });
 
@@ -265,26 +293,22 @@
         }
       });
 
-      // email pattern
       if (!validEmail(email.value)) {
         markInvalid(email, 'Enter a valid email');
         ok = false;
       }
 
-      // phone - 10 digits
       if (phone.value.replace(/\D/g, '').length !== 10) {
         markInvalid(phone, 'Enter a 10 digit phone');
         ok = false;
       }
 
-      // radio picked
       const chosen = form.querySelector('input[name="position"]:checked');
       if (!chosen) {
         addError(form.querySelector('.positions'), 'Please pick one position');
         ok = false;
       }
 
-      // other text required if Other is chosen
       if (otherRadio.checked && !otherText.value.trim()) {
         markInvalid(otherText, 'Tell us the position');
         ok = false;
@@ -302,7 +326,6 @@
       e.preventDefault();
       if (!validateForm()) return;
 
-      // success - show thank you
       form.hidden   = true;
       thanks.hidden = false;
     });
@@ -317,6 +340,28 @@
       form.hidden = false;
       form.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  </script>
+
+  <!-- Fallback nav JS if main.js isn't handling the menu -->
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.querySelector('.menu-toggle');
+      const dd  = document.getElementById('hamburger-dropdown');
+      if (!nav || !btn || !dd) return;
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+        }
+      });
+    })();
   </script>
 </body>
 </html>
