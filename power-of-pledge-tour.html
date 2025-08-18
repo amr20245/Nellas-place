@@ -50,7 +50,6 @@
         <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
         <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
           <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
-          <a href="news.html" role="menuitem" tabindex="-1">News</a>
           <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
           <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
           <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
@@ -340,5 +339,94 @@
 
   <!-- your site script, unchanged -->
   <script src="js/main.js"></script>
-</body>
+
+
+<footer class="footer" role="contentinfo">
+  <div class="container cols">
+    <section class="foot-col">
+      <h3>Programs</h3>
+      <ul role="list">
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>Get involved</h3>
+      <ul role="list">
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>About</h3>
+      <ul role="list">
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="partners.html">Partners & Sponsors</a></li>
+        <li><a href="news.html">News</a> / <a href="blog.html">Blog</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>Help and contact</h3>
+      <ul role="list">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html#hours">Location & Hours</a></li>
+        <li><a href="contact.html#emergency">Emergency / After Hours</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>Policies</h3>
+      <ul role="list">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="rules-and-regulations.html">Rules & Regulations</a></li>
+        <li><a href="medical-consent.html">Medical Consent</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>Quick links</h3>
+      <ul role="list">
+        <li><a href="register.html">Register for a Tour</a></li>
+        <li><a href="chaperone-application.html">Chaperone Application</a></li>
+        <li><a href="tour-our-facility.html">Tour Our Facility</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>For supporters</h3>
+      <ul role="list">
+        <li><a href="partners.html#sponsorships">Corporate Sponsorships</a></li>
+        <li><a href="wish-list-wednesday.html#in-kind">In Kind Donations</a></li>
+        <li><a href="news.html#impact">Impact / Annual Report</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>For families</h3>
+      <ul role="list">
+        <li><a href="contact.html#referral">Referral Form</a></li>
+        <li><a href="our-story.html#resources">Parent Resources</a></li>
+        <li><a href="register.html#checklist">Intake Checklist</a></li>
+      </ul>
+    </section>
+    <section class="foot-col">
+      <h3>Stay in touch</h3>
+      <ul role="list">
+        <li><a href="news.html#newsletter">Newsletter Sign Up</a></li>
+        <li><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://x.com/" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="container foot-meta">
+    <small>© <span id="year"></span> SHNP. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>document.addEventListener('DOMContentLoaded',()=>{const y=document.getElementById('year');if(y){y.textContent=new Date().getFullYear();}});</script></body>
 </html>
