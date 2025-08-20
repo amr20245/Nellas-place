@@ -8,10 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-
-  <!-- global theme -->
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- page css -->
   <link rel="stylesheet" href="css/nellas.css" />
 </head>
 
@@ -45,38 +42,41 @@
   <!-- Header -->
   <header class="header">
     <nav class="container nav" role="navigation" aria-label="Main">
-      <div class="brand">
+      <!-- Brand -->
+      <a class="brand" href="index.html" aria-label="SHNP home">
         <div class="logo" aria-hidden="true"></div>
-        <a href="index.html">SHNP</a>
-      </div>
+        SHNP
+      </a>
 
+      <!-- Primary nav -->
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
-        <li><a href="nellas-place.html">Nella’s Place</a></li>
+        <li><a href="nellas-place.html" aria-current="page">Nella’s Place</a></li>
         <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
+      <!-- Hamburger / overflow -->
       <div class="menu-wrap">
         <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
         <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
-          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
-          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
-          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
-          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
-          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
-          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+          <a href="programs.html" role="menuitem">Programs</a>
+          <a href="get-involved.html" role="menuitem">Get Involved</a>
+          <a href="about.html" role="menuitem">About Us</a>
+          <a href="#footer" role="menuitem">Resources</a>
+          <a href="policies.html" role="menuitem">Policies</a>
         </div>
       </div>
 
+      <!-- Desktop CTAs -->
       <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
   <!-- MAIN -->
   <main id="main-content">
-
     <!-- HERO split -->
     <section class="hero-dark hero-split">
       <div class="container hero__inner">
@@ -86,20 +86,17 @@
           <p class="hero__lead">
             We partner with families and agencies to deliver individualized treatment, education support, and life skills so each girl can reach her full potential.
           </p>
-
           <div class="hero__ctas">
             <a href="tours.html" class="btn btn-solid">Book a tour</a>
             <a href="contact.html" class="btn btn-outline">Refer a client</a>
             <a href="tel:+15134360118" class="btn btn-outline">Call 513-436-0118</a>
           </div>
-
           <div class="badge-row">
             <span class="badge">✅ CARF Accredited</span>
             <span class="badge">🕑 Staff awake on-site 24/7</span>
             <span class="badge">🎓 College & Vocational Prep</span>
           </div>
         </div>
-
         <figure class="hero__media">
           <img src="assets/img/nellas-hero-2.jpg" alt="Warm, welcoming environment at Nella’s Place">
           <figcaption class="hero-sticker">💫 Safe • Structured • Caring</figcaption>
@@ -240,36 +237,6 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container cols">
-      <div>
-        <div class="brand"><div class="logo"></div><strong>SHNP</strong></div>
-        <p class="muted" style="margin-top:10px">Step Higher and Nella's Place empowering youth through education, structure, and care.</p>
-        <p class="muted" style="margin-top:10px">1610 California Ave, Cincinnati, OH 45237 • info@shnp.org • 513-436-0118</p>
-      </div>
-      <div>
-        <h4>Programs</h4>
-        <ul style="list-style:none;margin-top:10px">
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="nellas-place.html">Nella’s Place</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get Involved</h4>
-        <ul style="list-style:none;margin-top:10px">
-          <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container" style="padding:10px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <small>© 2025 SHNP. All rights reserved.</small>
-      <small><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></small>
-    </div>
-  </footer>
 
   <!-- Page JS -->
   <script>
@@ -305,92 +272,94 @@
   <script src="js/main.js"></script>
 
 
-<footer class="footer" role="contentinfo">
-  <div class="container cols">
-    <section class="foot-col">
-      <h3>Programs</h3>
-      <ul role="list">
-        <li><a href="tours.html">Tours</a></li>
-        <li><a href="nellas-place.html">Nella’s Place</a></li>
-        <li><a href="scholarships.html">Scholarships</a></li>
-        <li><a href="events.html">Events</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>Get involved</h3>
-      <ul role="list">
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="volunteer.html">Volunteer</a></li>
-        <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
-        <li><a href="careers.html">Careers</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>About</h3>
-      <ul role="list">
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="partners.html">Partners & Sponsors</a></li>
-        <li><a href="news.html">News</a> / <a href="blog.html">Blog</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>Help and contact</h3>
-      <ul role="list">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="contact.html#hours">Location & Hours</a></li>
-        <li><a href="contact.html#emergency">Emergency / After Hours</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>Policies</h3>
-      <ul role="list">
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="rules-and-regulations.html">Rules & Regulations</a></li>
-        <li><a href="medical-consent.html">Medical Consent</a></li>
-        <li><a href="terms.html">Terms of Use</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>Quick links</h3>
-      <ul role="list">
-        <li><a href="register.html">Register for a Tour</a></li>
-        <li><a href="chaperone-application.html">Chaperone Application</a></li>
-        <li><a href="tour-our-facility.html">Tour Our Facility</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>For supporters</h3>
-      <ul role="list">
-        <li><a href="partners.html#sponsorships">Corporate Sponsorships</a></li>
-        <li><a href="wish-list-wednesday.html#in-kind">In Kind Donations</a></li>
-        <li><a href="news.html#impact">Impact / Annual Report</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>For families</h3>
-      <ul role="list">
-        <li><a href="contact.html#referral">Referral Form</a></li>
-        <li><a href="our-story.html#resources">Parent Resources</a></li>
-        <li><a href="register.html#checklist">Intake Checklist</a></li>
-      </ul>
-    </section>
-    <section class="foot-col">
-      <h3>Stay in touch</h3>
-      <ul role="list">
-        <li><a href="news.html#newsletter">Newsletter Sign Up</a></li>
-        <li><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
-        <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://x.com/" target="_blank" rel="noopener">X</a></li>
-      </ul>
-    </section>
-  </div>
-  <div class="container foot-meta">
-    <small>© <span id="year"></span> SHNP. All rights reserved.</small>
-  </div>
-</footer>
+<footer id="footer" class="footer fx" role="contentinfo">
+    <div class="container footer__inner">
+      <!-- Left: brand + mission -->
+      <section class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="SHNP home">
+          <span class="footer__logo-mark"></span>
+          <span class="footer__logo-text">SHNP</span>
+        </a>
+        <p class="footer__mission">
+          Empowering youth and families with mentorship, tours, scholarships, and accredited care that improves outcomes.
+        </p>
+        <ul class="footer__socials" role="list">
+          <li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">X</a></li>
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
+          <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
+        </ul>
+        <button class="footer__back" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          <span class="footer__back-icon" aria-hidden="true">⌃</span>
+          Back to top
+        </button>
+      </section>
 
-<script>document.addEventListener('DOMContentLoaded',()=>{const y=document.getElementById('year');if(y){y.textContent=new Date().getFullYear();}});</script></body>
+      <!-- Right: link columns -->
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3>Programs</h3>
+          <ul role="list">
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="nellas-place.html">Nella’s Place</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Get Involved</h3>
+          <ul role="list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
+            <li class="inline-with-pill">
+              <a href="careers.html">Careers</a>
+              <span class="footer-pill">We’re hiring</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>About</h3>
+          <ul role="list">
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="partners.html">Partners & Sponsors</a></li>
+            <li class="split-links"><a href="news.html">News</a><span aria-hidden="true">/</span><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Explore</h3>
+          <ul role="list">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="our-story.html#see-our-space">See Our Space</a></li>
+            <li><a href="nellas-place.html#see-our-space">Nella’s Place Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Policies</h3>
+          <ul role="list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="rules-and-regulations.html">Rules & Regulations</a></li>
+            <li><a href="medical-consent.html">Medical Consent</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bar">
+      <div class="container">
+        © <span id="year"></span> SHNP. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Match Home page footer year script
+    document.addEventListener('DOMContentLoaded',()=>{
+      const y=document.getElementById('year');
+      if(y) y.textContent=new Date().getFullYear();
+    });
+  </script>
+</body>
 </html>
