@@ -32,7 +32,6 @@
           <span>Community impact</span>
         </div>
       </div>
-      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
     </div>
   </div>
 
@@ -42,13 +41,11 @@
   <!-- Header -->
   <header class="header">
     <nav class="container nav" role="navigation" aria-label="Main">
-      <!-- Brand -->
       <a class="brand" href="index.html" aria-label="SHNP home">
         <div class="logo" aria-hidden="true"></div>
         SHNP
       </a>
 
-      <!-- Primary nav -->
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="tours.html">Tours</a></li>
@@ -58,11 +55,10 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-         <!-- Hamburger / overflow -->
       <div class="menu-wrap">
         <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
         <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
-            <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
           <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
           <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
           <a href="#footer" role="menuitem">Resources</a>
@@ -72,72 +68,115 @@
         </div>
       </div>
 
-      <!-- Desktop CTAs -->
       <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
     </nav>
   </header>
 
   <!-- MAIN -->
   <main id="main-content">
-    <!-- HERO split -->
-    <section class="hero-dark hero-split">
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <span class="hero__eyebrow">CARF-Accredited • Since 2014</span>
-          <h1 class="hero__title">A safe, structured home where girls 8 to 21 heal, learn, and thrive.</h1>
-          <p class="hero__lead">
-            We partner with families and agencies to deliver individualized treatment, education support, and life skills so each girl can reach her full potential.
-          </p>
-          <div class="hero__ctas">
-            <a href="tours.html" class="btn btn-solid">Book a tour</a>
-            <a href="contact.html" class="btn btn-outline">Refer a client</a>
-            <a href="tel:+15134360118" class="btn btn-outline">Call 513-436-0118</a>
-          </div>
-          <div class="badge-row">
-            <span class="badge">✅ CARF Accredited</span>
-            <span class="badge">🕑 Staff awake on-site 24/7</span>
-            <span class="badge">🎓 College & Vocational Prep</span>
-          </div>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero-dark hero-slider" aria-label="Highlights">
+      <div class="container">
+        <div class="slider" data-autoplay="true" data-interval="12000">
+
+          <!-- Slide 1 -->
+          <article class="slide hero-split">
+            <div class="hero__inner">
+              <div class="hero__copy">
+                <span class="hero__eyebrow">CARF Accredited • Since 2014</span>
+                <h1 class="hero__title">A safe, structured home where girls 8 to 21 heal, learn, and thrive.</h1>
+                <p class="hero__lead">Individualized treatment, education support, and life skills so each girl can reach her full potential.</p>
+                <div class="hero__ctas">
+                  <a href="tours.html" class="btn btn-solid">Book a tour</a>
+                  <a href="contact.html" class="btn btn-outline">Refer a client</a>
+                  <a href="tel:+15134360118" class="btn btn-outline">Call 513-436-0118</a>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">✅ CARF Accredited</span>
+                  <span class="badge">🕑 Awake staff on-site 24/7</span>
+                  <span class="badge">🎓 College and Vocational Prep</span>
+                </div>
+              </div>
+              <figure class="hero__media">
+                <img src="assets/img/nellas-hero-2" alt="Warm, welcoming environment at Nella’s Place">
+                <figcaption class="hero-sticker">💫 Safe • Structured • Caring</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Slide 2 - Arts and Crafts -->
+          <article class="slide hero-split">
+            <div class="hero__inner">
+              <div class="hero__copy">
+                <span class="hero__eyebrow">Creativity and Community</span>
+                <h1 class="hero__title">Joy shows up when we make things together.</h1>
+                <p class="hero__lead">Arts and Crafts Day gives residents a relaxed space to create and connect with mentors.</p>
+                <div class="hero__ctas">
+                  <a href="#crafts-heading" class="btn btn-solid">See the gallery</a>
+                  <a href="volunteer.html" class="btn btn-outline">Become a mentor</a>
+                </div>
+              </div>
+              <figure class="hero__media">
+                <img src="assets/crafts/crafts-7.JPEG" alt="Residents decorating rhinestone hand mirrors together">
+                <figcaption class="hero-sticker">🎨 Arts and Crafts Day</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="slide hero-split">
+            <div class="hero__inner">
+              <div class="hero__copy">
+                <span class="hero__eyebrow">Future Readiness</span>
+                <h1 class="hero__title">We prepare each girl for school, work, and family life.</h1>
+                <p class="hero__lead">College and vocational prep, community engagement, and reintegration plans tailored to the individual.</p>
+                <div class="hero__ctas">
+                  <a href="tours.html" class="btn btn-solid">Schedule a visit</a>
+                  <a href="contact.html" class="btn btn-outline">Ask a question</a>
+                </div>
+              </div>
+              <figure class="hero__media">
+                <img src="assets/img/nellas-hero-future.jpg" alt="Resident planning next steps with staff">
+                <figcaption class="hero-sticker">🎓 Goals • Progress • Next steps</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Hidden arrows (kept for a11y) -->
+          <button class="slider-btn prev" aria-label="Previous slide">‹</button>
+          <button class="slider-btn next" aria-label="Next slide">›</button>
+          <div class="slider-dots" role="tablist" aria-label="Slide navigation"></div>
         </div>
-        <figure class="hero__media">
-          <img src="assets/img/nellas-hero-2.jpg" alt="Warm, welcoming environment at Nella’s Place">
-          <figcaption class="hero-sticker">💫 Safe • Structured • Caring</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- FEATURE GRID -->
+    <!-- ===== FEATURE GRID ===== -->
     <section class="section">
       <div class="feature-grid container">
         <figure class="feature-media card-shine">
-          <img src="assets/img/nellas-feature-1.jpg" alt="Resident at Nella’s Place"
-               onerror="this.closest('.feature-media').classList.add('is-fallback'); this.remove();">
+          <img src="assets/crafts/crafts-3.jpeg" alt="Craft supplies spread across the table">
         </figure>
 
         <article class="feature-card card-elevate">
           <div class="pill" data-emoji="👥">Who We Are</div>
           <h2 class="feature-title">Clinically informed care in a stable, loving home</h2>
-          <p>
-            Nella’s Place is a group home in the Cincinnati metro area providing a continuum of treatment, evaluation, and services for girls ages 8 to 21 with emotional and behavioral needs.
-          </p>
+          <p>Nella’s Place provides clinically informed care in a stable, loving home. We serve girls ages 8 to 21 with individualized treatment, evaluation, and supports.</p>
         </article>
 
         <article class="feature-card card-elevate">
           <div class="pill" data-emoji="🎯">Our Mission</div>
           <h2 class="feature-title">Mend mind, body, and spirit</h2>
-          <p>
-            We provide a safe, nurturing environment where girls build routines, restore confidence, and practice life skills that prepare them for school, work, family, and independent living.
-          </p>
+          <p>Mend mind, body, and spirit through safe routines, restorative relationships, and practice so every resident can thrive at school, work, and home.</p>
         </article>
 
         <figure class="feature-media card-shine">
-          <img src="assets/img/nellas-feature-2.jpg" alt="Students on campus tour"
-               onerror="this.closest('.feature-media').classList.add('is-fallback'); this.remove();">
+          <img src="assets/crafts/crafts-6.jpeg" alt="Finished purple rhinestone mirror">
         </figure>
       </div>
     </section>
 
-    <!-- WHAT WE DO -->
+    <!-- ===== WHAT WE DO ===== -->
     <section class="section" aria-labelledby="services-heading">
       <div class="container">
         <h2 id="services-heading" class="section-heading">What We Do</h2>
@@ -146,35 +185,36 @@
         <div class="grid grid-3" style="margin-top:18px">
           <div class="card reveal">
             <div class="card__icon">🩺</div>
-            <h3>Therapy & Care</h3>
+            <h3>Therapy and Care</h3>
             <ul>
-              <li>Treatment plans</li>
-              <li>Group psychotherapy</li>
-              <li>Counseling services</li>
+              <li>Personalized treatment plans</li>
+              <li>Group therapy and counseling</li>
+              <li>Trauma informed care</li>
             </ul>
           </div>
           <div class="card reveal">
             <div class="card__icon">🌱</div>
-            <h3>Growth & Skills</h3>
+            <h3>Growth and Skills</h3>
             <ul>
-              <li>Life skills and confidence</li>
-              <li>Education readiness</li>
-              <li>Cultural enrichment</li>
+              <li>Daily routines and life skills</li>
+              <li>Study support and tutoring</li>
+              <li>Arts, fitness, enrichment</li>
             </ul>
           </div>
           <div class="card reveal">
             <div class="card__icon">🎓</div>
             <h3>Future Readiness</h3>
             <ul>
-              <li>College prep</li>
-              <li>Vocational prep</li>
+              <li>College and career prep</li>
+              <li>Vocational pathways</li>
+              <li>Family reintegration</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- IMPACT -->
+    <!-- ===== IMPACT ===== -->
     <section class="section">
       <div class="container">
         <h2 class="section-heading">Our Impact</h2>
@@ -182,12 +222,12 @@
           <div class="stat reveal">
             <div class="stat__icon">📍</div>
             <div class="stat__num">11+ yrs</div>
-            <div class="stat__label">Serving Cincinnati</div>
+            <div class="stat__label">Serving Greater Cincinnati</div>
           </div>
           <div class="stat reveal">
             <div class="stat__icon">⏰</div>
             <div class="stat__num">24/7</div>
-            <div class="stat__label">Awake, on-site staffing</div>
+            <div class="stat__label">Awake staff on-site</div>
           </div>
           <div class="stat reveal">
             <div class="stat__icon">📚</div>
@@ -197,17 +237,17 @@
           <div class="stat reveal">
             <div class="stat__icon">🏡</div>
             <div class="stat__num">80%+</div>
-            <div class="stat__label">Family reintegration plans</div>
+            <div class="stat__label">Active reintegration plans</div>
           </div>
         </div>
         <p class="muted" style="margin-top:8px;font-size:12px">*Internal 12 month average. Varies by placement.</p>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="section testimonials" aria-labelledby="testi-heading">
       <div class="container">
-        <h2 id="testi-heading" class="section-heading">What Families & Partners Say</h2>
+        <h2 id="testi-heading" class="section-heading">What Families and Partners Say</h2>
 
         <div class="testi-grid">
           <article class="testi-card reveal">
@@ -237,11 +277,100 @@
       </div>
     </section>
 
+   
+
   </main>
 
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" class="footer fx" role="contentinfo">
+    <div class="container footer__inner">
+      <section class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="SHNP home">
+          <span class="footer__logo-mark"></span>
+          <span class="footer__logo-text">SHNP</span>
+        </a>
+        <p class="footer__mission">
+          Empowering youth and families with mentorship, tours, scholarships, and accredited care that improves outcomes.
+        </p>
 
-  <!-- Page JS -->
+        <address class="footer__contact">
+          <div class="footer__contact-item">📍 417 S Breiel Blvd, Middletown, OH 45044</div>
+          <div class="footer__contact-item">📞 <a href="tel:+15134360118">513-436-0118</a></div>
+          <div class="footer__contact-item">✉️ <a href="mailto:info@stephigher.org">info@stephigher.org</a></div>
+        </address>
+
+        <ul class="footer__socials" role="list">
+          <li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">X</a></li>
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
+          <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
+        </ul>
+
+        <button class="footer__back" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          <span class="footer__back-icon" aria-hidden="true">⌃</span>
+          Back to top
+        </button>
+      </section>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3>Programs</h3>
+          <ul role="list">
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="nellas-place.html">Nella’s Place</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Get Involved</h3>
+          <ul role="list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
+            <li class="inline-with-pill">
+              <a href="careers.html">Careers</a>
+              <span class="footer-pill">We’re hiring</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>About</h3>
+          <ul role="list">
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="partners.html">Partners and Sponsors</a></li>
+            <li class="split-links"><a href="news.html">News</a><span aria-hidden="true">/</span><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Explore</h3>
+          <ul role="list">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="our-story.html#see-our-space">See Our Space</a></li>
+            <li><a href="nellas-place.html#see-our-space">Nella’s Place Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Policies</h3>
+          <ul role="list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="rules-and-regulations.html">Rules and Regulations</a></li>
+            <li><a href="medical-consent.html">Medical Consent</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bar">
+      <div class="container">
+        © <span id="year"></span> SHNP. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS (in-page) ===== -->
   <script>
+    // hamburger
     (function(){
       const nav = document.querySelector('.nav');
       const btn = document.querySelector('.menu-toggle');
@@ -270,94 +399,110 @@
       }, {threshold: 0.12});
       document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     })();
-  </script>
-  <script src="js/main.js"></script>
 
+    // hero slider
+    (function(){
+      const sliders = document.querySelectorAll('.hero-slider .slider');
+      sliders.forEach(slider=>{
+        const slides = [...slider.querySelectorAll('.slide')];
+        const dotsWrap = slider.querySelector('.slider-dots');
+        const btnPrev = slider.querySelector('.prev');
+        const btnNext = slider.querySelector('.next');
+        let i = 0, autoplay = slider.dataset.autoplay === 'true', interval = +slider.dataset.interval || 7000, timer;
 
-<footer id="footer" class="footer fx" role="contentinfo">
-    <div class="container footer__inner">
-      <!-- Left: brand + mission -->
-      <section class="footer__brand">
-        <a class="footer__logo" href="index.html" aria-label="SHNP home">
-          <span class="footer__logo-mark"></span>
-          <span class="footer__logo-text">SHNP</span>
-        </a>
-        <p class="footer__mission">
-          Empowering youth and families with mentorship, tours, scholarships, and accredited care that improves outcomes.
-        </p>
-        <ul class="footer__socials" role="list">
-          <li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">X</a></li>
-          <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
-          <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
-        </ul>
-        <button class="footer__back" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-          <span class="footer__back-icon" aria-hidden="true">⌃</span>
-          Back to top
-        </button>
-      </section>
+        function go(n){
+          slides[i].classList.remove('active');
+          dotsWrap.children[i]?.setAttribute('aria-selected','false');
+          i = (n + slides.length) % slides.length;
+          slides[i].classList.add('active');
+          dotsWrap.children[i]?.setAttribute('aria-selected','true');
+        }
+        slides.forEach((_,idx)=>{
+          const b = document.createElement('button');
+          b.type='button'; b.setAttribute('role','tab'); b.setAttribute('aria-selected', idx===0 ? 'true':'false');
+          b.addEventListener('click', ()=>{ go(idx); restart(); });
+          dotsWrap.appendChild(b);
+        });
+        slides[0].classList.add('active');
 
-      <!-- Right: link columns -->
-      <nav class="footer__nav" aria-label="Footer">
-        <div class="footer__col">
-          <h3>Programs</h3>
-          <ul role="list">
-            <li><a href="tours.html">Tours</a></li>
-            <li><a href="nellas-place.html">Nella’s Place</a></li>
-            <li><a href="scholarships.html">Scholarships</a></li>
-            <li><a href="events.html">Events</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h3>Get Involved</h3>
-          <ul role="list">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
-            <li class="inline-with-pill">
-              <a href="careers.html">Careers</a>
-              <span class="footer-pill">We’re hiring</span>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h3>About</h3>
-          <ul role="list">
-            <li><a href="our-story.html">Our Story</a></li>
-            <li><a href="staff.html">Staff</a></li>
-            <li><a href="partners.html">Partners & Sponsors</a></li>
-            <li class="split-links"><a href="news.html">News</a><span aria-hidden="true">/</span><a href="blog.html">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h3>Explore</h3>
-          <ul role="list">
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="our-story.html#see-our-space">See Our Space</a></li>
-            <li><a href="nellas-place.html#see-our-space">Nella’s Place Tour</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h3>Policies</h3>
-          <ul role="list">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="rules-and-regulations.html">Rules & Regulations</a></li>
-            <li><a href="medical-consent.html">Medical Consent</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="footer__bar">
-      <div class="container">
-        © <span id="year"></span> SHNP. All rights reserved.
-      </div>
-    </div>
-  </footer>
+        function next(){ go(i+1); }
+        function prev(){ go(i-1); }
+        btnNext.addEventListener('click', ()=>{ next(); restart(); });
+        btnPrev.addEventListener('click', ()=>{ prev(); restart(); });
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script>
-    // Match Home page footer year script
+        function start(){ if(autoplay) timer = setInterval(next, interval); }
+        function stop(){ clearInterval(timer); }
+        function restart(){ stop(); start(); }
+        slider.addEventListener('mouseenter', stop);
+        slider.addEventListener('mouseleave', start);
+        start();
+      });
+    })();
+
+    // lightbox for crafts gallery
+    (function(){
+      const grid = document.getElementById('crafts-gallery');
+      const lb = document.createElement('div');
+      lb.className = 'lightbox';
+      lb.id = 'lb';
+      lb.setAttribute('aria-hidden','true');
+      lb.innerHTML = `
+        <button class="lb-close" aria-label="Close">✕</button>
+        <img class="lb-img" alt="">
+        <div class="lb-cap" id="lb-cap"></div>
+        <button class="lb-prev" aria-label="Previous">‹</button>
+        <button class="lb-next" aria-label="Next">›</button>
+      `;
+      document.body.appendChild(lb);
+
+      if(!grid) return;
+
+      const imgs = [...grid.querySelectorAll('.gallery-item')];
+      const imgEl = lb.querySelector('.lb-img');
+      const capEl = lb.querySelector('#lb-cap');
+      const btnPrev = lb.querySelector('.lb-prev');
+      const btnNext = lb.querySelector('.lb-next');
+      const btnClose = lb.querySelector('.lb-close');
+      let i = 0;
+
+      function show(n){
+        const a = imgs[n];
+        imgEl.src = a.getAttribute('href');
+        imgEl.alt = a.querySelector('img').alt || '';
+        capEl.textContent = a.dataset.caption || '';
+      }
+      function open(n){
+        i = n; show(i);
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      }
+      function close(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        imgEl.src = '';
+      }
+      function nav(delta){
+        i = (i + delta + imgs.length) % imgs.length;
+        show(i);
+      }
+
+      imgs.forEach((a,idx)=>{
+        a.addEventListener('click', e => { e.preventDefault(); open(idx); });
+      });
+      btnPrev.addEventListener('click', ()=>nav(-1));
+      btnNext.addEventListener('click', ()=>nav(1));
+      btnClose.addEventListener('click', close);
+      lb.addEventListener('click', e => { if(e.target === lb) close(); });
+
+      document.addEventListener('keydown', e=>{
+        if(!lb.classList.contains('open')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowLeft') nav(-1);
+        if(e.key === 'ArrowRight') nav(1);
+      });
+    })();
+
+    // Footer year
     document.addEventListener('DOMContentLoaded',()=>{
       const y=document.getElementById('year');
       if(y) y.textContent=new Date().getFullYear();
