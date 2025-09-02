@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery • SHNP</title>
-  <meta name="description" content="Photo and media gallery for SHNP events." />
+  <meta name="description" content="Browse photos from Step Higher and Nella’s Place tours, events and programs." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- Global + Page styles -->
+  <!-- Global styles -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
 </head>
 <body>
 
@@ -80,147 +79,55 @@
     </nav>
   </header>
 
-  <!-- Page header and controls -->
-  <header class="page-header container">
-    <h1 class="page-title">Gallery</h1>
-    <p class="page-subtitle">Browse photos, videos, and files from events and programs</p>
-
-    <div class="controls">
-      <div class="search-wrap">
-        <input id="search" type="search" placeholder="Search by title or tag" aria-label="Search gallery" />
-        <button class="btn btn-ghost" id="clearSearch" aria-label="Clear search">Clear</button>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="reveal">Gallery</h1>
+        <p class="muted reveal" style="margin-top:6px">Browse photos from our tours, events and programs.</p>
+        <div class="gallery-grid">
+          <!-- Craft images -->
+          <img src="images/crafts-1.jpg" alt="Craft project 1" loading="lazy" />
+          <img src="images/crafts-2.jpg" alt="Craft project 2" loading="lazy" />
+          <img src="images/crafts-3.jpg" alt="Craft project 3" loading="lazy" />
+          <img src="images/crafts-4.jpg" alt="Craft project 4" loading="lazy" />
+          <img src="images/crafts-5.jpg" alt="Craft project 5" loading="lazy" />
+          <img src="images/crafts-6.jpg" alt="Craft project 6" loading="lazy" />
+          <img src="images/crafts-7.jpg" alt="Craft project 7" loading="lazy" />
+          <img src="images/crafts-8.jpg" alt="Craft project 8" loading="lazy" />
+          <img src="images/crafts-9.jpg" alt="Craft project 9" loading="lazy" />
+          <!-- Trip photos -->
+          <img src="images/trips/trip1.jpg" alt="Step Higher trip photo 1" loading="lazy" />
+          <img src="images/trips/trip2.jpg" alt="Step Higher trip photo 2" loading="lazy" />
+          <img src="images/trips/trip3.jpg" alt="Step Higher trip photo 3" loading="lazy" />
+          <img src="images/trips/trip4.jpg" alt="Step Higher trip photo 4" loading="lazy" />
+          <img src="images/trips/trip5.jpg" alt="Step Higher trip photo 5" loading="lazy" />
+          <img src="images/trips/trip6.jpg" alt="Step Higher trip photo 6" loading="lazy" />
+          <img src="images/trips/trip7.jpg" alt="Step Higher trip photo 7" loading="lazy" />
+          <img src="images/trips/trip8.jpg" alt="Step Higher trip photo 8" loading="lazy" />
+          <img src="images/trips/trip9.jpg" alt="Step Higher trip photo 9" loading="lazy" />
+          <img src="images/trips/trip10.jpg" alt="Step Higher trip photo 10" loading="lazy" />
+          <img src="images/trips/trip11.jpg" alt="Step Higher trip photo 11" loading="lazy" />
+          <img src="images/trips/trip12.jpg" alt="Step Higher trip photo 12" loading="lazy" />
+          <img src="images/trips/trip13.jpg" alt="Step Higher trip photo 13" loading="lazy" />
+          <img src="images/trips/trip14.jpg" alt="Step Higher trip photo 14" loading="lazy" />
+          <img src="images/trips/trip15.jpg" alt="Step Higher trip photo 15" loading="lazy" />
+          <img src="images/trips/trip16.jpg" alt="Step Higher trip photo 16" loading="lazy" />
+          <img src="images/trips/trip17.jpg" alt="Step Higher trip photo 17" loading="lazy" />
+          <img src="images/trips/trip18.jpg" alt="Step Higher trip photo 18" loading="lazy" />
+          <img src="images/trips/trip19.jpg" alt="Step Higher trip photo 19" loading="lazy" />
+          <img src="images/trips/trip20.jpg" alt="Step Higher trip photo 20" loading="lazy" />
+          <img src="images/trips/trip21.jpg" alt="Step Higher trip photo 21" loading="lazy" />
+          <img src="images/trips/trip22.jpg" alt="Step Higher trip photo 22" loading="lazy" />
+          <img src="images/trips/trip23.jpg" alt="Step Higher trip photo 23" loading="lazy" />
+          <img src="images/trips/trip24.jpg" alt="Step Higher trip photo 24" loading="lazy" />
+          <img src="images/trips/trip25.jpg" alt="Step Higher trip photo 25" loading="lazy" />
+          <img src="images/trips/trip26.jpg" alt="Step Higher trip photo 26" loading="lazy" />
+          <img src="images/trips/trip27.jpg" alt="Step Higher trip photo 27" loading="lazy" />
+          <img src="images/trips/trip28.jpg" alt="Step Higher trip photo 28" loading="lazy" />
+        </div>
       </div>
-
-      <div class="filters" role="tablist" aria-label="Filter by category">
-        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="photos" role="tab" aria-selected="false">Photos</button>
-        <button class="chip" data-filter="videos" role="tab" aria-selected="false">Videos</button>
-        <button class="chip" data-filter="docs" role="tab" aria-selected="false">Docs</button>
-        <div class="divider" aria-hidden="true"></div>
-        <!-- sample event filters. add your own -->
-        <button class="chip" data-filter="event:graduation" role="tab" aria-selected="false">Graduation</button>
-        <button class="chip" data-filter="event:campus-tour" role="tab" aria-selected="false">Campus Tour</button>
-        <button class="chip" data-filter="event:workshop" role="tab" aria-selected="false">Workshop</button>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Quick instructions area you can remove later -->
-    <section class="hint">
-      <p>Add new items by copying a <code>.card</code> and updating the <code>data-type</code>, <code>data-tags</code>, thumb, and source. Supported:</p>
-      <ul>
-        <li><strong>data-type</strong>: photo, video, doc</li>
-        <li><strong>data-tags</strong>: any words like event:graduation, year:2025</li>
-      </ul>
-    </section>
-
-    <!-- Responsive grid -->
-    <section id="gallery" class="grid" aria-live="polite">
-      <!-- PHOTO -->
-      <article class="card" tabindex="0"
-        data-type="photo"
-        data-tags="event:graduation year:2025 students">
-        <button class="thumb" data-src="media/graduation-01.jpg" data-kind="image" aria-label="Open Graduation Photo 1">
-          <img src="media/graduation-01-thumb.jpg" alt="Students celebrating at graduation" loading="lazy" />
-        </button>
-        <div class="meta">
-          <h3 class="title">Graduation Highlights</h3>
-          <p class="tags">event:graduation • year:2025 • photo</p>
-        </div>
-      </article>
-
-      <!-- PHOTO -->
-      <article class="card" tabindex="0"
-        data-type="photo"
-        data-tags="event:campus-tour year:2025 campus">
-        <button class="thumb" data-src="media/tour-02.jpg" data-kind="image" aria-label="Open Campus Tour Photo">
-          <img src="media/tour-02-thumb.jpg" alt="Group walking on campus" loading="lazy" />
-        </button>
-        <div class="meta">
-          <h3 class="title">Campus Tour</h3>
-          <p class="tags">event:campus-tour • year:2025 • photo</p>
-        </div>
-      </article>
-
-      <!-- VIDEO -->
-      <article class="card" tabindex="0"
-        data-type="video"
-        data-tags="event:workshop year:2024 training">
-        <button class="thumb" data-src="media/workshop-recap.mp4" data-kind="video" aria-label="Open Workshop Recap Video">
-          <video muted preload="metadata">
-            <source src="media/workshop-recap.mp4#t=0.1" type="video/mp4" />
-          </video>
-          <span class="badge">Video</span>
-        </button>
-        <div class="meta">
-          <h3 class="title">Workshop Recap</h3>
-          <p class="tags">event:workshop • year:2024 • video</p>
-        </div>
-      </article>
-
-      <!-- DOC (PDF) -->
-      <article class="card" tabindex="0"
-        data-type="doc"
-        data-tags="event:graduation year:2025 program">
-        <a class="thumb doc" href="media/graduation-program.pdf" target="_blank" rel="noopener" aria-label="Open Graduation Program PDF">
-          <div class="doc-icon" aria-hidden="true">📄</div>
-          <span class="badge">PDF</span>
-        </a>
-        <div class="meta">
-          <h3 class="title">Graduation Program</h3>
-          <p class="tags">event:graduation • year:2025 • doc</p>
-        </div>
-      </article>
-
-      <!-- PHOTO -->
-      <article class="card" tabindex="0"
-        data-type="photo"
-        data-tags="event:workshop year:2024 mentors">
-        <button class="thumb" data-src="media/workshop-mentors.jpg" data-kind="image" aria-label="Open Workshop Mentors Photo">
-          <img src="media/workshop-mentors-thumb.jpg" alt="Mentors guiding students" loading="lazy" />
-        </button>
-        <div class="meta">
-          <h3 class="title">Mentors In Action</h3>
-          <p class="tags">event:workshop • year:2024 • photo</p>
-        </div>
-      </article>
-
-      <!-- VIDEO (YouTube) -->
-      <article class="card" tabindex="0"
-        data-type="video"
-        data-tags="event:campus-tour year:2025 recap yt">
-        <button class="thumb" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-kind="youtube" aria-label="Open Campus Tour Recap on YouTube">
-          <img src="media/youtube-thumb.jpg" alt="Video thumbnail" loading="lazy" />
-          <span class="badge">YouTube</span>
-        </button>
-        <div class="meta">
-          <h3 class="title">Campus Tour Recap</h3>
-          <p class="tags">event:campus-tour • year:2025 • video</p>
-        </div>
-      </article>
-
-      <!-- DOC (pptx) -->
-      <article class="card" tabindex="0"
-        data-type="doc"
-        data-tags="event:workshop year:2024 slides">
-        <a class="thumb doc" href="media/financial-literacy-slides.pptx" target="_blank" aria-label="Download Financial Literacy Slides">
-          <div class="doc-icon" aria-hidden="true">🗂️</div>
-          <span class="badge">PPTX</span>
-        </a>
-        <div class="meta">
-          <h3 class="title">Financial Literacy Slides</h3>
-          <p class="tags">event:workshop • year:2024 • doc</p>
-        </div>
-      </article>
     </section>
   </main>
-
-  <!-- Lightbox using <dialog> -->
-  <dialog id="lightbox" aria-label="Media preview">
-    <button class="close" aria-label="Close preview">✕</button>
-    <div class="stage" id="stage" role="document"></div>
-  </dialog>
 
   <!-- Footer (unified) -->
   <footer id="footer" class="footer fx" role="contentinfo">
@@ -317,7 +224,7 @@
   <!-- Global JS -->
   <script src="js/main.js"></script>
 
-  <!-- Unified nav helper (drawer behavior) -->
+  <!-- Unified nav helper (drawer behavior) and footer year -->
   <script>
     (function(){
       const nav = document.querySelector('.nav');
@@ -339,99 +246,11 @@
         }
       });
     })();
-
     // Footer year
     document.addEventListener('DOMContentLoaded',()=>{
       const y=document.getElementById('year');
       if(y) y.textContent=new Date().getFullYear();
     });
-  </script>
-
-  <!-- Gallery page script -->
-  <script>
-    // Filter logic
-    const chips = [...document.querySelectorAll('.chip')];
-    const cards = [...document.querySelectorAll('.card')];
-    const search = document.getElementById('search');
-    const clearSearch = document.getElementById('clearSearch');
-
-    let activeFilter = 'all';
-
-    function applyFilters() {
-      const q = search.value.trim().toLowerCase();
-      cards.forEach(card => {
-        const type = card.dataset.type;
-        const tags = (card.dataset.tags || '').toLowerCase();
-        const title = card.querySelector('.title')?.textContent.toLowerCase() || '';
-
-        const passesType = activeFilter === 'all'
-          ? true
-          : activeFilter === 'photos' ? type === 'photo'
-          : activeFilter === 'videos' ? type === 'video'
-          : activeFilter === 'docs' ? type === 'doc'
-          : tags.includes(activeFilter); // event filter like event:graduation
-
-        const passesSearch = !q || tags.includes(q) || title.includes(q);
-
-        card.style.display = passesType && passesSearch ? '' : 'none';
-      });
-    }
-
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => { c.classList.remove('is-active'); c.setAttribute('aria-selected','false'); });
-        chip.classList.add('is-active');
-        chip.setAttribute('aria-selected','true');
-        activeFilter = chip.dataset.filter;
-        applyFilters();
-      });
-    });
-
-    search.addEventListener('input', applyFilters);
-    clearSearch.addEventListener('click', () => { search.value = ''; applyFilters(); });
-
-    // Lightbox logic
-    const lb = document.getElementById('lightbox');
-    const stage = document.getElementById('stage');
-    function openLightbox(kind, src) {
-      stage.innerHTML = '';
-      if (kind === 'image') {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = '';
-        img.loading = 'eager';
-        stage.appendChild(img);
-      } else if (kind === 'video') {
-        const vid = document.createElement('video');
-        vid.controls = true;
-        vid.autoplay = true;
-        const source = document.createElement('source');
-        source.src = src;
-        source.type = 'video/mp4';
-        vid.appendChild(source);
-        stage.appendChild(vid);
-      } else if (kind === 'youtube') {
-        const iframe = document.createElement('iframe');
-        iframe.src = src + '?autoplay=1&modestbranding=1&rel=0';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        stage.appendChild(iframe);
-      }
-      lb.showModal();
-    }
-
-    document.querySelectorAll('.thumb').forEach(btn => {
-      if (btn.tagName.toLowerCase() === 'a') return; // docs open in new tab
-      btn.addEventListener('click', () => openLightbox(btn.dataset.kind, btn.dataset.src));
-      // allow Enter to open when card is focused
-      btn.closest('.card')?.addEventListener('keydown', e => {
-        if (e.key === 'Enter') btn.click();
-      });
-    });
-
-    lb.querySelector('.close').addEventListener('click', () => lb.close());
-    lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.open) lb.close(); });
   </script>
 </body>
 </html>

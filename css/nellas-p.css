@@ -4,17 +4,12 @@
 
 /* Fallback tokens in case globals are missing */
 :root{
-  --bg:#0f1012;
-  --bg-2:#121316;
-  --panel:#15161a;
-  --card:#15161a;
-  --text:#e7eaee;
-  --muted:#9aa0a6;
-  --border:#202227;
-  --radius:16px;
-  --shadow:0 14px 34px rgba(0,0,0,.32);
-  --cta:#00b4ff;
-  --cta-2:#008cff;
+  /* Allow this page to inherit the global theme tokens. To avoid
+     overriding the palette with custom dark colors, we intentionally
+     leave the standard variables undefined here. Only call to action
+     colors are defined below. */
+  --cta: #00b4ff;
+  --cta-2: #008cff;
 }
 
 /* Headline treatment for page h1 */
@@ -158,12 +153,14 @@ main h1{
 .ql-card{
   --glow: rgba(0,180,255,.18);
   position: relative;
-  display:flex;
-  align-items:flex-start;
-  gap:14px;
-  padding:18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 16px;
   border-radius: 18px;
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
   background:
     radial-gradient(1200px 200px at -20% -60%, rgba(0,180,255,.10), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
@@ -172,9 +169,14 @@ main h1{
     0 16px 36px rgba(0,0,0,.28),
     inset 0 1px 0 rgba(255,255,255,.03);
   color: var(--text);
-  text-decoration:none;
+  text-decoration: none;
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
-  overflow:hidden;
+  overflow: hidden;
+  /* Constrain quick-link cards to squares so the grid feels balanced on both
+     large and small screens. Using aspect-ratio ensures that the
+     height follows the width set by the grid column.
+  */
+  aspect-ratio: 1 / 1;
 }
 .ql-card::after{
   content:"";
@@ -208,7 +210,15 @@ main h1{
 }
 
 /* Card text block */
-.ql-content{ display:grid; gap:4px; min-width:0; }
+.ql-content{
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  /* Allow the content area to fill available vertical space within the
+     square quick-link card. This pushes the arrow to the bottom and
+     keeps the icon and labels grouped near the top. */
+  flex-grow: 1;
+}
 .ql-title{
   font-weight:800;
   letter-spacing:-.01em;
@@ -224,10 +234,20 @@ main h1{
 
 /* Arrow affordance */
 .ql-arrow{
-  margin-left:auto; align-self:center; opacity:.6;
+  /* Position the arrow at the bottom-right of the square card. On
+     desktop this ensures the arrow is anchored after the other
+     content. Removing margin-left:auto prevents the arrow from
+     vertically centering in the flex column. */
+  margin-left: 0;
+  align-self: flex-end;
+  margin-top: 10px;
+  opacity: .6;
   transition: transform .18s ease, opacity .18s ease;
 }
-.ql-card:hover .ql-arrow{ transform: translateX(4px); opacity:.9; }
+.ql-card:hover .ql-arrow{
+  transform: translateX(4px);
+  opacity: .9;
+}
 
 /* Keyboard focus states */
 .ql-card:focus-visible{

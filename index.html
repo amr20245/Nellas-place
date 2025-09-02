@@ -80,19 +80,114 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="section">
-    <div class="container hero">
-      <div class="reveal">
-        <span class="tag">Step Higher • Nella's Place</span>
-        <h1>Opportunity that <em>lifts</em> modern support for students and youth</h1>
-        <p class="lead">College tours, scholarships, and a safe accredited group home. Explore programs, register for tours, or get involved as a volunteer or donor.</p>
-        <div style="display:flex;gap:12px;margin-top:12px">
-          <a class="btn btn-primary" href="tours.html">Explore Tours</a>
-          <a class="btn" href="nellas-place.html">Nella's Place</a>
-        </div>
+  <!-- Hero Slider -->
+  <section class="hero-slider" aria-label="Highlights">
+    <div class="container">
+      <div class="slider" data-autoplay="true" data-interval="10000">
+        <!-- Slide 1 -->
+        <article class="slide">
+          <div class="hero">
+            <div class="hero__copy">
+              <span class="tag">Step Higher • Nella's Place</span>
+              <h1>Opportunity that <em>lifts</em> modern support for students and youth</h1>
+              <p class="lead">College tours, scholarships, and a safe accredited group home. Explore programs, register for tours, or get involved as a volunteer or donor.</p>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <a class="btn btn-primary" href="tours.html">Explore Tours</a>
+                <a class="btn" href="nellas-place.html">Nella's Place</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="images/trips/trip1.jpg" alt="Group posing at Universal Orlando Resort" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+        <!-- Slide 2 -->
+        <article class="slide">
+          <div class="hero">
+            <div class="hero__copy">
+              <span class="tag">Spring College Tour</span>
+              <h1>Experience campuses up close</h1>
+              <p class="lead">Join our multi‑campus tours to meet mentors, attend workshops, and discover your future.</p>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <a class="btn btn-primary" href="tours.html">See tour details</a>
+                <a class="btn" href="tour-application.html">Register now</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="images/trips/trip4.jpg" alt="Students visiting multiple colleges during spring tour" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+        <!-- Slide 3 -->
+        <article class="slide">
+          <div class="hero">
+            <div class="hero__copy">
+              <span class="tag">Nella’s Place</span>
+              <h1>Safe, structured group home</h1>
+              <p class="lead">We provide accredited care with personalized programming and support for girls aged 8 to 21.</p>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <a class="btn btn-primary" href="nellas-place.html">Learn more</a>
+                <a class="btn" href="contact.html">Refer a client</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="images/trips/trip5.jpg" alt="Residents enjoying activities at Nella’s Place" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+        <!-- Slide 4 -->
+        <article class="slide">
+          <div class="hero">
+            <div class="hero__copy">
+              <span class="tag">Wish List Wednesday</span>
+              <h1>Help fill their closets &amp; cupboards</h1>
+              <p class="lead">Donate personal care items, school supplies, clothing and more to make a meaningful difference for our residents.</p>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <a class="btn btn-primary" href="wish-list-wednesday.html">View wishlist</a>
+                <a class="btn" href="donate.html">Give now</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="images/trips/trip12.jpg" alt="Smiling students indoors after volunteer work" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+        <!-- Slide 5 -->
+        <article class="slide">
+          <div class="hero">
+            <div class="hero__copy">
+              <span class="tag">Community Support</span>
+              <h1>Thanks to our partners &amp; sponsors</h1>
+              <p class="lead">Our programs thrive because of generous businesses and community members. Join them and amplify our impact.</p>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <a class="btn btn-primary" href="partners.html">See supporters</a>
+                <a class="btn" href="contact.html">Become a partner</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="images/trips/trip20.jpg" alt="Large group gathered outside a campus building in spring" loading="lazy" />
+            </figure>
+          </div>
+        </article>
+        <button class="slider-btn prev" aria-label="Previous slide">‹</button>
+        <button class="slider-btn next" aria-label="Next slide">›</button>
+        <div class="slider-dots" role="tablist" aria-label="Slide navigation"></div>
       </div>
-      <div class="hero-media reveal"><div></div></div>
+    </div>
+  </section>
+
+  <!-- Recent Adventures collage -->
+  <section class="section section-collage">
+    <div class="container">
+      <h2 class="reveal">Recent Adventures</h2>
+      <p class="muted reveal" style="margin-bottom:14px">A few snapshots from our latest tours and campus visits.</p>
+      <div class="collage-grid">
+        <img src="images/trips/trip1.jpg" alt="Group posing at Universal Orlando Resort" loading="lazy" class="reveal" />
+        <img src="images/trips/trip2.jpg" alt="Students boarding the tour bus early in the morning" loading="lazy" class="reveal" />
+        <img src="images/trips/trip3.jpg" alt="Walking together across a college campus courtyard" loading="lazy" class="reveal" />
+        <img src="images/trips/trip4.jpg" alt="Smiling group of participants at Morehouse College booth" loading="lazy" class="reveal" />
+      </div>
+      <p style="margin-top:20px"><a class="btn btn-primary" href="tours.html">Join the next tour</a></p>
     </div>
   </section>
 
@@ -174,6 +269,7 @@
             <span class="badge">Give</span>
             <h2>Support the Mission</h2>
             <p class="muted">Your gift powers tours, scholarships, and services. Every dollar matters.</p>
+            <p class="muted">Looking to give items instead? Check out our <a href="wish-list-wednesday.html">Wish List Wednesday</a> for our most needed supplies.</p>
             <p><a class="btn btn-primary" href="donate.html">Donate now</a></p>
           </div>
           <figure class="feature__media">

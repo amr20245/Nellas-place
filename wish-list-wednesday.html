@@ -56,7 +56,10 @@
 
   <!-- Main -->
   <main>
-    <section class="section">
+    <!-- Give the wishlist a light background by applying the section--soft
+         modifier.  This uses the soft cream tone defined in styles.css
+         making the cards stand out and the section feel more spacious. -->
+    <section class="section section--soft">
       <div class="container">
         <h1 class="reveal">Wish List Wednesday</h1>
         <p class="muted reveal" style="margin-top:6px">Update this list weekly with priority items and drop-off/shipping info.</p>
@@ -196,25 +199,9 @@
       if (y) y.textContent = new Date().getFullYear();
     });
 
-    // hamburger toggle
-    (function(){
-      const nav = document.querySelector('.nav');
-      const btn = document.querySelector('.menu-toggle');
-      const dd  = document.getElementById('hamburger-dropdown');
-      if (!nav || !btn || !dd) return;
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(open));
-        dd.querySelectorAll('a').forEach(a => a.tabIndex = open ? 0 : -1);
-      });
-      document.addEventListener('click', e => {
-        if (!nav.contains(e.target)){
-          nav.classList.remove('open');
-          btn.setAttribute('aria-expanded','false');
-          dd.querySelectorAll('a').forEach(a => a.tabIndex = -1);
-        }
-      });
-    })();
+    /* Hamburger toggle logic has been centralised in js/main.js. Removing
+       duplicate code here prevents conflicts and ensures a single
+       source of truth for mobile navigation. */
   </script>
 
   <script src="js/main.js"></script>

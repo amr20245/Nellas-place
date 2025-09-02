@@ -12,6 +12,17 @@
 }
 
 /* cards */
+/*
+  The tour list at the top of the page used to render as large horizontal
+  rectangles which felt oversized on desktop and especially awkward on
+  phones. To give the layout a cleaner rhythm and make each tour
+  preview feel consistent with the square gallery thumbnails below, we
+  constrain each card to a 1:1 aspect ratio. The card remains a flex
+  container so its contents (heading, description and button) are
+  vertically distributed. The height adapts automatically based on the
+  grid column width and the `aspect-ratio` property, ensuring the
+  square shape is maintained on any screen size.
+*/
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -19,6 +30,11 @@
   padding: 24px;
   box-shadow: var(--shadow);
   transition: transform .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Maintain a perfect square for tour list cards */
+  aspect-ratio: 1 / 1;
 }
 
 .card:hover {
@@ -63,6 +79,84 @@ h1.reveal {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
+}
+
+/* Gallery section */
+.tour-gallery {
+  margin-top: 48px;
+}
+.tour-gallery h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.tour-gallery p {
+  color: var(--muted);
+  font-size: 16px;
+}
+.gallery-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ================================================================
+   Featured gallery for tour preview
+   Displays a limited set of highlighted tour images with captions.
+   ================================================================ */
+.feature-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.feature-gallery figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature-gallery figure img {
+  /* Constrain images to a square ratio for a cleaner preview grid. Using
+     aspect-ratio ensures that each preview thumbnail remains a perfect
+     square regardless of the viewport, while object-fit keeps the
+     picture nicely cropped. */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.feature-gallery figcaption {
+  padding: 14px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+.feature-gallery figure:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.feature-gallery figcaption strong {
+  display: block;
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 4px;
 }
 
 /* subtle animation */

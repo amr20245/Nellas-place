@@ -29,15 +29,29 @@ body {
   --periwinkle-200:#C7D2FE;
   --purple-500:#7C3AED; --purple-600:#6D28D9;
   --pink-200:#FBCFE8; --mint-200:#BBF7D0;
-  --ink:#111827; --ink-2:#1F2937; --muted:#6B7280; --muted-2:#9CA3AF;
+  /* Primary ink colours have been darkened to improve contrast. These
+     values now lean towards true black and deep charcoal, ensuring
+     maximum legibility against our light pastel backgrounds. */
+  --ink:#0F0F0F;      /* near‑black for headings and primary text */
+  --ink-2:#333333;    /* dark grey for secondary copy */
+  --muted:#5B5B5B;    /* muted grey for subtle text */
+  --muted-2:#7A7A7A;
   --bg:var(--cream); --bg-soft:var(--cream-2); --card:#fff; --panel:#fff;
   --border:#E6E1F5; --divider:#ECE8F7;
   --cta:#E7DAFF; --cta-2:#C7B8FF; --ring:rgba(124,58,237,.4);
   --radius-xs:10px; --radius:16px; --radius-lg:22px;
   --shadow:0 8px 24px rgba(17,24,39,.08); --shadow-lg:0 18px 36px rgba(17,24,39,.12);
+
+  /* Provide a generic --text token referencing our secondary ink color.
+     Several component styles reference var(--text), but our design uses
+     --ink and --ink-2. This fallback keeps text readable across pages. */
+  --text: var(--ink-2);
   --size-hero:clamp(32px,4.5vw,56px); --size-h1:clamp(28px,3.6vw,40px);
   --size-h2:clamp(22px,2.6vw,28px); --size-h3:clamp(18px,1.9vw,22px);
-  --size-body:17px; --size-small:14px;
+  /* Increase the default body font size slightly for better readability
+     across devices. This also scales up small text tokens accordingly. */
+  --size-body:18px;
+  --size-small:15px;
   --content-max:1200px; --content-pad:20px; --section-y:clamp(32px,5vw,64px);
   --header-glass:rgba(255,249,242,.78); --header-border:rgba(230,225,245,.85);
 }
@@ -62,9 +76,12 @@ hr{border:0;border-top:1px solid var(--divider);margin:24px 0;}
    TOP STRIP (Why Step Higher?)
    ==================================================================== */
 .top-strip{
-  background:linear-gradient(90deg,var(--lavender-100),#FFF5FE);
-  border-bottom:1px solid var(--border);
-  color:var(--ink);font-weight:700;
+  /* Use theme variables for the background so the top strip blends with both light
+     and dark palettes.  In dark mode the lavender variables darken automatically. */
+  background: linear-gradient(90deg, var(--lavender-100), var(--lavender-50));
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 700;
 }
 .top-strip__inner{display:flex;align-items:center;gap:16px;padding:10px 0;}
 .top-strip .kicker{color:var(--purple-600);font-weight:800;letter-spacing:.02em;white-space:nowrap;}
@@ -163,9 +180,11 @@ label{font-weight:700;color:var(--ink);margin-bottom:6px;display:block;}
    FOOTER (refined)
    ==================================================================== */
 .footer{
-  background:#fff;
-  border-top:1px solid var(--border);
-  color:var(--ink-2);
+  /* Use theme-aware panel and border colors instead of hard-coded white.
+     This ensures the footer adapts when switching between light and dark modes. */
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  color: var(--ink-2);
 }
 .footer__inner{
   display:grid;
@@ -302,3 +321,110 @@ label{font-weight:700;color:var(--ink);margin-bottom:6px;display:block;}
   .footer__nav{ grid-template-columns:1fr; }
   .footer__socials a{ padding:0 12px; }
 }
+
+/* ================================================================
+   Dark mode variables (applied when html has .dark)
+   These override the pastel light palette with a rich, modern dark
+   aesthetic. By toggling the .dark class on the <html> element
+   you can switch between themes. See main.js for toggle logic.
+   ================================================================ */
+html.dark {
+  --bg: #0f1012;
+  --bg-soft: #121316;
+  --card: #15161a;
+  --panel: #15161a;
+  --border: #202227;
+  --divider: #202227;
+  --ink: #e7eaee;
+  --ink-2: #d7dae0;
+  --muted: #9aa0a6;
+  --muted-2: #7a7f8b;
+  --cta: #2c3a8f;
+  --cta-2: #3c4bac;
+  --purple-500: #9b7ef6;
+  --purple-600: #b8a5fc;
+  --lavender-50: #141421;
+  --lavender-100: #1a1b2a;
+  --lavender-200: #232538;
+  --lavender-300: #2c2f4e;
+  --periwinkle-200: #4d59a6;
+  --header-glass: rgba(15,16,18,0.9);
+  --header-border: #202227;
+  --ring: rgba(0,180,255,0.4);
+  --shadow: 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 18px 36px rgba(0,0,0,0.7);
+
+  /* In dark mode ensure pages referencing --text still use the lighter
+     ink colour for readability. */
+  --text: var(--ink-2);
+}
+
+/* ================================================================
+   Theme toggle button
+   Positioned at the bottom-left on all pages to allow users to
+   switch between the light and dark palettes. It adopts the
+   surrounding theme colors automatically via CSS variables.
+   ================================================================ */
+#theme-toggle {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, background 0.2s ease;
+  font-size: 20px;
+}
+#theme-toggle:hover {
+  transform: translateY(-2px);
+  background: var(--lavender-50);
+}
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   Generic gallery grid (used by tours and gallery pages)
+   Provides a responsive grid for thumbnail images. This is defined
+   globally so that multiple pages can reuse the class without
+   requiring additional CSS imports. Adjust the minmax() width to
+   change how many columns appear at various breakpoints.
+   ================================================================ */
+.gallery-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ----------------------------------------------------------------
+   Global slider visibility fix
+   Many pages reuse the `.hero-slider` pattern. Without hiding
+   inactive slides, multiple slides stack on top of each other and
+   cause overlapping content. Define generic rules here to ensure
+   only the `.active` slide is visible across all pages. Individual
+   page styles can override these if necessary. */
+.hero-slider .slide { display: none; }
+.hero-slider .slide.active { display: block; }

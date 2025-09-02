@@ -12,7 +12,9 @@
   background:
     radial-gradient(100% 180% at 30% -20%,rgba(0,160,255,.08),transparent 60%),
     var(--card);
-  border:1px solid #1f2227;
+  /* Use the global border colour instead of a hard‑coded value to
+     ensure teaser cards adapt gracefully to light and dark modes. */
+  border: 1px solid var(--border);
   border-radius:var(--radius);
   box-shadow:0 6px 18px rgba(0,0,0,.35);
   padding:26px 24px 30px;
@@ -52,7 +54,14 @@
 .story__content{display:flex;flex-direction:column;gap:16px}
 .story__date{align-self:flex-start;background:linear-gradient(180deg,var(--cta),var(--cta-2));color:#061018;font-weight:800;padding:6px 14px;border-radius:999px;font-size:.78rem;letter-spacing:.3px;text-transform:uppercase}
 .story__title{font-size:clamp(22px,2.6vw,28px);line-height:1.22;margin:0}
-.story__excerpt{color:#c9ced4;max-width:60ch;line-height:1.6;font-size:1rem}
+.story__excerpt{
+  /* Use the global muted colour for body text so stories remain
+     readable on light backgrounds and switch nicely in dark mode */
+  color: var(--muted);
+  max-width: 60ch;
+  line-height: 1.6;
+  font-size: 1rem;
+}
 .story__link a{font-weight:600;color:var(--cta);font-size:.92rem}
 .story:nth-child(even) .story__media{order:2}
 .story:nth-child(even) .story__content{order:1}
