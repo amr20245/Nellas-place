@@ -187,3 +187,49 @@
   .feature__media{width:100%;height:clamp(200px,48vw,300px)}
   .feature__content{flex-basis:auto}
 }
+
+
+/* =========================
+   Hero "scroll wheel" polish
+   ========================= */
+.hero-slider{
+  border: 1.5px solid rgba(17,17,17,.12);
+  border-radius: 18px;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+}
+.hero-slider > .container{
+  overflow: hidden;
+  border-radius: 12px;
+}
+.hero-slider .slider-dots{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 10px;
+  margin: 12px auto 0;
+  background: rgba(255,255,255,.90);
+  border: 1px solid rgba(17,17,17,.10);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.hero-slider .slider-dots button{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,17,17,.28);
+  background: #bbb;
+  opacity: 1;
+  transition: width .18s ease, background .18s ease, border-color .18s ease;
+}
+.hero-slider .slider-dots button[aria-selected="true"]{
+  width: 20px;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Text contrast lock for this page */
+.muted, .lead{ color: var(--ink-2) !important; }
+h1, h2, h3, h4, h5, h6{ color: var(--ink) !important; }

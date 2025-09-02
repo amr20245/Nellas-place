@@ -169,3 +169,24 @@ h1.reveal {
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* =========================
+   Tours grid: three across, tighter cards
+   ========================= */
+.grid{ display:grid; }
+.grid.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+@media (max-width: 700px){ .grid.grid-3{ grid-template-columns: 1fr; } }
+
+/* Smaller, cleaner cards */
+.card{
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+.card h3{ font-size: clamp(16px, 2.2vw, 20px); color: var(--ink); }
+.card p, .card li, .card small{ color: var(--ink-2); }
+.card .btn, .card a.button{ padding: 10px 12px; }
+
+/* Ensure images keep clean 16:9 without stretching */
+.card img{ aspect-ratio: 16/9; object-fit: cover; width:100%; height:auto; }

@@ -1,642 +1,595 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chaperone Application • SHNP</title>
-  <meta name="description" content="Complete the Chaperone Application online. No downloads required." />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Global and page styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/chaperone-app.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Chaperone Application • SHNP</title>
+<meta content="Complete the Chaperone Application online. No downloads required." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Global and page styles -->
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/chaperone-app.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- Top strip (standard) -->
-  <div class="top-strip">
-    <div class="container top-strip__inner">
-      <div class="kicker">Why Step Higher?</div>
-      <div class="scroller" aria-hidden="true">
-        <div class="scroller__track">
-          <span>College readiness</span>
-          <span>Mentorship</span>
-          <span>Scholarships</span>
-          <span>Accredited care at Nella's Place</span>
-          <span>Community impact</span>
-          <span>College readiness</span>
-          <span>Mentorship</span>
-          <span>Scholarships</span>
-          <span>Accredited care at Nella's Place</span>
-          <span>Community impact</span>
-        </div>
-      </div>
-      <a class="btn-ghost" href="donate.html" aria-label="Donate">Donate</a>
-    </div>
-  </div>
-
-  <!-- HubSpot -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243496281.js"></script>
-
-  <!-- Header (unified) -->
-  <header class="header">
-    <nav class="container nav" role="navigation" aria-label="Main">
-      <!-- Brand -->
-      <a class="brand" href="index.html" aria-label="SHNP home">
-        <div class="logo" aria-hidden="true"></div>
+<!-- Top strip (standard) -->
+<div class="top-strip">
+<div class="container top-strip__inner">
+<div class="kicker">Why Step Higher?</div>
+<div aria-hidden="true" class="scroller">
+<div class="scroller__track">
+<span>College readiness</span>
+<span>Mentorship</span>
+<span>Scholarships</span>
+<span>Accredited care at Nella's Place</span>
+<span>Community impact</span>
+<span>College readiness</span>
+<span>Mentorship</span>
+<span>Scholarships</span>
+<span>Accredited care at Nella's Place</span>
+<span>Community impact</span>
+</div>
+</div>
+<a aria-label="Donate" class="btn-ghost" href="donate.html">Donate</a>
+</div>
+</div>
+<!-- HubSpot -->
+<script async="" defer="" id="hs-script-loader" src="//js-na2.hs-scripts.com/243496281.js" type="text/javascript"></script>
+<!-- Header (unified) -->
+<header class="header">
+<nav aria-label="Main" class="container nav" role="navigation">
+<!-- Brand -->
+<a aria-label="SHNP home" class="brand" href="index.html">
+<div aria-hidden="true" class="logo"></div>
         SHNP
       </a>
-
-      <!-- Primary nav -->
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tours.html">Tours</a></li>
-        <li><a href="nellas-place.html">Nella’s Place</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <!-- Hamburger / overflow -->
-      <div class="menu-wrap">
-        <button class="btn-menu menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="hamburger-dropdown">☰</button>
-        <div id="hamburger-dropdown" class="hamburger-dropdown" role="menu" aria-label="More pages">
-          <a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
-          <a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
-          <a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
-          <a href="#footer" role="menuitem">Resources</a>
-          <a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
-          <a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
-          <a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
-        </div>
-      </div>
-
-      <!-- Desktop CTAs -->
-      <a class="btn-donate" href="donate.html" aria-label="Donate">Donate</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="page-hero" aria-labelledby="pageTitle">
-    <div class="container">
-      <h1 id="pageTitle">Chaperone Application</h1>
-      <p class="muted">Fill this out online. Fields marked * are required.</p>
-    </div>
-  </section>
-
-  <!-- Layout: sticky section nav + form -->
-  <main class="section">
-    <div class="container form-layout">
-      <!-- Sticky in page nav -->
-      <aside class="form-nav" aria-label="Form sections">
-        <nav>
-          <ol>
-            <li><a class="form-nav__link" href="#applicant">Applicant</a></li>
-            <li><a class="form-nav__link" href="#emergency">Emergency</a></li>
-            <li><a class="form-nav__link" href="#education">Education</a></li>
-            <li><a class="form-nav__link" href="#employment">Employment</a></li>
-            <li><a class="form-nav__link" href="#references">References</a></li>
-            <li><a class="form-nav__link" href="#certify">Certification</a></li>
-          </ol>
-        </nav>
-        <span class="form-nav__indicator" aria-hidden="true"></span>
-      </aside>
-
-      <!-- Full application form -->
-      <section class="form-wrap" aria-label="Chaperone application form">
-        <form id="chaperoneFullForm" class="app-form" novalidate>
-          <!-- Applicant Information -->
-          <fieldset class="card section-group" id="applicant">
-            <legend>Applicant Information</legend>
-
-            <div class="field-inline-3">
-              <div>
-                <label for="last_name">Last Name *</label>
-                <input id="last_name" name="last_name" class="input" autocomplete="family-name" required />
-              </div>
-              <div>
-                <label for="first_name">First Name *</label>
-                <input id="first_name" name="first_name" class="input" autocomplete="given-name" required />
-              </div>
-              <div>
-                <label for="middle_name">Middle</label>
-                <input id="middle_name" name="middle_name" class="input" />
-              </div>
-            </div>
-
-            <div class="field-address">
-              <div class="span-2">
-                <label for="street">Street *</label>
-                <input id="street" name="street" class="input" autocomplete="address-line1" required />
-              </div>
-              <div>
-                <label for="city">City *</label>
-                <input id="city" name="city" class="input" autocomplete="address-level2" required />
-              </div>
-              <div class="state-zip">
-                <div>
-                  <label for="state">State *</label>
-                  <input id="state" name="state" class="input" maxlength="2" placeholder="OH" autocomplete="address-level1" required />
-                </div>
-                <div>
-                  <label for="zip">Zip *</label>
-                  <input id="zip" name="zip" class="input" pattern="\\d{5}(-\\d{4})?" inputmode="numeric" placeholder="45237" autocomplete="postal-code" required />
-                </div>
-              </div>
-            </div>
-
-            <div class="field-inline-3">
-              <div>
-                <label for="phone_home">Phone</label>
-                <input id="phone_home" name="phone_home" class="input" inputmode="tel" autocomplete="tel" placeholder="(xxx) xxx-xxxx" />
-              </div>
-              <div>
-                <label for="phone_cell">Cell</label>
-                <input id="phone_cell" name="phone_cell" class="input" inputmode="tel" autocomplete="tel-national" placeholder="(xxx) xxx-xxxx" />
-              </div>
-              <div>
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="email" class="input" placeholder="name@example.com" autocomplete="email" required />
-              </div>
-            </div>
-
-            <div class="field-inline-3">
-              <div>
-                <label for="ssn">Social Security *</label>
-                <input id="ssn" name="ssn" class="input" inputmode="numeric" pattern="\\d{3}-\\d{2}-\\d{4}" placeholder="123-45-6789" required />
-                <small class="muted">Only submit over HTTPS. Store securely.</small>
-              </div>
-              <div>
-                <label for="dob">Date of Birth *</label>
-                <input id="dob" name="dob" type="date" class="input" required />
-              </div>
-              <div class="state-zip">
-                <div>
-                  <label for="dl_state">License State *</label>
-                  <input id="dl_state" name="dl_state" class="input" maxlength="2" placeholder="OH" required />
-                </div>
-                <div>
-                  <label for="dl_number">License Number *</label>
-                  <input id="dl_number" name="dl_number" class="input" required />
-                </div>
-              </div>
-            </div>
-
-            <div class="field-inline-2">
-              <div>
-                <label for="airport_1">Closest Major Airport *</label>
-                <input id="airport_1" name="airport_1" class="input" required />
-              </div>
-              <div>
-                <label for="airport_2">Second Closest Major Airport *</label>
-                <input id="airport_2" name="airport_2" class="input" required />
-              </div>
-            </div>
-
-            <div class="field-inline-2">
-              <div>
-                <label for="dates_available">Dates Available *</label>
-                <textarea id="dates_available" name="dates_available" class="input" rows="2" placeholder="List ranges or specific dates" required></textarea>
-              </div>
-              <div>
-                <label for="referred_by">Referred By</label>
-                <input id="referred_by" name="referred_by" class="input" />
-              </div>
-            </div>
-
-            <div class="field-stack">
-              <fieldset class="yesno">
-                <legend>Have you ever been accused or convicted of a crime? *</legend>
-                <label><input type="radio" name="crime_history" value="No" required /> No</label>
-                <label><input type="radio" name="crime_history" value="Yes" required /> Yes</label>
-              </fieldset>
-              <div id="crime_explain_wrap" class="hidden">
-                <label for="crime_explain">If yes, please explain</label>
-                <textarea id="crime_explain" name="crime_explain" class="input" rows="3"></textarea>
-              </div>
-
-              <fieldset class="yesno">
-                <legend>Have you ever been accused or convicted of mishandling or misappropriating funds? *</legend>
-                <label><input type="radio" name="funds_history" value="No" required /> No</label>
-                <label><input type="radio" name="funds_history" value="Yes" required /> Yes</label>
-              </fieldset>
-              <div id="funds_explain_wrap" class="hidden">
-                <label for="funds_explain">If yes, please explain</label>
-                <textarea id="funds_explain" name="funds_explain" class="input" rows="3"></textarea>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Emergency Contact -->
-          <fieldset class="card section-group" id="emergency">
-            <legend>Emergency Contact</legend>
-
-            <div class="field-inline-3">
-              <div class="span-2">
-                <label for="em_name">Name *</label>
-                <input id="em_name" name="em_name" class="input" required />
-              </div>
-              <div>
-                <label for="em_relationship">Relationship *</label>
-                <input id="em_relationship" name="em_relationship" class="input" required />
-              </div>
-            </div>
-
-            <div class="field-address">
-              <div class="span-2">
-                <label for="em_street">Street *</label>
-                <input id="em_street" name="em_street" class="input" required />
-              </div>
-              <div>
-                <label for="em_city">City *</label>
-                <input id="em_city" name="em_city" class="input" required />
-              </div>
-              <div class="state-zip">
-                <div>
-                  <label for="em_state">State *</label>
-                  <input id="em_state" name="em_state" class="input" maxlength="2" required />
-                </div>
-                <div>
-                  <label for="em_zip">Zip *</label>
-                  <input id="em_zip" name="em_zip" class="input" pattern="\\d{5}(-\\d{4})?" inputmode="numeric" required />
-                </div>
-              </div>
-            </div>
-
-            <div class="field-inline-2">
-              <div>
-                <label for="em_phone">Phone *</label>
-                <input id="em_phone" name="em_phone" class="input" inputmode="tel" required />
-              </div>
-              <div>
-                <label for="em_cell">Cell</label>
-                <input id="em_cell" name="em_cell" class="input" inputmode="tel" />
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Education and Experience -->
-          <fieldset class="card section-group" id="education">
-            <legend>Education and Experience</legend>
-
-            <div class="school-repeat">
-              <div class="sublegend">School 1</div>
-              <div class="field-inline-2">
-                <div><label for="school1_name">Name of School</label><input id="school1_name" name="school1_name" class="input" /></div>
-                <div><label for="school1_dates">Dates Attended</label><input id="school1_dates" name="school1_dates" class="input" placeholder="2019 to 2023" /></div>
-              </div>
-              <div class="field-inline-2">
-                <div><label for="school1_major">Major Course of Study</label><input id="school1_major" name="school1_major" class="input" /></div>
-                <div><label for="school1_degree">Diploma or Degree</label><input id="school1_degree" name="school1_degree" class="input" /></div>
-              </div>
-            </div>
-
-            <div class="school-repeat">
-              <div class="sublegend">School 2</div>
-              <div class="field-inline-2">
-                <div><label for="school2_name">Name of School</label><input id="school2_name" name="school2_name" class="input" /></div>
-                <div><label for="school2_dates">Dates Attended</label><input id="school2_dates" name="school2_dates" class="input" /></div>
-              </div>
-              <div class="field-inline-2">
-                <div><label for="school2_major">Major Course of Study</label><input id="school2_major" name="school2_major" class="input" /></div>
-                <div><label for="school2_degree">Diploma or Degree</label><input id="school2_degree" name="school2_degree" class="input" /></div>
-              </div>
-            </div>
-
-            <div class="school-repeat">
-              <div class="sublegend">School 3</div>
-              <div class="field-inline-2">
-                <div><label for="school3_name">Name of School</label><input id="school3_name" name="school3_name" class="input" /></div>
-                <div><label for="school3_dates">Dates Attended</label><input id="school3_dates" name="school3_dates" class="input" /></div>
-              </div>
-              <div class="field-inline-2">
-                <div><label for="school3_major">Major Course of Study</label><input id="school3_major" name="school3_major" class="input" /></div>
-                <div><label for="school3_degree">Diploma or Degree</label><input id="school3_degree" name="school3_degree" class="input" /></div>
-              </div>
-            </div>
-
-            <div class="field-stack">
-              <label for="skills">Other educational experience or special skills</label>
-              <textarea id="skills" name="skills" class="input" rows="3" placeholder="First aid, CPR, sign language, etc."></textarea>
-            </div>
-
-            <div class="field-stack">
-              <label for="dev_disability_exp">Experience working with people with developmental disabilities</label>
-              <textarea id="dev_disability_exp" name="dev_disability_exp" class="input" rows="3"></textarea>
-            </div>
-
-            <div class="field-stack">
-              <label for="travel_exp">Travel experience</label>
-              <textarea id="travel_exp" name="travel_exp" class="input" rows="3"></textarea>
-            </div>
-
-            <div class="field-stack">
-              <label for="volunteer_exp">Volunteer experience</label>
-              <textarea id="volunteer_exp" name="volunteer_exp" class="input" rows="3"></textarea>
-            </div>
-          </fieldset>
-
-          <!-- Employment History -->
-          <fieldset class="card section-group" id="employment">
-            <legend>Employment History</legend>
-
-            <div class="sublegend">Current Employer</div>
-            <div class="field-inline-3">
-              <div><label for="emp_current_name">Employer *</label><input id="emp_current_name" name="emp_current_name" class="input" required /></div>
-              <div><label for="emp_current_supervisor">Supervisor *</label><input id="emp_current_supervisor" name="emp_current_supervisor" class="input" required /></div>
-              <div><label for="emp_current_title">Job Title *</label><input id="emp_current_title" name="emp_current_title" class="input" required /></div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_current_desc">Brief Job Description *</label>
-              <textarea id="emp_current_desc" name="emp_current_desc" class="input" rows="3" required></textarea>
-            </div>
-            <div class="field-inline-3">
-              <div><label for="emp_current_start">Employment Start *</label><input id="emp_current_start" name="emp_current_start" type="date" class="input" required /></div>
-              <div><label for="emp_current_end">End</label><input id="emp_current_end" name="emp_current_end" type="date" class="input" /></div>
-              <div><label for="emp_current_phone">Phone *</label><input id="emp_current_phone" name="emp_current_phone" class="input" inputmode="tel" required /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="emp_current_street">Street *</label><input id="emp_current_street" name="emp_current_street" class="input" required /></div>
-              <div><label for="emp_current_city">City *</label><input id="emp_current_city" name="emp_current_city" class="input" required /></div>
-              <div class="state-zip">
-                <div><label for="emp_current_state">State *</label><input id="emp_current_state" name="emp_current_state" class="input" maxlength="2" required /></div>
-                <div><label for="emp_current_zip">Zip *</label><input id="emp_current_zip" name="emp_current_zip" class="input" inputmode="numeric" required /></div>
-              </div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_current_reason">Reason For Leaving</label>
-              <input id="emp_current_reason" name="emp_current_reason" class="input" />
-            </div>
-
-            <hr class="divider" />
-
-            <div class="sublegend">Previous Employer 1</div>
-            <div class="field-inline-3">
-              <div><label for="emp_prev1_name">Employer</label><input id="emp_prev1_name" name="emp_prev1_name" class="input" /></div>
-              <div><label for="emp_prev1_supervisor">Supervisor</label><input id="emp_prev1_supervisor" name="emp_prev1_supervisor" class="input" /></div>
-              <div><label for="emp_prev1_title">Job Title</label><input id="emp_prev1_title" name="emp_prev1_title" class="input" /></div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_prev1_desc">Brief Job Description</label>
-              <textarea id="emp_prev1_desc" name="emp_prev1_desc" class="input" rows="3"></textarea>
-            </div>
-            <div class="field-inline-3">
-              <div><label for="emp_prev1_start">Start</label><input id="emp_prev1_start" name="emp_prev1_start" type="date" class="input" /></div>
-              <div><label for="emp_prev1_end">End</label><input id="emp_prev1_end" name="emp_prev1_end" type="date" class="input" /></div>
-              <div><label for="emp_prev1_phone">Phone</label><input id="emp_prev1_phone" name="emp_prev1_phone" class="input" inputmode="tel" /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="emp_prev1_street">Street</label><input id="emp_prev1_street" name="emp_prev1_street" class="input" /></div>
-              <div><label for="emp_prev1_city">City</label><input id="emp_prev1_city" name="emp_prev1_city" class="input" /></div>
-              <div class="state-zip">
-                <div><label for="emp_prev1_state">State</label><input id="emp_prev1_state" name="emp_prev1_state" class="input" maxlength="2" /></div>
-                <div><label for="emp_prev1_zip">Zip</label><input id="emp_prev1_zip" name="emp_prev1_zip" class="input" inputmode="numeric" /></div>
-              </div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_prev1_reason">Reason For Leaving</label>
-              <input id="emp_prev1_reason" name="emp_prev1_reason" class="input" />
-            </div>
-
-            <hr class="divider" />
-
-            <div class="sublegend">Previous Employer 2</div>
-            <div class="field-inline-3">
-              <div><label for="emp_prev2_name">Employer</label><input id="emp_prev2_name" name="emp_prev2_name" class="input" /></div>
-              <div><label for="emp_prev2_supervisor">Supervisor</label><input id="emp_prev2_supervisor" name="emp_prev2_supervisor" class="input" /></div>
-              <div><label for="emp_prev2_title">Job Title</label><input id="emp_prev2_title" name="emp_prev2_title" class="input" /></div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_prev2_desc">Brief Job Description</label>
-              <textarea id="emp_prev2_desc" name="emp_prev2_desc" class="input" rows="3"></textarea>
-            </div>
-            <div class="field-inline-3">
-              <div><label for="emp_prev2_start">Start</label><input id="emp_prev2_start" name="emp_prev2_start" type="date" class="input" /></div>
-              <div><label for="emp_prev2_end">End</label><input id="emp_prev2_end" name="emp_prev2_end" type="date" class="input" /></div>
-              <div><label for="emp_prev2_phone">Phone</label><input id="emp_prev2_phone" name="emp_prev2_phone" class="input" inputmode="tel" /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="emp_prev2_street">Street</label><input id="emp_prev2_street" name="emp_prev2_street" class="input" /></div>
-              <div><label for="emp_prev2_city">City</label><input id="emp_prev2_city" name="emp_prev2_city" class="input" /></div>
-              <div class="state-zip">
-                <div><label for="emp_prev2_state">State</label><input id="emp_prev2_state" name="emp_prev2_state" class="input" maxlength="2" /></div>
-                <div><label for="emp_prev2_zip">Zip</label><input id="emp_prev2_zip" name="emp_prev2_zip" class="input" inputmode="numeric" /></div>
-              </div>
-            </div>
-            <div class="field-stack">
-              <label for="emp_prev2_reason">Reason For Leaving</label>
-              <input id="emp_prev2_reason" name="emp_prev2_reason" class="input" />
-            </div>
-          </fieldset>
-
-          <!-- References -->
-          <fieldset class="card section-group" id="references">
-            <legend>References</legend>
-            <p class="muted small">List three people not related to you whom you have known for at least 1 year.</p>
-
-            <!-- Ref 1 -->
-            <div class="sublegend">Reference 1</div>
-            <div class="field-inline-3">
-              <div class="span-2"><label for="ref1_name">Name *</label><input id="ref1_name" name="ref1_name" class="input" required /></div>
-              <div><label for="ref1_relationship">Relationship *</label><input id="ref1_relationship" name="ref1_relationship" class="input" required /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="ref1_street">Street *</label><input id="ref1_street" name="ref1_street" class="input" required /></div>
-              <div><label for="ref1_city">City *</label><input id="ref1_city" name="ref1_city" class="input" required /></div>
-              <div class="state-zip">
-                <div><label for="ref1_state">State *</label><input id="ref1_state" name="ref1_state" class="input" maxlength="2" required /></div>
-                <div><label for="ref1_phone">Phone *</label><input id="ref1_phone" name="ref1_phone" class="input" inputmode="tel" required /></div>
-              </div>
-            </div>
-
-            <!-- Ref 2 -->
-            <div class="sublegend">Reference 2</div>
-            <div class="field-inline-3">
-              <div class="span-2"><label for="ref2_name">Name *</label><input id="ref2_name" name="ref2_name" class="input" required /></div>
-              <div><label for="ref2_relationship">Relationship *</label><input id="ref2_relationship" name="ref2_relationship" class="input" required /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="ref2_street">Street *</label><input id="ref2_street" name="ref2_street" class="input" required /></div>
-              <div><label for="ref2_city">City *</label><input id="ref2_city" name="ref2_city" class="input" required /></div>
-              <div class="state-zip">
-                <div><label for="ref2_state">State *</label><input id="ref2_state" name="ref2_state" class="input" maxlength="2" required /></div>
-                <div><label for="ref2_phone">Phone *</label><input id="ref2_phone" name="ref2_phone" class="input" inputmode="tel" required /></div>
-              </div>
-            </div>
-
-            <!-- Ref 3 -->
-            <div class="sublegend">Reference 3</div>
-            <div class="field-inline-3">
-              <div class="span-2"><label for="ref3_name">Name *</label><input id="ref3_name" name="ref3_name" class="input" required /></div>
-              <div><label for="ref3_relationship">Relationship *</label><input id="ref3_relationship" name="ref3_relationship" class="input" required /></div>
-            </div>
-            <div class="field-address">
-              <div class="span-2"><label for="ref3_street">Street *</label><input id="ref3_street" name="ref3_street" class="input" required /></div>
-              <div><label for="ref3_city">City *</label><input id="ref3_city" name="ref3_city" class="input" required /></div>
-              <div class="state-zip">
-                <div><label for="ref3_state">State *</label><input id="ref3_state" name="ref3_state" class="input" maxlength="2" required /></div>
-                <div><label for="ref3_phone">Phone *</label><input id="ref3_phone" name="ref3_phone" class="input" inputmode="tel" required /></div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Certification -->
-          <fieldset class="card section-group" id="certify">
-            <legend>Certification</legend>
-            <p class="muted small">
+<!-- Primary nav -->
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="tours.html">Tours</a></li>
+<li><a href="nellas-place.html">Nella’s Place</a></li>
+<li><a href="our-story.html">Our Story</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<!-- Hamburger / overflow -->
+<div class="menu-wrap">
+<button aria-controls="hamburger-dropdown" aria-expanded="false" aria-label="Open menu" class="btn-menu menu-toggle">☰</button>
+<div aria-label="More pages" class="hamburger-dropdown" id="hamburger-dropdown" role="menu">
+<a href="scholarships.html" role="menuitem" tabindex="-1">Scholarships</a>
+<a href="blog.html" role="menuitem" tabindex="-1">Blog</a>
+<a href="careers.html" role="menuitem" tabindex="-1">Careers</a>
+<a href="#footer" role="menuitem">Resources</a>
+<a href="volunteer.html" role="menuitem" tabindex="-1">Volunteer</a>
+<a href="privacy-policy.html" role="menuitem" tabindex="-1">Privacy</a>
+<a href="terms.html" role="menuitem" tabindex="-1">Terms</a>
+</div>
+</div>
+<!-- Desktop CTAs -->
+<a aria-label="Donate" class="btn-donate" href="donate.html">Donate</a>
+</nav>
+</header>
+<!-- Hero -->
+<section aria-labelledby="pageTitle" class="page-hero">
+<div class="container">
+<h1 id="pageTitle">Chaperone Application</h1>
+<p class="muted">Fill this out online. Fields marked * are required.</p>
+</div>
+</section>
+<!-- Layout: sticky section nav + form -->
+<main class="section">
+<div class="container form-layout">
+<!-- Sticky in page nav -->
+<aside aria-label="Form sections" class="form-nav">
+<nav>
+<ol>
+<li><a class="form-nav__link" href="#applicant">Applicant</a></li>
+<li><a class="form-nav__link" href="#emergency">Emergency</a></li>
+<li><a class="form-nav__link" href="#education">Education</a></li>
+<li><a class="form-nav__link" href="#employment">Employment</a></li>
+<li><a class="form-nav__link" href="#references">References</a></li>
+<li><a class="form-nav__link" href="#certify">Certification</a></li>
+</ol>
+</nav>
+<span aria-hidden="true" class="form-nav__indicator"></span>
+</aside>
+<!-- Full application form -->
+<section aria-label="Chaperone application form" class="form-wrap">
+<form class="app-form" id="chaperoneFullForm" novalidate="">
+<!-- Applicant Information -->
+<fieldset class="card section-group" id="applicant">
+<legend>Applicant Information</legend>
+<div class="field-inline-3">
+<div>
+<label for="last_name">Last Name *</label>
+<input autocomplete="family-name" class="input" id="last_name" name="last_name" required=""/>
+</div>
+<div>
+<label for="first_name">First Name *</label>
+<input autocomplete="given-name" class="input" id="first_name" name="first_name" required=""/>
+</div>
+<div>
+<label for="middle_name">Middle</label>
+<input class="input" id="middle_name" name="middle_name"/>
+</div>
+</div>
+<div class="field-address">
+<div class="span-2">
+<label for="street">Street *</label>
+<input autocomplete="street-address" class="input" id="street" name="street" required=""/>
+</div>
+<div>
+<label for="city">City *</label>
+<input autocomplete="address-level2" class="input" id="city" name="city" required=""/>
+</div>
+<div class="state-zip">
+<div>
+<label for="state">State *</label>
+<input autocomplete="address-level1" class="input" id="state" maxlength="2" name="state" placeholder="OH" required=""/>
+</div>
+<div>
+<label for="zip">Zip *</label>
+<input autocomplete="postal-code" class="input" id="zip" inputmode="numeric" name="zip" pattern="\\d{5}(-\\d{4})?" placeholder="45237" required=""/>
+</div>
+</div>
+</div>
+<div class="field-inline-3">
+<div>
+<label for="phone_home">Phone</label>
+<input autocomplete="tel" class="input" id="phone_home" inputmode="tel" name="phone_home" placeholder="(xxx) xxx-xxxx" type="tel"/>
+</div>
+<div>
+<label for="phone_cell">Cell</label>
+<input autocomplete="tel" class="input" id="phone_cell" inputmode="tel" name="phone_cell" placeholder="(xxx) xxx-xxxx" type="tel"/>
+</div>
+<div>
+<label for="email">Email *</label>
+<input autocomplete="email" class="input" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<div class="field-inline-3">
+<div>
+<label for="ssn">Social Security *</label>
+<input class="input" id="ssn" inputmode="numeric" name="ssn" pattern="\\d{3}-\\d{2}-\\d{4}" placeholder="123-45-6789" required=""/>
+<small class="muted">Only submit over HTTPS. Store securely.</small>
+</div>
+<div>
+<label for="dob">Date of Birth *</label>
+<input class="input" id="dob" name="dob" required="" type="date"/>
+</div>
+<div class="state-zip">
+<div>
+<label for="dl_state">License State *</label>
+<input class="input" id="dl_state" maxlength="2" name="dl_state" placeholder="OH" required=""/>
+</div>
+<div>
+<label for="dl_number">License Number *</label>
+<input class="input" id="dl_number" name="dl_number" required=""/>
+</div>
+</div>
+</div>
+<div class="field-inline-2">
+<div>
+<label for="airport_1">Closest Major Airport *</label>
+<input class="input" id="airport_1" name="airport_1" required=""/>
+</div>
+<div>
+<label for="airport_2">Second Closest Major Airport *</label>
+<input class="input" id="airport_2" name="airport_2" required=""/>
+</div>
+</div>
+<div class="field-inline-2">
+<div>
+<label for="dates_available">Dates Available *</label>
+<textarea class="input" id="dates_available" name="dates_available" placeholder="List ranges or specific dates" required="" rows="2"></textarea>
+</div>
+<div>
+<label for="referred_by">Referred By</label>
+<input class="input" id="referred_by" name="referred_by"/>
+</div>
+</div>
+<div class="field-stack">
+<fieldset class="yesno">
+<legend>Have you ever been accused or convicted of a crime? *</legend>
+<label><input name="crime_history" required="" type="radio" value="No"/> No</label>
+<label><input name="crime_history" required="" type="radio" value="Yes"/> Yes</label>
+</fieldset>
+<div class="hidden" id="crime_explain_wrap">
+<label for="crime_explain">If yes, please explain</label>
+<textarea class="input" id="crime_explain" name="crime_explain" rows="3"></textarea>
+</div>
+<fieldset class="yesno">
+<legend>Have you ever been accused or convicted of mishandling or misappropriating funds? *</legend>
+<label><input name="funds_history" required="" type="radio" value="No"/> No</label>
+<label><input name="funds_history" required="" type="radio" value="Yes"/> Yes</label>
+</fieldset>
+<div class="hidden" id="funds_explain_wrap">
+<label for="funds_explain">If yes, please explain</label>
+<textarea class="input" id="funds_explain" name="funds_explain" rows="3"></textarea>
+</div>
+</div>
+</fieldset>
+<!-- Emergency Contact -->
+<fieldset class="card section-group" id="emergency">
+<legend>Emergency Contact</legend>
+<div class="field-inline-3">
+<div class="span-2">
+<label for="em_name">Name *</label>
+<input class="input" id="em_name" name="em_name" required=""/>
+</div>
+<div>
+<label for="em_relationship">Relationship *</label>
+<input class="input" id="em_relationship" name="em_relationship" required=""/>
+</div>
+</div>
+<div class="field-address">
+<div class="span-2">
+<label for="em_street">Street *</label>
+<input autocomplete="street-address" class="input" id="em_street" name="em_street" required=""/>
+</div>
+<div>
+<label for="em_city">City *</label>
+<input class="input" id="em_city" name="em_city" required=""/>
+</div>
+<div class="state-zip">
+<div>
+<label for="em_state">State *</label>
+<input class="input" id="em_state" maxlength="2" name="em_state" required=""/>
+</div>
+<div>
+<label for="em_zip">Zip *</label>
+<input class="input" id="em_zip" inputmode="numeric" name="em_zip" pattern="\\d{5}(-\\d{4})?" required=""/>
+</div>
+</div>
+</div>
+<div class="field-inline-2">
+<div>
+<label for="em_phone">Phone *</label>
+<input autocomplete="tel" class="input" id="em_phone" inputmode="tel" name="em_phone" required="" type="tel"/>
+</div>
+<div>
+<label for="em_cell">Cell</label>
+<input autocomplete="tel" class="input" id="em_cell" inputmode="tel" name="em_cell" type="tel"/>
+</div>
+</div>
+</fieldset>
+<!-- Education and Experience -->
+<fieldset class="card section-group" id="education">
+<legend>Education and Experience</legend>
+<div class="school-repeat">
+<div class="sublegend">School 1</div>
+<div class="field-inline-2">
+<div><label for="school1_name">Name of School</label><input class="input" id="school1_name" name="school1_name"/></div>
+<div><label for="school1_dates">Dates Attended</label><input class="input" id="school1_dates" name="school1_dates" placeholder="2019 to 2023"/></div>
+</div>
+<div class="field-inline-2">
+<div><label for="school1_major">Major Course of Study</label><input class="input" id="school1_major" name="school1_major"/></div>
+<div><label for="school1_degree">Diploma or Degree</label><input class="input" id="school1_degree" name="school1_degree"/></div>
+</div>
+</div>
+<div class="school-repeat">
+<div class="sublegend">School 2</div>
+<div class="field-inline-2">
+<div><label for="school2_name">Name of School</label><input class="input" id="school2_name" name="school2_name"/></div>
+<div><label for="school2_dates">Dates Attended</label><input class="input" id="school2_dates" name="school2_dates"/></div>
+</div>
+<div class="field-inline-2">
+<div><label for="school2_major">Major Course of Study</label><input class="input" id="school2_major" name="school2_major"/></div>
+<div><label for="school2_degree">Diploma or Degree</label><input class="input" id="school2_degree" name="school2_degree"/></div>
+</div>
+</div>
+<div class="school-repeat">
+<div class="sublegend">School 3</div>
+<div class="field-inline-2">
+<div><label for="school3_name">Name of School</label><input class="input" id="school3_name" name="school3_name"/></div>
+<div><label for="school3_dates">Dates Attended</label><input class="input" id="school3_dates" name="school3_dates"/></div>
+</div>
+<div class="field-inline-2">
+<div><label for="school3_major">Major Course of Study</label><input class="input" id="school3_major" name="school3_major"/></div>
+<div><label for="school3_degree">Diploma or Degree</label><input class="input" id="school3_degree" name="school3_degree"/></div>
+</div>
+</div>
+<div class="field-stack">
+<label for="skills">Other educational experience or special skills</label>
+<textarea class="input" id="skills" name="skills" placeholder="First aid, CPR, sign language, etc." rows="3"></textarea>
+</div>
+<div class="field-stack">
+<label for="dev_disability_exp">Experience working with people with developmental disabilities</label>
+<textarea class="input" id="dev_disability_exp" name="dev_disability_exp" rows="3"></textarea>
+</div>
+<div class="field-stack">
+<label for="travel_exp">Travel experience</label>
+<textarea class="input" id="travel_exp" name="travel_exp" rows="3"></textarea>
+</div>
+<div class="field-stack">
+<label for="volunteer_exp">Volunteer experience</label>
+<textarea class="input" id="volunteer_exp" name="volunteer_exp" rows="3"></textarea>
+</div>
+</fieldset>
+<!-- Employment History -->
+<fieldset class="card section-group" id="employment">
+<legend>Employment History</legend>
+<div class="sublegend">Current Employer</div>
+<div class="field-inline-3">
+<div><label for="emp_current_name">Employer *</label><input class="input" id="emp_current_name" name="emp_current_name" required=""/></div>
+<div><label for="emp_current_supervisor">Supervisor *</label><input class="input" id="emp_current_supervisor" name="emp_current_supervisor" required=""/></div>
+<div><label for="emp_current_title">Job Title *</label><input class="input" id="emp_current_title" name="emp_current_title" required=""/></div>
+</div>
+<div class="field-stack">
+<label for="emp_current_desc">Brief Job Description *</label>
+<textarea class="input" id="emp_current_desc" name="emp_current_desc" required="" rows="3"></textarea>
+</div>
+<div class="field-inline-3">
+<div><label for="emp_current_start">Employment Start *</label><input class="input" id="emp_current_start" name="emp_current_start" required="" type="date"/></div>
+<div><label for="emp_current_end">End</label><input class="input" id="emp_current_end" name="emp_current_end" type="date"/></div>
+<div><label for="emp_current_phone">Phone *</label><input autocomplete="tel" class="input" id="emp_current_phone" inputmode="tel" name="emp_current_phone" required="" type="tel"/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="emp_current_street">Street *</label><input autocomplete="street-address" class="input" id="emp_current_street" name="emp_current_street" required=""/></div>
+<div><label for="emp_current_city">City *</label><input class="input" id="emp_current_city" name="emp_current_city" required=""/></div>
+<div class="state-zip">
+<div><label for="emp_current_state">State *</label><input class="input" id="emp_current_state" maxlength="2" name="emp_current_state" required=""/></div>
+<div><label for="emp_current_zip">Zip *</label><input class="input" id="emp_current_zip" inputmode="numeric" name="emp_current_zip" required=""/></div>
+</div>
+</div>
+<div class="field-stack">
+<label for="emp_current_reason">Reason For Leaving</label>
+<input class="input" id="emp_current_reason" name="emp_current_reason"/>
+</div>
+<hr class="divider"/>
+<div class="sublegend">Previous Employer 1</div>
+<div class="field-inline-3">
+<div><label for="emp_prev1_name">Employer</label><input class="input" id="emp_prev1_name" name="emp_prev1_name"/></div>
+<div><label for="emp_prev1_supervisor">Supervisor</label><input class="input" id="emp_prev1_supervisor" name="emp_prev1_supervisor"/></div>
+<div><label for="emp_prev1_title">Job Title</label><input class="input" id="emp_prev1_title" name="emp_prev1_title"/></div>
+</div>
+<div class="field-stack">
+<label for="emp_prev1_desc">Brief Job Description</label>
+<textarea class="input" id="emp_prev1_desc" name="emp_prev1_desc" rows="3"></textarea>
+</div>
+<div class="field-inline-3">
+<div><label for="emp_prev1_start">Start</label><input class="input" id="emp_prev1_start" name="emp_prev1_start" type="date"/></div>
+<div><label for="emp_prev1_end">End</label><input class="input" id="emp_prev1_end" name="emp_prev1_end" type="date"/></div>
+<div><label for="emp_prev1_phone">Phone</label><input autocomplete="tel" class="input" id="emp_prev1_phone" inputmode="tel" name="emp_prev1_phone" type="tel"/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="emp_prev1_street">Street</label><input autocomplete="street-address" class="input" id="emp_prev1_street" name="emp_prev1_street"/></div>
+<div><label for="emp_prev1_city">City</label><input class="input" id="emp_prev1_city" name="emp_prev1_city"/></div>
+<div class="state-zip">
+<div><label for="emp_prev1_state">State</label><input class="input" id="emp_prev1_state" maxlength="2" name="emp_prev1_state"/></div>
+<div><label for="emp_prev1_zip">Zip</label><input class="input" id="emp_prev1_zip" inputmode="numeric" name="emp_prev1_zip"/></div>
+</div>
+</div>
+<div class="field-stack">
+<label for="emp_prev1_reason">Reason For Leaving</label>
+<input class="input" id="emp_prev1_reason" name="emp_prev1_reason"/>
+</div>
+<hr class="divider"/>
+<div class="sublegend">Previous Employer 2</div>
+<div class="field-inline-3">
+<div><label for="emp_prev2_name">Employer</label><input class="input" id="emp_prev2_name" name="emp_prev2_name"/></div>
+<div><label for="emp_prev2_supervisor">Supervisor</label><input class="input" id="emp_prev2_supervisor" name="emp_prev2_supervisor"/></div>
+<div><label for="emp_prev2_title">Job Title</label><input class="input" id="emp_prev2_title" name="emp_prev2_title"/></div>
+</div>
+<div class="field-stack">
+<label for="emp_prev2_desc">Brief Job Description</label>
+<textarea class="input" id="emp_prev2_desc" name="emp_prev2_desc" rows="3"></textarea>
+</div>
+<div class="field-inline-3">
+<div><label for="emp_prev2_start">Start</label><input class="input" id="emp_prev2_start" name="emp_prev2_start" type="date"/></div>
+<div><label for="emp_prev2_end">End</label><input class="input" id="emp_prev2_end" name="emp_prev2_end" type="date"/></div>
+<div><label for="emp_prev2_phone">Phone</label><input autocomplete="tel" class="input" id="emp_prev2_phone" inputmode="tel" name="emp_prev2_phone" type="tel"/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="emp_prev2_street">Street</label><input autocomplete="street-address" class="input" id="emp_prev2_street" name="emp_prev2_street"/></div>
+<div><label for="emp_prev2_city">City</label><input class="input" id="emp_prev2_city" name="emp_prev2_city"/></div>
+<div class="state-zip">
+<div><label for="emp_prev2_state">State</label><input class="input" id="emp_prev2_state" maxlength="2" name="emp_prev2_state"/></div>
+<div><label for="emp_prev2_zip">Zip</label><input class="input" id="emp_prev2_zip" inputmode="numeric" name="emp_prev2_zip"/></div>
+</div>
+</div>
+<div class="field-stack">
+<label for="emp_prev2_reason">Reason For Leaving</label>
+<input class="input" id="emp_prev2_reason" name="emp_prev2_reason"/>
+</div>
+</fieldset>
+<!-- References -->
+<fieldset class="card section-group" id="references">
+<legend>References</legend>
+<p class="muted small">List three people not related to you whom you have known for at least 1 year.</p>
+<!-- Ref 1 -->
+<div class="sublegend">Reference 1</div>
+<div class="field-inline-3">
+<div class="span-2"><label for="ref1_name">Name *</label><input class="input" id="ref1_name" name="ref1_name" required=""/></div>
+<div><label for="ref1_relationship">Relationship *</label><input class="input" id="ref1_relationship" name="ref1_relationship" required=""/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="ref1_street">Street *</label><input autocomplete="street-address" class="input" id="ref1_street" name="ref1_street" required=""/></div>
+<div><label for="ref1_city">City *</label><input class="input" id="ref1_city" name="ref1_city" required=""/></div>
+<div class="state-zip">
+<div><label for="ref1_state">State *</label><input class="input" id="ref1_state" maxlength="2" name="ref1_state" required=""/></div>
+<div><label for="ref1_phone">Phone *</label><input autocomplete="tel" class="input" id="ref1_phone" inputmode="tel" name="ref1_phone" required="" type="tel"/></div>
+</div>
+</div>
+<!-- Ref 2 -->
+<div class="sublegend">Reference 2</div>
+<div class="field-inline-3">
+<div class="span-2"><label for="ref2_name">Name *</label><input class="input" id="ref2_name" name="ref2_name" required=""/></div>
+<div><label for="ref2_relationship">Relationship *</label><input class="input" id="ref2_relationship" name="ref2_relationship" required=""/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="ref2_street">Street *</label><input autocomplete="street-address" class="input" id="ref2_street" name="ref2_street" required=""/></div>
+<div><label for="ref2_city">City *</label><input class="input" id="ref2_city" name="ref2_city" required=""/></div>
+<div class="state-zip">
+<div><label for="ref2_state">State *</label><input class="input" id="ref2_state" maxlength="2" name="ref2_state" required=""/></div>
+<div><label for="ref2_phone">Phone *</label><input autocomplete="tel" class="input" id="ref2_phone" inputmode="tel" name="ref2_phone" required="" type="tel"/></div>
+</div>
+</div>
+<!-- Ref 3 -->
+<div class="sublegend">Reference 3</div>
+<div class="field-inline-3">
+<div class="span-2"><label for="ref3_name">Name *</label><input class="input" id="ref3_name" name="ref3_name" required=""/></div>
+<div><label for="ref3_relationship">Relationship *</label><input class="input" id="ref3_relationship" name="ref3_relationship" required=""/></div>
+</div>
+<div class="field-address">
+<div class="span-2"><label for="ref3_street">Street *</label><input autocomplete="street-address" class="input" id="ref3_street" name="ref3_street" required=""/></div>
+<div><label for="ref3_city">City *</label><input class="input" id="ref3_city" name="ref3_city" required=""/></div>
+<div class="state-zip">
+<div><label for="ref3_state">State *</label><input class="input" id="ref3_state" maxlength="2" name="ref3_state" required=""/></div>
+<div><label for="ref3_phone">Phone *</label><input autocomplete="tel" class="input" id="ref3_phone" inputmode="tel" name="ref3_phone" required="" type="tel"/></div>
+</div>
+</div>
+</fieldset>
+<!-- Certification -->
+<fieldset class="card section-group" id="certify">
+<legend>Certification</legend>
+<p class="muted small">
               I state that all of the information provided above is true and accurate to the best of my knowledge.
               I authorize investigation of all statements contained in this application. I understand that
               misrepresentation or omission of facts is a Federal crime punishable by law.
             </p>
-
-            <div class="field-inline-3">
-              <div class="span-2">
-                <label for="signature">Signature (type full name) *</label>
-                <input id="signature" name="signature" class="input" required />
-              </div>
-              <div>
-                <label for="signature_date">Date *</label>
-                <input id="signature_date" name="signature_date" type="date" class="input" required />
-              </div>
-            </div>
-            <label class="agree">
-              <input type="checkbox" id="agree" required />
+<div class="field-inline-3">
+<div class="span-2">
+<label for="signature">Signature (type full name) *</label>
+<input class="input" id="signature" name="signature" required=""/>
+</div>
+<div>
+<label for="signature_date">Date *</label>
+<input class="input" id="signature_date" name="signature_date" required="" type="date"/>
+</div>
+</div>
+<label class="agree">
+<input id="agree" required="" type="checkbox"/>
               I agree and certify the above is true.
             </label>
-          </fieldset>
-
-          <!-- Submit -->
-          <div class="actions">
-            <button class="btn btn-primary" type="submit">Submit Application</button>
-            <button class="btn btn-ghost" type="reset">Reset</button>
-          </div>
-
-          <div id="formSuccess" class="alert success" role="status" aria-live="polite" style="display:none">
+</fieldset>
+<!-- Submit -->
+<div class="actions">
+<button class="btn btn-primary" type="submit">Submit Application</button>
+<button class="btn btn-ghost" type="reset">Reset</button>
+</div>
+<div aria-live="polite" class="alert success" id="formSuccess" role="status" style="display:none">
             Application submitted. We will be in touch soon.
           </div>
-        </form>
-      </section>
-    </div>
-  </main>
-
-  <!-- Footer (unified) -->
-  <footer id="footer" class="footer fx" role="contentinfo">
-    <div class="container footer__inner">
-      <!-- Left: brand + mission -->
-      <section class="footer__brand">
-        <a class="footer__logo" href="index.html" aria-label="SHNP home">
-          <span class="footer__logo-mark"></span>
-          <span class="footer__logo-text">SHNP</span>
-        </a>
-
-        <p class="footer__mission">
+</form>
+</section>
+</div>
+</main>
+<!-- Footer (unified) -->
+<footer class="footer fx" id="footer" role="contentinfo">
+<div class="container footer__inner">
+<!-- Left: brand + mission -->
+<section class="footer__brand">
+<a aria-label="SHNP home" class="footer__logo" href="index.html">
+<span class="footer__logo-mark"></span>
+<span class="footer__logo-text">SHNP</span>
+</a>
+<p class="footer__mission">
           Empowering youth and families with mentorship, tours, scholarships, and accredited care that improves outcomes.
         </p>
-
-        <ul class="footer__socials" role="list">
-          <li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X">X</a></li>
-          <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
-          <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
-        </ul>
-
-        <button class="footer__back" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-          <span class="footer__back-icon" aria-hidden="true">⌃</span>
+<ul class="footer__socials" role="list">
+<li><a aria-label="X" href="https://x.com/" rel="noopener" target="_blank">X</a></li>
+<li><a aria-label="Instagram" href="https://instagram.com/" rel="noopener" target="_blank">Instagram</a></li>
+<li><a aria-label="Facebook" href="https://facebook.com/" rel="noopener" target="_blank">Facebook</a></li>
+</ul>
+<button class="footer__back" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">
+<span aria-hidden="true" class="footer__back-icon">⌃</span>
           Back to top
         </button>
-      </section>
 
-      <!-- Right: link columns -->
-      <nav class="footer__nav" aria-label="Footer">
-        <div class="footer__col">
-          <h3>Programs</h3>
-          <ul role="list">
-            <li><a href="tours.html">Tours</a></li>
-            <li><a href="nellas-place.html">Nella’s Place</a></li>
-            <li><a href="scholarships.html">Scholarships</a></li>
-            <li><a href="events.html">Events</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>Get Involved</h3>
-          <ul role="list">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
-            <li class="inline-with-pill">
-              <a href="careers.html">Careers</a>
-              <span class="footer-pill">We’re hiring</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>About</h3>
-          <ul role="list">
-            <li><a href="our-story.html">Our Story</a></li>
-            <li><a href="staff.html">Staff</a></li>
-            <li><a href="partners.html">Partners & Sponsors</a></li>
-            <li class="split-links">
-              <a href="news.html">News</a>
-              <span aria-hidden="true">/</span>
-              <a href="blog.html">Blog</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>Explore</h3>
-          <ul role="list">
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="our-story.html#see-our-space">See Our Space</a></li>
-            <li><a href="nellas-place.html#see-our-space">Nella’s Place Tour</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>Policies</h3>
-          <ul role="list">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="rules-and-regulations.html">Rules & Regulations</a></li>
-            <li><a href="medical-consent.html">Medical Consent</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="footer__bar">
-      <div class="container">
+<div class="footer__contact">
+<button aria-label="Back to top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+<ul class="footer__list">
+<li><strong>Address</strong><br/>1610 California Ave Cincinnati, Ohio 45237</li>
+<li><strong>Email</strong><br/><a href="mailto:janelle@mystephigher.org">janelle@mystephigher.org</a></li>
+<li><strong>Phone</strong><br/><a href="tel:+15135551234">(513) 555‑1234</a></li>
+</ul>
+</div>
+</section>
+<!-- Right: link columns -->
+<nav aria-label="Footer" class="footer__nav">
+<div class="footer__col">
+<h3>Programs</h3>
+<ul role="list">
+<li><a href="tours.html">Tours</a></li>
+<li><a href="nellas-place.html">Nella’s Place</a></li>
+<li><a href="scholarships.html">Scholarships</a></li>
+<li><a href="events.html">Events</a></li>
+</ul>
+</div>
+<div class="footer__col">
+<h3>Get Involved</h3>
+<ul role="list">
+<li><a href="donate.html">Donate</a></li>
+<li><a href="volunteer.html">Volunteer</a></li>
+<li><a href="wish-list-wednesday.html">Wish List Wednesday</a></li>
+<li class="inline-with-pill">
+<a href="careers.html">Careers</a>
+<span class="footer-pill">We’re hiring</span>
+</li>
+</ul>
+</div>
+<div class="footer__col">
+<h3>About</h3>
+<ul role="list">
+<li><a href="our-story.html">Our Story</a></li>
+<li><a href="staff.html">Staff</a></li>
+<li><a href="partners.html">Partners &amp; Sponsors</a></li>
+<li class="split-links">
+<a href="news.html">News</a>
+<span aria-hidden="true">/</span>
+<a href="blog.html">Blog</a>
+</li>
+</ul>
+</div>
+<div class="footer__col">
+<h3>Explore</h3>
+<ul role="list">
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="our-story.html#see-our-space">See Our Space</a></li>
+<li><a href="nellas-place.html#see-our-space">Nella’s Place Tour</a></li>
+</ul>
+</div>
+<div class="footer__col">
+<h3>Policies</h3>
+<ul role="list">
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="rules-and-regulations.html">Rules &amp; Regulations</a></li>
+<li><a href="medical-consent.html">Medical Consent</a></li>
+<li><a href="terms.html">Terms of Use</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Bottom bar -->
+<div class="footer__bar">
+<div class="container">
         © <span id="year"></span> SHNP. All rights reserved.
       </div>
-    </div>
-  </footer>
-
-  <!-- Thank You overlay -->
-  <div id="thankYou" class="ty" role="dialog" aria-modal="true" aria-labelledby="tyTitle" aria-hidden="true">
-    <div class="ty__backdrop"></div>
-    <div class="ty__card">
-      <svg class="ty__icon" viewBox="0 0 120 120" aria-hidden="true">
-        <circle class="check check__circle" cx="60" cy="60" r="42"></circle>
-        <path class="check check__tick" d="M40 62 L55 75 L82 47"></path>
-      </svg>
-      <h2 id="tyTitle" class="ty__title">Thank you for applying</h2>
-      <p class="ty__meta">We received your application. We will follow up by email soon.</p>
-      <div class="ty__actions">
-        <button id="tyClose" class="ty__btn ty__btn--primary" type="button">Close</button>
-        <a href="index.html" class="ty__btn" role="button">Back to Home</a>
-      </div>
-    </div>
-  </div>
-  <div id="confetti" class="confetti" aria-hidden="true"></div>
-
-  <!-- Interactions (page specific) -->
-  <script>
+</div>
+</footer>
+<!-- Thank You overlay -->
+<div aria-hidden="true" aria-labelledby="tyTitle" aria-modal="true" class="ty" id="thankYou" role="dialog">
+<div class="ty__backdrop"></div>
+<div class="ty__card">
+<svg aria-hidden="true" class="ty__icon" viewbox="0 0 120 120">
+<circle class="check check__circle" cx="60" cy="60" r="42"></circle>
+<path class="check check__tick" d="M40 62 L55 75 L82 47"></path>
+</svg>
+<h2 class="ty__title" id="tyTitle">Thank you for applying</h2>
+<p class="ty__meta">We received your application. We will follow up by email soon.</p>
+<div class="ty__actions">
+<button class="ty__btn ty__btn--primary" id="tyClose" type="button">Close</button>
+<a class="ty__btn" href="index.html" role="button">Back to Home</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="confetti" id="confetti"></div>
+<!-- Interactions (page specific) -->
+<script>
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.documentElement.style.scrollBehavior = prefersReduced ? 'auto' : 'smooth';
 
@@ -795,9 +748,8 @@
       }, 600);
     });
   </script>
-
-  <!-- Unified nav helper + footer year -->
-  <script>
+<!-- Unified nav helper + footer year -->
+<script>
     (function(){
       const nav = document.querySelector('.nav');
       const btn = document.querySelector('.menu-toggle');
@@ -825,8 +777,7 @@
       if(y) y.textContent=new Date().getFullYear();
     });
   </script>
-
-  <!-- Site JS (if present) -->
-  <script src="js/main.js"></script>
+<!-- Site JS (if present) -->
+<script src="js/main.js"></script>
 </body>
 </html>
