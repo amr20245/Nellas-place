@@ -13,6 +13,9 @@
 <!-- Global + Page styles -->
 <link href="css/styles.css" rel="stylesheet"/>
 <link href="css/index.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/award-v5.css" />
+  <link rel="stylesheet" href="css/ra.css">
 </head>
 <body>
 <!-- Top strip -->
@@ -163,23 +166,33 @@
 </article>
 <button aria-label="Previous slide" class="slider-btn prev">‹</button>
 <button aria-label="Next slide" class="slider-btn next">›</button>
-<div aria-label="Slide navigation" class="slider-dots" role="tablist"></div>
+
 </div>
 </div>
 </section>
-<!-- Recent Adventures collage -->
-<section class="section section-collage">
-<div class="container">
-<h2 class="reveal">Recent Adventures</h2>
-<p class="muted reveal" style="margin-bottom:14px">A few snapshots from our latest tours and campus visits.</p>
-<div class="collage-grid">
-<img alt="Group posing at Universal Orlando Resort" class="reveal" height="1066" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="images/trips/trip1.jpg" srcset="images/trips/trip1-480w.jpg 480w, images/trips/trip1-768w.jpg 768w" width="800"/>
-<img alt="Students boarding the tour bus early in the morning" class="reveal" height="600" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="images/trips/trip2.jpg" srcset="images/trips/trip2-480w.jpg 480w, images/trips/trip2-768w.jpg 768w" width="800"/>
-<img alt="Walking together across a college campus courtyard" class="reveal" height="600" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="images/trips/trip3.jpg" srcset="images/trips/trip3-480w.jpg 480w, images/trips/trip3-768w.jpg 768w" width="800"/>
-<img alt="Smiling group of participants at Morehouse College booth" class="reveal" height="600" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="images/trips/trip4.jpg" srcset="images/trips/trip4-480w.jpg 480w, images/trips/trip4-768w.jpg 768w" width="800"/>
-</div>
-<p style="margin-top:20px"><a class="btn btn-primary" href="tours.html">Join the next tour</a></p>
-</div>
+<!-- Recent Adventures – 3D circle carousel (top header + bottom CTA/dots) -->
+<section class="section section-collage" id="recent-adventures-3d">
+  <div class="container">
+    <header class="ra-header">
+      <h2 class="reveal">Recent Adventures</h2>
+      <p class="muted reveal">From sunrise bus rides to campus tours—quick snapshots of the moments that lift us higher.</p>
+    </header>
+
+    <div class="ra-stage" data-radius="440" data-auto="true" data-speed="0.02333" data-arrows="false">
+      <div class="ra-ring" aria-label="Recent Adventures image carousel">
+        <figure class="ra-card"><img src="images/trips/trip1.jpg" alt="Group posing at Universal Orlando Resort"></figure>
+        <figure class="ra-card"><img src="images/trips/trip2.jpg" alt="Students boarding the tour bus early in the morning"></figure>
+        <figure class="ra-card"><img src="images/trips/trip3.jpg" alt="Walking together across a college campus courtyard"></figure>
+        <figure class="ra-card"><img src="images/trips/trip4.jpg" alt="Smiling group of participants at Morehouse College booth"></figure>
+      </div>
+      <button class="ra-arrow ra-prev" aria-label="Previous">‹</button>
+      <button class="ra-arrow ra-next" aria-label="Next">›</button>
+    </div>
+
+    <footer class="ra-footer">
+      <a class="ra-btn" href="tours.html">Join the next tour</a>
+    </footer>
+  </div>
 </section>
 <!-- Sidebar + stacked features -->
 <section class="section">
@@ -451,5 +464,8 @@
 </footer>
 <!-- Site JS (optional if you have shared behaviors there) -->
 <script src="js/main.js"></script>
+
+<script src="js/award-v5.js" defer></script>
+  <script src="js/ra.js"></script>
 </body>
 </html>

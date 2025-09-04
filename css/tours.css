@@ -1,192 +1,145 @@
-/* tours.css – extra flavor only for tours page */
+\/* tours.css — scoped, premium layout. LOAD THIS LAST. */
 
-/* section styling */
-.section {
-  padding: 60px 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.1) 120%);
+/* Page spacing */
+.tours-page .section { padding: 48px 0; }
+.tours-page .section--tight { padding-top: 24px; }
+
+/* Page head */
+.tours-page .page-head h1{
+  margin: 0 0 6px;
+  font-size: clamp(28px, 3.2vw, 36px);
+  background: linear-gradient(90deg, var(--cta), var(--cta-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+.tours-page .page-head .muted{ margin: 0; }
 
-/* grid spacing */
-.grid.grid-3 {
-  gap: 24px;
+/* Grid (2 → 1; these are wide row-cards so 2 across works best) */
+.tours-page .tour-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(14px, 2.2vw, 22px);
+  margin-top: 16px;
 }
+@media (max-width: 980px){ .tours-page .tour-grid{ grid-template-columns: 1fr; } }
 
-/* cards */
-/*
-  The tour list at the top of the page used to render as large horizontal
-  rectangles which felt oversized on desktop and especially awkward on
-  phones. To give the layout a cleaner rhythm and make each tour
-  preview feel consistent with the square gallery thumbnails below, we
-  constrain each card to a 1:1 aspect ratio. The card remains a flex
-  container so its contents (heading, description and button) are
-  vertically distributed. The height adapts automatically based on the
-  grid column width and the `aspect-ratio` property, ensuring the
-  square shape is maintained on any screen size.
-*/
-.card {
-  background: var(--panel);
+/* Row Cards (pill style) */
+.tours-page .card{
+  position: relative;
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: 0 16px 48px -28px rgba(0,0,0,.20), 0 8px 22px -12px rgba(0,0,0,.10);
+  padding: 18px 18px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* Maintain a perfect square for tour list cards */
-  aspect-ratio: 1 / 1;
+  align-items: center;
+  gap: 16px;
+  min-height: 128px;
+  transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+  will-change: transform, box-shadow;
+}
+.tours-page .card::before{
+  /* thin left accent */
+  content:"";
+  position:absolute;
+  left:0; top:12px; bottom:12px;
+  width:4px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--cta), var(--cta-2));
+  opacity:.9;
+}
+.tours-page .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 22px 60px -26px rgba(0,0,0,.24), 0 10px 26px -14px rgba(0,0,0,.12);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+/* Card content + CTA */
+.tours-page .card__body{
+  flex: 1 1 auto;
+  min-width: 0;
 }
-
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  background: linear-gradient(90deg, var(--cta), var(--cta-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.tours-page .card__cta{
+  flex: 0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-
-.card p {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-/* buttons inside cards */
-.card .btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  background: linear-gradient(90deg, var(--cta), var(--cta-2));
-  color: #fff;
-  text-decoration: none;
-  transition: filter .2s ease;
-}
-
-.card .btn:hover {
-  filter: brightness(1.15);
-}
-
-/* page title reveal */
-h1.reveal {
-  font-size: 36px;
-  background: linear-gradient(90deg, var(--cta), var(--cta-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-}
-
-/* Gallery section */
-.tour-gallery {
-  margin-top: 48px;
-}
-.tour-gallery h2 {
-  font-size: 28px;
-  margin-bottom: 6px;
-  font-weight: 800;
+.tours-page .card h3{
+  margin: 0 0 6px;
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.15;
   color: var(--ink);
 }
-.tour-gallery p {
-  color: var(--muted);
-  font-size: 16px;
+.tours-page .card p{ margin: 0; color: var(--muted); }
+.tours-page .card__footer{ margin-top: 10px; }
+
+/* Button (use your global .btn styles; this just enhances hover) */
+.tours-page .card .btn{
+  display:inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--cta), var(--cta-2));
+  color:#fff; text-decoration:none;
+  box-shadow: 0 12px 28px -10px rgba(123,97,255,.35);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  white-space: nowrap;
 }
-.gallery-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.gallery-grid img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.gallery-grid img:hover {
-  transform: scale(1.04);
-  box-shadow: var(--shadow-lg);
+.tours-page .card .btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px -10px rgba(123,97,255,.45);
+  filter: brightness(1.05);
 }
 
-/* ================================================================
-   Featured gallery for tour preview
-   Displays a limited set of highlighted tour images with captions.
-   ================================================================ */
-.feature-gallery {
+/* Highlights */
+.tours-page .section-head{ margin-bottom: 10px; }
+.tours-page .section-head h2{ margin:0; font-size: clamp(22px, 2.7vw, 28px); }
+.tours-page .section-head .muted{ margin:6px 0 0; }
+
+.tours-page .gallery{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(12px, 2vw, 18px);
 }
-.feature-gallery figure {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--card);
+@media (max-width: 1100px){ .tours-page .gallery{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px){ .tours-page .gallery{ grid-template-columns: 1fr; } }
+
+.tours-page .gallery__item{
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 16px 48px -28px rgba(0,0,0,.20), 0 8px 22px -12px rgba(0,0,0,.10);
+  transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
 }
-.feature-gallery figure img {
-  /* Constrain images to a square ratio for a cleaner preview grid. Using
-     aspect-ratio ensures that each preview thumbnail remains a perfect
-     square regardless of the viewport, while object-fit keeps the
-     picture nicely cropped. */
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-.feature-gallery figcaption {
-  padding: 14px;
-  font-size: 15px;
-  color: var(--ink-2);
-}
-.feature-gallery figure:hover {
-  transform: translateY(-4px);
+.tours-page .gallery__item:hover{
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
-.feature-gallery figcaption strong {
-  display: block;
-  font-size: 17px;
-  color: var(--ink);
-  margin-bottom: 4px;
+.tours-page .gallery__item img{
+  display:block;
+  width:100%;
+  height: clamp(210px, 28vw, 340px);
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform .4s ease, filter .4s ease;
+}
+.tours-page .gallery__item:hover img{
+  transform: scale(1.05);
+  filter: saturate(1.05) contrast(1.02);
+}
+.tours-page .gallery__item figcaption{
+  padding: 10px 12px 12px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.tours-page .gallery__item figcaption strong{
+  display:block; color: var(--ink);
 }
 
-/* subtle animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp .8s ease forwards;
-}
+/* Reveal animation (ties to your IntersectionObserver) */
+.tours-page .reveal{ opacity:0; transform: translateY(18px); }
+.tours-page .reveal.visible{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
 
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-/* =========================
-   Tours grid: three across, tighter cards
-   ========================= */
-.grid{ display:grid; }
-.grid.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
-@media (max-width: 700px){ .grid.grid-3{ grid-template-columns: 1fr; } }
-
-/* Smaller, cleaner cards */
-.card{
-  padding: 14px;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,.06);
-}
-.card h3{ font-size: clamp(16px, 2.2vw, 20px); color: var(--ink); }
-.card p, .card li, .card small{ color: var(--ink-2); }
-.card .btn, .card a.button{ padding: 10px 12px; }
-
-/* Ensure images keep clean 16:9 without stretching */
-.card img{ aspect-ratio: 16/9; object-fit: cover; width:100%; height:auto; }
+/* Utility */
+.tours-page .center{ text-align:center; }
