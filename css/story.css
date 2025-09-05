@@ -1,12 +1,89 @@
 /* ================================================================
-   SHNP • Our Story page styles
-   Fresh alternating layout with tight alignment
-   Works with global styles.css
+   SHNP • Our Story page styles  • v6 upgrades
+   - Sticky top strip + slower marquee
+   - Scroll lock on mobile drawer
+   - Clean anchor landings under header
+   - Tighter feature rows, 4:3 media frames with depth
+   - Timeline connectors
+   - Visible focus states
+   - Motion standards + reduced motion
+   - Stats micro count-up support
    --------------------------------------------------------------- */
 
+:root{
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --dur-1: .18s;
+  --dur-2: .36s;
+  --dur-3: .7s;
+  /* header height is set dynamically by JS too */
+  --header-h: clamp(64px, 8vw, 92px);
+  --anchor-offset: calc(var(--header-h) + 14px);
+}
+
+html { scroll-behavior: smooth; }
 main { overflow-x: clip; }
 
-/* Hero */
+/* focus states you can see */
+:where(a,button,[role="button"],input,select,textarea,.pill,.btn,.btn-primary,.btn-ghost):focus-visible{
+  outline: 3px solid var(--cta);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* anchors land clean under sticky header */
+:where(main) :where([id]){ scroll-margin-top: var(--anchor-offset); }
+
+/* -----------------------------
+   Top strip: sticky + slower marquee
+-------------------------------- */
+.top-strip{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg) 74%, #fff 26%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(1.1) blur(6px);
+}
+.top-strip .top-strip__inner{ display:flex; align-items:center; gap:12px; }
+.top-strip .kicker{ font-weight:800; letter-spacing:.2px; }
+
+.scroller{
+  overflow:hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.scroller__track{
+  display:inline-flex; gap:28px; white-space:nowrap;
+  animation: marquee 40s linear infinite;
+}
+@keyframes marquee{
+  from{ transform: translateX(0) }
+  to{ transform: translateX(-50%) }
+}
+
+/* -----------------------------
+   Lock page when hamburger is open
+-------------------------------- */
+body.drawer-open{
+  overflow: hidden;
+  height: 100dvh;
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+/* overlay behind the drawer */
+.nav{ position: relative; z-index: 45; }
+.nav.open::before{
+  content:"";
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  z-index: 9;
+}
+.hamburger-dropdown{ position: absolute; z-index: 10; }
+
+/* -----------------------------
+   Hero
+-------------------------------- */
 .story-hero{
   position:relative;
   padding:clamp(44px,7vw,88px) 0 clamp(28px,5vw,56px);
@@ -21,8 +98,8 @@ main { overflow-x: clip; }
   background: var(--lavender-100);
   font-weight:700; font-size:13px; color:var(--ink);
 }
-.story-hero h1{ margin-top:10px; }
-.story-hero .lead{ max-width:820px; font-size:clamp(16px,1.6vw,19px); color:var(--ink-2); }
+.story-hero h1{ margin-top:8px; }
+.story-hero .lead{ max-width:820px; font-size:clamp(16px,1.6vw,19px); color:var(--ink-2); margin-top:10px; }
 .story-hero::after{
   content:""; position:absolute; inset:-60px -10% auto -10%; height:200px;
   background:
@@ -32,31 +109,39 @@ main { overflow-x: clip; }
 }
 
 /* ===============================
-   Feature rows - hard two columns
+   Feature rows
    =============================== */
 .feature{
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); /* text gets a touch more width */
+  grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
   gap:28px;
-  align-items:start; /* top align both sides */
+  align-items:start;
+}
+@media (min-width: 981px){
+  .feature{ align-items:center; } /* center vertically on desktop */
 }
 .feature .copy h2{ margin-bottom:6px; }
-.feature .copy p{ color:var(--ink-2); }
+.feature .copy p{ color:var(--ink-2); max-width:58ch; }
 
-/* media rectangle next to copy */
+/* media frames with depth, predictable 4:3 */
 .feature .media{
   position:relative;
   width:100%;
-  max-width:520px;
-  aspect-ratio:16/9;
+  max-width:560px;
+  aspect-ratio:4/3;
   border-radius:var(--radius);
   overflow:hidden;
   border:1px solid var(--border);
   background: var(--card);
-  box-shadow: var(--shadow);
-  justify-self:end; /* hugs inner edge */
+  box-shadow: 0 8px 28px rgba(16,18,22,.08), 0 2px 10px rgba(16,18,22,.06);
+  justify-self:end;
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
 }
-.feature .media img{ display:block; width:100%; height:100%; object-fit:cover; }
+.feature .media:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(16,18,22,.14), 0 4px 14px rgba(16,18,22,.10);
+}
+.feature .media img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
 
 /* flip columns when .alt is present */
 .feature.alt .copy{ order:2; }
@@ -96,7 +181,8 @@ main { overflow-x: clip; }
   display:inline-flex; align-items:center; gap:8px;
   padding:10px 14px; border-radius:999px;
   background: var(--lavender-100); border:1px solid var(--border);
-  color:var(--ink); text-decoration:none!important; transition:.18s ease; font-weight:800;
+  color:var(--ink); text-decoration:none!important; transition:transform var(--dur-1) var(--ease);
+  font-weight:800;
 }
 .pill:hover{ transform:translateY(-1px); }
 
@@ -174,13 +260,28 @@ main { overflow-x: clip; }
   display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:center;
   position:relative; padding:18px 0;
 }
+.t-row .t-copy{ position:relative; }
 .t-row .t-copy h4{ margin-bottom:6px; }
 .t-row .t-copy p{ color:var(--ink-2); }
-.t-row .t-media{
-  justify-self:end; width:100%; max-width:480px; aspect-ratio:16/10;
-  border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--card); box-shadow:var(--shadow);
+
+/* tiny horizontal connector ticks to center rail */
+.t-row .t-copy::before{
+  content:""; position:absolute; top:calc(50% - 1px); height:2px; width:18px;
+  background: color-mix(in srgb, var(--border) 65%, #999 35%);
+  opacity:.9;
 }
+.t-row:not(.reverse) .t-copy::before{ right:-18px; border-radius:2px 0 0 2px; }
+.t-row.reverse .t-copy::before{ left:-18px; border-radius:0 2px 2px 0; }
+
+.t-row .t-media{
+  justify-self:end; width:100%; max-width:480px; aspect-ratio:4/3;
+  border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--card);
+  box-shadow:var(--shadow);
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+.t-row .t-media:hover{ transform: translateY(-2px) }
 .t-row .t-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+
 .t-row::after{
   content:""; position:absolute; left:50%; top:50%; width:12px; height:12px; border-radius:50%;
   background:linear-gradient(180deg, var(--cta), var(--cta-2));
@@ -189,6 +290,7 @@ main { overflow-x: clip; }
 }
 .t-row.reverse .t-copy{ order:2; padding-left:18px; }
 .t-row.reverse .t-media{ order:1; justify-self:start; }
+
 @media (max-width:980px){
   .timeline::before{ left:12px; transform:none; }
   .t-row{ grid-template-columns:1fr; padding-left:28px; }
@@ -196,9 +298,10 @@ main { overflow-x: clip; }
   .t-row.reverse .t-media{ justify-self:start; max-width:100%; }
   .t-row::after{ left:12px; }
   .t-row.reverse .t-copy{ order:2; padding-left:0; }
+  .t-row .t-copy::before{ display:none; } /* hide ticks on narrow screens */
 }
 
-/* Stats base */
+/* Stats */
 .stats{ margin-top:12px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
 @media (max-width:980px){ .stats{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px){ .stats{ grid-template-columns:1fr; } }
@@ -235,7 +338,7 @@ main { overflow-x: clip; }
     0 10px 24px rgba(73, 59, 142, .08),
     0 2px 8px rgba(73, 59, 142, .06);
   text-align:center;
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
 }
 .stats.stats-fancy .stat:hover{
   transform:translateY(-2px);
@@ -258,21 +361,13 @@ main { overflow-x: clip; }
   -webkit-background-clip:text; background-clip:text; color:transparent;
   margin-bottom:6px;
 }
-.stats.stats-fancy .stat__label{
-  color:var(--ink-2);
-  font-weight:600;
-  letter-spacing:.2px;
-}
 
 /* optional pulse on first paint */
 @keyframes stat-pop { 0%{ transform:scale(.98); opacity:.6 } 100%{ transform:scale(1); opacity:1 } }
-.stats.stats-fancy .stat{ animation: stat-pop .4s ease both; }
+.stats.stats-fancy .stat{ animation: stat-pop .4s var(--ease) both; }
 .stats.stats-fancy .stat:nth-child(2){ animation-delay:.05s; }
 .stats.stats-fancy .stat:nth-child(3){ animation-delay:.1s; }
 .stats.stats-fancy .stat:nth-child(4){ animation-delay:.15s; }
-@media (prefers-reduced-motion:reduce){
-  .stats.stats-fancy .stat{ animation:none }
-}
 
 /* Tick list */
 .tick{ list-style:none; padding:0; }
@@ -284,16 +379,13 @@ main { overflow-x: clip; }
   background:linear-gradient(180deg, var(--cta), var(--cta-2));
 }
 
-/* Reveal on scroll */
+/* Reveal on scroll - motion standards */
 .reveal-slide{ opacity:0; transform: translateY(18px); will-change: transform, opacity; }
 .reveal-slide.from-left{ transform: translateX(-36px); }
 .reveal-slide.from-right{ transform: translateX(36px); }
 .reveal-slide.is-visible{
   opacity:1; transform: translateX(0) translateY(0);
-  transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .6s ease;
-}
-@media (prefers-reduced-motion: reduce){
-  .reveal-slide, .reveal-slide.is-visible{ transition:none; transform:none; opacity:1; }
+  transition: transform var(--dur-3) var(--ease), opacity .6s ease;
 }
 
 /* Micro utils */
@@ -301,3 +393,12 @@ main { overflow-x: clip; }
 .m-6{ margin-top:6px; }
 .m-10{ margin-top:10px; }
 .gap-10{ display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior: auto; }
+  .reveal-slide, .reveal-slide.is-visible{ transition:none; transform:none; opacity:1; }
+  .stats.stats-fancy .stat{ animation:none }
+  .scroller__track{ animation-play-state: paused !important; }
+  .feature .media, .t-row .t-media{ transition: none; }
+}

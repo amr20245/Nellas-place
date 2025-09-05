@@ -28,6 +28,10 @@
           <span>Scholarships</span>
           <span>Accredited care at Nella's Place</span>
           <span>Community impact</span>
+          <!-- duplicate a few items for seamless loop -->
+          <span>College readiness</span>
+          <span>Mentorship</span>
+          <span>Scholarships</span>
         </div>
       </div>
       <a class="btn btn-ghost" aria-label="Donate" href="donate.html">Donate</a>
@@ -75,8 +79,8 @@
     <section class="section story-hero">
       <div class="container">
         <span class="tag">Two missions • One organization</span>
-        <h1 style="margin-top:8px">Our Story</h1>
-        <p class="lead" style="margin-top:10px">
+        <h1>Our Story</h1>
+        <p class="lead">
           SHNP brings together <strong>Step Higher</strong> with <strong>Nella’s Place</strong>. Youth see options, plan next steps, then move with confidence.
         </p>
       </div>
@@ -217,12 +221,12 @@
         <div class="stats stats-fancy reveal-slide">
           <div class="stat">
             <div class="stat__emoji" aria-hidden="true">📅</div>
-            <div class="stat__num">11+</div>
+            <div class="stat__num" data-count-to="11" data-suffix="+">11+</div>
             <div class="stat__label">Years serving</div>
           </div>
           <div class="stat">
             <div class="stat__emoji" aria-hidden="true">👧</div>
-            <div class="stat__num">250+</div>
+            <div class="stat__num" data-count-to="250" data-suffix="+">250+</div>
             <div class="stat__label">Youth reached</div>
           </div>
           <div class="stat">
@@ -232,7 +236,7 @@
           </div>
           <div class="stat">
             <div class="stat__emoji" aria-hidden="true">💯</div>
-            <div class="stat__num">100%</div>
+            <div class="stat__num" data-count-to="100" data-suffix="%">100%</div>
             <div class="stat__label">Student first</div>
           </div>
         </div>
@@ -454,6 +458,59 @@
       const y=document.getElementById('year');
       if(y) y.textContent=new Date().getFullYear();
     })();
+  </script>
+
+  <!-- Count up micro interaction -->
+  <script>
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const nums = document.querySelectorAll('.stat__num[data-count-to]');
+    if (!nums.length) return;
+
+    const ease = (t)=> t<.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2;
+
+    const io = new IntersectionObserver((entries)=>{
+      for(const e of entries){
+        if(!e.isIntersecting) continue;
+        const el = e.target;
+        io.unobserve(el);
+
+        const target = parseFloat(el.dataset.countTo);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const dur = parseInt(el.dataset.countDuration || '900', 10);
+
+        const start = performance.now();
+        const from = 0;
+
+        function tick(now){
+          const p = Math.min(1, (now - start)/dur);
+          const v = Math.round((from + (target - from) * ease(p)) * 10) / 10;
+          el.textContent = prefix + (Number.isInteger(target) ? Math.round(v) : v) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+    }, { threshold: 0.35 });
+
+    nums.forEach(n => io.observe(n));
+  })();
+  </script>
+
+  <!-- Set --header-h dynamically so anchors land perfect -->
+  <script>
+  (function(){
+    const header=document.querySelector('.header');
+    const r=document.documentElement;
+    function setVar(){
+      if(!header) return;
+      r.style.setProperty('--header-h', header.offsetHeight + 'px');
+    }
+    setVar();
+    window.addEventListener('resize', setVar);
+  })();
   </script>
 
   <script src="js/award-v5.js" defer></script>
